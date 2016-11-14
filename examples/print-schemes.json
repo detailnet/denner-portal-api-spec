@@ -4,7 +4,7 @@
             "id": "dw-20",
             "name": "Denner Woche (20 Seiten)",
             "sort_index": 10,
-            "pages": [
+            "documents": [
                 {
                     "name": "Seite 1",
                     "length": 1,
