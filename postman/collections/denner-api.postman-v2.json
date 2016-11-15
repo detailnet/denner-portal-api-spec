@@ -1536,18 +1536,18 @@
 					"response": []
 				},
 				{
-					"name": "/print-publications/{publication_id}/pages",
+					"name": "/print-publications/{publication_id}/documents",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save first publication page's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publication_pages && jsonData.print_publication_pages[0]) ? jsonData.print_publication_pages[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_page_id\", id);\n\ntests[\"Setup first publication_page_id in environment\"] = !!id;\n"
+								"exec": "// Save first publication document's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publication_documents && jsonData.print_publication_documents[0]) ? jsonData.print_publication_documents[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_document_id\", id);\n\ntests[\"Setup first publication_document_id in environment\"] = !!id;\n"
 							}
 						}
 					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents",
 						"method": "GET",
 						"header": [
 							{
@@ -1570,23 +1570,23 @@
 							"mode": "formdata",
 							"formdata": []
 						},
-						"description": "List a print publication's pages (Seiten eines Print-Werbemittels)"
+						"description": "List a print publication's documents (Dokumente eines Print-Werbemittels)"
 					},
 					"response": []
 				},
 				{
-					"name": "/print-publications/{publication_id}/pages",
+					"name": "/print-publications/{publication_id}/documents",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save created publication page's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_page_id\", id);\n\ntests[\"Setup new publication_page_id in environment\"] = !!id;\n"
+								"exec": "// Save created publication document's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_document_id\", id);\n\ntests[\"Setup new publication_document_id in environment\"] = !!id;\n"
 							}
 						}
 					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents",
 						"method": "POST",
 						"header": [
 							{
@@ -1612,25 +1612,25 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Neue Seite\",\n  \"template\": \"dw-article-right\"\n}\n"
+							"raw": "{\n  \"name\": \"Neues Dokument\",\n  \"template\": \"dw-article-right\"\n}\n"
 						},
-						"description": "Add a new page (Seite) to a print publication (Print-Werbemittel)"
+						"description": "Add a new document (Dokument) to a print publication (Print-Werbemittel)"
 					},
 					"response": []
 				},
 				{
-					"name": "/print-publications/{publication_id}/pages/{page_id}",
+					"name": "/print-publications/{publication_id}/documents/{document_id}",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save first publication page sheet's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.sheets && jsonData.sheets[0]) ? jsonData.sheets[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_page_sheet_id\", id);\n\ntests[\"Setup first publication_page_sheet_id in environment\"] = !!id;\n"
+								"exec": "// Save first publication document sheet's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.sheets && jsonData.sheets[0]) ? jsonData.sheets[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_document_sheet_id\", id);\n\ntests[\"Setup first publication_document_sheet_id in environment\"] = !!id;\n"
 							}
 						}
 					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}",
 						"method": "GET",
 						"header": [
 							{
@@ -1653,14 +1653,14 @@
 							"mode": "formdata",
 							"formdata": []
 						},
-						"description": "List a single page (Seite) for a print publication (Print-Werbemittel)"
+						"description": "List a single document (Dokument) for a print publication (Print-Werbemittel)"
 					},
 					"response": []
 				},
 				{
-					"name": "/print-publications/{publication_id}/pages/{page_id}",
+					"name": "/print-publications/{publication_id}/documents/{document_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}",
 						"method": "PATCH",
 						"header": [
 							{
@@ -1688,14 +1688,14 @@
 							"mode": "raw",
 							"raw": "{\n  \"name\": \"Neuer Name\",\n  \"template\": \"dw-front\"\n}\n"
 						},
-						"description": "Update a print publication's page (Seite eines Print-Werbemittels)"
+						"description": "Update a print publication's document (Dokument eines Print-Werbemittels)"
 					},
 					"response": []
 				},
 				{
-					"name": "/print-publications/{publication_id}/pages/{page_id}",
+					"name": "/print-publications/{publication_id}/documents/{document_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}",
 						"method": "DELETE",
 						"header": [
 							{
@@ -1718,23 +1718,23 @@
 							"mode": "formdata",
 							"formdata": []
 						},
-						"description": "Delete a page (Seite) from a print publication (Print-Werbemittel)"
+						"description": "Delete a document (Dokument) from a print publication (Print-Werbemittel)"
 					},
 					"response": []
 				},
 				{
-					"name": "/print-publications/{publication_id}/pages/{page_id}/sheets",
+					"name": "/print-publications/{publication_id}/documents/{document_id}/sheets",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save created publication page sheet's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_page_sheet_id\", id);\n\ntests[\"Setup new publication_page_sheet_id in environment\"] = !!id;\n"
+								"exec": "// Save created publication document sheet's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_document_sheet_id\", id);\n\ntests[\"Setup new publication_document_sheet_id in environment\"] = !!id;\n"
 							}
 						}
 					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/sheets",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/sheets",
 						"method": "POST",
 						"header": [
 							{
@@ -1762,14 +1762,14 @@
 							"mode": "raw",
 							"raw": "{\n  \"language\": \"it\"\n}"
 						},
-						"description": "Add a new sheet (Arbeitsblatt) to a print publication's page (Seite eines Print-Werbemittels) by splitting of a language from an existing sheet"
+						"description": "Add a new sheet (Arbeitsblatt) to a print publication's document (Dokument eines Print-Werbemittels) by splitting of a language from an existing sheet"
 					},
 					"response": []
 				},
 				{
-					"name": "/print-publications/{publication_id}/pages/{page_id}/sheets/{sheet_id}",
+					"name": "/print-publications/{publication_id}/documents/{document_id}/sheets/{sheet_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/sheets/{{publication_page_sheet_id}}",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/sheets/{{publication_document_sheet_id}}",
 						"method": "PATCH",
 						"header": [
 							{
@@ -1797,12 +1797,12 @@
 							"mode": "raw",
 							"raw": "{\n  \"items\": [\n    {\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"{{advertised_article_id}}\"\n    }\n  ]\n}\n"
 						},
-						"description": "Update sheet (Arbeitsblatt) of a print publication's page (Seite eines Print-Werbemittels)."
+						"description": "Update sheet (Arbeitsblatt) of a print publication's document (Dokument eines Print-Werbemittels)."
 					},
 					"response": []
 				},
 				{
-					"name": "/print-publications/{publication_id}/pages/{page_id}/articles",
+					"name": "/print-publications/{publication_id}/documents/{document_id}/articles",
 					"event": [
 						{
 							"listen": "test",
@@ -1813,7 +1813,7 @@
 						}
 					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/articles",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/articles",
 						"method": "GET",
 						"header": [
 							{
@@ -1836,14 +1836,14 @@
 							"mode": "formdata",
 							"formdata": []
 						},
-						"description": "List a print publication page's articles (Artikel einer Seite im Print-Werbemittel)"
+						"description": "List a print publication document's articles (Artikel eines Dokument im Print-Werbemittel)"
 					},
 					"response": []
 				},
 				{
-					"name": "/print-publications/{publication_id}/pages/{page_id}/articles/{article_id}",
+					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/articles/{{publication_article_id}}",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/articles/{{publication_article_id}}",
 						"method": "GET",
 						"header": [
 							{
@@ -1866,14 +1866,14 @@
 							"mode": "formdata",
 							"formdata": []
 						},
-						"description": "List a single article (Artikel) for a print publication's page (Seite im Print-Werbemittel)"
+						"description": "List a single article (Artikel) for a print publication's document (Dokument im Print-Werbemittel)"
 					},
 					"response": []
 				},
 				{
-					"name": "/print-publications/{publication_id}/pages/{page_id}/articles/{article_id}/text-blocks",
+					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}/text-blocks",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/articles/{{publication_article_id}}/text-blocks",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/articles/{{publication_article_id}}/text-blocks",
 						"method": "GET",
 						"header": [
 							{
@@ -1896,14 +1896,14 @@
 							"mode": "formdata",
 							"formdata": []
 						},
-						"description": "List Article's text blocks from a page of a print publication by positioning (Print-Werbemittel)"
+						"description": "List Article's text blocks from a document of a print publication by positioning (Print-Werbemittel)"
 					},
 					"response": []
 				},
 				{
-					"name": "/print-publications/{publication_id}/pages/{page_id}/articles/{article_id}/text-blocks",
+					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}/text-blocks",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/articles/{{publication_article_id}}/text-blocks",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/articles/{{publication_article_id}}/text-blocks",
 						"method": "PATCH",
 						"header": [
 							{
@@ -1931,7 +1931,7 @@
 							"mode": "raw",
 							"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]"
 						},
-						"description": "Update Article's override-texts from a page of a print publication by positioning (Print-Werbemittel)"
+						"description": "Update Article's override-texts from a document of a print publication by positioning (Print-Werbemittel)"
 					},
 					"response": []
 				},
