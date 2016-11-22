@@ -48,7 +48,13 @@
 							"listen": "prerequest",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 \n// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js\n(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);\n\npostman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+								"exec": [
+									"// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 ",
+									"// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js",
+									"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
+									"",
+									"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+								]
 							}
 						}
 					],
@@ -543,7 +549,13 @@
 							"listen": "prerequest",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 \n// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js\n(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);\n\npostman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+								"exec": [
+									"// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 ",
+									"// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js",
+									"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
+									"",
+									"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+								]
 							}
 						}
 					],
@@ -1103,7 +1115,16 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save first publication's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publications && jsonData.print_publications[0]) ? jsonData.print_publications[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_id\", id);\n\ntests[\"Setup first publication_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save first publication's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.print_publications && jsonData.print_publications[0]) ? jsonData.print_publications[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"publication_id\", id);",
+									"",
+									"tests[\"Setup first publication_id in environment\"] = !!id;",
+									""
+								]
 							}
 						}
 					],
@@ -1142,14 +1163,29 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save first publication's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publications && jsonData.print_publications[0]) ? jsonData.print_publications[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_id\", id);\n\ntests[\"Setup first publication_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save first publication's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.print_publications && jsonData.print_publications[0]) ? jsonData.print_publications[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"publication_id\", id);",
+									"",
+									"tests[\"Setup first publication_id in environment\"] = !!id;",
+									""
+								]
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 \n// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js\n(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);\n\npostman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+								"exec": [
+									"// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 ",
+									"// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js",
+									"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
+									"",
+									"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+								]
 							}
 						}
 					],
@@ -1188,14 +1224,25 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save created publication's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_id\", id);\n\ntests[\"Setup new publication_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save created publication's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData) ? jsonData.id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"publication_id\", id);",
+									"",
+									"tests[\"Setup new publication_id in environment\"] = !!id;",
+									""
+								]
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
 								"type": "text/javascript",
-								"exec": "postman.setEnvironmentVariable(\"new_uuid\",'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0,v=c=='x'?r:(r&0x3|0x8);return v.toString(16);}));"
+								"exec": [
+									"postman.setEnvironmentVariable(\"new_uuid\",'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0,v=c=='x'?r:(r&0x3|0x8);return v.toString(16);}));"
+								]
 							}
 						}
 					],
@@ -1334,7 +1381,16 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save first publication articles's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publication_articles && jsonData.print_publication_articles[0]) ? jsonData.print_publication_articles[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_article_id\", id);\n\ntests[\"Setup first publication_article_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save first publication articles's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.print_publication_articles && jsonData.print_publication_articles[0]) ? jsonData.print_publication_articles[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"publication_article_id\", id);",
+									"",
+									"tests[\"Setup first publication_article_id in environment\"] = !!id;",
+									""
+								]
 							}
 						}
 					],
@@ -1373,7 +1429,16 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save created publication article's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_article_id\", id);\n\ntests[\"Setup new publication_article_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save created publication article's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData) ? jsonData.id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"publication_article_id\", id);",
+									"",
+									"tests[\"Setup new publication_article_id in environment\"] = !!id;",
+									""
+								]
 							}
 						}
 					],
@@ -1542,7 +1607,16 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save first publication document's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publication_documents && jsonData.print_publication_documents[0]) ? jsonData.print_publication_documents[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_document_id\", id);\n\ntests[\"Setup first publication_document_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save first publication document's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.print_publication_documents && jsonData.print_publication_documents[0]) ? jsonData.print_publication_documents[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"document_id\", id);",
+									"",
+									"tests[\"Setup first document_id in environment\"] = !!id;",
+									""
+								]
 							}
 						}
 					],
@@ -1581,7 +1655,16 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save created publication document's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_document_id\", id);\n\ntests[\"Setup new publication_document_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save created publication document's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData) ? jsonData.id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"document_id\", id);",
+									"",
+									"tests[\"Setup new document_id in environment\"] = !!id;",
+									""
+								]
 							}
 						}
 					],
@@ -1625,12 +1708,21 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save first publication document sheet's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.sheets && jsonData.sheets[0]) ? jsonData.sheets[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_document_sheet_id\", id);\n\ntests[\"Setup first publication_document_sheet_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save first publication document sheet's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.sheets && jsonData.sheets[0]) ? jsonData.sheets[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"sheet_id\", id);",
+									"",
+									"tests[\"Setup first sheet_id in environment\"] = !!id;",
+									""
+								]
 							}
 						}
 					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}",
 						"method": "GET",
 						"header": [
 							{
@@ -1660,7 +1752,7 @@
 				{
 					"name": "/print-publications/{publication_id}/documents/{document_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}",
 						"method": "PATCH",
 						"header": [
 							{
@@ -1695,7 +1787,7 @@
 				{
 					"name": "/print-publications/{publication_id}/documents/{document_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}",
 						"method": "DELETE",
 						"header": [
 							{
@@ -1729,12 +1821,21 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save created publication document sheet's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_document_sheet_id\", id);\n\ntests[\"Setup new publication_document_sheet_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save created publication document sheet's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData) ? jsonData.id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"sheet_id\", id);",
+									"",
+									"tests[\"Setup new sheet_id in environment\"] = !!id;",
+									""
+								]
 							}
 						}
 					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/sheets",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/sheets",
 						"method": "POST",
 						"header": [
 							{
@@ -1769,7 +1870,7 @@
 				{
 					"name": "/print-publications/{publication_id}/documents/{document_id}/sheets/{sheet_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/sheets/{{publication_document_sheet_id}}",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/sheets/{{sheet_id}}",
 						"method": "PATCH",
 						"header": [
 							{
@@ -1808,12 +1909,21 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save first publication articles's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publication_articles && jsonData.print_publication_articles[0]) ? jsonData.print_publication_articles[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_article_id\", id);\n\ntests[\"Setup first publication_article_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save first publication articles's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.print_publication_articles && jsonData.print_publication_articles[0]) ? jsonData.print_publication_articles[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"publication_article_id\", id);",
+									"",
+									"tests[\"Setup first publication_article_id in environment\"] = !!id;",
+									""
+								]
 							}
 						}
 					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/articles",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles",
 						"method": "GET",
 						"header": [
 							{
@@ -1836,14 +1946,14 @@
 							"mode": "formdata",
 							"formdata": []
 						},
-						"description": "List a print publication document's articles (Artikel eines Dokument im Print-Werbemittel)"
+						"description": "List a print publication document's articles (Artikel eines Dokuments im Print-Werbemittel)"
 					},
 					"response": []
 				},
 				{
 					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/articles/{{publication_article_id}}",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}",
 						"method": "GET",
 						"header": [
 							{
@@ -1873,7 +1983,7 @@
 				{
 					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}/text-blocks",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/articles/{{publication_article_id}}/text-blocks",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}/text-blocks",
 						"method": "GET",
 						"header": [
 							{
@@ -1903,7 +2013,7 @@
 				{
 					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}/text-blocks",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{publication_document_id}}/articles/{{publication_article_id}}/text-blocks",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}/text-blocks",
 						"method": "PATCH",
 						"header": [
 							{
@@ -1932,6 +2042,119 @@
 							"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]"
 						},
 						"description": "Update Article's override-texts from a document of a print publication by positioning (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/documents/{document_id}/pages",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Save first publication articles's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.publication_pages && jsonData.publication_pages[0]) ? jsonData.publication_pages[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"page_id\", id);",
+									"",
+									"tests[\"Setup first page_id in environment\"] = !!id;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List a print publication document's pages (Seiten eines Dokuments im Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/documents/{document_id}/pages/{page_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages/{{page_id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List a single page (Seite) for a print publication's document (Dokument im Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/documents/{document_id}/pages/{page_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages/{{page_id}}",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"style\": \"dw-wine\",\t\n  \"elements\": [\n    {\n      \"id\": \"footnotes\",\n      \"visible\": false\n    }\n  ]\n}\n"
+						},
+						"description": "Update page (Seite) of a print publication's document (Dokument eines Print-Werbemittels)."
 					},
 					"response": []
 				},
@@ -2024,6 +2247,36 @@
 						"description": "List print schemes"
 					},
 					"response": []
+				},
+				{
+					"name": "/print-styles",
+					"request": {
+						"url": "{{advertising_url_base}}/print-styles",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List print styles"
+					},
+					"response": []
 				}
 			]
 		},
@@ -2103,7 +2356,13 @@
 							"listen": "prerequest",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 \n// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js\n(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);\n\npostman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+								"exec": [
+									"// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 ",
+									"// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js",
+									"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
+									"",
+									"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+								]
 							}
 						}
 					],
@@ -2142,7 +2401,17 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var jsonData = JSON.parse(responseBody);\n\nfor (var i =0; i < jsonData.articles.length; ++i) {\n    var article = jsonData.articles[i],\n        testName = 'Test price: ' + article.article_id + ' - ' + article.quantity + ' - ' + article.name;\n\n    tests[testName] = article.sales_price &&  article.sales_price.length > 1;\n}\n"
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"for (var i =0; i < jsonData.articles.length; ++i) {",
+									"    var article = jsonData.articles[i],",
+									"        testName = 'Test price: ' + article.article_id + ' - ' + article.quantity + ' - ' + article.name;",
+									"",
+									"    tests[testName] = article.sales_price &&  article.sales_price.length > 1;",
+									"}",
+									""
+								]
 							}
 						}
 					],
@@ -2913,7 +3182,16 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save first advertised-article's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.advertised_articles && jsonData.advertised_articles[0]) ? jsonData.advertised_articles[0].id : null;\n    \npostman.setEnvironmentVariable(\"advertised_article_id\", id);\n\ntests[\"Setup first advertised_article_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save first advertised-article's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.advertised_articles && jsonData.advertised_articles[0]) ? jsonData.advertised_articles[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
+									"",
+									"tests[\"Setup first advertised_article_id in environment\"] = !!id;",
+									""
+								]
 							}
 						}
 					],
@@ -2952,14 +3230,28 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save first advertised-article's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.advertised_articles_by_week && jsonData.advertised_articles_by_week[0]) ? jsonData.advertised_articles_by_week[0].id : null;\n    \npostman.setEnvironmentVariable(\"advertised_article_id\", id);\n\ntests[\"Setup first advertised_article_id in environment\"] = !!id;"
+								"exec": [
+									"// Save first advertised-article's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.advertised_articles_by_week && jsonData.advertised_articles_by_week[0]) ? jsonData.advertised_articles_by_week[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
+									"",
+									"tests[\"Setup first advertised_article_id in environment\"] = !!id;"
+								]
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 \n// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js\n(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);\n\npostman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+								"exec": [
+									"// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 ",
+									"// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js",
+									"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
+									"",
+									"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+								]
 							}
 						}
 					],
@@ -3068,7 +3360,16 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save first advertised-article dot's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.advertised_article_dots && jsonData.advertised_article_dots[0]) ? jsonData.advertised_article_dots[0].id : null;\n    \npostman.setEnvironmentVariable(\"dot_id\", id);\n\ntests[\"Setup first dot_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save first advertised-article dot's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.advertised_article_dots && jsonData.advertised_article_dots[0]) ? jsonData.advertised_article_dots[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"dot_id\", id);",
+									"",
+									"tests[\"Setup first dot_id in environment\"] = !!id;",
+									""
+								]
 							}
 						}
 					],
@@ -3107,7 +3408,16 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// Save created advertised article dots's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"dot_id\", id);\n\ntests[\"Setup new dot_id in environment\"] = !!id;\n"
+								"exec": [
+									"// Save created advertised article dots's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData) ? jsonData.id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"dot_id\", id);",
+									"",
+									"tests[\"Setup new dot_id in environment\"] = !!id;",
+									""
+								]
 							}
 						}
 					],
@@ -4432,7 +4742,48 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var rendererResponses = JSON.parse(postman.getGlobalVariable(\"rendererResponses\") || '{}');\nconsole.log( rendererResponses);\n\nvar doc = new DOMParser().parseFromString(responseBody,'text/html');\nvar iterator = doc.evaluate('//div/@data-id', doc, null, XPathResult.ANY_TYPE, null);\n\ntry {\n  var thisNode = iterator.iterateNext();\n  \n  while (thisNode && thisNode.textContent) {\n    var id = thisNode.textContent,\n        contentResultNode=doc.evaluate('//div[@data-id=\"'+id+'\"]/pre/text()',  doc, null, XPathResult.ANY_TYPE, null),\n        content=JSON.parse(contentResultNode.iterateNext().nodeValue);\n    \n    if (!rendererResponses[id]) {\n        rendererResponses[id] = {\n            status: 'new',\n            content: content\n        };\n        \n        tests[\"Added new response id \"+ id] = true;\n    } else {\n        if(rendererResponses[id].status == 'new') {\n            tests[\"Response id \"+ id + \" already in environment, and ready for submission\"] = false;\n        } else {\n            tests[\"Response id \"+ id + \" already fetched and sent\"] = true;\n        }\n    }\n    \n    thisNode = iterator.iterateNext();\n  }  \n}\ncatch (e) {\n \n}\n\n//console.log(rendererResponses);\n\npostman.setGlobalVariable(\"rendererResponses\", JSON.stringify(rendererResponses));\n"
+								"exec": [
+									"var rendererResponses = JSON.parse(postman.getGlobalVariable(\"rendererResponses\") || '{}');",
+									"console.log( rendererResponses);",
+									"",
+									"var doc = new DOMParser().parseFromString(responseBody,'text/html');",
+									"var iterator = doc.evaluate('//div/@data-id', doc, null, XPathResult.ANY_TYPE, null);",
+									"",
+									"try {",
+									"  var thisNode = iterator.iterateNext();",
+									"  ",
+									"  while (thisNode && thisNode.textContent) {",
+									"    var id = thisNode.textContent,",
+									"        contentResultNode=doc.evaluate('//div[@data-id=\"'+id+'\"]/pre/text()',  doc, null, XPathResult.ANY_TYPE, null),",
+									"        content=JSON.parse(contentResultNode.iterateNext().nodeValue);",
+									"    ",
+									"    if (!rendererResponses[id]) {",
+									"        rendererResponses[id] = {",
+									"            status: 'new',",
+									"            content: content",
+									"        };",
+									"        ",
+									"        tests[\"Added new response id \"+ id] = true;",
+									"    } else {",
+									"        if(rendererResponses[id].status == 'new') {",
+									"            tests[\"Response id \"+ id + \" already in environment, and ready for submission\"] = false;",
+									"        } else {",
+									"            tests[\"Response id \"+ id + \" already fetched and sent\"] = true;",
+									"        }",
+									"    }",
+									"    ",
+									"    thisNode = iterator.iterateNext();",
+									"  }  ",
+									"}",
+									"catch (e) {",
+									" ",
+									"}",
+									"",
+									"//console.log(rendererResponses);",
+									"",
+									"postman.setGlobalVariable(\"rendererResponses\", JSON.stringify(rendererResponses));",
+									""
+								]
 							}
 						}
 					],
@@ -4471,14 +4822,33 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "// @todo would be better to update the rendererResponses here if response successful (no time for it now)"
+								"exec": [
+									"// @todo would be better to update the rendererResponses here if response successful (no time for it now)"
+								]
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var rendererResponses = JSON.parse(postman.getGlobalVariable(\"rendererResponses\") || '{}');\r\n\r\n\r\nfor (var reqId in rendererResponses) {\r\n    if(!rendererResponses.hasOwnProperty(reqId)) continue;\r\n     \r\n    if (rendererResponses[reqId].status == 'new') {\r\n        rendererResponses[reqId].status = 'processed';\r\n        postman.setEnvironmentVariable(\"responseToSubmit\", JSON.stringify(rendererResponses[reqId].content));\r\n        \r\n        break;\r\n        \r\n    }\r\n}\r\n\r\npostman.setGlobalVariable(\"rendererResponses\", JSON.stringify(rendererResponses));"
+								"exec": [
+									"var rendererResponses = JSON.parse(postman.getGlobalVariable(\"rendererResponses\") || '{}');\r",
+									"\r",
+									"\r",
+									"for (var reqId in rendererResponses) {\r",
+									"    if(!rendererResponses.hasOwnProperty(reqId)) continue;\r",
+									"     \r",
+									"    if (rendererResponses[reqId].status == 'new') {\r",
+									"        rendererResponses[reqId].status = 'processed';\r",
+									"        postman.setEnvironmentVariable(\"responseToSubmit\", JSON.stringify(rendererResponses[reqId].content));\r",
+									"        \r",
+									"        break;\r",
+									"        \r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"postman.setGlobalVariable(\"rendererResponses\", JSON.stringify(rendererResponses));"
+								]
 							}
 						}
 					],
