@@ -2055,7 +2055,7 @@
 								"exec": [
 									"// Save first publication articles's id in environment",
 									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.print_publication_pages && jsonData.print_publication_pages[0]) ? jsonData.print_publication_pages[0].id : null;",
+									"    id = (jsonData && jsonData.publication_pages && jsonData.publication_pages[0]) ? jsonData.publication_pages[0].id : null;",
 									"    ",
 									"postman.setEnvironmentVariable(\"page_id\", id);",
 									"",
@@ -2245,6 +2245,36 @@
 							"formdata": []
 						},
 						"description": "List print schemes"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-styles",
+					"request": {
+						"url": "{{advertising_url_base}}/print-styles",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List print styles"
 					},
 					"response": []
 				}
