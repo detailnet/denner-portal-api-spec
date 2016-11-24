@@ -1,0 +1,89 @@
+{
+    "total_items": 6,
+    "translations": [
+        {
+            "id": "a8fd23a9-55cd-4c88-97db-0174e3d7164d",
+            "item": {
+                "type": "article",
+                "id": "054824",
+                "field": "name-fr",
+                "name": "Feldschlösschen Premium Bier"
+            },
+            "created_on": "2016-10-11T12:11:32+02:00",
+            "created_by": "Ivan Wolf",
+            "source_language": "de",
+            "source_text": "Feldschlösschen Premium Bier",
+            "translated_language": "fr"
+        },
+        {
+            "id": "4cf9b8f4-a6dc-456c-9dc6-02ee0ab8c0c1",
+            "item": {
+                "type": "article",
+                "id": "054824",
+                "field": "name-it",
+                "name": "Feldschlösschen Premium Bier"
+            },
+            "created_on": "2016-10-11T12:11:32+02:00",
+            "created_by": "Ivan Wolf",
+            "source_language": "de",
+            "source_text": "Feldschlösschen Premium Bier",
+            "translated_language": "it"
+        },
+        {
+            "id": "8aa35f94-8817-465a-8de3-6f1f0905bc94",
+            "item": {
+                "type": "article",
+                "id": "054824",
+                "field": "description-fr",
+                "name": "Feldschlösschen Premium Bier"
+            },
+            "created_on": "2016-10-11T12:11:32+02:00",
+            "created_by": "Ivan Wolf",
+            "source_language": "de",
+            "source_text": "Dose, 50 cl",
+            "translated_language": "fr"
+        },
+        {
+            "id": "5a0df950-03ec-4307-9d15-22eac2684826",
+            "item": {
+                "type": "article",
+                "id": "054824",
+                "field": "description-it",
+                "name": "Feldschlösschen Premium Bier"
+            },
+            "created_on": "2016-10-11T12:11:32+02:00",
+            "created_by": "Ivan Wolf",
+            "source_language": "de",
+            "source_text": "Dose, 50 cl",
+            "translated_language": "it"
+        },
+        {
+            "id": "859ad844-e89f-41dc-b5bc-f389858a5ffc",
+            "item": {
+                "type": "article",
+                "id": "054824",
+                "field": "description-fr-6",
+                "name": "Feldschlösschen Premium Bier"
+            },
+            "created_on": "2016-10-11T12:11:32+02:00",
+            "created_by": "Ivan Wolf",
+            "source_language": "de",
+            "source_text": "Dosen, 6 x 50 cl",
+            "translated_language": "fr"
+        },
+        {
+            "id": "ac852d5c-c003-4299-b770-18123ae8a31a",
+            "item": {
+                "type": "article",
+                "id": "054824",
+                "field": "description-it-6",
+                "name": "Feldschlösschen Premium Bier"
+            },
+            "created_on": "2016-10-11T12:11:32+02:00",
+            "created_by": "Ivan Wolf",
+            "source_language": "de",
+            "source_text": "Dosen, 6 x 50 cl",
+            "translated_language": "it"
+        }
+    ]
+}
