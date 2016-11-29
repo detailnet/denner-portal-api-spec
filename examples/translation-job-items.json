@@ -3,30 +3,48 @@
         "type": "article",
         "id": "051273",
         "field": "character-fr", "_field_regex": "(name|description|fits_with|varietals|character|temperature|award|storage)-(fr|it)(-[0-9]{1,4}){0,1}",
-        "name": "Mandorla Primitivo IGT Puglia"
+        "title": "Mandorla Primitivo IGT Puglia"
     },
     {
         "type": "online-publication-article",
         "id": "7abb0a2d-6ff3-4a8f-8507-25bbbc168262",
         "field": "description-fr", "_field_regex": "(name|description|fits_with|varietals|character|temperature|award|storage)-(fr|it)(-[0-9]{1,4}){0,1}",
-        "name": "Wochenaktionen (KW 46/2016): Feldschlösschen Premium Bier"
+        "title": "Wochenaktionen (KW 46/2016): Feldschlösschen Premium Bier"
     },
     {
         "type": "print-publication-article",
         "id": "55d30cfb-54d5-41f4-98a0-69662c844cee",
         "field": "description-fr", "_field_regex": "(name|description|fits_with|varietals|character|temperature|award|storage)-(fr|it)(-[0-9]{1,4}){0,1}",
-        "name": "Denner-Woche 2017-17: Feldschlösschen Premium Bier"
+        "title": "Denner-Woche 2017-17: Feldschlösschen Premium Bier"
     },
     {
-        "type": "print-publication-sheet",
+        "type": "print-publication-page-element",
         "id": "55d30cfb-54d5-41f4-98a0-69662c844cee",
         "field": "footer-fr", "_field_regex": "[_a-z]+-(fr|it)",
-        "name": "Denner-Woche 2017-17: Footer Seite 1"
+        "title": "Denner-Woche 2017-17: Footer Seite 1"
     },
     {
-        "type": "appraisal",
-        "id": "55d30cfb-54d5-41f4-98a0-69662c844cee",
-        "field": "description-fr", "_field_regex": "(title|description|response)-(fr|it)",
-        "name": "Mandorla Primitivo IGT Puglia (051273)"
+        "type": "composite-advertised-article",
+        "id": "901215",
+        "field": "description-fr", "_field_regex": "(title|description)-(fr|it)",
+        "title": "KW 48/2016: Danone Actimel Joghurtdrink"
+    },
+    {
+        "type": "composite-advertised-article",
+        "id": "901215",
+        "field": "description-fr", "_field_regex": "(title|description)-(fr|it)",
+        "title": "KW 48/2016: Danone Actimel Joghurtdrink"
+    },
+    {
+        "type": "newsletter-section",
+        "id": "5ff27b04-8059-4260-82f0-1b35fb86029a",
+        "field": "editorial-fr", "_field_regex": "(title|description|editorial)-(fr|it)",
+        "title": "KW48_Weinnewsletter - Weinaktionen"
+    },
+    {
+        "type": "mobile-banner",
+        "id": "55dc3f27-9a3b-4bdc-8ed9-5c6eccd02639",
+        "field": "html-fr", "_field_regex": "(title|html)-(fr|it)",
+        "title": "20% auf alle Cailler-Produkte*"
     }
 ]
