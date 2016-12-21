@@ -6,7 +6,7 @@
             "item": {
                 "type": "article",
                 "id": "054824",
-                "field": "name-fr",
+                "field": "title-fr",
                 "name": "Feldschlösschen Premium Bier"
             },
             "created_on": "2016-10-11T12:11:32+02:00",
@@ -21,7 +21,7 @@
             "item": {
                 "type": "article",
                 "id": "054824",
-                "field": "name-it",
+                "field": "title-it",
                 "name": "Feldschlösschen Premium Bier"
             },
             "created_on": "2016-10-11T12:11:32+02:00",
