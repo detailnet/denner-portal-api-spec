@@ -776,7 +776,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n}"
+							"raw": "{\n  \"advertised_article\": \"{{advertised_article_id}}\"\n}"
 						},
 						"description": "Add a new article to the online publication (Online-Werbemittel)"
 					},
@@ -1469,7 +1469,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n}"
+							"raw": "{\n  \"advertised_article\": \"{{advertised_article_id}}\",\n  \"composite_article\": false\n}"
 						},
 						"description": "Add a new article (Artikel) to a print publication (Print-Werbemittel)"
 					},
@@ -1896,7 +1896,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"items\": [\n    {\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"{{advertised_article_id}}\"\n    }\n  ]\n}\n"
+							"raw": "{\n  \"items\": [\n    {\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"{{advertised_article_id}}\",\n  \"composite_article\": false\n    }\n  ]\n}\n"
 						},
 						"description": "Update sheet (Arbeitsblatt) of a print publication's document (Dokument eines Print-Werbemittels)."
 					},
@@ -2191,7 +2191,7 @@
 				{
 					"name": "/print-layouts/{layout_id}",
 					"request": {
-						"url": "/print-layouts/listing",
+						"url": "{{advertising_url_base}}/print-layouts/listing",
 						"method": "GET",
 						"header": [
 							{
@@ -2597,7 +2597,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n}"
+							"raw": "{\n  \"advertised_article\": \"{{advertised_article_id}}\"\n}"
 						},
 						"description": "Add a new article to the screen publication (Screen-Werbemittel)"
 					},
@@ -3377,7 +3377,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"promoted_override\": 1,\n    \"instead_prices\": [\n        {\n            \"quantity\": 1,\n            \"price\": 12.45\n        },\n        {\n            \"quantity\": 10,\n            \"price\": 144.5\n        }\n    ],\n    \"packshots\" : [\n        {\n            \"auto_assigned\": false,\n            \"id\": \"69ed5a6c-f800-42ce-886b-d7e0f3061747\",\n            \"url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"preview_url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg?version=4\",\n            \"cdn_url\" :\"https://curzio-della-santa.imgix.net/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"quantity\": 1,\n            \"created_on\": \"2016-08-24T18:11:12+0200\",\n            \"images\": [\n                {\n                    \"created_on\": \"2016-08-25T18:44:14+0200\",\n                    \"purpose\":\"web\",\n                    \"url\" : \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\"\n                }\n            ]\n        }\n    ],\n    \"composite_info\" : {\n        \"titles\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite title\"},\n            {\"locale\":\"fr\", \"value\": \"FR composite title\"}\n        ],\n        \"descriptions\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite description\"},\n            {\"locale\":\"it\", \"value\": \"IT composite description\"}\n        ]\n    }\n}\n\n"
+							"raw": "{\n    \"promoted_override\": true,\n    \"hide_base_price_override\": true,\n    \"instead_prices\": [\n        {\n            \"quantity\": 1,\n            \"price\": 12.45\n        },\n        {\n            \"quantity\": 10,\n            \"price\": 144.5\n        }\n    ],\n    \"packshots\" : [\n        {\n            \"auto_assigned\": false,\n            \"id\": \"69ed5a6c-f800-42ce-886b-d7e0f3061747\",\n            \"url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"preview_url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg?version=4\",\n            \"cdn_url\" :\"https://curzio-della-santa.imgix.net/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"quantity\": 1,\n            \"created_on\": \"2016-08-24T18:11:12+0200\",\n            \"images\": [\n                {\n                    \"created_on\": \"2016-08-25T18:44:14+0200\",\n                    \"purpose\":\"web\",\n                    \"url\" : \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\"\n                }\n            ]\n        }\n    ],\n    \"composite_info\" : {\n        \"titles\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite title\"},\n            {\"locale\":\"fr\", \"value\": \"FR composite title\"}\n        ],\n        \"descriptions\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite description\"},\n            {\"locale\":\"it\", \"value\": \"IT composite description\"}\n        ]\n    }\n}\n\n"
 						},
 						"description": "Edit an advertised article (Artikel)"
 					},
