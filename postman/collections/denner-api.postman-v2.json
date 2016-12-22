@@ -1896,7 +1896,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"items\": [\n    {\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"{{advertised_article_id}}\",\n  \"composite_article\": false\n    }\n  ]\n}\n"
+							"raw": "{\n  \"items\": [\n    {\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"{{advertised_article_id}}\",\n      \"composite_article\": false\n    }\n  ]\n}\n"
 						},
 						"description": "Update sheet (Arbeitsblatt) of a print publication's document (Dokument eines Print-Werbemittels)."
 					},
