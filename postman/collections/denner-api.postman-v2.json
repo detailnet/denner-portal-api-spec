@@ -3550,6 +3550,202 @@
 					"response": []
 				},
 				{
+					"name": "/advertised-articles/{advertised_article_id}/stoppers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Save first advertised-article stopper's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.advertised_article_stoppers && jsonData.advertised_article_stoppers[0]) ? jsonData.advertised_article_stoppers[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"stopper_id\", id);",
+									"",
+									"tests[\"Setup first stopper_id in environment\"] = !!id;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List stoppers of an advertised article"
+					},
+					"response": []
+				},
+				{
+					"name": "/advertised-articles/{advertised_article_id}/stoppers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Save created advertised article stoppers's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData) ? jsonData.id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"stopper_id\", id);",
+									"",
+									"tests[\"Setup new stopper_id in environment\"] = !!id;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\" : \"x_for_y\",\n    \"placeholders\": {\n        \"original_quantity\": 2\n    }\n}"
+						},
+						"description": "ROUTE STILL NOT ACTIVE: Create a stopper within an advertised article"
+					},
+					"response": []
+				},
+				{
+					"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id}",
+					"request": {
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "ROUTE STILL NOT ACTIVE: Get a stopper within an advertised article, (Re-)render on request"
+					},
+					"response": []
+				},
+				{
+					"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id}",
+					"request": {
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"inactive\" : false,\n    \"placeholders\": {\n        \"original_quantity\": 50\n    }\n}"
+						},
+						"description": "Update a stopper within an advertised article"
+					},
+					"response": []
+				},
+				{
+					"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id}",
+					"request": {
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "ROUTE STILL NOT ACTIVE: Delete a stopper within an advertised article"
+					},
+					"response": []
+				},
+				{
 					"name": "/article-groups",
 					"request": {
 						"url": "{{articles_url_base}}/article-groups?page_size=-1",
