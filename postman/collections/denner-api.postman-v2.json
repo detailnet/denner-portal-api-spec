@@ -2189,6 +2189,36 @@
 					"response": []
 				},
 				{
+					"name": "/print-layouts/{layout_id}",
+					"request": {
+						"url": "/print-layouts/listing",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List a single layout"
+					},
+					"response": []
+				},
+				{
 					"name": "/print-formats",
 					"request": {
 						"url": "{{advertising_url_base}}/print-formats",
