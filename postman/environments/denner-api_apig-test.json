@@ -161,6 +161,26 @@
 			"type": "text",
 			"name": "portal_header_app_key",
 			"enabled": true
+		},
+		{
+			"key": "translations_url_host",
+			"value": "denner-translations-api.detailnet.ch",
+			"type": "text",
+			"name": "translations_url_host",
+			"enabled": true
+		},
+		{
+			"key": "translations_url_base",
+			"value": "{{base_url_schema}}{{translations_url_host}}/{{api_version}}",
+			"type": "text",
+			"enabled": true
+		},
+		{
+			"key": "translations_header_app_key",
+			"value": "{{denner_translations_app_key}}",
+			"type": "text",
+			"name": "translations_header_app_key",
+			"enabled": true
 		}
 	],
 	"timestamp": 1470902456945,
