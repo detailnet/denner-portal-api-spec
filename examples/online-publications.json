@@ -258,15 +258,15 @@
                         "text": [
                             {
                                 "locale": "de",
-                                "value": "- 9 Fr."
+                                "value": "– 9 Fr."
                             },
                             {
                                 "locale": "fr",
-                                "value": "- 9 Fr."
+                                "value": "– 9 Fr."
                             },
                             {
                                 "locale": "it",
-                                "value": "- 9 Fr."
+                                "value": "– 9 Fr."
                             }
                         ]
                     },
