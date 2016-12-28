@@ -339,6 +339,26 @@
                                     "value": "31% di sconto"
                                 }
                             ],
+                            "stopper": {
+                                "id": "61fad027-1866-4753-8dc2-814b5dc796e2",
+                                "type": {
+                                    "id": "x_percent"
+                                },
+                                "text": [
+                                    {
+                                        "locale": "de",
+                                        "value": "31%"
+                                    },
+                                    {
+                                        "locale": "fr",
+                                        "value": "31%"
+                                    },
+                                    {
+                                        "locale": "it",
+                                        "value": "31%"
+                                    }
+                                ]
+                            },
                             "availability_limitations": {
                                 "store": [],
                                 "region": []
