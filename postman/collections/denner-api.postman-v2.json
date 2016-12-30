@@ -5081,6 +5081,31 @@
 						"description": "Roles"
 					},
 					"response": []
+				},
+				{
+					"name": "/translations/import/new",
+					"request": {
+						"url": "{{portal_url_base}}/translations/import/new",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"my-test.xml\",\n\t\"mime_type\": \"application/xml\"\n}"
+						},
+						"description": "Tentative translation import"
+					},
+					"response": []
 				}
 			]
 		},
