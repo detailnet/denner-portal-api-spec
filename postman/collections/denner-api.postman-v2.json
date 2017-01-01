@@ -5230,7 +5230,7 @@
 				{
 					"name": "/items/{item_type}/{item_id}/jobs",
 					"request": {
-						"url": "{{translations_url_base}}/items/article/054824/jobs",
+						"url": "{{translations_base_url}}/items/article/054824/jobs",
 						"method": "GET",
 						"header": [
 							{
@@ -5252,7 +5252,7 @@
 				{
 					"name": "/jobs",
 					"request": {
-						"url": "{{translations_url_base}}/jobs",
+						"url": "{{translations_base_url}}/jobs",
 						"method": "GET",
 						"header": [
 							{
@@ -5274,7 +5274,7 @@
 				{
 					"name": "/jobs",
 					"request": {
-						"url": "{{translations_url_base}}/jobs",
+						"url": "{{translations_base_url}}/jobs",
 						"method": "POST",
 						"header": [
 							{
@@ -5304,7 +5304,7 @@
 				{
 					"name": "/jobs/{job_id}",
 					"request": {
-						"url": "{{translations_url_base}}/jobs/cf5e1c7c-86ae-4f03-aa9e-513b46cd3b7e",
+						"url": "{{translations_base_url}}/jobs/cf5e1c7c-86ae-4f03-aa9e-513b46cd3b7e",
 						"method": "PATCH",
 						"header": [
 							{
@@ -5334,7 +5334,7 @@
 				{
 					"name": "/jobs/{job_id}",
 					"request": {
-						"url": "{{translations_url_base}}/jobs/cf5e1c7c-86ae-4f03-aa9e-513b46cd3b7e",
+						"url": "{{translations_base_url}}/jobs/cf5e1c7c-86ae-4f03-aa9e-513b46cd3b7e",
 						"method": "DELETE",
 						"header": [
 							{
@@ -5356,7 +5356,7 @@
 				{
 					"name": "/export",
 					"request": {
-						"url": "{{translations_url_base}}/exports",
+						"url": "{{translations_base_url}}/exports",
 						"method": "POST",
 						"header": [
 							{
