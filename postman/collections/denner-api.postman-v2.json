@@ -5354,7 +5354,25 @@
 					"response": []
 				},
 				{
-					"name": "/export",
+					"name": "/exports",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Save generated url in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    url = (jsonData) ? jsonData.url : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"translations_exported_url\", url);",
+									"",
+									"tests[\"Setup new translations_exported_url in environment\"] = !!url;",
+									""
+								]
+							}
+						}
+					],
 					"request": {
 						"url": "{{translations_url_base}}/exports",
 						"method": "POST",
@@ -5380,6 +5398,47 @@
 							"raw": ""
 						},
 						"description": "Export open translation jobs"
+					},
+					"response": []
+				},
+				{
+					"name": "View exported XML",
+					"request": {
+						"url": "{{translations_exported_url}}",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/imports",
+					"request": {
+						"url": "{{translations_url_base}}/imports",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{translations_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"url\": \"{{translations_exported_url}}\"\n}"
+						},
+						"description": "Import translated translation jobs"
 					},
 					"response": []
 				}
