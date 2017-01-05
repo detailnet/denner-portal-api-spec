@@ -1,0 +1,26 @@
+{
+    "id": "436954fb-f250-4531-aafc-b9e93ad248e5",
+    "name": "denner-translations-api apig-v1",
+    "values": [
+        {
+            "key": "translations_header_app_key",
+            "value": "{{denner_translations_app_key}}",
+            "type": "text",
+            "name": "translations_header_app_key",
+            "enabled": true
+        },
+        {
+            "key": "translations_base_url",
+            "value": "https://denner-translations-api.detailnet.ch/v1",
+            "type": "text",
+            "name": "translations_base_url",
+            "enabled": true,
+            "hovered": false
+        }
+    ],
+    "timestamp": 1483265612945,
+    "synced": false,
+    "syncedFilename": "",
+    "team": null,
+    "isDeleted": false
+}
