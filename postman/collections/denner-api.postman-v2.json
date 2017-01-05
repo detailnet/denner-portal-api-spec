@@ -5415,7 +5415,7 @@
 				{
 					"name": "/imports",
 					"request": {
-						"url": "{{translations_url_base}}/imports",
+						"url": "{{translations_base_url}}/imports",
 						"method": "POST",
 						"header": [
 							{
