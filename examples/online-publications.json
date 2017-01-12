@@ -250,6 +250,26 @@
                             "value": "9.- risparmiati"
                         }
                     ],
+                    "stopper": {
+                        "id": "502d19d1-4d54-42ec-85c2-5e1608e4e231",
+                        "type": {
+                            "id": "save_value"
+                        },
+                        "text": [
+                            {
+                                "locale": "de",
+                                "value": "– 9 Fr."
+                            },
+                            {
+                                "locale": "fr",
+                                "value": "– 9 Fr."
+                            },
+                            {
+                                "locale": "it",
+                                "value": "– 9 Fr."
+                            }
+                        ]
+                    },
                     "quantity": 6,
                     "base": {
                         "text": [

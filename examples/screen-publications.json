@@ -212,6 +212,26 @@
                             "value": "3.30 risparmiati"
                         }
                     ],
+                    "stopper": {
+                        "id": "a5849cf6-8507-4fc3-b158-b6c5fbc9378c",
+                        "type": {
+                            "id": "save_value"
+                        },
+                        "text": [
+                            {
+                                "locale": "de",
+                                "value": "– 3.30"
+                            },
+                            {
+                                "locale": "fr",
+                                "value": "– 3.30"
+                            },
+                            {
+                                "locale": "it",
+                                "value": "– 3.30"
+                            }
+                        ]
+                    },
                     "instead_price": [
                         {
                             "locale": "de",
@@ -368,6 +388,26 @@
                             "value": "3.30 risparmiati"
                         }
                     ],
+                    "stopper": {
+                        "id": "c91ec1ae-47b9-4d86-870f-232dc06fa400",
+                        "type": {
+                            "id": "save_value"
+                        },
+                        "text": [
+                            {
+                                "locale": "de",
+                                "value": "– 3.30"
+                            },
+                            {
+                                "locale": "fr",
+                                "value": "– 3.30"
+                            },
+                            {
+                                "locale": "it",
+                                "value": "– 3.30"
+                            }
+                        ]
+                    },
                     "instead_price": [
                         {
                             "locale": "de",
@@ -484,6 +524,26 @@
                             "value": "Azione"
                         }
                     ],
+                    "stopper": {
+                        "id": "591e77dc-68f3-47e5-bc92-7f2a578bc6ca",
+                        "type": {
+                            "id": "promotion"
+                        },
+                        "text": [
+                            {
+                                "locale": "de",
+                                "value": "AKTION"
+                            },
+                            {
+                                "locale": "fr",
+                                "value": "ACTION"
+                            },
+                            {
+                                "locale": "it",
+                                "value": "AZIONE"
+                            }
+                        ]
+                    },
                     "instead_price": [
                         {
                             "locale": "de",
