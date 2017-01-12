@@ -267,6 +267,22 @@
                             "name": "Rauchwaren"
                         }
                     },
+                    "eco_labels": [
+                        {
+                            "id": "096ec6fc-2722-4907-82ef-8694b3f38240",
+                            "name": "Suisse Garantie",
+                            "image": {
+                                "cdn_url": "https://denner.imgix.net/eco-labels/096ec6fc-2722-4907-82ef-8694b3f38240/suisse-garantie.png"
+                            }
+                        },
+                        {
+                            "id": "920795b5-3dbf-4a56-875b-76837cd4eca3",
+                            "name": "UTZ",
+                            "image": {
+                                "cdn_url": "https://denner.imgix.net/eco-labels/920795b5-3dbf-4a56-875b-76837cd4eca3/utz.png"
+                            }
+                        }
+                    ],
                     "packshot": {
                         "id": "5054223d-3830-4abb-a2aa-4de55250d6a4",
                         "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5054223d-3830-4abb-a2aa-4de55250d6a4/091121.png",
@@ -394,6 +410,7 @@
                             "name": "Rauchwaren"
                         }
                     },
+                    "eco_labels": [],
                     "packshot": {
                         "id": "bef741d6-e734-41b0-ac06-3d3fe3f4fc0e",
                         "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png",
@@ -509,6 +526,7 @@
                             "name": "Rauchwaren"
                         }
                     },
+                    "eco_labels": [],
                     "packshot": {
                         "id": "5054223d-3830-4abb-a2aa-4de55250d6a4",
                         "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5054223d-3830-4abb-a2aa-4de55250d6a4/091121.png",
@@ -603,6 +621,7 @@
                             "name": "Rauchwaren"
                         }
                     },
+                    "eco_labels": [],
                     "packshot": {
                         "id": "bef741d6-e734-41b0-ac06-3d3fe3f4fc0e",
                         "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png",

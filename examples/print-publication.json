@@ -296,6 +296,22 @@
                                     "value": "I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva settimana promozionale"
                                 }
                             ],
+                            "eco_labels": [
+                                {
+                                    "id": "096ec6fc-2722-4907-82ef-8694b3f38240",
+                                    "name": "Suisse Garantie",
+                                    "image": {
+                                        "cdn_url": "https://denner.imgix.net/eco-labels/096ec6fc-2722-4907-82ef-8694b3f38240/suisse-garantie.png"
+                                    }
+                                },
+                                {
+                                    "id": "920795b5-3dbf-4a56-875b-76837cd4eca3",
+                                    "name": "UTZ",
+                                    "image": {
+                                        "cdn_url": "https://denner.imgix.net/eco-labels/920795b5-3dbf-4a56-875b-76837cd4eca3/utz.png"
+                                    }
+                                }
+                            ],
                             "packshot": {
                                 "id": "86a3ba46-80e5-40cc-8b4b-6be51e955147",
                                 "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/86a3ba46-80e5-40cc-8b4b-6be51e955147/050093_1.png",
