@@ -2187,24 +2187,6 @@
 				},
 				{
 					"name": "/eye-catchers",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save first publication's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.print_publications && jsonData.print_publications[0]) ? jsonData.print_publications[0].id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"publication_id\", id);",
-									"",
-									"tests[\"Setup first publication_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
 					"request": {
 						"url": "{{advertising_url_base}}/eye-catchers",
 						"method": "GET",
