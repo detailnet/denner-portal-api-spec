@@ -1,0 +1,238 @@
+{
+	"variables": [],
+	"info": {
+		"name": "denner-translations-api",
+		"_postman_id": "4b8ab425-2674-1c76-fb2d-cdeb7eeaa23e",
+		"description": "Denner Translations Service API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/items/{item_type}/{item_id}/jobs",
+			"request": {
+				"url": "{{translations_base_url}}/items/article/054824/jobs",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "App-Key",
+						"value": "{{translations_header_app_key}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "List translation jobs for a specific item"
+			},
+			"response": []
+		},
+		{
+			"name": "/jobs",
+			"request": {
+				"url": "{{translations_base_url}}/jobs",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "App-Key",
+						"value": "{{translations_header_app_key}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "List translation jobs"
+			},
+			"response": []
+		},
+		{
+			"name": "/jobs",
+			"request": {
+				"url": "{{translations_base_url}}/jobs",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "App-Key",
+						"value": "{{translations_header_app_key}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"created_by\": \"Ivan Wolf\",\r\n    \"item\": {\r\n        \"type\": \"article\",\r\n        \"id\": \"051273\",\r\n        \"field\": \"character-fr\",\r\n        \"name\": \"Mandorla Primitivo IGT Puglia\"\r\n    },\r\n    \"source_language\": \"de\",\r\n    \"source_text\": \"Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen.\",\r\n    \"translated_language\": \"fr\"\r\n}"
+				},
+				"description": "New translation job"
+			},
+			"response": []
+		},
+		{
+			"name": "/jobs/{job_id}",
+			"request": {
+				"url": "{{translations_base_url}}/jobs/cf5e1c7c-86ae-4f03-aa9e-513b46cd3b7e",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "App-Key",
+						"value": "{{translations_header_app_key}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"translated\",\r\n    \"translated_on\": \"2016-10-13T06:12:37+02:00\",\r\n    \"translated_by\": \"Mirjam Dupond\",\r\n    \"translated_text\": \"Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse.\"\r\n}"
+				},
+				"description": "Update translation job"
+			},
+			"response": []
+		},
+		{
+			"name": "/jobs/{job_id}",
+			"request": {
+				"url": "{{translations_base_url}}/jobs/cf5e1c7c-86ae-4f03-aa9e-513b46cd3b7e",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "App-Key",
+						"value": "{{translations_header_app_key}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Delete translation job"
+			},
+			"response": []
+		},
+		{
+			"name": "/exports",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"// Save generated url in environment",
+							"var jsonData = JSON.parse(responseBody),",
+							"    url = (jsonData) ? jsonData.url : null;",
+							"    ",
+							"postman.setEnvironmentVariable(\"translations_exported_url\", url);",
+							"",
+							"tests[\"Setup new translations_exported_url in environment\"] = !!url;",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{translations_base_url}}/exports",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "App-Key",
+						"value": "{{translations_header_app_key}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Export open translation jobs"
+			},
+			"response": []
+		},
+		{
+			"name": "View exported XML",
+			"request": {
+				"url": "{{translations_exported_url}}",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/imports",
+			"request": {
+				"url": "{{translations_base_url}}/imports",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "App-Key",
+						"value": "{{translations_header_app_key}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"url\": \"{{translations_exported_url}}\"\n}"
+				},
+				"description": "Import translated translation jobs"
+			},
+			"response": []
+		}
+	]
+}
