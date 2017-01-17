@@ -2186,9 +2186,9 @@
 					"response": []
 				},
 				{
-					"name": "/eye-catchers",
+					"name": "/eye-catcher-templates",
 					"request": {
-						"url": "{{advertising_url_base}}/eye-catchers",
+						"url": "{{advertising_url_base}}/eye-catcher-templates",
 						"method": "GET",
 						"header": [
 							{
