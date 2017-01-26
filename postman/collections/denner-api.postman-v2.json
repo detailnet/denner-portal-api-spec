@@ -33,7 +33,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List newsletters"
 					},
 					"response": []
@@ -75,7 +78,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List newsletters depending on a specific combination of year and week"
 					},
 					"response": []
@@ -137,7 +143,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single newsletter"
 					},
 					"response": []
@@ -199,7 +208,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete newsletter"
 					},
 					"response": []
@@ -226,7 +238,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all sections for a newsletter"
 					},
 					"response": []
@@ -288,7 +303,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single newsletter section"
 					},
 					"response": []
@@ -350,7 +368,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete newsletter section"
 					},
 					"response": []
@@ -377,7 +398,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all articles for a newsletter section"
 					},
 					"response": []
@@ -474,7 +498,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete an article from a newsletter section"
 					},
 					"response": []
@@ -507,7 +534,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List online publications (Online-Werbemittel)"
 					},
 					"response": []
@@ -549,7 +579,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List online publications depending on a specific combination of year and week"
 					},
 					"response": []
@@ -611,7 +644,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single online publication (Online-Werbemittel)"
 					},
 					"response": []
@@ -673,7 +709,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete online publication (Online-Werbemittel)\nNote: only for manual ones"
 					},
 					"response": []
@@ -700,7 +739,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all articles for an online publication (Online-Werbemittel)"
 					},
 					"response": []
@@ -762,7 +804,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List a specific article for an online publication (Online-Werbemittel)"
 					},
 					"response": []
@@ -789,7 +834,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete an online publication article from an online publication"
 					},
 					"response": []
@@ -816,7 +864,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all appearance filters for an online publication (Online-Werbemittel)"
 					},
 					"response": []
@@ -913,7 +964,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete an online filter appearance from an online publication"
 					},
 					"response": []
@@ -940,7 +994,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List online filters (Angebotsfilter)"
 					},
 					"response": []
@@ -1037,7 +1094,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete an online filter (Angebotsfilter)"
 					},
 					"response": []
@@ -1088,7 +1148,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List print publications (Print-Werbemittel)"
 					},
 					"response": []
@@ -1146,7 +1209,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List print publications (Print-Werbemittel) of specific week"
 					},
 					"response": []
@@ -1235,7 +1301,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single print publication (Print-Werbemittel)"
 					},
 					"response": []
@@ -1297,7 +1366,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete print publication (Print-Werbemittel)"
 					},
 					"response": []
@@ -1342,7 +1414,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List a print publication's articles (Artikel eines Print-Werbemittels)"
 					},
 					"response": []
@@ -1422,7 +1497,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List a single article (Artikel) for a print publication (Print-Werbemittel)"
 					},
 					"response": []
@@ -1449,7 +1527,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete an article (Artikel) from a print publication (Print-Werbemittel)"
 					},
 					"response": []
@@ -1476,7 +1557,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List Article's text blocks from a print publication (Print-Werbemittel)"
 					},
 					"response": []
@@ -1556,7 +1640,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List a print publication's documents (Dokumente eines Print-Werbemittels)"
 					},
 					"response": []
@@ -1654,7 +1741,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List a single document (Dokument) for a print publication (Print-Werbemittel)"
 					},
 					"response": []
@@ -1716,7 +1806,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete a document (Dokument) from a print publication (Print-Werbemittel)"
 					},
 					"response": []
@@ -1849,7 +1942,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List a print publication document's articles (Artikel eines Dokuments im Print-Werbemittel)"
 					},
 					"response": []
@@ -1876,7 +1972,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List a single article (Artikel) for a print publication's document (Dokument im Print-Werbemittel)"
 					},
 					"response": []
@@ -1903,7 +2002,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List Article's text blocks from a document of a print publication by positioning (Print-Werbemittel)"
 					},
 					"response": []
@@ -1983,7 +2085,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List a print publication document's pages (Seiten eines Dokuments im Print-Werbemittel)"
 					},
 					"response": []
@@ -2010,7 +2115,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List a single page (Seite) for a print publication's document (Dokument im Print-Werbemittel)"
 					},
 					"response": []
@@ -2072,7 +2180,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List print layouts"
 					},
 					"response": []
@@ -2099,7 +2210,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List a single layout"
 					},
 					"response": []
@@ -2126,7 +2240,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List print formats"
 					},
 					"response": []
@@ -2153,7 +2270,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List print schemes"
 					},
 					"response": []
@@ -2180,7 +2300,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List print styles"
 					},
 					"response": []
@@ -2207,7 +2330,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List eye catcher templates"
 					},
 					"response": []
@@ -2240,7 +2366,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List screen publications (Screen-Werbemittel)"
 					},
 					"response": []
@@ -2317,7 +2446,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List screen publications depending on a specific combination of year and week"
 					},
 					"response": []
@@ -2363,7 +2495,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single screen publication (Online-Werbemittel)"
 					},
 					"response": []
@@ -2425,7 +2560,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete screen publication (Screen-Werbemittel)\nNote: only for manual ones"
 					},
 					"response": []
@@ -2452,7 +2590,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all articles for an screen publication (Screen-Werbemittel)"
 					},
 					"response": []
@@ -2514,7 +2655,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List a specific article for an screen publication (Screen-Werbemittel)"
 					},
 					"response": []
@@ -2541,7 +2685,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete an screen publication article from a screen publication"
 					},
 					"response": []
@@ -2568,7 +2715,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List designs for screen publications"
 					},
 					"response": []
@@ -2595,7 +2745,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List templates for screen publications"
 					},
 					"response": []
@@ -2623,7 +2776,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List wine appraisals"
 					},
 					"response": []
@@ -2645,7 +2801,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single appraisal"
 					},
 					"response": []
@@ -2697,7 +2856,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Wine appraisal statistics"
 					},
 					"response": []
@@ -2719,7 +2881,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List sweepstake participants"
 					},
 					"response": []
@@ -2741,7 +2906,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List wine ratings"
 					},
 					"response": []
@@ -2763,7 +2931,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single rating"
 					},
 					"response": []
@@ -2796,7 +2967,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List articles (Artikel)"
 					},
 					"response": []
@@ -2823,7 +2997,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single article (Artikel)"
 					},
 					"response": []
@@ -2890,7 +3067,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all text blocks for an article"
 					},
 					"response": []
@@ -2957,7 +3137,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all wines currently targeted for the Wineshop"
 					},
 					"response": []
@@ -2984,7 +3167,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Fetch wine targeted for the Wineshop"
 					},
 					"response": []
@@ -3011,7 +3197,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all wines currently targeted for the Mobile App"
 					},
 					"response": []
@@ -3038,7 +3227,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Fetch wine targeted for the Mobile App"
 					},
 					"response": []
@@ -3083,7 +3275,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List advertised articles (beworbene Artikel)"
 					},
 					"response": []
@@ -3193,7 +3388,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List advertised article depending on a specific combination of year and week"
 					},
 					"response": []
@@ -3220,7 +3418,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single advertised article (beworbene Artikel)"
 					},
 					"response": []
@@ -3305,7 +3506,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List dots of an advertised article"
 					},
 					"response": []
@@ -3385,7 +3589,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Get a dot within an advertised article, (Re-)render on request"
 					},
 					"response": []
@@ -3447,7 +3654,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete a dot within an advertised article"
 					},
 					"response": []
@@ -3492,7 +3702,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List stoppers of an advertised article"
 					},
 					"response": []
@@ -3572,7 +3785,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "ROUTE STILL NOT ACTIVE: Get a stopper within an advertised article, (Re-)render on request"
 					},
 					"response": []
@@ -3634,7 +3850,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "ROUTE STILL NOT ACTIVE: Delete a stopper within an advertised article"
 					},
 					"response": []
@@ -3661,7 +3880,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List article groups (Warengruppen)"
 					},
 					"response": []
@@ -3688,7 +3910,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List online groups (Internet-Sortimente)"
 					},
 					"response": []
@@ -3715,7 +3940,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List online specials (Online-Specials)"
 					},
 					"response": []
@@ -3742,7 +3970,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List promotion types (Aktionstypen)"
 					},
 					"response": []
@@ -3769,7 +4000,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List promotions (Aktionen)"
 					},
 					"response": []
@@ -3796,7 +4030,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List languages"
 					},
 					"response": []
@@ -3823,7 +4060,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all boxes"
 					},
 					"response": []
@@ -3850,7 +4090,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all price regions"
 					},
 					"response": []
@@ -3877,7 +4120,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all store availabilities"
 					},
 					"response": []
@@ -3910,7 +4156,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List purposes"
 					},
 					"response": []
@@ -3937,7 +4186,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List languages"
 					},
 					"response": []
@@ -3964,7 +4216,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List file types"
 					},
 					"response": []
@@ -3991,7 +4246,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List asset tags"
 					},
 					"response": []
@@ -4018,7 +4276,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List asset types"
 					},
 					"response": []
@@ -4045,7 +4306,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List assets"
 					},
 					"response": []
@@ -4112,7 +4376,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Delete tentative asset"
 					},
 					"response": []
@@ -4174,7 +4441,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single asset"
 					},
 					"response": []
@@ -4371,7 +4641,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Get history of file replacements of an asset"
 					},
 					"response": []
@@ -4463,7 +4736,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List asset collections"
 					},
 					"response": []
@@ -4525,7 +4801,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single asset collection"
 					},
 					"response": []
@@ -4682,7 +4961,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single link of an asset collection"
 					},
 					"response": []
@@ -4894,7 +5176,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Fetch pending renderer requests on requestbin \n(update the id in the url to your own)"
 					},
 					"response": []
@@ -4992,7 +5277,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Banners"
 					},
 					"response": []
@@ -5014,7 +5302,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single banner"
 					},
 					"response": []
@@ -5107,7 +5398,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Users"
 					},
 					"response": []
@@ -5129,7 +5423,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List single user"
 					},
 					"response": []
@@ -5211,7 +5508,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Roles"
 					},
 					"response": []
@@ -5269,7 +5569,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List stores (Filialen)"
 					},
 					"response": []
@@ -5296,7 +5599,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Get a single store (Filiale)"
 					},
 					"response": []
@@ -5323,7 +5629,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List store channels (Filialkanäle)"
 					},
 					"response": []
@@ -5350,7 +5659,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List store services (Filialangebote)"
 					},
 					"response": []
