@@ -3089,6 +3089,59 @@
 					"response": []
 				},
 				{
+					"name": "/advertised-articles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Save created advertised article dots's id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData) ? jsonData.id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
+									"",
+									"tests[\"Setup new advertised_article_id in environment\"] = !!id;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{articles_url_base}}/advertised-articles",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n\t\"article\" : \"054824\",\n\t\"sold_from\": \"2017-02-27\",\n\t\"valid_from\": \"2017-02-28\",\n\t\"valid_to\": \"2017-03-06\",\n\t\"quantity\": 24,\n\t\"week\": {\n\t\t\"year\": 2017, \n\t\t\"number\": 9\n\t}\n}"
+						},
+						"description": "Create an advertised article"
+					},
+					"response": []
+				},
+				{
 					"name": "/advertised-articles/{year}-{week}",
 					"event": [
 						{
@@ -3206,7 +3259,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"promoted_override\": true,\n    \"hide_base_price_override\": true,\n    \"instead_prices\": [\n        {\n            \"quantity\": 1,\n            \"price\": 12.45\n        },\n        {\n            \"quantity\": 10,\n            \"price\": 144.5\n        }\n    ],\n    \"packshots\" : [\n        {\n            \"auto_assigned\": false,\n            \"id\": \"69ed5a6c-f800-42ce-886b-d7e0f3061747\",\n            \"url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"preview_url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg?version=4\",\n            \"cdn_url\" :\"https://curzio-della-santa.imgix.net/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"quantity\": 1,\n            \"created_on\": \"2016-08-24T18:11:12+0200\",\n            \"images\": [\n                {\n                    \"created_on\": \"2016-08-25T18:44:14+0200\",\n                    \"purpose\":\"web\",\n                    \"url\" : \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\"\n                }\n            ]\n        }\n    ],\n    \"composite_info\" : {\n        \"titles\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite title\"},\n            {\"locale\":\"fr\", \"value\": \"FR composite title\"}\n        ],\n        \"descriptions\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite description\"},\n            {\"locale\":\"it\", \"value\": \"IT composite description\"}\n        ]\n    }\n}\n\n"
+							"raw": "{\n    \"promoted_override\": true,\n    \"hide_base_price_override\": true,\n    \"instead_prices\": [\n        {\n            \"quantity\": 1,\n            \"price\": 12.45\n        },\n        {\n            \"quantity\": 10,\n            \"price\": 144.5\n        }\n    ],\n    \"packshots\" : [\n        {\n            \"auto_assigned\": false,\n            \"id\": \"69ed5a6c-f800-42ce-886b-d7e0f3061747\",\n            \"url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"preview_url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg?version=4\",\n            \"cdn_url\" :\"https://curzio-della-santa.imgix.net/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"quantity\": 1,\n            \"created_on\": \"2016-08-24T18:11:12+0200\",\n            \"images\": [\n                {\n                    \"created_on\": \"2016-08-25T18:44:14+0200\",\n                    \"purpose\":\"web\",\n                    \"url\" : \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\"\n                }\n            ]\n        }\n    ],\n    \"composite_info\" : {\n        \"titles\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite title\"},\n            {\"locale\":\"fr\", \"value\": \"FR composite title\"}\n        ],\n        \"descriptions\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite description\"},\n            {\"locale\":\"it\", \"value\": \"IT composite description\"}\n        ]\n    },\n    \"hide_in_manuscript\": false,\n    \"price_region\": \"DF\",\n    \"store_availability\": [1, 2, 3, 4],\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"use_promotion_prices\": true,\n    \"promotion_prices\": [\n\t    {\n\t      \"quantity\": 1,\n\t      \"sales_price\": 4.3,\n\t      \"instead_price\": 5.75\n\t    }\n  \t]\n}\n\n"
 						},
 						"description": "Edit an advertised article (Artikel)"
 					},
@@ -3772,6 +3825,60 @@
 						],
 						"body": {},
 						"description": "List all boxes"
+					},
+					"response": []
+				},
+				{
+					"name": "/price-regions",
+					"request": {
+						"url": "{{articles_url_base}}/price-regions",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "List all price regions"
+					},
+					"response": []
+				},
+				{
+					"name": "/store-availabilities",
+					"request": {
+						"url": "{{articles_url_base}}/store-availabilities",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "List all store availabilities"
 					},
 					"response": []
 				}
