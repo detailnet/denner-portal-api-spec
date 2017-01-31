@@ -3759,7 +3759,7 @@
 							"mode": "raw",
 							"raw": "{\n    \"type\" : \"x_for_y\",\n    \"placeholders\": {\n        \"original_quantity\": 2\n    }\n}"
 						},
-						"description": "ROUTE STILL NOT ACTIVE: Create a stopper within an advertised article"
+						"description": "Create a stopper within an advertised article"
 					},
 					"response": []
 				},
@@ -3789,7 +3789,7 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "ROUTE STILL NOT ACTIVE: Get a stopper within an advertised article, (Re-)render on request"
+						"description": "Get a stopper within an advertised article"
 					},
 					"response": []
 				},
@@ -3854,7 +3854,7 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "ROUTE STILL NOT ACTIVE: Delete a stopper within an advertised article"
+						"description": "Delete a stopper within an advertised article"
 					},
 					"response": []
 				},
