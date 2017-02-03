@@ -3116,6 +3116,36 @@
 					"response": []
 				},
 				{
+					"name": "/articles/{article_id}/packshot/{filename}",
+					"request": {
+						"url": "{{articles_url_base}}/articles/022617/packshot/022617.png?quantity=1&with-archived=true&imgix_w=250&imgix_h=250",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Get article packshot image"
+					},
+					"response": []
+				},
+				{
 					"name": "/shop-wines",
 					"request": {
 						"url": "{{articles_url_base}}/shop-wines",
