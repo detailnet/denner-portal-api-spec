@@ -1536,13 +1536,25 @@ paths:
                     store:
                       -
                         locale: "de"
-                        value: "Nur in Filialen mit Frischprodukten erhältlich"
+                        value: "Nur in Filialen mit Frischprodukten erhältlich, ohne Denner Satelliten / Denner Express"
                       -
                         locale: "fr"
-                        value: "Disponible(s) uniquement dans les succursales aves des produits frais"
+                        value: "Disponible uniquement dans les succursales avec des produits frais, satellites Denner et Denner Express exclus"
                       -
                         locale: "it"
-                        value: "..."
+                        value: "Disponibile solo nelle filiali con prodotti freschi, exclusi i satelliti Denner e i Denner Express"
+                    store_filters:
+                      -
+                        property: "services.id"
+                        value:
+                          - "7fefad45-81d2-4228-a0a1-ed618184b96e"
+                          - "47191064-ad2e-482a-a5cf-2aa32d0b8116"
+                      -
+                        property: "channel"
+                        value:
+                          - "d247ecc8-ee06-47e7-b25c-1d267059cf18"
+                          - "8afb451c-614b-412a-bd7b-03d3ab0e61ef"
+                          - "a411c290-4b9c-42dd-b753-039918d66b51"
                   sort_index: 0
                   featured_sort_index: 10
                   featured: true
@@ -2691,6 +2703,26 @@ parameters:
 
 definitions:
   ### Common
+  FilterWithArrayValues:
+    type: object
+    properties:
+      property:
+        type: string
+        description: Property to filter on
+#      operator:
+#        type: string
+#        pattern: '/^(in|nin)$/'
+#        description: Operation property
+#      type:
+#        type: string
+#        pattern: '/^(string|integer|boolean|array)$/'
+#        description: Type of value
+      value:
+        type: array
+        description: Values to filter on
+    required:
+       - property
+       - value
   UUIDv4:
     type: string
     pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
@@ -2838,6 +2870,8 @@ definitions:
         $ref: '#/definitions/Translations'
       store:
         $ref: '#/definitions/Translations'
+      store_filters:
+        $ref: '#/definitions/FiltersWithArrayValues'
 
   Phone:
     type: string
@@ -3984,6 +4018,11 @@ definitions:
       - language
 
   ### Collections
+  FiltersWithArrayValues:
+    type: array
+    items:
+      $ref: '#/definitions/FilterWithArrayValues'
+
   Translations:
     type: array
     items:
