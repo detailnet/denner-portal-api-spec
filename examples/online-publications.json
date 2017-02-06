@@ -327,11 +327,11 @@
                             },
                             {
                                 "locale": "fr",
-                                "value": "..."
+                                "value": "Disponible uniquement en Suisse alémanique et romande"
                             },
                             {
                                 "locale": "it",
-                                "value": "..."
+                                "value": "Disponibile solo nella Svizzera tedesca e romanda"
                             }
                         ],
                         "store": [
@@ -350,11 +350,11 @@
                         ],
                         "store_filters": [
                             {
-                                "property": "services.id",
+                                "id": "services",
                                 "value": ["7fefad45-81d2-4228-a0a1-ed618184b96e", "47191064-ad2e-482a-a5cf-2aa32d0b8116"]
                             },
                             {
-                                "property": "channel",
+                                "id": "channels",
                                 "value": ["d247ecc8-ee06-47e7-b25c-1d267059cf18", "8afb451c-614b-412a-bd7b-03d3ab0e61ef", "a411c290-4b9c-42dd-b753-039918d66b51"]
                             }
                         ]

@@ -1529,10 +1529,10 @@ paths:
                         value: "Nur in der deutschen und französischen Schweiz erhältlich"
                       -
                         locale: "fr"
-                        value: "..."
+                        value: "Disponible uniquement en Suisse alémanique et romande"
                       -
                         locale: "it"
-                        value: "..."
+                        value: "Disponibile solo nella Svizzera tedesca e romanda"
                     store:
                       -
                         locale: "de"
@@ -1545,12 +1545,12 @@ paths:
                         value: "Disponibile solo nelle filiali con prodotti freschi, exclusi i satelliti Denner e i Denner Express"
                     store_filters:
                       -
-                        property: "services.id"
+                        id: "services"
                         value:
                           - "7fefad45-81d2-4228-a0a1-ed618184b96e"
                           - "47191064-ad2e-482a-a5cf-2aa32d0b8116"
                       -
-                        property: "channel"
+                        id: "channels"
                         value:
                           - "d247ecc8-ee06-47e7-b25c-1d267059cf18"
                           - "8afb451c-614b-412a-bd7b-03d3ab0e61ef"
@@ -2703,26 +2703,6 @@ parameters:
 
 definitions:
   ### Common
-  FilterWithArrayValues:
-    type: object
-    properties:
-      property:
-        type: string
-        description: Property to filter on
-#      operator:
-#        type: string
-#        pattern: '/^(in|nin)$/'
-#        description: Operation property
-#      type:
-#        type: string
-#        pattern: '/^(string|integer|boolean|array)$/'
-#        description: Type of value
-      value:
-        type: array
-        description: Values to filter on
-    required:
-       - property
-       - value
   UUIDv4:
     type: string
     pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
@@ -2862,6 +2842,33 @@ definitions:
         long_text:
           $ref: '#/definitions/Translations'
 
+  StoreFilter:
+    type: object
+    properties:
+      id:
+        type: string
+        pattern: '/^(services|channels)$/'
+        description: Property ID to filter on
+#      property:
+#        type: string
+#        description: Property to filter on
+#      operator:
+#        type: string
+#        pattern: '/^(in|nin)$/'
+#        description: Operation property
+#      type:
+#        type: string
+#        pattern: '/^(string|integer|boolean|array)$/'
+#        description: Type of value
+      value:
+        type: array
+        items:
+          $ref: '#/definitions/UUIDv4'
+        description: Values to filter on. Array of UUids
+    required:
+       - id
+       - value
+
   AvailabilityLimitations:
     type: object
     description: Texts for information about limited availability
@@ -2871,7 +2878,7 @@ definitions:
       store:
         $ref: '#/definitions/Translations'
       store_filters:
-        $ref: '#/definitions/FiltersWithArrayValues'
+        $ref: '#/definitions/StoreFilters'
 
   Phone:
     type: string
@@ -4018,11 +4025,6 @@ definitions:
       - language
 
   ### Collections
-  FiltersWithArrayValues:
-    type: array
-    items:
-      $ref: '#/definitions/FilterWithArrayValues'
-
   Translations:
     type: array
     items:
@@ -4032,6 +4034,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/Appearance'
+
+  StoreFilters:
+    type: array
+    items:
+      $ref: '#/definitions/StoreFilter'
 
   Stores:
     type: array
