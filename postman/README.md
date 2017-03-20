@@ -24,8 +24,8 @@ Following guide applies for:
 
 Choose the one that best fits the testing situation you need:
 
-- GitHub repository | e.g. https://raw.githubusercontent.com/detailnet/denner-portal-api-spec/master/postman/collections/denner-api.json
-- Local checkout through Protobox | e.g. http://denner-portal-api-spec.web01.detailnet.me/postman/collections/denner-api.json
+- GitHub repository | e.g. https://raw.githubusercontent.com/detailnet/denner-portal-api-spec/master/postman/collections/denner-api.postman-v2.json
+- Local checkout through Protobox | e.g. http://denner-portal-api-spec.web01.detailnet.me/postman/collections/denner-api.postman-v2.json
 
 > You can also access different branches on GitHub (replace `master` with the branch name).
 
