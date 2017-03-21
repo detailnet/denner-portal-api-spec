@@ -1529,20 +1529,32 @@ paths:
                         value: "Nur in der deutschen und französischen Schweiz erhältlich"
                       -
                         locale: "fr"
-                        value: "..."
+                        value: "Disponible uniquement en Suisse alémanique et romande"
                       -
                         locale: "it"
-                        value: "..."
+                        value: "Disponibile solo nella Svizzera tedesca e romanda"
                     store:
                       -
                         locale: "de"
-                        value: "Nur in Filialen mit Frischprodukten erhältlich"
+                        value: "Nur in Filialen mit Frischprodukten erhältlich, ohne Denner Satelliten / Denner Express"
                       -
                         locale: "fr"
-                        value: "Disponible(s) uniquement dans les succursales aves des produits frais"
+                        value: "Disponible uniquement dans les succursales avec des produits frais, satellites Denner et Denner Express exclus"
                       -
                         locale: "it"
-                        value: "..."
+                        value: "Disponibile solo nelle filiali con prodotti freschi, exclusi i satelliti Denner e i Denner Express"
+                    store_filters:
+                      -
+                        id: "services"
+                        value:
+                          - "7fefad45-81d2-4228-a0a1-ed618184b96e"
+                          - "47191064-ad2e-482a-a5cf-2aa32d0b8116"
+                      -
+                        id: "channels"
+                        value:
+                          - "d247ecc8-ee06-47e7-b25c-1d267059cf18"
+                          - "8afb451c-614b-412a-bd7b-03d3ab0e61ef"
+                          - "a411c290-4b9c-42dd-b753-039918d66b51"
                   sort_index: 0
                   featured_sort_index: 10
                   featured: true
@@ -2830,6 +2842,33 @@ definitions:
         long_text:
           $ref: '#/definitions/Translations'
 
+  StoreFilter:
+    type: object
+    properties:
+      id:
+        type: string
+        pattern: '/^(services|channels)$/'
+        description: Property ID to filter on
+#      property:
+#        type: string
+#        description: Property to filter on
+#      operator:
+#        type: string
+#        pattern: '/^(in|nin)$/'
+#        description: Operation property
+#      type:
+#        type: string
+#        pattern: '/^(string|integer|boolean|array)$/'
+#        description: Type of value
+      value:
+        type: array
+        items:
+          $ref: '#/definitions/UUIDv4'
+        description: Values to filter on. Array of UUids
+    required:
+       - id
+       - value
+
   AvailabilityLimitations:
     type: object
     description: Texts for information about limited availability
@@ -2838,6 +2877,8 @@ definitions:
         $ref: '#/definitions/Translations'
       store:
         $ref: '#/definitions/Translations'
+      store_filters:
+        $ref: '#/definitions/StoreFilters'
 
   Phone:
     type: string
@@ -3993,6 +4034,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/Appearance'
+
+  StoreFilters:
+    type: array
+    items:
+      $ref: '#/definitions/StoreFilter'
 
   Stores:
     type: array
