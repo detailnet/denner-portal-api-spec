@@ -3146,7 +3146,7 @@
 							},
 							{
 								"key": "User",
-								"value": "Jean Tartampion",
+								"value": "{{user_fullname}}",
 								"description": ""
 							}
 						],
@@ -3216,7 +3216,7 @@
 							},
 							{
 								"key": "User",
-								"value": "Jean Tartampion",
+								"value": "{{user_fullname}}",
 								"description": ""
 							}
 						],
@@ -3597,13 +3597,13 @@
 							},
 							{
 								"key": "User",
-								"value": "Jean Tartampion",
+								"value": "{{user_fullname}}",
 								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"promoted_override\": true,\n    \"hide_base_price_override\": true,\n    \"instead_prices\": [\n        {\n            \"quantity\": 1,\n            \"price\": 12.45\n        },\n        {\n            \"quantity\": 10,\n            \"price\": 144.5\n        }\n    ],\n    \"packshots\" : [\n        {\n            \"auto_assigned\": false,\n            \"id\": \"69ed5a6c-f800-42ce-886b-d7e0f3061747\",\n            \"url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"preview_url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg?version=4\",\n            \"cdn_url\" :\"https://curzio-della-santa.imgix.net/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"quantity\": 1,\n            \"created_on\": \"2016-08-24T18:11:12+0200\",\n            \"images\": [\n                {\n                    \"created_on\": \"2016-08-25T18:44:14+0200\",\n                    \"purpose\":\"web\",\n                    \"url\" : \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\"\n                }\n            ]\n        }\n    ],\n    \"composite_info\" : {\n        \"titles\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite title\"},\n            {\"locale\":\"fr\", \"value\": \"FR composite title\"}\n        ],\n        \"descriptions\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite description\"},\n            {\"locale\":\"it\", \"value\": \"IT composite description\"}\n        ]\n    },\n    \"hide_in_manuscript\": false,\n    \"price_region\": \"DF\",\n    \"store_availability\": [1, 2, 3, 4],\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"use_promotion_prices\": true,\n    \"promotion_price\": {\n        \"sales_price\": 4.3,\n        \"instead_price\": 5.75\n    }\n}"
+							"raw": "{\n    \"promoted_override\": true,\n    \"hide_base_price_override\": true,\n    \"instead_prices\": [\n        {\n            \"quantity\": 1,\n            \"price\": 12.45\n        },\n        {\n            \"quantity\": 10,\n            \"price\": 144.5\n        }\n    ],\n    \"packshots\" : [\n        {\n            \"auto_assigned\": false,\n            \"id\": \"69ed5a6c-f800-42ce-886b-d7e0f3061747\",\n            \"url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"preview_url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg?version=4\",\n            \"cdn_url\" :\"https://curzio-della-santa.imgix.net/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"quantity\": 1,\n            \"created_on\": \"2016-08-24T18:11:12+0200\",\n            \"images\": [\n                {\n                    \"created_on\": \"2016-08-25T18:44:14+0200\",\n                    \"purpose\":\"web\",\n                    \"url\" : \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\"\n                }\n            ]\n        }\n    ],\n    \"composite_info\" : {\n        \"override_title\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite title\"},\n            {\"locale\":\"fr\", \"value\": \"FR composite title\"}\n        ],\n        \"override_description\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite description\"},\n            {\"locale\":\"it\", \"value\": \"IT composite description\"}\n        ]\n    },\n    \"hide_in_manuscript\": false,\n    \"price_region\": \"DF\",\n    \"store_availability\": [1, 2, 3, 4],\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"use_promotion_prices\": true,\n    \"promotion_price\": {\n        \"sales_price\": 4.3,\n        \"instead_price\": 5.75\n    }\n}"
 						},
 						"description": "Edit an advertised article (Artikel)"
 					},
@@ -4004,6 +4004,7 @@
 				{
 					"name": "/article-groups",
 					"request": {
+					"request": co{
 						"url": "{{articles_url_base}}/article-groups?page_size=-1",
 						"method": "GET",
 						"header": [

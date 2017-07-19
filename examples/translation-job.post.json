@@ -1,12 +1,24 @@
+[{
+    "created_by": "Ivan Wolf",
+    "item": {
+        "type": "advertised-article",
+        "id": "0279434a-d28a-4486-9b5c-3efb80c52a88",
+        "field": "composite_article_title-fr",
+        "name": "Winston ERA 4 Blue Box LEP 20"
+    },
+    "source_language": "de",
+    "source_text": "Winston Limited Edition",
+    "translated_language": "fr"
+},
 {
     "created_by": "Ivan Wolf",
     "item": {
-        "type": "article",
-        "id": "051273",
-        "field": "character-fr",
-        "name": "Mandorla Primitivo IGT Puglia"
+        "type": "advertised-article",
+        "id": "0279434a-d28a-4486-9b5c-3efb80c52a88",
+        "field": "composite_article_description-fr",
+        "name": "Winston ERA 4 Blue Box LEP 20"
     },
     "source_language": "de",
-    "source_text": "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen.",
+    "source_text": "- Blue\n- Classic\n- Silver\nBox, 10 x 20 Zigaretten",
     "translated_language": "fr"
-}
+}]
