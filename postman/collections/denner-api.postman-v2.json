@@ -2756,6 +2756,119 @@
 			]
 		},
 		{
+			"name": "advertising/usages",
+			"description": "",
+			"item": [
+				{
+					"name": "/publication-article-usages",
+					"request": {
+						"url": {
+							"raw": "{{advertising_url_base}}/publication-article-usages?filter=[{\"property\":\"article_id\",\"value\":\"090098\"}]",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"publication-article-usages"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{\"property\":\"article_id\",\"value\":\"090098\"}]",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "List publication article usages"
+					},
+					"response": []
+				},
+				{
+					"name": "/publication-article-usages/article/{article_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/publication-article-usages/article/090098",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "List publication article usages searching by article id"
+					},
+					"response": []
+				},
+				{
+					"name": "/publication-article-usages/advertised-article/{advertised_article_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/publication-article-usages/advertised-article/d090e97c-2238-480c-b5c5-700a9c858635",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "List publication article usages searching by advertised article id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "appraisals",
 			"description": "Wine appraisals",
 			"item": [
@@ -3789,7 +3902,7 @@
 							"mode": "raw",
 							"raw": "{\n    \"type\" : \"x_for_y\",\n    \"placeholders\": {\n        \"original_quantity\": 2\n    }\n}"
 						},
-						"description": "Create a stopper within an advertised article"
+						"description": "ROUTE STILL NOT ACTIVE: Create a stopper within an advertised article"
 					},
 					"response": []
 				},
@@ -3819,7 +3932,7 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "Get a stopper within an advertised article"
+						"description": "ROUTE STILL NOT ACTIVE: Get a stopper within an advertised article, (Re-)render on request"
 					},
 					"response": []
 				},
@@ -3884,7 +3997,7 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "Delete a stopper within an advertised article"
+						"description": "ROUTE STILL NOT ACTIVE: Delete a stopper within an advertised article"
 					},
 					"response": []
 				},
@@ -5397,177 +5510,6 @@
 							"raw": "{\n    \"name\": \"20% auf alle Weine\",\n    \"closable\": true,\n    \"active\": true,\n    \"position\": \"top\",\n    \"display_from\": \"2016-01-01\",\n    \"display_to\": \"2016-12-31\",\n    \"locales\": [\n        \"de\",\n        \"fr\",\n        \"it\"\n    ],\n    \"types\": [\n        \"wine\"\n    ],\n    \"platforms\": [\n        \"iOS\",\n        \"Android\",\n        \"Windows\"\n    ],\n    \"title\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"20% auf alle Weine\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"20% sur tous les vins\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"20% su tutti i vini\"\n        }\n    ],\n    \"html\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"Nur am Sonntag, 20. Dezember 2015 auch auf bestehende Aktionspreise. Gültig in allen geöffneten Filialen (siehe www.denner.ch), unter www.denner-wineshop.ch und in der Denner App.**<br />*ausgenommen Schaumweine und Bordeaux Grands Crus 2013. Solange Vorrat. Nicht mit Gutscheinen, Bons und Rabatten bei Neueröffnungen und Weinmessen kumulierbar. **die Lieferung vor Weihnachten ist nicht garantiert.\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"Seulement le dimanche 20 décembre 2015, valable également sur les prix promotionnels. Valable dans toutes les succursales ouvertes (voir www.denner.ch), sur www.denner-wineshop.ch et dans l’appli Denner.**<br />*excepté les vins mousseux et Bordeaux Grands Crus 2013. Jusqu’à épuisement des stocks. Non cumulable avec des bons et des rabais accordés aux inaugurations et aux foires aux vins. **la livraison avant Noël n’est pas garantie.\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"Solo domenica 20 dicembre 2015 anche sugli attuali prezzi promozionali. Valida in tutte le filiali aperte (vedi www.denner.ch), su www.denner-wineshop.ch e nell’app di Denner.**<br />*sono esclusi spumanti, vini frizzanti e Bordeaux Grands Crus 2013. Fino a esaurimento. Non cumulabile con buoni e sconti a fiere del vino e inaugurazioni di nuovi punti vendita. **consegna prima di Natale non garantita.\"\n        }\n    ],\n    \"image\": [\n        {\n            \"locale\": \"de\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/6557432f-2aeb-4440-8405-799b9120727b/20Weine_de.png\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/b0a1bf0e-2b09-4fe8-ba2a-19030d23e67f/20Weine_fr.png\"\n        },\n        {\n            \"locale\": \"it\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/f31c80ee-ecbc-4af8-b972-00e7facabede/20Weine_it.png\"\n        }\n    ],\n    \"link\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"http://denner-wineshop.ch/de\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"http://denner-wineshop.ch/fr\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"http://denner-wineshop.ch/it\"\n        }\n    ]\n}\n"
 						},
 						"description": "Create a new banner"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "portal",
-			"description": "Portal",
-			"item": [
-				{
-					"name": "/users",
-					"request": {
-						"url": "{{portal_url_base}}/users",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}",
-								"description": ""
-							},
-							{
-								"key": "App-Key",
-								"value": "{{portal_header_app_key}}",
-								"description": ""
-							},
-							{
-								"key": "App-Id",
-								"value": "{{portal_header_app_id}}",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": "Users"
-					},
-					"response": []
-				},
-				{
-					"name": "/users/{user_id}",
-					"request": {
-						"url": "{{portal_url_base}}/users/44444444-aaaa-4444-aaaa-444444444444",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}",
-								"description": ""
-							},
-							{
-								"key": "App-Key",
-								"value": "{{portal_header_app_key}}",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": "List single user"
-					},
-					"response": []
-				},
-				{
-					"name": "/users/{user_id}",
-					"request": {
-						"url": "{{portal_url_base}}/users/44444444-aaaa-4444-aaaa-444444444444",
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}",
-								"description": ""
-							},
-							{
-								"key": "App-Key",
-								"value": "{{portal_header_app_key}}",
-								"description": ""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
-						},
-						"description": "Update a user"
-					},
-					"response": []
-				},
-				{
-					"name": "/users",
-					"request": {
-						"url": "{{portal_url_base}}/users",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}",
-								"description": ""
-							},
-							{
-								"key": "App-Key",
-								"value": "{{portal_header_app_key}}",
-								"description": ""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
-						},
-						"description": "Create a new user"
-					},
-					"response": []
-				},
-				{
-					"name": "/roles",
-					"request": {
-						"url": "{{portal_url_base}}/roles",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}",
-								"description": ""
-							},
-							{
-								"key": "App-Key",
-								"value": "{{portal_header_app_key}}",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": "Roles"
-					},
-					"response": []
-				},
-				{
-					"name": "/translations/imports",
-					"request": {
-						"url": "{{portal_url_base}}/translations/imports",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}",
-								"description": ""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\": \"my-test.xml\",\n\t\"mime_type\": \"application/xml\"\n}"
-						},
-						"description": "Tentative translation import"
 					},
 					"response": []
 				}
