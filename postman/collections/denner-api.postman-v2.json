@@ -4004,7 +4004,6 @@
 				{
 					"name": "/article-groups",
 					"request": {
-					"request": co{
 						"url": "{{articles_url_base}}/article-groups?page_size=-1",
 						"method": "GET",
 						"header": [
