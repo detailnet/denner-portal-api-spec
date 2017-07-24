@@ -4270,6 +4270,83 @@
 						"description": "List all store availabilities"
 					},
 					"response": []
+				},
+				{
+					"name": "/rebate-promotions",
+					"request": {
+						"url": "{{articles_url_base}}/rebate-promotions",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "List rebate promotions (Rabattartikel Planung)"
+					},
+					"response": []
+				},
+				{
+					"name": "/rebate-articles",
+					"request": {
+						"url": {
+							"raw": "{{articles_url_base}}/rebate-articles?filter=[{\"property\":\"rebate_code\",\"value\":\"1706-KAMB\"}]",
+							"host": [
+								"{{articles_url_base}}"
+							],
+							"path": [
+								"rebate-articles"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{\"property\":\"rebate_code\",\"value\":\"1706-KAMB\"}]",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "List rebate articles (Rabattartikel)"
+					},
+					"response": []
 				}
 			]
 		},
