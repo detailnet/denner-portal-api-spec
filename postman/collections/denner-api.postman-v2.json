@@ -124,7 +124,23 @@
 				{
 					"name": "/newsletters/{newsletter_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/newsletters/44444444-aaaa-4444-aaaa-444444444444?publish=0",
+						"url": {
+							"raw": "{{advertising_url_base}}/newsletters/44444444-aaaa-4444-aaaa-444444444444?publish=0",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"newsletters",
+								"44444444-aaaa-4444-aaaa-444444444444"
+							],
+							"query": [
+								{
+									"key": "publish",
+									"value": "0"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -975,7 +991,22 @@
 				{
 					"name": "/online-filters",
 					"request": {
-						"url": "{{advertising_url_base}}/online-filters?page_size=-1",
+						"url": {
+							"raw": "{{advertising_url_base}}/online-filters?page_size=-1",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"online-filters"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -3143,11 +3174,6 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"description": ""
-							},
-							{
-								"key": "User",
-								"value": "{{user_fullname}}",
-								"description": ""
 							}
 						],
 						"body": {
@@ -3190,6 +3216,17 @@
 				},
 				{
 					"name": "/articles/{article_id}/text-blocks",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"postman.setEnvironmentVariable(\"current_datetime\", (new Date()).toISOString().replace(/\\.\\d+Z$/,'Z'));"
+								]
+							}
+						}
+					],
 					"request": {
 						"url": "{{articles_url_base}}/articles/022617/text-blocks",
 						"method": "PATCH",
@@ -3213,16 +3250,11 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"description": ""
-							},
-							{
-								"key": "User",
-								"value": "{{user_fullname}}",
-								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "[\n  {\n    \"name\": \"title\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW TRANSLATION Lu Mikado Chocolat au lait\",\n        \"sources\": [\n          {\n            \"id\": \"print\",\n            \"linked\": true,\n            \"change_approved\": true\n          },\n          {\n            \"id\": \"denner\",\n            \"linked\": false,\n            \"change_approved\": true\n          }\n        ]\n      },\n      {\n        \"locale\": \"fr\",\n        \"value\": \"NEW TRANSLATION Mikado Chocolat au lait Lu\",\n        \"sources\": [\n          {\n            \"id\": \"print\",\n            \"linked\": true\n          },\n          {\n            \"id\": \"denner\",\n            \"linked\": false\n          }\n        ]\n      },\n      {\n        \"locale\": \"it\",\n        \"sources\": [\n          {\n            \"id\": \"print\",\n            \"linked\": true\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"name\": \"description\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW DESCRIPTION 75 g\"\n      }\n    ]\n  },\n  {\n    \"name\": \"new\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW BLOCK\"\n      }\n    ]\n  }\n]"
+							"raw": "[\n  {\n    \"name\": \"title\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW TEXT Mikado Chocolat au lait\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\",\n        \"from_translation\": false,\n        \"sources\": [\n          {\n            \"id\": \"print\",\n            \"change_approved\": true\n          },\n          {\n            \"id\": \"denner\",\n            \"linked\": false,\n            \"change_approved\": true\n          }\n        ]\n      },\n      {\n        \"locale\": \"fr\",\n        \"value\": \"NEW TEXT Mikado Chocolat au lait Lu\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\",\n        \"sources\": [\n          {\n            \"id\": \"print\"\n          },\n          {\n            \"id\": \"denner\",\n            \"linked\": false\n          }\n        ]\n      },\n      {\n        \"locale\": \"it\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\",\n        \"sources\": [\n          {\n            \"id\": \"print\"\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"name\": \"description\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW DESCRIPTION 75 g\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\"\n      }\n    ]\n  },\n  {\n    \"name\": \"new\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW BLOCK\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\"\n      }\n    ]\n  }\n]"
 						},
 						"description": "Edit text blocks for an article"
 					},
@@ -3231,7 +3263,37 @@
 				{
 					"name": "/articles/{article_id}/packshot/{filename}",
 					"request": {
-						"url": "{{articles_url_base}}/articles/022617/packshot/022617.png?quantity=1&with-archived=true&imgix_w=250&imgix_h=250",
+						"url": {
+							"raw": "{{articles_url_base}}/articles/022617/packshot/022617.png?quantity=1&with-archived=true&imgix_w=250&imgix_h=250",
+							"host": [
+								"{{articles_url_base}}"
+							],
+							"path": [
+								"articles",
+								"022617",
+								"packshot",
+								"022617.png"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "1"
+								},
+								{
+									"key": "with-archived",
+									"value": "true"
+								},
+								{
+									"key": "imgix_w",
+									"value": "250"
+								},
+								{
+									"key": "imgix_h",
+									"value": "250"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -3571,6 +3633,17 @@
 				},
 				{
 					"name": "/advertised-articles/{advertised_article_id}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"postman.setEnvironmentVariable(\"current_datetime\", (new Date()).toISOString().replace(/\\.\\d+Z$/,'Z'));"
+								]
+							}
+						}
+					],
 					"request": {
 						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}",
 						"method": "PATCH",
@@ -3594,16 +3667,11 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"description": ""
-							},
-							{
-								"key": "User",
-								"value": "{{user_fullname}}",
-								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"promoted_override\": true,\n    \"hide_base_price_override\": true,\n    \"instead_prices\": [\n        {\n            \"quantity\": 1,\n            \"price\": 12.45\n        },\n        {\n            \"quantity\": 10,\n            \"price\": 144.5\n        }\n    ],\n    \"packshots\" : [\n        {\n            \"auto_assigned\": false,\n            \"id\": \"69ed5a6c-f800-42ce-886b-d7e0f3061747\",\n            \"url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"preview_url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg?version=4\",\n            \"cdn_url\" :\"https://curzio-della-santa.imgix.net/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"quantity\": 1,\n            \"created_on\": \"2016-08-24T18:11:12+0200\",\n            \"images\": [\n                {\n                    \"created_on\": \"2016-08-25T18:44:14+0200\",\n                    \"purpose\":\"web\",\n                    \"url\" : \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\"\n                }\n            ]\n        }\n    ],\n    \"composite_info\" : {\n        \"override_title\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite title\"},\n            {\"locale\":\"fr\", \"value\": \"FR composite title\"}\n        ],\n        \"override_description\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite description\"},\n            {\"locale\":\"it\", \"value\": \"IT composite description\"}\n        ]\n    },\n    \"hide_in_manuscript\": false,\n    \"price_region\": \"DF\",\n    \"store_availability\": [1, 2, 3, 4],\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"use_promotion_prices\": true,\n    \"promotion_price\": {\n        \"sales_price\": 4.3,\n        \"instead_price\": 5.75\n    }\n}"
+							"raw": "{\n    \"promoted_override\": true,\n    \"hide_base_price_override\": true,\n    \"instead_prices\": [\n        {\n            \"quantity\": 1,\n            \"price\": 12.45\n        },\n        {\n            \"quantity\": 10,\n            \"price\": 144.5\n        }\n    ],\n    \"packshots\" : [\n        {\n            \"auto_assigned\": false,\n            \"id\": \"69ed5a6c-f800-42ce-886b-d7e0f3061747\",\n            \"url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"preview_url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg?version=4\",\n            \"cdn_url\" :\"https://curzio-della-santa.imgix.net/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"quantity\": 1,\n            \"created_on\": \"2016-08-24T18:11:12+0200\",\n            \"images\": [\n                {\n                    \"created_on\": \"2016-08-25T18:44:14+0200\",\n                    \"purpose\":\"web\",\n                    \"url\" : \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\"\n                }\n            ]\n        }\n    ],\n    \"composite_info\" : {\n        \"override_title\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite title\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"},\n            {\"locale\":\"fr\", \"value\": \"FR composite title\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"}\n        ],\n        \"override_description\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite description\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"},\n            {\"locale\":\"it\", \"value\": \"IT composite description\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"}\n        ]\n    },\n    \"hide_in_manuscript\": false,\n    \"price_region\": \"DF\",\n    \"store_availability\": [1, 2, 3, 4],\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"use_promotion_prices\": true,\n    \"promotion_price\": {\n        \"sales_price\": 4.3,\n        \"instead_price\": 5.75\n    }\n}"
 						},
 						"description": "Edit an advertised article (Artikel)"
 					},
@@ -4004,7 +4072,22 @@
 				{
 					"name": "/article-groups",
 					"request": {
-						"url": "{{articles_url_base}}/article-groups?page_size=-1",
+						"url": {
+							"raw": "{{articles_url_base}}/article-groups?page_size=-1",
+							"host": [
+								"{{articles_url_base}}"
+							],
+							"path": [
+								"article-groups"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4034,7 +4117,22 @@
 				{
 					"name": "/online-groups",
 					"request": {
-						"url": "{{articles_url_base}}/online-groups?page_size=-1",
+						"url": {
+							"raw": "{{articles_url_base}}/online-groups?page_size=-1",
+							"host": [
+								"{{articles_url_base}}"
+							],
+							"path": [
+								"online-groups"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4064,7 +4162,22 @@
 				{
 					"name": "/online-specials",
 					"request": {
-						"url": "{{articles_url_base}}/online-specials?page_size=-1",
+						"url": {
+							"raw": "{{articles_url_base}}/online-specials?page_size=-1",
+							"host": [
+								"{{articles_url_base}}"
+							],
+							"path": [
+								"online-specials"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4094,7 +4207,22 @@
 				{
 					"name": "/promotion-types",
 					"request": {
-						"url": "{{articles_url_base}}/promotion-types?page_size=-1",
+						"url": {
+							"raw": "{{articles_url_base}}/promotion-types?page_size=-1",
+							"host": [
+								"{{articles_url_base}}"
+							],
+							"path": [
+								"promotion-types"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4124,7 +4252,22 @@
 				{
 					"name": "/promotions",
 					"request": {
-						"url": "{{articles_url_base}}/promotions?page_size=-1",
+						"url": {
+							"raw": "{{articles_url_base}}/promotions?page_size=-1",
+							"host": [
+								"{{articles_url_base}}"
+							],
+							"path": [
+								"promotions"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4154,7 +4297,22 @@
 				{
 					"name": "/languages",
 					"request": {
-						"url": "{{articles_url_base}}/languages?page_size=-1",
+						"url": {
+							"raw": "{{articles_url_base}}/languages?page_size=-1",
+							"host": [
+								"{{articles_url_base}}"
+							],
+							"path": [
+								"languages"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4357,7 +4515,22 @@
 				{
 					"name": "/purposes",
 					"request": {
-						"url": "{{assets_url_base}}/languages?page_size=-1",
+						"url": {
+							"raw": "{{assets_url_base}}/languages?page_size=-1",
+							"host": [
+								"{{assets_url_base}}"
+							],
+							"path": [
+								"languages"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4387,7 +4560,22 @@
 				{
 					"name": "/languages",
 					"request": {
-						"url": "{{assets_url_base}}/languages?page_size=-1",
+						"url": {
+							"raw": "{{assets_url_base}}/languages?page_size=-1",
+							"host": [
+								"{{assets_url_base}}"
+							],
+							"path": [
+								"languages"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4417,7 +4605,22 @@
 				{
 					"name": "/file-types",
 					"request": {
-						"url": "{{assets_url_base}}/file-types?page_size=-1",
+						"url": {
+							"raw": "{{assets_url_base}}/file-types?page_size=-1",
+							"host": [
+								"{{assets_url_base}}"
+							],
+							"path": [
+								"file-types"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4447,7 +4650,22 @@
 				{
 					"name": "/asset-tags",
 					"request": {
-						"url": "{{assets_url_base}}/asset-tags?page_size=-1",
+						"url": {
+							"raw": "{{assets_url_base}}/asset-tags?page_size=-1",
+							"host": [
+								"{{assets_url_base}}"
+							],
+							"path": [
+								"asset-tags"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4477,7 +4695,22 @@
 				{
 					"name": "/asset-types",
 					"request": {
-						"url": "{{assets_url_base}}/asset-types?page_size=-1",
+						"url": {
+							"raw": "{{assets_url_base}}/asset-types?page_size=-1",
+							"host": [
+								"{{assets_url_base}}"
+							],
+							"path": [
+								"asset-types"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4507,7 +4740,38 @@
 				{
 					"name": "/assets",
 					"request": {
-						"url": "{{assets_url_base}}/assets?page=1&page_size=5&filter=[{\"property\":\"articles\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"000000\",\"222222\"]}]&sort=[{\"property\":\"created_on\",\"direction\":\"asc\"}]&query=test",
+						"url": {
+							"raw": "{{assets_url_base}}/assets?page=1&page_size=5&filter=[{\"property\":\"articles\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"000000\",\"222222\"]}]&sort=[{\"property\":\"created_on\",\"direction\":\"asc\"}]&query=test",
+							"host": [
+								"{{assets_url_base}}"
+							],
+							"path": [
+								"assets"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "5"
+								},
+								{
+									"key": "filter",
+									"value": "[{\"property\":\"articles\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"000000\",\"222222\"]}]"
+								},
+								{
+									"key": "sort",
+									"value": "[{\"property\":\"created_on\",\"direction\":\"asc\"}]"
+								},
+								{
+									"key": "query",
+									"value": "test"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4937,7 +5201,30 @@
 				{
 					"name": "/asset-collections",
 					"request": {
-						"url": "{{assets_url_base}}/asset-collections?page=1&page_size=5&sort=[{\"property\":\"created_on\",\"direction\":\"asc\"}]",
+						"url": {
+							"raw": "{{assets_url_base}}/asset-collections?page=1&page_size=5&sort=[{\"property\":\"created_on\",\"direction\":\"asc\"}]",
+							"host": [
+								"{{assets_url_base}}"
+							],
+							"path": [
+								"asset-collections"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "[{\"property\":\"created_on\",\"direction\":\"asc\"}]"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -5377,7 +5664,24 @@
 						}
 					],
 					"request": {
-						"url": "https://requestb.in/{your-reqwstb.in-id}?inspect",
+						"url": {
+							"raw": "https://requestb.in/{your-reqwstb.in-id}?inspect",
+							"protocol": "https",
+							"host": [
+								"requestb",
+								"in"
+							],
+							"path": [
+								"{your-reqwstb.in-id}"
+							],
+							"query": [
+								{
+									"key": "inspect",
+									"value": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -5659,7 +5963,22 @@
 				{
 					"name": "/store-channels",
 					"request": {
-						"url": "{{stores_url_base}}/store-channels?filter=[{\"property\":\"stores_count\",\"operator\":\">\",\"value\":0,\"type\":\"integer\"}]",
+						"url": {
+							"raw": "{{stores_url_base}}/store-channels?filter=[{\"property\":\"stores_count\",\"operator\":\">\",\"value\":0,\"type\":\"integer\"}]",
+							"host": [
+								"{{stores_url_base}}"
+							],
+							"path": [
+								"store-channels"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "[{\"property\":\"stores_count\",\"operator\":\">\",\"value\":0,\"type\":\"integer\"}]"
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [
 							{
