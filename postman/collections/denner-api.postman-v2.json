@@ -2794,7 +2794,7 @@
 					"name": "/publication-article-usages",
 					"request": {
 						"url": {
-							"raw": "{{advertising_url_base}}/publication-article-usages?filter=[{\"property\":\"article_id\",\"value\":\"090098\"}]",
+							"raw": "{{advertising_url_base}}/publication-article-usages?filter=[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\",\"090093\",\"090094\",\"090095\",\"090096\",\"090097\",\"090099\"],\"operator\":\"in\",\"type\":\"array\"}]",
 							"host": [
 								"{{advertising_url_base}}"
 							],
@@ -2804,7 +2804,7 @@
 							"query": [
 								{
 									"key": "filter",
-									"value": "[{\"property\":\"article_id\",\"value\":\"090098\"}]",
+									"value": "[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\",\"090093\",\"090094\",\"090095\",\"090096\",\"090097\",\"090099\"],\"operator\":\"in\",\"type\":\"array\"}]",
 									"equals": true,
 									"description": ""
 								}
@@ -5665,7 +5665,7 @@
 					],
 					"request": {
 						"url": {
-							"raw": "https://requestb.in/{your-reqwstb.in-id}?inspect",
+							"raw": "https://requestb.in/{your-request.bin-id}?inspect=",
 							"protocol": "https",
 							"host": [
 								"requestb",
