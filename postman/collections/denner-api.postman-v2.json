@@ -4430,9 +4430,9 @@
 					"response": []
 				},
 				{
-					"name": "/rebate-promotions",
+					"name": "/discount-campaigns",
 					"request": {
-						"url": "{{articles_url_base}}/rebate-promotions",
+						"url": "{{articles_url_base}}/discount-campaigns",
 						"method": "GET",
 						"header": [
 							{
@@ -4455,25 +4455,25 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "List rebate promotions (Rabattartikel Planung)"
+						"description": "List discount campaigns (Rabattaktionen)"
 					},
 					"response": []
 				},
 				{
-					"name": "/rebate-articles",
+					"name": "/discounts",
 					"request": {
 						"url": {
-							"raw": "{{articles_url_base}}/rebate-articles?filter=[{\"property\":\"rebate_code\",\"value\":\"1706-KAMB\"}]",
+							"raw": "{{articles_url_base}}/discounts?filter=[{\"property\":\"campaign_id\",\"value\":\"1706-KAMB\"}]",
 							"host": [
 								"{{articles_url_base}}"
 							],
 							"path": [
-								"rebate-articles"
+								"discounts"
 							],
 							"query": [
 								{
 									"key": "filter",
-									"value": "[{\"property\":\"rebate_code\",\"value\":\"1706-KAMB\"}]",
+									"value": "[{\"property\":\"campaign_id\",\"value\":\"1706-KAMB\"}]",
 									"equals": true,
 									"description": ""
 								}
@@ -4502,7 +4502,7 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "List rebate articles (Rabattartikel)"
+						"description": "List discounts (Rabatte)"
 					},
 					"response": []
 				}
