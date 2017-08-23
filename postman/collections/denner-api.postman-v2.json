@@ -2340,6 +2340,41 @@
 					"response": []
 				},
 				{
+					"name": "/print-publication-duplications",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publication-duplications",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Duplicate Publication\",\r\n  \"year\": 2017,\r\n  \"week\": 36,\r\n  \"validity\": {\r\n    \"from\": \"2017-08-29\",\r\n    \"to\": \"2017-09-04\"\r\n  },\r\n  \"template\": \"a4-poster\",\r\n  \"valid_from\": \"2017-08-29\",\r\n  \"valid_to\": \"2017-09-04\",\r\n  \"publication\": \"35e93dd5-c401-43ad-ba0f-d300c6e2dcff\"\r\n}"
+						},
+						"description": "Duplicate publication"
+					},
+					"response": []
+				},
+				{
 					"name": "/eye-catcher-templates",
 					"request": {
 						"url": "{{advertising_url_base}}/eye-catcher-templates",
