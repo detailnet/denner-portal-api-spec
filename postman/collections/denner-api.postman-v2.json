@@ -2190,6 +2190,168 @@
 					"response": []
 				},
 				{
+					"name": "/print-publications/{publication_id}/links",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/links",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "List links of a print publication"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/links/{link_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "List a single link (Link) for a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/links",
+					"event": [
+					],
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/links",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Hans\",\n\t\"valid_to\": \"2017-08-28\"\n}"
+						},
+						"description": "Add a new link to a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/links/{link_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Hans 2\",\n\t\"valid_to\": \"2017-08-29\"\n}"
+						},
+						"description": "Update links's details from a print publication by listing (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/links/{link_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Delete a link (Link) from a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
 					"name": "/print-layouts",
 					"request": {
 						"url": "{{advertising_url_base}}/print-layouts",
