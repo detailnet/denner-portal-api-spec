@@ -2251,8 +2251,6 @@
 				},
 				{
 					"name": "/print-publications/{publication_id}/links",
-					"event": [
-					],
 					"request": {
 						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/links",
 						"method": "POST",
@@ -3818,6 +3816,12 @@
 								"key": "App-Key",
 								"value": "{{articles_header_app_key}}",
 								"description": ""
+							},
+							{
+								"key": "X-Denner-Broadcast",
+								"value": "UPDATE",
+								"description": "Request broadcast notifications for this advertised article on updates",
+								"disabled": true
 							}
 						],
 						"body": {
