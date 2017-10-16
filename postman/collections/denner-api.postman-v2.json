@@ -2190,6 +2190,167 @@
 					"response": []
 				},
 				{
+					"name": "/print-publications/{publication_id}/generated-files",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Save first generated file id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = (jsonData && jsonData.generated_files && jsonData.generated_files[0]) ? jsonData.generated_files[0].id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"generated_file_id\", id);",
+									"",
+									"tests[\"Setup first generated_file_id in environment\"] = !!id;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Test file 2\",\n\t\"size\": 1024,\n\t\"locale\": \"it\",\n\t\"created_by\": \"Curzio\",\n\t\"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
+						},
+						"description": "Get generated files"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/generated-files",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Save Generated file id in environment",
+									"var jsonData = JSON.parse(responseBody),",
+									"    id = jsonData ? jsonData.id : null;",
+									"    ",
+									"postman.setEnvironmentVariable(\"generated_file_id\", id);",
+									"",
+									"tests[\"Setup generated_file_id in environment\"] = !!id;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Test file 2\",\n\t\"size\": 1024,\n\t\"locale\": \"it\",\n\t\"created_by\": \"Curzio\",\n\t\"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
+						},
+						"description": "Create generated file"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/generated-files/{generated_file_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files/{{generated_file_id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Test file 2\",\n\t\"size\": 1024,\n\t\"locale\": \"it\",\n\t\"created_by\": \"Curzio\",\n\t\"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
+						},
+						"description": "Get generated file"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/generated-files/{generated_file_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files/{{generated_file_id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Delete denerated file"
+					},
+					"response": []
+				},
+				{
 					"name": "/print-publications/{publication_id}/links",
 					"request": {
 						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/links",
