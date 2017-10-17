@@ -3,7 +3,7 @@
 	"info": {
 		"name": "denner-api",
 		"_postman_id": "89189644-37fe-c47a-027a-f972eb4c6b00",
-		"description": "Denner 2.0 API",
+		"description": "Denner 2.0 Web Service",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -2314,7 +2314,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Test file 2\",\n\t\"size\": 1024,\n\t\"locale\": \"it\",\n\t\"created_by\": \"Curzio\",\n\t\"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
+							"raw": ""
 						},
 						"description": "Get generated file"
 					},
@@ -2507,6 +2507,161 @@
 							"raw": ""
 						},
 						"description": "Delete a link (Link) from a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-skeletons?file={file_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-skeletons?file={{file_id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Get a skeleton for a file"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-skeletons?file={file_id}&page={page_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-skeletons?file={{file_id}}&page={{page_id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Get a skeleton for a single page of a file"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-skeletons?publication={publication_id}&language={language}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-skeletons?publication={{publication_id}}&language={{language}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Get a skeleton for a publication"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-skeletons?publication={publication_id}&language={language}&page={page_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-skeletons?publication={{publication_id}}&language={{language}}&page={{page_id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Get a skeleton for a single page of a publication"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-skeletons",
+					"request": {
+						"url": "{{advertising_url_base}}/print-skeletons",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"language\": \"de\"\n}"
+						},
+						"description": "Get a skeleton from custom input"
 					},
 					"response": []
 				},
