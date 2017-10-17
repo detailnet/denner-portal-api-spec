@@ -2518,7 +2518,7 @@
 						"header": [
 							{
 								"key": "Accept",
-								"value": "{{header_accept}}",
+								"value": "application/xml",
 								"description": ""
 							},
 							{
@@ -2548,7 +2548,7 @@
 						"header": [
 							{
 								"key": "Accept",
-								"value": "{{header_accept}}",
+								"value": "application/xml",
 								"description": ""
 							},
 							{
@@ -2578,7 +2578,7 @@
 						"header": [
 							{
 								"key": "Accept",
-								"value": "{{header_accept}}",
+								"value": "application/xml",
 								"description": ""
 							},
 							{
@@ -2608,7 +2608,7 @@
 						"header": [
 							{
 								"key": "Accept",
-								"value": "{{header_accept}}",
+								"value": "application/xml",
 								"description": ""
 							},
 							{
@@ -2638,7 +2638,7 @@
 						"header": [
 							{
 								"key": "Accept",
-								"value": "{{header_accept}}",
+								"value": "application/xml",
 								"description": ""
 							},
 							{
