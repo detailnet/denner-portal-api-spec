@@ -1540,6 +1540,41 @@
 					"name": "/print-publications/{publication_id}/articles/{article_id}",
 					"request": {
 						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"valid_to\": \"2017-08-19\",\n\t\"compared\": true,\n\t\"promote_100g_price\": true,\n\t\"base_price_display\": 2,\n\t\"promotion_type\": \"WOCHENEND\",\n\t\"stopper\": {\n\t\t\"type\": \"x_percent\",\n\t\t\"placeholders\": {\n\t\t\t\"discount-percent\": 11\n\t\t\t\n\t\t}\n\t}\n}"
+						},
+						"description": "Update plain article (Stammartikel) properties from a print publication by listing (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/articles/{article_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
 						"method": "DELETE",
 						"header": [
 							{
@@ -1592,7 +1627,7 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "List Article's text blocks from a print publication (Print-Werbemittel)"
+						"description": "List article's text blocks from a print publication (Print-Werbemittel)"
 					},
 					"response": []
 				},
@@ -1627,7 +1662,7 @@
 							"mode": "raw",
 							"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]"
 						},
-						"description": "Update Article's override-texts from a print publication by listing (Print-Werbemittel)"
+						"description": "Update article's override-texts from a print publication by listing (Print-Werbemittel)"
 					},
 					"response": []
 				},
@@ -2012,6 +2047,41 @@
 					"response": []
 				},
 				{
+					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"valid_to\": \"2017-08-19\",\n\t\"compared\": true,\n\t\"promote_100g_price\": true,\n\t\"base_price_display\": 2,\n\t\"promotion_type\": \"WOCHENEND\",\n\t\"stopper\": {\n\t\t\"type\": \"x_percent\",\n\t\t\"placeholders\": {\n\t\t\t\"discount-percent\": 11\n\t\t\t\n\t\t}\n\t}\n}"
+						},
+						"description": "Update plain article (Stammartikel) properties from a document of a print publication by positioning (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
 					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}/text-blocks",
 					"request": {
 						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}/text-blocks",
@@ -2037,7 +2107,7 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "List Article's text blocks from a document of a print publication by positioning (Print-Werbemittel)"
+						"description": "List article's text blocks from a document of a print publication by positioning (Print-Werbemittel)"
 					},
 					"response": []
 				},
@@ -2072,7 +2142,7 @@
 							"mode": "raw",
 							"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]"
 						},
-						"description": "Update Article's override-texts from a document of a print publication by positioning (Print-Werbemittel)"
+						"description": "Update article's override-texts from a document of a print publication by positioning (Print-Werbemittel)"
 					},
 					"response": []
 				},
@@ -3650,6 +3720,12 @@
 								"key": "App-Key",
 								"value": "{{articles_header_app_key}}",
 								"description": ""
+							},
+							{
+								"key": "X-Denner-Broadcast",
+								"value": "UPDATE",
+								"description": "Request broadcast notifications for this article on updates",
+								"disabled": true
 							}
 						],
 						"body": {
