@@ -1333,6 +1333,1548 @@
 			"description": "Advertising: Print publication",
 			"item": [
 				{
+					"name": "by listing",
+					"description": "",
+					"item": [
+						{
+							"name": "/print-publications/{publication_id}/articles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save first publication articles's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData && jsonData.print_publication_articles && jsonData.print_publication_articles[0]) ? jsonData.print_publication_articles[0].id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"publication_article_id\", id);",
+											"",
+											"tests[\"Setup first publication_article_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"articles"
+									]
+								},
+								"description": "List a print publication's articles (Artikel eines Print-Werbemittels)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/articles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save created publication article's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData) ? jsonData.id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"publication_article_id\", id);",
+											"",
+											"tests[\"Setup new publication_article_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"advertised_article\": \"{{advertised_article_id}}\",\n  \"composite_article\": false\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"articles"
+									]
+								},
+								"description": "Add a new article (Artikel) to a print publication (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/articles/{article_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"articles",
+										"{{publication_article_id}}"
+									]
+								},
+								"description": "List a single article (Artikel) for a print publication (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/articles/{article_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"valid_to\": \"2017-08-19\",\n\t\"compared\": true,\n\t\"promote_100g_price\": true,\n\t\"base_price_display\": 2,\n\t\"promotion_type\": \"WOCHENEND\",\n\t\"stopper\": {\n\t\t\"type\": \"x_percent\",\n\t\t\"placeholders\": {\n\t\t\t\"discount-percent\": 11\n\t\t\t\n\t\t}\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"articles",
+										"{{publication_article_id}}"
+									]
+								},
+								"description": "Update plain article (Stammartikel) properties from a print publication by listing (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/articles/{article_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"articles",
+										"{{publication_article_id}}"
+									]
+								},
+								"description": "Delete an article (Artikel) from a print publication (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/articles/{article_id}/text-blocks",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}/text-blocks",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"articles",
+										"{{publication_article_id}}",
+										"text-blocks"
+									]
+								},
+								"description": "List article's text blocks from a print publication (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/articles/{article_id}/text-blocks",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}/text-blocks",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"articles",
+										"{{publication_article_id}}",
+										"text-blocks"
+									]
+								},
+								"description": "Update article's override-texts from a print publication by listing (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/links",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"links"
+									]
+								},
+								"description": "List links of a print publication"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/links/{link_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"links",
+										"{{link_id}}"
+									]
+								},
+								"description": "List a single link (Link) for a print publication (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/links",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Hans\",\n\t\"valid_to\": \"2017-08-28\"\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"links"
+									]
+								},
+								"description": "Add a new link to a print publication (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/links/{link_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Hans 2\",\n\t\"valid_to\": \"2017-08-29\"\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"links",
+										"{{link_id}}"
+									]
+								},
+								"description": "Update links's details from a print publication by listing (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/links/{link_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"links",
+										"{{link_id}}"
+									]
+								},
+								"description": "Delete a link (Link) from a print publication (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/generated-files",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save first generated file id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData && jsonData.generated_files && jsonData.generated_files[0]) ? jsonData.generated_files[0].id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"generated_file_id\", id);",
+											"",
+											"tests[\"Setup first generated_file_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Test file 2\",\n\t\"size\": 1024,\n\t\"locale\": \"it\",\n\t\"created_by\": \"Curzio\",\n\t\"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"generated-files"
+									]
+								},
+								"description": "Get generated files"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/generated-files",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save Generated file id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = jsonData ? jsonData.id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"generated_file_id\", id);",
+											"",
+											"tests[\"Setup generated_file_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Test file 2\",\n\t\"size\": 1024,\n\t\"locale\": \"it\",\n\t\"created_by\": \"Curzio\",\n\t\"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"generated-files"
+									]
+								},
+								"description": "Create generated file"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/generated-files/{generated_file_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files/{{generated_file_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"generated-files",
+										"{{generated_file_id}}"
+									]
+								},
+								"description": "Get generated file"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/generated-files/{generated_file_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files/{{generated_file_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"generated-files",
+										"{{generated_file_id}}"
+									]
+								},
+								"description": "Delete denerated file"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-production-types",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-production-types",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-production-types"
+									]
+								},
+								"description": "List print production types"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "by positioning",
+					"description": "",
+					"item": [
+						{
+							"name": "/print-publications/{publication_id}/documents",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save first publication document's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData && jsonData.print_publication_documents && jsonData.print_publication_documents[0]) ? jsonData.print_publication_documents[0].id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"document_id\", id);",
+											"",
+											"tests[\"Setup first document_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents"
+									]
+								},
+								"description": "List a print publication's documents (Dokumente eines Print-Werbemittels)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save created publication document's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData) ? jsonData.id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"document_id\", id);",
+											"",
+											"tests[\"Setup new document_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Neues Dokument\",\n  \"template\": \"dw-article-right\"\n}\n"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents"
+									]
+								},
+								"description": "Add a new document (Dokument) to a print publication (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Neuer Name\",\n  \"template\": \"dw-front\"\n}\n"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}"
+									]
+								},
+								"description": "Update a print publication's document (Dokument eines Print-Werbemittels)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}"
+									]
+								},
+								"description": "Delete a document (Dokument) from a print publication (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}/sheets",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save created publication document sheet's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData) ? jsonData.id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"sheet_id\", id);",
+											"",
+											"tests[\"Setup new sheet_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"language\": \"it\"\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/sheets",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}",
+										"sheets"
+									]
+								},
+								"description": "Add a new sheet (Arbeitsblatt) to a print publication's document (Dokument eines Print-Werbemittels) by splitting of a language from an existing sheet"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}/sheets/{sheet_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"items\": [\n    {\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"{{advertised_article_id}}\",\n      \"composite_article\": false\n    },\n    {\n      \"type\": \"eye-catcher\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"name\": \"Test Störer\",\n      \"text\": [\n      \t\t{\"locale\" : \"de\", \"value\": \"Test Störer DE\\nsecond line\"},\n      \t\t{\"locale\" : \"fr\", \"value\": \"Test Störer FR\"},\n      \t\t{\"locale\" : \"it\", \"value\": \"Test Störer IT\"}\n      ],\n      \"notes\": \"Test Störer NOTES\"\n    }\n  ]\n}\n"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/sheets/{{sheet_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}",
+										"sheets",
+										"{{sheet_id}}"
+									]
+								},
+								"description": "Update sheet (Arbeitsblatt) of a print publication's document (Dokument eines Print-Werbemittels)."
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}/articles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save first publication articles's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData && jsonData.print_publication_articles && jsonData.print_publication_articles[0]) ? jsonData.print_publication_articles[0].id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"publication_article_id\", id);",
+											"",
+											"tests[\"Setup first publication_article_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}",
+										"articles"
+									]
+								},
+								"description": "List a print publication document's articles (Artikel eines Dokuments im Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}",
+										"articles",
+										"{{publication_article_id}}"
+									]
+								},
+								"description": "List a single article (Artikel) for a print publication's document (Dokument im Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"valid_to\": \"2017-08-19\",\n\t\"compared\": true,\n\t\"promote_100g_price\": true,\n\t\"base_price_display\": 2,\n\t\"promotion_type\": \"WOCHENEND\",\n\t\"stopper\": {\n\t\t\"type\": \"x_percent\",\n\t\t\"placeholders\": {\n\t\t\t\"discount-percent\": 11\n\t\t\t\n\t\t}\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}",
+										"articles",
+										"{{publication_article_id}}"
+									]
+								},
+								"description": "Update plain article (Stammartikel) properties from a document of a print publication by positioning (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}/text-blocks",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}/text-blocks",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}",
+										"articles",
+										"{{publication_article_id}}",
+										"text-blocks"
+									]
+								},
+								"description": "List article's text blocks from a document of a print publication by positioning (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}/text-blocks",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}/text-blocks",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}",
+										"articles",
+										"{{publication_article_id}}",
+										"text-blocks"
+									]
+								},
+								"description": "Update article's override-texts from a document of a print publication by positioning (Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}/pages",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save first publication articles's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData && jsonData.publication_pages && jsonData.publication_pages[0]) ? jsonData.publication_pages[0].id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"page_id\", id);",
+											"",
+											"tests[\"Setup first page_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}",
+										"pages"
+									]
+								},
+								"description": "List a print publication document's pages (Seiten eines Dokuments im Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}/pages/{page_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages/{{page_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}",
+										"pages",
+										"{{page_id}}"
+									]
+								},
+								"description": "List a single page (Seite) for a print publication's document (Dokument im Print-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}/pages/{page_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"style\": \"dw-wine\",\t\n  \"elements\": [\n    {\n      \"id\": \"footnotes\",\n      \"visible\": false\n    }\n  ]\n}\n"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages/{{page_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}",
+										"pages",
+										"{{page_id}}"
+									]
+								},
+								"description": "Update page (Seite) of a print publication's document (Dokument eines Print-Werbemittels)."
+							},
+							"response": []
+						},
+						{
+							"name": "/print-schemes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-schemes",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-schemes"
+									]
+								},
+								"description": "List print schemes"
+							},
+							"response": []
+						},
+						{
+							"name": "/eye-catcher-templates",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/eye-catcher-templates",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"eye-catcher-templates"
+									]
+								},
+								"description": "List eye catcher templates"
+							},
+							"response": []
+						},
+						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save first publication document sheet's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData && jsonData.sheets && jsonData.sheets[0]) ? jsonData.sheets[0].id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"sheet_id\", id);",
+											"",
+											"tests[\"Setup first sheet_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}"
+									]
+								},
+								"description": "List a single document (Dokument) for a print publication (Print-Werbemittel)"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "/print-publications",
 					"event": [
 						{
@@ -1519,6 +3061,45 @@
 					"response": []
 				},
 				{
+					"name": "/print-publication-duplications",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Duplicate Publication\",\r\n  \"year\": 2017,\r\n  \"week\": 36,\r\n  \"validity\": {\r\n    \"from\": \"2017-08-29\",\r\n    \"to\": \"2017-09-04\"\r\n  },\r\n  \"template\": \"a4-poster\",\r\n  \"valid_from\": \"2017-08-29\",\r\n  \"valid_to\": \"2017-09-04\",\r\n  \"publication\": \"35e93dd5-c401-43ad-ba0f-d300c6e2dcff\"\r\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/print-publication-duplications",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"print-publication-duplications"
+							]
+						},
+						"description": "Duplicate publication"
+					},
+					"response": []
+				},
+				{
 					"name": "/print-publications/{publication_id}",
 					"request": {
 						"method": "GET",
@@ -1627,1429 +3208,6 @@
 							]
 						},
 						"description": "Delete print publication (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/articles",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save first publication articles's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.print_publication_articles && jsonData.print_publication_articles[0]) ? jsonData.print_publication_articles[0].id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"publication_article_id\", id);",
-									"",
-									"tests[\"Setup first publication_article_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"articles"
-							]
-						},
-						"description": "List a print publication's articles (Artikel eines Print-Werbemittels)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/articles",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save created publication article's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData) ? jsonData.id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"publication_article_id\", id);",
-									"",
-									"tests[\"Setup new publication_article_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"advertised_article\": \"{{advertised_article_id}}\",\n  \"composite_article\": false\n}"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"articles"
-							]
-						},
-						"description": "Add a new article (Artikel) to a print publication (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/articles/{article_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"articles",
-								"{{publication_article_id}}"
-							]
-						},
-						"description": "List a single article (Artikel) for a print publication (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/articles/{article_id}",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"valid_to\": \"2017-08-19\",\n\t\"compared\": true,\n\t\"promote_100g_price\": true,\n\t\"base_price_display\": 2,\n\t\"promotion_type\": \"WOCHENEND\",\n\t\"stopper\": {\n\t\t\"type\": \"x_percent\",\n\t\t\"placeholders\": {\n\t\t\t\"discount-percent\": 11\n\t\t\t\n\t\t}\n\t}\n}"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"articles",
-								"{{publication_article_id}}"
-							]
-						},
-						"description": "Update plain article (Stammartikel) properties from a print publication by listing (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/articles/{article_id}",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"articles",
-								"{{publication_article_id}}"
-							]
-						},
-						"description": "Delete an article (Artikel) from a print publication (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/articles/{article_id}/text-blocks",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}/text-blocks",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"articles",
-								"{{publication_article_id}}",
-								"text-blocks"
-							]
-						},
-						"description": "List article's text blocks from a print publication (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/articles/{article_id}/text-blocks",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}/text-blocks",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"articles",
-								"{{publication_article_id}}",
-								"text-blocks"
-							]
-						},
-						"description": "Update article's override-texts from a print publication by listing (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save first publication document's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.print_publication_documents && jsonData.print_publication_documents[0]) ? jsonData.print_publication_documents[0].id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"document_id\", id);",
-									"",
-									"tests[\"Setup first document_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents"
-							]
-						},
-						"description": "List a print publication's documents (Dokumente eines Print-Werbemittels)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save created publication document's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData) ? jsonData.id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"document_id\", id);",
-									"",
-									"tests[\"Setup new document_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"name\": \"Neues Dokument\",\n  \"template\": \"dw-article-right\"\n}\n"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents"
-							]
-						},
-						"description": "Add a new document (Dokument) to a print publication (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save first publication document sheet's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.sheets && jsonData.sheets[0]) ? jsonData.sheets[0].id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"sheet_id\", id);",
-									"",
-									"tests[\"Setup first sheet_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}"
-							]
-						},
-						"description": "List a single document (Dokument) for a print publication (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"name\": \"Neuer Name\",\n  \"template\": \"dw-front\"\n}\n"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}"
-							]
-						},
-						"description": "Update a print publication's document (Dokument eines Print-Werbemittels)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}"
-							]
-						},
-						"description": "Delete a document (Dokument) from a print publication (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}/sheets",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save created publication document sheet's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData) ? jsonData.id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"sheet_id\", id);",
-									"",
-									"tests[\"Setup new sheet_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"language\": \"it\"\n}"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/sheets",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}",
-								"sheets"
-							]
-						},
-						"description": "Add a new sheet (Arbeitsblatt) to a print publication's document (Dokument eines Print-Werbemittels) by splitting of a language from an existing sheet"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}/sheets/{sheet_id}",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"items\": [\n    {\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"{{advertised_article_id}}\",\n      \"composite_article\": false\n    },\n    {\n      \"type\": \"eye-catcher\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"name\": \"Test Störer\",\n      \"text\": [\n      \t\t{\"locale\" : \"de\", \"value\": \"Test Störer DE\\nsecond line\"},\n      \t\t{\"locale\" : \"fr\", \"value\": \"Test Störer FR\"},\n      \t\t{\"locale\" : \"it\", \"value\": \"Test Störer IT\"}\n      ],\n      \"notes\": \"Test Störer NOTES\"\n    }\n  ]\n}\n"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/sheets/{{sheet_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}",
-								"sheets",
-								"{{sheet_id}}"
-							]
-						},
-						"description": "Update sheet (Arbeitsblatt) of a print publication's document (Dokument eines Print-Werbemittels)."
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}/articles",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save first publication articles's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.print_publication_articles && jsonData.print_publication_articles[0]) ? jsonData.print_publication_articles[0].id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"publication_article_id\", id);",
-									"",
-									"tests[\"Setup first publication_article_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}",
-								"articles"
-							]
-						},
-						"description": "List a print publication document's articles (Artikel eines Dokuments im Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}",
-								"articles",
-								"{{publication_article_id}}"
-							]
-						},
-						"description": "List a single article (Artikel) for a print publication's document (Dokument im Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"valid_to\": \"2017-08-19\",\n\t\"compared\": true,\n\t\"promote_100g_price\": true,\n\t\"base_price_display\": 2,\n\t\"promotion_type\": \"WOCHENEND\",\n\t\"stopper\": {\n\t\t\"type\": \"x_percent\",\n\t\t\"placeholders\": {\n\t\t\t\"discount-percent\": 11\n\t\t\t\n\t\t}\n\t}\n}"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}",
-								"articles",
-								"{{publication_article_id}}"
-							]
-						},
-						"description": "Update plain article (Stammartikel) properties from a document of a print publication by positioning (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}/text-blocks",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}/text-blocks",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}",
-								"articles",
-								"{{publication_article_id}}",
-								"text-blocks"
-							]
-						},
-						"description": "List article's text blocks from a document of a print publication by positioning (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}/text-blocks",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}/text-blocks",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}",
-								"articles",
-								"{{publication_article_id}}",
-								"text-blocks"
-							]
-						},
-						"description": "Update article's override-texts from a document of a print publication by positioning (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}/pages",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save first publication articles's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.publication_pages && jsonData.publication_pages[0]) ? jsonData.publication_pages[0].id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"page_id\", id);",
-									"",
-									"tests[\"Setup first page_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}",
-								"pages"
-							]
-						},
-						"description": "List a print publication document's pages (Seiten eines Dokuments im Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}/pages/{page_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages/{{page_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}",
-								"pages",
-								"{{page_id}}"
-							]
-						},
-						"description": "List a single page (Seite) for a print publication's document (Dokument im Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/documents/{document_id}/pages/{page_id}",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"style\": \"dw-wine\",\t\n  \"elements\": [\n    {\n      \"id\": \"footnotes\",\n      \"visible\": false\n    }\n  ]\n}\n"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages/{{page_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"documents",
-								"{{document_id}}",
-								"pages",
-								"{{page_id}}"
-							]
-						},
-						"description": "Update page (Seite) of a print publication's document (Dokument eines Print-Werbemittels)."
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/generated-files",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save first generated file id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.generated_files && jsonData.generated_files[0]) ? jsonData.generated_files[0].id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"generated_file_id\", id);",
-									"",
-									"tests[\"Setup first generated_file_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Test file 2\",\n\t\"size\": 1024,\n\t\"locale\": \"it\",\n\t\"created_by\": \"Curzio\",\n\t\"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"generated-files"
-							]
-						},
-						"description": "Get generated files"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/generated-files",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save Generated file id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = jsonData ? jsonData.id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"generated_file_id\", id);",
-									"",
-									"tests[\"Setup generated_file_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Test file 2\",\n\t\"size\": 1024,\n\t\"locale\": \"it\",\n\t\"created_by\": \"Curzio\",\n\t\"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"generated-files"
-							]
-						},
-						"description": "Create generated file"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/generated-files/{generated_file_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files/{{generated_file_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"generated-files",
-								"{{generated_file_id}}"
-							]
-						},
-						"description": "Get generated file"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/generated-files/{generated_file_id}",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files/{{generated_file_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"generated-files",
-								"{{generated_file_id}}"
-							]
-						},
-						"description": "Delete denerated file"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/links",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"links"
-							]
-						},
-						"description": "List links of a print publication"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/links/{link_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"links",
-								"{{link_id}}"
-							]
-						},
-						"description": "List a single link (Link) for a print publication (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/links",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Hans\",\n\t\"valid_to\": \"2017-08-28\"\n}"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"links"
-							]
-						},
-						"description": "Add a new link to a print publication (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/links/{link_id}",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Hans 2\",\n\t\"valid_to\": \"2017-08-29\"\n}"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"links",
-								"{{link_id}}"
-							]
-						},
-						"description": "Update links's details from a print publication by listing (Print-Werbemittel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publications/{publication_id}/links/{link_id}",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publications",
-								"{{publication_id}}",
-								"links",
-								"{{link_id}}"
-							]
-						},
-						"description": "Delete a link (Link) from a print publication (Print-Werbemittel)"
 					},
 					"response": []
 				},
@@ -3379,41 +3537,6 @@
 					"response": []
 				},
 				{
-					"name": "/print-schemes",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-schemes",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-schemes"
-							]
-						},
-						"description": "List print schemes"
-					},
-					"response": []
-				},
-				{
 					"name": "/print-styles",
 					"request": {
 						"method": "GET",
@@ -3445,80 +3568,6 @@
 							]
 						},
 						"description": "List print styles"
-					},
-					"response": []
-				},
-				{
-					"name": "/print-publication-duplications",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Duplicate Publication\",\r\n  \"year\": 2017,\r\n  \"week\": 36,\r\n  \"validity\": {\r\n    \"from\": \"2017-08-29\",\r\n    \"to\": \"2017-09-04\"\r\n  },\r\n  \"template\": \"a4-poster\",\r\n  \"valid_from\": \"2017-08-29\",\r\n  \"valid_to\": \"2017-09-04\",\r\n  \"publication\": \"35e93dd5-c401-43ad-ba0f-d300c6e2dcff\"\r\n}"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/print-publication-duplications",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"print-publication-duplications"
-							]
-						},
-						"description": "Duplicate publication"
-					},
-					"response": []
-				},
-				{
-					"name": "/eye-catcher-templates",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/eye-catcher-templates",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"eye-catcher-templates"
-							]
-						},
-						"description": "List eye catcher templates"
 					},
 					"response": []
 				}
