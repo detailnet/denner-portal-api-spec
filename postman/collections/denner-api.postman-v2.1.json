@@ -6014,7 +6014,7 @@
 								"{{assets_url_base}}"
 							],
 							"path": [
-								"languages"
+								"purposes"
 							],
 							"query": [
 								{
@@ -6024,6 +6024,47 @@
 							]
 						},
 						"description": "List purposes"
+					},
+					"response": []
+				},
+				{
+					"name": "/views",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{assets_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{assets_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{assets_url_base}}/views?page_size=-1",
+							"host": [
+								"{{assets_url_base}}"
+							],
+							"path": [
+								"views"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "-1"
+								}
+							]
+						},
+						"description": "List views"
 					},
 					"response": []
 				},
