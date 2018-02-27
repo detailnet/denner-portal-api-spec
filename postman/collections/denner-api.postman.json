@@ -8127,6 +8127,191 @@
 			"description": "",
 			"item": [
 				{
+					"name": "/users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{portal_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{portal_url_base}}/users",
+							"host": [
+								"{{portal_url_base}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "List users"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{user_id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{portal_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{portal_url_base}}/users/{{user_id}}",
+							"host": [
+								"{{portal_url_base}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}"
+							]
+						},
+						"description": "List single user"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{user_id}",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{portal_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{portal_url_base}}/users/{{user_id}}",
+							"host": [
+								"{{portal_url_base}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}"
+							]
+						},
+						"description": "Update a user"
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{portal_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{portal_url_base}}/users",
+							"host": [
+								"{{portal_url_base}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Create a new user"
+					},
+					"response": []
+				},
+				{
+					"name": "/roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{portal_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{portal_url_base}}/roles",
+							"host": [
+								"{{portal_url_base}}"
+							],
+							"path": [
+								"roles"
+							]
+						},
+						"description": "List roles"
+					},
+					"response": []
+				},
+				{
 					"name": "/departments",
 					"request": {
 						"method": "GET",
@@ -8137,11 +8322,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
+								"value": "{{portal_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
+								"value": "{{portal_header_app_key}}"
 							}
 						],
 						"body": {
