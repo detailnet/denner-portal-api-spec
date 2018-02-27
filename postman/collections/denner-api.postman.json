@@ -4532,41 +4532,6 @@
 						"description": "Delete a file (Dokument)"
 					},
 					"response": []
-				},
-				{
-					"name": "/departments",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{advertising_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{advertising_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{portal_url_base}}/departments",
-							"host": [
-								"{{portal_url_base}}"
-							],
-							"path": [
-								"departments"
-							]
-						},
-						"description": "List departments"
-					},
-					"response": []
 				}
 			]
 		},
@@ -8152,6 +8117,47 @@
 							]
 						},
 						"description": "Create a new banner"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "portal",
+			"description": "",
+			"item": [
+				{
+					"name": "/departments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{portal_url_base}}/departments",
+							"host": [
+								"{{portal_url_base}}"
+							],
+							"path": [
+								"departments"
+							]
+						},
+						"description": "List departments"
 					},
 					"response": []
 				}
