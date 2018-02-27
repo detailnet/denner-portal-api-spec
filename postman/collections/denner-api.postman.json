@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "denner-api",
-		"_postman_id": "eb880cdd-d925-1767-d3ef-6d0fb5fb508e",
+		"_postman_id": "68857ec2-6d1f-6d59-4fa1-09b53026c273",
 		"description": "Denner 2.0 Web Service",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -4240,7 +4240,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{cycle_id}}\",\t\n  \"name\": \"First Cycle\",\n  \"deadline\": \"2018-02-25\",\n  \"type\": \"articles\",\n  \"created_by\": \"Kevin Jüni\",\n  \"departments\": [\n\t{\n\t\t\"id\": \"wine\",\n\t\t\"name\": \"Spirituosen\",\n\t\t\"recipients\": [\n\t\t\t{\n\t\t\t\t\"id\": \"d3fe88b1-ddbc-4752-b3b7-423b3e490c18\",\n\t\t\t\t\"name\": \"Kevin Jüni\",\n\t\t\t\t\"email\": \"x@y.ch\"\n\t\t\t}\t\n\t\t]\n\t}\t\n  ]\n}"
+							"raw": "{\n  \"name\": \"First Cycle\",\n  \"deadline\": \"2018-02-25\",\n  \"type\": \"articles\",\n  \"created_by\": \"Kevin Jüni\",\n  \"departments\": [\n\t{\n\t\t\"id\": \"wine\",\n\t\t\"name\": \"Spirituosen\",\n\t\t\"recipients\": [\n\t\t\t{\n\t\t\t\t\"id\": \"d3fe88b1-ddbc-4752-b3b7-423b3e490c18\",\n\t\t\t\t\"name\": \"Kevin Jüni\",\n\t\t\t\t\"email\": \"x@y.ch\"\n\t\t\t}\t\n\t\t]\n\t}\t\n  ]\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles",
@@ -8124,7 +8124,6 @@
 		},
 		{
 			"name": "portal",
-			"description": "",
 			"item": [
 				{
 					"name": "/users",
