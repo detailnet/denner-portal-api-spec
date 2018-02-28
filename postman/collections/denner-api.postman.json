@@ -4240,7 +4240,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"First Cycle\",\n  \"deadline\": \"2018-02-25\",\n  \"type\": \"articles\",\n  \"created_by\": \"Kevin Jüni\",\n  \"departments\": [\n\t{\n\t\t\"id\": \"wine\",\n\t\t\"name\": \"Spirituosen\",\n\t\t\"recipients\": [\n\t\t\t{\n\t\t\t\t\"id\": \"d3fe88b1-ddbc-4752-b3b7-423b3e490c18\",\n\t\t\t\t\"name\": \"Kevin Jüni\",\n\t\t\t\t\"email\": \"x@y.ch\"\n\t\t\t}\t\n\t\t]\n\t}\t\n  ]\n}"
+							"raw": "{\r\n    \"name\":\"Manuskript KW 30/2017\",\r\n    \"deadline\":\"2018-02-28T12:00:00+0100\",\r\n    \"type\":\"articles\",\r\n    \"created_by\":\"Ivan Wolf\",\r\n    \"departments\":[\r\n        {\r\n            \"id\":\"W\",\r\n            \"name\":\"Wein\",\r\n            \"recipients\":[\r\n                {\r\n                    \"id\":\"d3fe88b1-ddbc-4752-b3b7-423b3e490c18\",\r\n                    \"name\":\"Ivan Wolf\",\r\n                    \"email\":\"ivan.wolf@detailnet.ch\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"week\":{\r\n        \"year\":2017,\r\n        \"number\":30\r\n    },\r\n    \"sample_delivery\": \"2018-03-15T10:00:00+0100\"\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles",
@@ -4436,7 +4436,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{file_id}}\",\n  \"name\": \"Dokument_1.pdf\",\n  \"locale\": \"de\",\n  \"created_by\": \"Hans Muster\",\n  \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n  \"publication\": \"{{publication_id}}\",\t\n  \"recipients\": [\n  \t{\n  \t\t\"name\": \"Hans Muster\",\n  \t\t\"email\": \"hans.muster@denner.ch\"\n  \t}\n  ]\n}"
+							"raw": "{\r\n    \"id\":\"5b0a9d90-99de-43e6-bd74-7b1670d459db\",\r\n    \"name\":\"Dokument_1.pdf\",\r\n    \"locale\":\"de\",\r\n    \"created_by\":\"Hans Muster\",\r\n    \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\r\n    \"size\":5634,\r\n    \"publication\":\"2228fcc2-bf2e-4c9c-b0eb-56206013526a\",\r\n    \"recipients\":[\r\n        {\r\n            \"name\":\"Hans Muster\",\r\n            \"email\":\"hans.muster@denner.ch\"\r\n        }\r\n    ]\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-files",
