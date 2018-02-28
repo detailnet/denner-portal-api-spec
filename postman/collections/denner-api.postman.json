@@ -8161,6 +8161,45 @@
 					"response": []
 				},
 				{
+					"name": "/users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{portal_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"admin\"\n    ],\n    \"departments\": [\n    \t\"W\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{portal_url_base}}/users",
+							"host": [
+								"{{portal_url_base}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Create a new user"
+					},
+					"response": []
+				},
+				{
 					"name": "/users/{user_id}",
 					"request": {
 						"method": "GET",
@@ -8220,7 +8259,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
+							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"admin\"\n    ],\n    \"departments\" : [ \n        \"NF\",\n        \"F\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{portal_url_base}}/users/{{user_id}}",
@@ -8237,9 +8276,9 @@
 					"response": []
 				},
 				{
-					"name": "/users",
+					"name": "/users/{user_id}",
 					"request": {
-						"method": "POST",
+						"method": "DELETE",
 						"header": [
 							{
 								"key": "Accept",
@@ -8252,26 +8291,23 @@
 							{
 								"key": "App-Key",
 								"value": "{{portal_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
+							"raw": ""
 						},
 						"url": {
-							"raw": "{{portal_url_base}}/users",
+							"raw": "{{portal_url_base}}/users/{{user_id}}",
 							"host": [
 								"{{portal_url_base}}"
 							],
 							"path": [
-								"users"
+								"users",
+								"{{user_id}}"
 							]
 						},
-						"description": "Create a new user"
+						"description": "Delete user"
 					},
 					"response": []
 				},
