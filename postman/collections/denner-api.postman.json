@@ -4271,12 +4271,6 @@
 							{
 								"key": "App-Key",
 								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "X-Denner-Broadcast",
-								"value": "UPDATE",
-								"description": "Request broadcast notifications for this article on updates",
-								"disabled": true
 							}
 						],
 						"body": {
@@ -4378,6 +4372,218 @@
 					"response": []
 				},
 				{
+					"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles",
+								"{{cycle_id}}",
+								"reviews",
+								"{{review_id}}"
+							]
+						},
+						"description": "List single review of given proofreading-cycle (Korrekturzyklus)"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"New article name\",\n\t\"reviewed\": \"true\",\n\t\"reviewed_by\": \"Vreni Schneider\"\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles",
+								"{{cycle_id}}",
+								"reviews",
+								"{{review_id}}"
+							]
+						},
+						"description": "Update review of given proofreading-cycle (Korrekturzyklus)"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/items",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"title\",\n\t\"comment\": {\n\t\t\"text\": \"Schreibfehler\",\n\t\t\"created_by\": \"Franz Heinzer\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles",
+								"{{cycle_id}}",
+								"reviews",
+								"{{review_id}}",
+								"items"
+							]
+						},
+						"description": "Create a new item in given review and proofreading-cycle (Korrekturzyklus)"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/items/{item_id}",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"resolved\": true,\n\t\"resolved_by\": \"Urs Lehmann\"\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items/{{item_id}}",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles",
+								"{{cycle_id}}",
+								"reviews",
+								"{{review_id}}",
+								"items",
+								"{{item_id}}"
+							]
+						},
+						"description": "Update item of given review and proofreading-cycle (Korrekturzyklus)"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/items/{item_id}/comments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"text\": \"Schreibfehler korrigiert\",\n\t\"created_by\": \"Pirmin Zurbriggen\"\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items/{{item_id}}/comments",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles",
+								"{{cycle_id}}",
+								"reviews",
+								"{{review_id}}",
+								"items",
+								"{{item_id}}",
+								"comments"
+							]
+						},
+						"description": "Create a new comment in given comment, review and proofreading-cycle (Korrekturzyklus)"
+					},
+					"response": []
+				},
+				{
 					"name": "/proofreading-files",
 					"request": {
 						"method": "GET",
@@ -4467,12 +4673,6 @@
 							{
 								"key": "App-Key",
 								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "X-Denner-Broadcast",
-								"value": "UPDATE",
-								"description": "Request broadcast notifications for this article on updates",
-								"disabled": true
 							}
 						],
 						"body": {
