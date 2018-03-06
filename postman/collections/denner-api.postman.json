@@ -4584,6 +4584,47 @@
 					"response": []
 				},
 				{
+					"name": "/proofreading-cycles/{cycle_id}/completions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"department\": \"W\",\n  \"completed_by\": \"Urs Lehmann\"\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/completions",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles",
+								"{{cycle_id}}",
+								"completions"
+							]
+						},
+						"description": "Complete proofreading-cycle (Korrekturzyklus) for a department"
+					},
+					"response": []
+				},
+				{
 					"name": "/proofreading-files",
 					"request": {
 						"method": "GET",
