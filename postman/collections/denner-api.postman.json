@@ -4093,8 +4093,7 @@
 							"query": [
 								{
 									"key": "filter",
-									"value": "[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\",\"090093\",\"090094\",\"090095\",\"090096\",\"090097\",\"090099\"],\"operator\":\"in\",\"type\":\"array\"}]",
-									"equals": true
+									"value": "[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\",\"090093\",\"090094\",\"090095\",\"090096\",\"090097\",\"090099\"],\"operator\":\"in\",\"type\":\"array\"}]"
 								}
 							]
 						},
@@ -4217,7 +4216,7 @@
 					"response": []
 				},
 				{
-					"name": "/proofreading-cycles",
+					"name": "/proofreading-cycles (articles)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4240,7 +4239,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Manuskript KW 30/2017\",\r\n    \"deadline\":\"2018-02-28T12:00:00+0100\",\r\n    \"type\":\"articles\",\r\n    \"created_by\":\"Ivan Wolf\",\r\n    \"departments\":[\r\n        {\r\n            \"id\":\"W\",\r\n            \"name\":\"Wein\",\r\n            \"recipients\":[\r\n                {\r\n                    \"id\":\"d3fe88b1-ddbc-4752-b3b7-423b3e490c18\",\r\n                    \"name\":\"Ivan Wolf\",\r\n                    \"email\":\"ivan.wolf@detailnet.ch\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"week\":{\r\n        \"year\":2017,\r\n        \"number\":30\r\n    },\r\n    \"sample_delivery\": \"2018-03-15T10:00:00+0100\"\r\n}"
+							"raw": "{\r\n    \"name\": \"Manuskript KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"articles\",\r\n    \"created_by\": {\r\n        \"id\": \"cc21976e-16fc-40be-84f9-b3985c89a5b4\",\r\n        \"name\": \"Daniel Albrecht\",\r\n        \"email\": \"ivan.wolf+danielalrbecht@detailnet.ch\"\r\n    },\r\n    \"departments\":[\r\n        {\r\n            \"id\":\"W\",\r\n            \"name\":\"Wein\",\r\n            \"recipients\":[\r\n                {\r\n                    \"id\":\"970790d0-e25f-4535-b43c-f5a12987091d\",\r\n                    \"name\":\"Marc Berthod\",\r\n                    \"email\":\"ivan.wolf+marcberthod@detailnet.ch\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"week\":{\r\n        \"year\":2017,\r\n        \"number\":30\r\n    },\r\n    \"sample_delivery\": \"2018-03-15T10:00:00+0100\"\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles",
@@ -4251,7 +4250,46 @@
 								"proofreading-cycles"
 							]
 						},
-						"description": "Create a proofreading-cycle (Korrekturzyklus)"
+						"description": "Create a proofreading-cycle (Korrekturzyklus) for advertised articles"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-cycles (file)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Denner Woche KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"file\",\r\n    \"created_by\": {\r\n        \"id\": \"dc3177a4-feb9-4952-b3e5-bb266820a87a\",\r\n        \"name\": \"Maria Walliser\",\r\n        \"email\": \"ivan.wolf+mariawalliser@detailnet.ch\"\r\n    },\r\n\t\"file\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\"\r\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles"
+							]
+						},
+						"description": "Create a proofreading-cycle (Korrekturzyklus) for a file"
 					},
 					"response": []
 				},
@@ -4315,7 +4353,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"status\": \"complete\",\n  \"status_changed_by\": \"Peter Muster\"\n}"
+							"raw": "{\n    \"status\": \"complete\",\n    \"status_changed_by\": {\n\t    \"id\": \"4485ae99-ec38-4e1e-b483-4c60add29822\",\n\t    \"name\": \"Sonja Näf\",\n\t    \"email\": \"ivan.wolf+sonjanaef@detailnet.ch\"\n\t}\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}",
@@ -4368,6 +4406,129 @@
 							]
 						},
 						"description": "Delete a proofreading-cycle (Korrekturzyklus)"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-cycles/{cycle_id}/documents/{document_id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles",
+								"{{cycle_id}}",
+								"documents",
+								"{{document_id}}"
+							]
+						},
+						"description": "List single document of given proofreading-cycle (Korrekturzyklus)"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-cycles/{cycle_id}/documents/{document_id}",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\": \"postprocessing\",\n\t\"status_changed_by\": {\n        \"id\": \"01db66ca-5ace-4807-ab1c-b3f4915feaea\",\n        \"name\": \"Bruno Kernen\",\n        \"email\": \"ivan.wolf+brunokernen@detailnet.ch\"\n    },\n\t\"discussion\": {\n\t\t\"resolved\": true,\n\t\t\"resolved_by\": {\n\t        \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n\t        \"name\": \"Urs Lehmann\",\n\t        \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n\t    }\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles",
+								"{{cycle_id}}",
+								"documents",
+								"{{document_id}}"
+							]
+						},
+						"description": "Update document of given proofreading-cycle (Korrekturzyklus)"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-cycles/{cycle_id}/documents/{document_id}/comments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"text\": \"Er schleicht geradezu um die Stangen\",\n\t\"created_by\": {\n        \"id\": \"af1a5830-106e-4b78-893e-f5de315e6a7f\",\n        \"name\": \"Bernhard Russi\",\n        \"email\": \"ivan.wolf+bernhardrussi@detailnet.ch\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}/comments",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles",
+								"{{cycle_id}}",
+								"documents",
+								"{{document_id}}",
+								"comments"
+							]
+						},
+						"description": "Create a new comment in document and proofreading-cycle (Korrekturzyklus)"
 					},
 					"response": []
 				},
@@ -4433,7 +4594,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"New article name\",\n\t\"reviewed\": true,\n\t\"reviewed_by\": \"Vreni Schneider\"\n}"
+							"raw": "{\n\t\"name\": \"Neuer Artikelname\",\n\t\"sort_index\": 10,\n\t\"discussion\": {\n\t\t\"resolved\": true,\n\t\t\"resolved_by\": {\n\t        \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n\t        \"name\": \"Urs Lehmann\",\n\t        \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n\t    }\n\t}\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}",
@@ -4448,6 +4609,49 @@
 							]
 						},
 						"description": "Update review of given proofreading-cycle (Korrekturzyklus)"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/comments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"text\": \"Bode Miller war heute einfach zu schnell\",\n\t\"created_by\": {\n        \"id\": \"4285933d-2880-4c7b-bcf3-a88e1e6eeb7e\",\n        \"name\": \"Didier Cuche\",\n        \"email\": \"ivan.wolf+didiercuche@detailnet.ch\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/comments",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles",
+								"{{cycle_id}}",
+								"reviews",
+								"{{review_id}}",
+								"comments"
+							]
+						},
+						"description": "Create a new comment in given review and proofreading-cycle (Korrekturzyklus)"
 					},
 					"response": []
 				},
@@ -4475,10 +4679,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": \"title\",\n    \"created_by\": \"Daniel Mahrer\"\n}"
+							"raw": "{\n    \"id\": \"prices\",\n    \"status\": \"accepted\",\n    \"created_by\": {\n        \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n        \"name\": \"Daniel Mahrer\",\n        \"email\": \"ivan.wolf+danielmahrer@detailnet.ch\"\n    }\n}"
 						},
 						"url": {
-							"raw": "{{advertising_url_base}}/proofreading-cycles/acd6cee5-e7a7-42c5-a948-e8822d902ee6/reviews/1adffecb-29d8-45a2-8af9-654f498a7094/check-changes",
+							"raw": "{{advertising_url_base}}/proofreading-cycles/acd6cee5-e7a7-42c5-a948-e8822d902ee6/reviews/1fe95ec5-1ecf-417c-b43a-2bee7d8da08e/check-changes",
 							"host": [
 								"{{advertising_url_base}}"
 							],
@@ -4486,7 +4690,7 @@
 								"proofreading-cycles",
 								"acd6cee5-e7a7-42c5-a948-e8822d902ee6",
 								"reviews",
-								"1adffecb-29d8-45a2-8af9-654f498a7094",
+								"1fe95ec5-1ecf-417c-b43a-2bee7d8da08e",
 								"check-changes"
 							]
 						},
@@ -4518,7 +4722,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": \"title\",\n\t\"comment\": {\n\t\t\"text\": \"Schreibfehler\",\n\t\t\"created_by\": \"Franz Heinzer\"\n\t}\n}"
+							"raw": "{\n\t\"id\": \"title\",\n\t\"comment\": {\n\t\t\"text\": \"Schreibfehler\",\n\t\t\"created_by\": {\n\t        \"id\": \"57c02b10-5003-4ca2-9ec2-21acd7bd4290\",\n\t        \"name\": \"Franz Heinzer\",\n\t        \"email\": \"ivan.wolf+franzheinzer@detailnet.ch\"\n\t    }\n\t}\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items",
@@ -4561,7 +4765,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"resolved\": true,\n\t\"resolved_by\": \"Urs Lehmann\"\n}"
+							"raw": "{\n\t\"discussion\": {\n\t\t\"resolved\": true,\n\t\t\"resolved_by\": {\n\t        \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n\t        \"name\": \"Urs Lehmann\",\n\t        \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n\t    }\n\t}\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items/{{item_id}}",
@@ -4605,7 +4809,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"text\": \"Schreibfehler korrigiert\",\n\t\"created_by\": \"Pirmin Zurbriggen\"\n}"
+							"raw": "{\n\t\"text\": \"Schreibfehler korrigiert\",\n\t\"created_by\": {\n        \"id\": \"27713fce-b1cc-4f30-86cf-5b6d575051b0\",\n        \"name\": \"Primin Zurbriggen\",\n        \"email\": \"ivan.wolf+priminzurbriggen@detailnet.ch\"\n    }\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items/{{item_id}}/comments",
@@ -4622,7 +4826,7 @@
 								"comments"
 							]
 						},
-						"description": "Create a new comment in given comment, review and proofreading-cycle (Korrekturzyklus)"
+						"description": "Create a new comment in given item, review and proofreading-cycle (Korrekturzyklus)"
 					},
 					"response": []
 				},
@@ -4650,7 +4854,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"department\": \"W\",\n  \"completed_by\": \"Urs Lehmann\"\n}"
+							"raw": "{\n    \"department\": \"W\",\n    \"completed_by\": {\n        \"id\": \"cc167038-d42e-46bc-b7e9-1836dc71d27a\",\n        \"name\": \"Karin Roten\",\n        \"email\": \"ivan.wolf+karinroten@detailnet.ch\"\n    }\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/completions",
@@ -4726,7 +4930,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\":\"5b0a9d90-99de-43e6-bd74-7b1670d459db\",\r\n    \"name\":\"Dokument_1.pdf\",\r\n    \"locale\":\"de\",\r\n    \"created_by\":\"Hans Muster\",\r\n    \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\r\n    \"size\":5634,\r\n    \"publication\":\"2228fcc2-bf2e-4c9c-b0eb-56206013526a\",\r\n    \"recipients\":[\r\n        {\r\n            \"name\":\"Hans Muster\",\r\n            \"email\":\"hans.muster@denner.ch\"\r\n        }\r\n    ]\r\n}"
+							"raw": "{\r\n    \"id\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\",\r\n    \"name\": \"DennerWoche_2017-10.pdf\",\r\n    \"locale\": \"de\",\r\n    \"created_by\": {\r\n        \"id\": \"b21fb040-34cf-4a13-ae73-e702df0edd01\",\r\n        \"name\": \"Paul Accola\",\r\n        \"email\": \"ivan.wolf+paulaccola@detailnet.ch\"\r\n    },\r\n    \"url\": \"https://ivan-wolf.s3.eu-west-1.amazonaws.com/denner-assets/proofreadings/5b0a9d90-99de-43e6-bd74-7b1670d459db/DennerWoche_2017-10.pdf\",\r\n    \"size\": 5634,\r\n    \"publication\": \"2228fcc2-bf2e-4c9c-b0eb-56206013526a\",\r\n    \"recipients\": [\r\n        {\r\n        \t\"id\": \"e6729c2c-8340-4632-8bcd-6878497932a2\",\r\n            \"name\": \"Michael von Grünigen\",\r\n            \"email\": \"ivan.wolf+michaelvongruenigen@detailnet.ch\"\r\n        }\r\n    ]\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-files",
@@ -6610,8 +6814,7 @@
 							"query": [
 								{
 									"key": "filter",
-									"value": "[{\"property\":\"campaign_id\",\"value\":\"1706-KAMB\"}]",
-									"equals": true
+									"value": "[{\"property\":\"campaign_id\",\"value\":\"1706-KAMB\"}]"
 								}
 							]
 						},
@@ -6652,8 +6855,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "test",
-									"equals": true
+									"value": "test"
 								}
 							]
 						},
