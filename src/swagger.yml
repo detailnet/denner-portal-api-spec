@@ -388,7 +388,7 @@ paths:
         - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
       responses:
         200:
           description: Successful listing
@@ -444,7 +444,7 @@ paths:
         - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
       responses:
         200:
           description: Successful listing
@@ -542,7 +542,7 @@ paths:
         - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
       responses:
         200:
           description: Successful listing
@@ -1002,7 +1002,7 @@ paths:
         - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
       responses:
         200:
           description: Successful listing
@@ -1057,7 +1057,7 @@ paths:
           - appId: []
         parameters:
           - $ref: '#/parameters/PageParam'
-          - $ref: '#/parameters/PageSizeParam'
+          - $ref: '#/parameters/PageSizeUnlimitableParam'
         responses:
           200:
             description: Successful listing
@@ -1138,7 +1138,7 @@ paths:
         - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
       responses:
         200:
           description: Successful listing
@@ -1755,7 +1755,7 @@ paths:
         - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
       responses:
         200:
           description: Successful listing
@@ -2638,16 +2638,28 @@ parameters:
     format: int32
     minimum: 0
     default: 1
-  PageSizeParam:
+  PageSizeUnlimitableParam:
     name: page_size
     description: >
-      The page size.
+      The page size that might be unlimited.
       Default: -1 (no limit)
     in: query
     type: integer
     required: false
     format: int32
     default: -1
+  PageSizeParam:
+    name: page_size
+    description: >
+      The page size.
+      Default: 10
+    in: query
+    type: integer
+    required: false
+    format: int32
+    minimum: 1
+    maximum: 100
+    default: 10
   SortParam:
     name: sort
     description: >
