@@ -1511,7 +1511,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"valid_to\": \"2017-08-19\",\n\t\"compared\": true,\n\t\"promote_100g_price\": true,\n\t\"base_price_display\": 2,\n\t\"promotion_type\": \"WOCHENEND\",\n\t\"stopper\": {\n\t\t\"type\": \"x_percent\",\n\t\t\"placeholders\": {\n\t\t\t\"discount-percent\": 11\n\t\t\t\n\t\t}\n\t}\n}"
+									"raw": "{\n  \"valid_to\": \"2017-08-19\",\n  \"compared\": true,\n  \"promote_100g_price\": true,\n  \"base_price_display\": 2,\n  \"promotion_type\": \"WOCHENEND\",\n  \"stopper\": {\n    \"type\": \"x_percent\",\n    \"placeholders\": {\n      \"discount-percent\": 11\n      \n    }\n  }\n}"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
@@ -1748,7 +1748,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\": \"Hans\",\n\t\"valid_to\": \"2017-08-28\"\n}"
+									"raw": "{\n  \"name\": \"Hans\",\n  \"valid_to\": \"2017-08-28\"\n}"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links",
@@ -1789,7 +1789,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\": \"Hans 2\",\n\t\"valid_to\": \"2017-08-29\"\n}"
+									"raw": "{\n  \"name\": \"Hans 2\",\n  \"valid_to\": \"2017-08-29\"\n}"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
@@ -1883,7 +1883,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\": \"Test file 2\",\n\t\"size\": 1024,\n\t\"locale\": \"it\",\n\t\"created_by\": \"Curzio\",\n\t\"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
+									"raw": "{\n  \"name\": \"Test file 2\",\n  \"size\": 1024,\n  \"locale\": \"it\",\n  \"created_by\": \"Curzio\",\n  \"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
@@ -1942,7 +1942,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\": \"Test file 2\",\n\t\"size\": 1024,\n\t\"locale\": \"it\",\n\t\"created_by\": \"Curzio\",\n\t\"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
+									"raw": "{\n  \"name\": \"Test file 2\",\n  \"size\": 1024,\n  \"locale\": \"it\",\n  \"created_by\": \"Curzio\",\n  \"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
@@ -2355,7 +2355,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"items\": [\n    {\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"{{advertised_article_id}}\",\n      \"composite_article\": false\n    },\n    {\n      \"type\": \"eye-catcher\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"name\": \"Test Störer\",\n      \"text\": [\n      \t\t{\"locale\" : \"de\", \"value\": \"Test Störer DE\\nsecond line\"},\n      \t\t{\"locale\" : \"fr\", \"value\": \"Test Störer FR\"},\n      \t\t{\"locale\" : \"it\", \"value\": \"Test Störer IT\"}\n      ],\n      \"notes\": \"Test Störer NOTES\"\n    }\n  ]\n}\n"
+									"raw": "{\n  \"items\": [\n    {\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"{{advertised_article_id}}\",\n      \"composite_article\": false\n    },\n    {\n      \"type\": \"eye-catcher\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"name\": \"Test Störer\",\n      \"text\": [\n          {\"locale\" : \"de\", \"value\": \"Test Störer DE\\nsecond line\"},\n          {\"locale\" : \"fr\", \"value\": \"Test Störer FR\"},\n          {\"locale\" : \"it\", \"value\": \"Test Störer IT\"}\n      ],\n      \"notes\": \"Test Störer NOTES\"\n    }\n  ]\n}\n"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/sheets/{{sheet_id}}",
@@ -2496,7 +2496,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"valid_to\": \"2017-08-19\",\n\t\"compared\": true,\n\t\"promote_100g_price\": true,\n\t\"base_price_display\": 2,\n\t\"promotion_type\": \"WOCHENEND\",\n\t\"stopper\": {\n\t\t\"type\": \"x_percent\",\n\t\t\"placeholders\": {\n\t\t\t\"discount-percent\": 11\n\t\t\t\n\t\t}\n\t}\n}"
+									"raw": "{\n  \"valid_to\": \"2017-08-19\",\n  \"compared\": true,\n  \"promote_100g_price\": true,\n  \"base_price_display\": 2,\n  \"promotion_type\": \"WOCHENEND\",\n  \"stopper\": {\n    \"type\": \"x_percent\",\n    \"placeholders\": {\n      \"discount-percent\": 11\n      \n    }\n  }\n}"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}",
@@ -2723,7 +2723,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"style\": \"dw-wine\",\t\n  \"elements\": [\n    {\n      \"id\": \"footnotes\",\n      \"visible\": false\n    }\n  ]\n}\n"
+									"raw": "{\n  \"style\": \"dw-wine\",  \n  \"elements\": [\n    {\n      \"id\": \"footnotes\",\n      \"visible\": false\n    }\n  ]\n}\n"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages/{{page_id}}",
@@ -3413,7 +3413,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"language\": \"de\"\n}"
+							"raw": "{\n  \"language\": \"de\"\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/print-skeletons",
@@ -4239,7 +4239,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Manuskript KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"articles\",\r\n    \"created_by\": {\r\n        \"id\": \"cc21976e-16fc-40be-84f9-b3985c89a5b4\",\r\n        \"name\": \"Daniel Albrecht\",\r\n        \"email\": \"ivan.wolf+danielalrbecht@detailnet.ch\"\r\n    },\r\n    \"departments\":[\r\n        {\r\n            \"id\":\"W\",\r\n            \"name\":\"Wein\",\r\n            \"recipients\":[\r\n                {\r\n                    \"id\":\"970790d0-e25f-4535-b43c-f5a12987091d\",\r\n                    \"name\":\"Marc Berthod\",\r\n                    \"email\":\"ivan.wolf+marcberthod@detailnet.ch\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"week\":{\r\n        \"year\":2017,\r\n        \"number\":30\r\n    },\r\n    \"sample_delivery\": \"2018-03-15T10:00:00+0100\"\r\n}"
+							"raw": "{\r\n    \"name\": \"Manuskript KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"articles\",\r\n    \"created_by\": {\r\n        \"id\": \"cc21976e-16fc-40be-84f9-b3985c89a5b4\",\r\n        \"name\": \"Daniel Albrecht\",\r\n        \"email\": \"ivan.wolf+danielalrbecht@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"review\"],\r\n    \"departments\":[\r\n        {\r\n            \"id\":\"W\",\r\n            \"name\":\"Wein\",\r\n            \"recipients\":[\r\n                {\r\n                    \"id\":\"970790d0-e25f-4535-b43c-f5a12987091d\",\r\n                    \"name\":\"Marc Berthod\",\r\n                    \"email\":\"ivan.wolf+marcberthod@detailnet.ch\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"week\":{\r\n        \"year\":2017,\r\n        \"number\":30\r\n    },\r\n    \"sample_delivery\": \"2018-03-15T10:00:00+0100\"\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles",
@@ -4278,7 +4278,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Denner Woche KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"file\",\r\n    \"created_by\": {\r\n        \"id\": \"dc3177a4-feb9-4952-b3e5-bb266820a87a\",\r\n        \"name\": \"Maria Walliser\",\r\n        \"email\": \"ivan.wolf+mariawalliser@detailnet.ch\"\r\n    },\r\n\t\"file\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\"\r\n}"
+							"raw": "{\r\n    \"name\": \"Denner Woche KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"file\",\r\n    \"created_by\": {\r\n        \"id\": \"dc3177a4-feb9-4952-b3e5-bb266820a87a\",\r\n        \"name\": \"Maria Walliser\",\r\n        \"email\": \"ivan.wolf+mariawalliser@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"texts\", \"prices\", \"pictures\"],\r\n    \"file\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\"\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles",
@@ -4353,7 +4353,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"status\": \"complete\",\n    \"status_changed_by\": {\n\t    \"id\": \"4485ae99-ec38-4e1e-b483-4c60add29822\",\n\t    \"name\": \"Sonja Näf\",\n\t    \"email\": \"ivan.wolf+sonjanaef@detailnet.ch\"\n\t}\n}"
+							"raw": "{\n    \"name\": \"Manus KW 30/2017\",\n    \"deadline\": \"2018-03-01T14:30:00+0100\",\n    \"status\": \"complete\",\n    \"status_changed_by\": {\n      \"id\": \"4485ae99-ec38-4e1e-b483-4c60add29822\",\n      \"name\": \"Sonja Näf\",\n      \"email\": \"ivan.wolf+sonjanaef@detailnet.ch\"\n}\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}",
@@ -4471,7 +4471,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"status\": \"postprocessing\",\n\t\"status_changed_by\": {\n        \"id\": \"01db66ca-5ace-4807-ab1c-b3f4915feaea\",\n        \"name\": \"Bruno Kernen\",\n        \"email\": \"ivan.wolf+brunokernen@detailnet.ch\"\n    },\n\t\"discussion\": {\n\t\t\"resolved\": true,\n\t\t\"resolved_by\": {\n\t        \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n\t        \"name\": \"Urs Lehmann\",\n\t        \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n\t    }\n\t}\n}"
+							"raw": "{\n  \"status\": \"postprocessing\",\n  \"status_changed_by\": {\n        \"id\": \"01db66ca-5ace-4807-ab1c-b3f4915feaea\",\n        \"name\": \"Bruno Kernen\",\n        \"email\": \"ivan.wolf+brunokernen@detailnet.ch\"\n    },\n  \"discussion\": {\n    \"resolved\": true,\n    \"resolved_by\": {\n          \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n          \"name\": \"Urs Lehmann\",\n          \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n      }\n}\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}",
@@ -4513,7 +4513,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"text\": \"Er schleicht geradezu um die Stangen\",\n\t\"created_by\": {\n        \"id\": \"af1a5830-106e-4b78-893e-f5de315e6a7f\",\n        \"name\": \"Bernhard Russi\",\n        \"email\": \"ivan.wolf+bernhardrussi@detailnet.ch\"\n    }\n}"
+							"raw": "{\n  \"text\": \"Er schleicht geradezu um die Stangen\",\n  \"created_by\": {\n        \"id\": \"af1a5830-106e-4b78-893e-f5de315e6a7f\",\n        \"name\": \"Bernhard Russi\",\n        \"email\": \"ivan.wolf+bernhardrussi@detailnet.ch\"\n}\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}/comments",
@@ -4594,7 +4594,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Neuer Artikelname\",\n\t\"sort_index\": 10,\n\t\"discussion\": {\n\t\t\"resolved\": true,\n\t\t\"resolved_by\": {\n\t        \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n\t        \"name\": \"Urs Lehmann\",\n\t        \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n\t    }\n\t}\n}"
+							"raw": "{\n  \"name\": \"Neuer Artikelname\",\n  \"sort_index\": 10,\n  \"discussion\": {\n    \"resolved\": true,\n    \"resolved_by\": {\n          \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n          \"name\": \"Urs Lehmann\",\n          \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n      }\n}\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}",
@@ -4636,7 +4636,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"text\": \"Bode Miller war heute einfach zu schnell\",\n\t\"created_by\": {\n        \"id\": \"4285933d-2880-4c7b-bcf3-a88e1e6eeb7e\",\n        \"name\": \"Didier Cuche\",\n        \"email\": \"ivan.wolf+didiercuche@detailnet.ch\"\n    }\n}"
+							"raw": "{\n  \"text\": \"Bode Miller war heute einfach zu schnell\",\n  \"created_by\": {\n        \"id\": \"4285933d-2880-4c7b-bcf3-a88e1e6eeb7e\",\n        \"name\": \"Didier Cuche\",\n        \"email\": \"ivan.wolf+didiercuche@detailnet.ch\"\n    }\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/comments",
@@ -4682,15 +4682,15 @@
 							"raw": "{\n    \"id\": \"prices\",\n    \"status\": \"accepted\",\n    \"created_by\": {\n        \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n        \"name\": \"Daniel Mahrer\",\n        \"email\": \"ivan.wolf+danielmahrer@detailnet.ch\"\n    }\n}"
 						},
 						"url": {
-							"raw": "{{advertising_url_base}}/proofreading-cycles/acd6cee5-e7a7-42c5-a948-e8822d902ee6/reviews/1fe95ec5-1ecf-417c-b43a-2bee7d8da08e/check-changes",
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/check-changes",
 							"host": [
 								"{{advertising_url_base}}"
 							],
 							"path": [
 								"proofreading-cycles",
-								"acd6cee5-e7a7-42c5-a948-e8822d902ee6",
+								"{{cycle_id}}",
 								"reviews",
-								"1fe95ec5-1ecf-417c-b43a-2bee7d8da08e",
+								"{{review_id}}",
 								"check-changes"
 							]
 						},
@@ -4722,7 +4722,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": \"title\",\n\t\"comment\": {\n\t\t\"text\": \"Schreibfehler\",\n\t\t\"created_by\": {\n\t        \"id\": \"57c02b10-5003-4ca2-9ec2-21acd7bd4290\",\n\t        \"name\": \"Franz Heinzer\",\n\t        \"email\": \"ivan.wolf+franzheinzer@detailnet.ch\"\n\t    }\n\t}\n}"
+							"raw": "{\n  \"id\": \"title\",\n  \"comment\": {\n    \"text\": \"Schreibfehler\",\n    \"created_by\": {\n          \"id\": \"57c02b10-5003-4ca2-9ec2-21acd7bd4290\",\n          \"name\": \"Franz Heinzer\",\n          \"email\": \"ivan.wolf+franzheinzer@detailnet.ch\"\n      }\n  }\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items",
@@ -4765,7 +4765,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"discussion\": {\n\t\t\"resolved\": true,\n\t\t\"resolved_by\": {\n\t        \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n\t        \"name\": \"Urs Lehmann\",\n\t        \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n\t    }\n\t}\n}"
+							"raw": "{\n  \"discussion\": {\n    \"resolved\": true,\n    \"resolved_by\": {\n          \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n          \"name\": \"Urs Lehmann\",\n          \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n      }\n  }\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items/{{item_id}}",
@@ -4809,7 +4809,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"text\": \"Schreibfehler korrigiert\",\n\t\"created_by\": {\n        \"id\": \"27713fce-b1cc-4f30-86cf-5b6d575051b0\",\n        \"name\": \"Primin Zurbriggen\",\n        \"email\": \"ivan.wolf+priminzurbriggen@detailnet.ch\"\n    }\n}"
+							"raw": "{\n  \"text\": \"Schreibfehler korrigiert\",\n  \"created_by\": {\n        \"id\": \"27713fce-b1cc-4f30-86cf-5b6d575051b0\",\n        \"name\": \"Primin Zurbriggen\",\n        \"email\": \"ivan.wolf+priminzurbriggen@detailnet.ch\"\n    }\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items/{{item_id}}/comments",
@@ -4930,7 +4930,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\",\r\n    \"name\": \"DennerWoche_2017-10.pdf\",\r\n    \"locale\": \"de\",\r\n    \"created_by\": {\r\n        \"id\": \"b21fb040-34cf-4a13-ae73-e702df0edd01\",\r\n        \"name\": \"Paul Accola\",\r\n        \"email\": \"ivan.wolf+paulaccola@detailnet.ch\"\r\n    },\r\n    \"url\": \"https://ivan-wolf.s3.eu-west-1.amazonaws.com/denner-assets/proofreadings/5b0a9d90-99de-43e6-bd74-7b1670d459db/DennerWoche_2017-10.pdf\",\r\n    \"size\": 5634,\r\n    \"publication\": \"2228fcc2-bf2e-4c9c-b0eb-56206013526a\",\r\n    \"recipients\": [\r\n        {\r\n        \t\"id\": \"e6729c2c-8340-4632-8bcd-6878497932a2\",\r\n            \"name\": \"Michael von Grünigen\",\r\n            \"email\": \"ivan.wolf+michaelvongruenigen@detailnet.ch\"\r\n        }\r\n    ]\r\n}"
+							"raw": "{\r\n    \"id\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\",\r\n    \"name\": \"DennerWoche_2017-10.pdf\",\r\n    \"locale\": \"de\",\r\n    \"created_by\": {\r\n        \"id\": \"b21fb040-34cf-4a13-ae73-e702df0edd01\",\r\n        \"name\": \"Paul Accola\",\r\n        \"email\": \"ivan.wolf+paulaccola@detailnet.ch\"\r\n    },\r\n    \"url\": \"https://ivan-wolf.s3.eu-west-1.amazonaws.com/denner-assets/proofreadings/5b0a9d90-99de-43e6-bd74-7b1670d459db/DennerWoche_2017-10.pdf\",\r\n    \"size\": 5634,\r\n    \"publication\": \"87823e32-9e5f-4469-b1d6-953ea5200c5b\",\r\n    \"pages\": [2, 3, 8, 9],\r\n    \"recipients\": [\r\n        {\r\n          \"id\": \"e6729c2c-8340-4632-8bcd-6878497932a2\",\r\n            \"name\": \"Michael von Grünigen\",\r\n            \"email\": \"ivan.wolf+michaelvongruenigen@detailnet.ch\"\r\n        }\r\n    ]\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-files",
@@ -5757,7 +5757,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n\t\"article\" : \"054824\",\n\t\"sold_from\": \"2017-02-27\",\n\t\"valid_from\": \"2017-02-28\",\n\t\"valid_to\": \"2017-03-06\",\n\t\"quantity\": 24,\n\t\"week\": {\n\t\t\"year\": 2017, \n\t\t\"number\": 9\n\t}\n}"
+							"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"article\" : \"054824\",\n  \"sold_from\": \"2017-02-27\",\n  \"valid_from\": \"2017-02-28\",\n  \"valid_to\": \"2017-03-06\",\n  \"quantity\": 24,\n  \"week\": {\n    \"year\": 2017, \n    \"number\": 9\n  }\n}"
 						},
 						"url": {
 							"raw": "{{articles_url_base}}/advertised-articles",
@@ -6947,7 +6947,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": \"{{wine_grower_id}}\",\n\t\"name\" : \"Hans Muster\",\n\t\"url\": \"http://www.muster.ch\",\n    \"picture\": {\n  \t\t\"id\":\"8b72a5de-f59a-4ceb-a9ac-2f84ef8da757\",\n  \t\t\"auto_assigned\":false,\n  \t\t\"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n  \t\t\"preview_url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png?version=1\",\n  \t\t\"cdn_url\":\"https://ivan-wolf.imgix.net/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n  \t\t\"quantity\":1,\n  \t\t\"created_on\":\"2009-08-17T10:56:19+0200\",\n  \t\t\"images\":[\n  \t\t\t{\n  \t\t\t\t\"purpose\":\"print\",\n  \t\t\t\t\"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n  \t\t\t\t\"created_on\":\"2009-08-17T10:56:19+0200\"\n  \t\t\t\n  \t\t\t},{\n  \t\t\t\t\"purpose\":\"web\",\n  \t\t\t\t\"url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n  \t\t\t\t\"created_on\":\"2016-12-01T13:46:03+0100\"\n  \t\t\t}\n  \t\t]\n\t},\n\t\"descriptions\": [\n\t\t{\n\t\t\t\"locale\": \"de\",\n\t\t\t\"value\": \"Text de\"\n\t\t},\n\t\t{\n\t\t\t\"locale\": \"fr\",\n\t\t\t\"value\": \"Text fr\"\n\t\t},\n\t\t{\n\t\t\t\"locale\": \"it\",\n\t\t\t\"value\": \"Text it\"\n\t\t}\n\t]\n}"
+							"raw": "{\n  \"id\": \"{{wine_grower_id}}\",\n  \"name\" : \"Hans Muster\",\n  \"url\": \"http://www.muster.ch\",\n    \"picture\": {\n      \"id\":\"8b72a5de-f59a-4ceb-a9ac-2f84ef8da757\",\n      \"auto_assigned\":false,\n      \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n      \"preview_url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png?version=1\",\n      \"cdn_url\":\"https://ivan-wolf.imgix.net/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n      \"quantity\":1,\n      \"created_on\":\"2009-08-17T10:56:19+0200\",\n      \"images\":[\n        {\n          \"purpose\":\"print\",\n          \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n          \"created_on\":\"2009-08-17T10:56:19+0200\"\n        \n        },{\n          \"purpose\":\"web\",\n          \"url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n          \"created_on\":\"2016-12-01T13:46:03+0100\"\n        }\n      ]\n  },\n  \"descriptions\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Text de\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Text fr\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Text it\"\n    }\n  ]\n}"
 						},
 						"url": {
 							"raw": "{{articles_url_base}}/wine-growers",
@@ -6986,7 +6986,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\" : \"Hans Meier\",\n  \"picture\": {\n  \t\"id\":\"8b72a5de-f59a-4ceb-a9ac-2f84ef8da757\",\n  \t\"auto_assigned\":false,\n  \t\"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n  \t\"preview_url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png?version=1\",\n  \t\"cdn_url\":\"https://ivan-wolf.imgix.net/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n  \t\"quantity\":1,\n  \t\"created_on\":\"2009-08-17T10:56:19+0200\",\n  \t\"images\":[\n  \t\t{\n  \t\t\t\"purpose\":\"print\",\n  \t\t\t\"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n  \t\t\t\"created_on\":\"2009-08-17T10:56:19+0200\"\n  \t\t\t\n  \t\t},{\n  \t\t\t\"purpose\":\"web\",\n  \t\t\t\"url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n  \t\t\t\"created_on\":\"2016-12-01T13:46:03+0100\"\n  \t\t}\n  \t]\n  }\n}"
+							"raw": "{\n  \"name\" : \"Hans Meier\",\n  \"picture\": {\n    \"id\":\"8b72a5de-f59a-4ceb-a9ac-2f84ef8da757\",\n    \"auto_assigned\":false,\n    \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n    \"preview_url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png?version=1\",\n    \"cdn_url\":\"https://ivan-wolf.imgix.net/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n    \"quantity\":1,\n    \"created_on\":\"2009-08-17T10:56:19+0200\",\n    \"images\":[\n      {\n        \"purpose\":\"print\",\n        \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n        \"created_on\":\"2009-08-17T10:56:19+0200\"\n        \n      },{\n        \"purpose\":\"web\",\n        \"url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n        \"created_on\":\"2016-12-01T13:46:03+0100\"\n      }\n    ]\n  }\n}"
 						},
 						"url": {
 							"raw": "{{articles_url_base}}/wine-growers/{{wine_grower_id}}",
@@ -8610,6 +8610,7 @@
 		},
 		{
 			"name": "portal",
+			"description": null,
 			"item": [
 				{
 					"name": "/users",
@@ -8670,7 +8671,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"admin\"\n    ],\n    \"departments\": [\n    \t\"W\"\n    ]\n}"
+							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"admin\"\n    ],\n    \"departments\": [\n      \"W\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{portal_url_base}}/users",
