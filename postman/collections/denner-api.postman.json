@@ -1334,6 +1334,7 @@
 			"item": [
 				{
 					"name": "by listing",
+					"description": null,
 					"item": [
 						{
 							"name": "/print-publications/{publication_id}/articles",
@@ -2075,6 +2076,7 @@
 				},
 				{
 					"name": "by positioning",
+					"description": null,
 					"item": [
 						{
 							"name": "/print-publications/{publication_id}/documents",
@@ -4059,6 +4061,7 @@
 		},
 		{
 			"name": "advertising/usages",
+			"description": null,
 			"item": [
 				{
 					"name": "/publication-article-usages",
@@ -4179,6 +4182,7 @@
 		},
 		{
 			"name": "advertising/proofreading",
+			"description": null,
 			"item": [
 				{
 					"name": "/proofreading-cycles",
@@ -4868,6 +4872,47 @@
 							]
 						},
 						"description": "Complete proofreading-cycle (Korrekturzyklus) for a department"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-cycles/{cycle_id}/comments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"text\": \"Muss auch mal wieder so einen Hügel herunterfahren wenn man danach so eine Maschine ist.\",\n\t\"created_by\": {\n        \"id\": \"af1a5830-106e-4b78-893e-f5de315e6a7f\",\n        \"name\": \"Marc Berthod\",\n        \"email\": \"kevin.jueni+marcberthod@detailnet.ch\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/comments",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-cycles",
+								"{{cycle_id}}",
+								"comments"
+							]
+						},
+						"description": "Create a new comment in proofreading-cycle (Korrekturzyklus)"
 					},
 					"response": []
 				},
@@ -7538,7 +7583,8 @@
 								"assets",
 								"44444444-aaaa-4444-aaaa-444444444444"
 							]
-						}
+						},
+						"description": null
 					},
 					"response": []
 				},
@@ -7577,7 +7623,8 @@
 								"assets",
 								"44444444-aaaa-4444-aaaa-444444444444,a0d6b94e-4d0f-4a68-aa95-b1641aedaee6"
 							]
-						}
+						},
+						"description": null
 					},
 					"response": []
 				},
