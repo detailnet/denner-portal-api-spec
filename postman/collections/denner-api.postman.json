@@ -1,7 +1,7 @@
 {
 	"info": {
-		"name": "denner-api",
 		"_postman_id": "68857ec2-6d1f-6d59-4fa1-09b53026c273",
+		"name": "denner-api",
 		"description": "Denner 2.0 Web Service",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -4243,7 +4243,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Manuskript KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"articles\",\r\n    \"created_by\": {\r\n        \"id\": \"cc21976e-16fc-40be-84f9-b3985c89a5b4\",\r\n        \"name\": \"Daniel Albrecht\",\r\n        \"email\": \"ivan.wolf+danielalrbecht@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"review\"],\r\n    \"departments\":[\r\n        {\r\n            \"id\":\"W\",\r\n            \"name\":\"Wein\",\r\n            \"recipients\":[\r\n                {\r\n                    \"id\":\"970790d0-e25f-4535-b43c-f5a12987091d\",\r\n                    \"name\":\"Marc Berthod\",\r\n                    \"email\":\"ivan.wolf+marcberthod@detailnet.ch\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"week\":{\r\n        \"year\":2017,\r\n        \"number\":30\r\n    },\r\n    \"sample_delivery\": \"2018-03-15T10:00:00+0100\"\r\n}"
+							"raw": "{\r\n    \"name\": \"Manuskript KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"articles\",\r\n    \"created_by\": {\r\n        \"id\": \"cc21976e-16fc-40be-84f9-b3985c89a5b4\",\r\n        \"name\": \"Daniel Albrecht\",\r\n        \"email\": \"ivan.wolf+danielalbrecht@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"review\"],\r\n    \"departments\":[\r\n        {\r\n            \"id\":\"W\",\r\n            \"name\":\"Wein\",\r\n            \"recipients\":[\r\n                {\r\n                    \"id\":\"970790d0-e25f-4535-b43c-f5a12987091d\",\r\n                    \"name\":\"Marc Berthod\",\r\n                    \"email\":\"ivan.wolf+marcberthod@detailnet.ch\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"week\":{\r\n        \"year\":2017,\r\n        \"number\":30\r\n    },\r\n    \"sample_delivery\": \"2018-03-15T10:00:00+0100\"\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles",
@@ -4876,47 +4876,6 @@
 					"response": []
 				},
 				{
-					"name": "/proofreading-cycles/{cycle_id}/comments",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"text\": \"Muss auch mal wieder so einen Hügel herunterfahren wenn man danach so eine Maschine ist.\",\n\t\"created_by\": {\n        \"id\": \"af1a5830-106e-4b78-893e-f5de315e6a7f\",\n        \"name\": \"Marc Berthod\",\n        \"email\": \"kevin.jueni+marcberthod@detailnet.ch\"\n    }\n}"
-						},
-						"url": {
-							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/comments",
-							"host": [
-								"{{advertising_url_base}}"
-							],
-							"path": [
-								"proofreading-cycles",
-								"{{cycle_id}}",
-								"comments"
-							]
-						},
-						"description": "Create a new comment in proofreading-cycle (Korrekturzyklus)"
-					},
-					"response": []
-				},
-				{
 					"name": "/proofreading-files",
 					"request": {
 						"method": "GET",
@@ -5063,6 +5022,196 @@
 							]
 						},
 						"description": "Delete a file (Dokument)"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-collaborators",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-collaborators",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-collaborators"
+							]
+						},
+						"description": "List collaborators"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-collaborators",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"74ea86e4-7390-462c-a3c7-7b7027a03822\",\r\n    \"notification_preferences\": [\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"articles\",\r\n            \"opted_out\": true\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-collaborators",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-collaborators"
+							]
+						},
+						"description": "Create a collaborator"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-collaborators/{collaborator_id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-collaborators/{{collaborator_id}}",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-collaborators",
+								"{{collaborator_id}}"
+							]
+						},
+						"description": "List single collaborator"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-collaborators/{collaborator_id}",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"notification_preferences\": [\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"articles\",\r\n            \"opted_out\": false\r\n        },\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"file\",\r\n            \"opted_out\": true\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-collaborators/{{collaborator_id}}",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-collaborators",
+								"{{collaborator_id}}"
+							]
+						},
+						"description": "Update a collaborator"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-collaborators/{collaborator_id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-collaborators/{{collaborator_id}}",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-collaborators",
+								"{{collaborator_id}}"
+							]
+						},
+						"description": "Delete a collaborator"
 					},
 					"response": []
 				}
@@ -7583,8 +7732,7 @@
 								"assets",
 								"44444444-aaaa-4444-aaaa-444444444444"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				},
@@ -7623,8 +7771,7 @@
 								"assets",
 								"44444444-aaaa-4444-aaaa-444444444444,a0d6b94e-4d0f-4a68-aa95-b1641aedaee6"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				},
