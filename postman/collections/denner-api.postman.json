@@ -4243,7 +4243,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Manuskript KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"articles\",\r\n    \"created_by\": {\r\n        \"id\": \"cc21976e-16fc-40be-84f9-b3985c89a5b4\",\r\n        \"name\": \"Daniel Albrecht\",\r\n        \"email\": \"ivan.wolf+danielalbrecht@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"review\"],\r\n    \"departments\":[\r\n        {\r\n            \"id\":\"W\",\r\n            \"name\":\"Wein\",\r\n            \"recipients\":[\r\n                {\r\n                    \"id\":\"970790d0-e25f-4535-b43c-f5a12987091d\",\r\n                    \"name\":\"Marc Berthod\",\r\n                    \"email\":\"ivan.wolf+marcberthod@detailnet.ch\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"week\":{\r\n        \"year\":2017,\r\n        \"number\":30\r\n    },\r\n    \"sample_delivery\": \"2018-03-15T10:00:00+0100\"\r\n}"
+							"raw": "{\r\n    \"name\": \"Manuskript KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"articles\",\r\n    \"created_by\": {\r\n        \"id\": \"cc21976e-16fc-40be-84f9-b3985c89a5b4\",\r\n        \"name\": \"Daniel Albrecht\",\r\n        \"email\": \"ivan.wolf+danielalbrecht@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"review\"],\r\n    \"departments\":[\r\n        {\r\n            \"id\":\"W\",\r\n            \"name\":\"Wein\",\r\n            \"recipients\":[\r\n                {\r\n                    \"id\":\"970790d0-e25f-4535-b43c-f5a12987091d\",\r\n                    \"name\":\"Marc Berthod\",\r\n                    \"email\":\"ivan.wolf+marcberthod@detailnet.ch\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"notification_mode\": \"single\",\r\n    \"week\":{\r\n        \"year\":2017,\r\n        \"number\":30\r\n    },\r\n    \"sample_delivery\": \"2018-03-15T10:00:00+0100\"\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles",
@@ -4282,7 +4282,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Denner Woche KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"file\",\r\n    \"created_by\": {\r\n        \"id\": \"dc3177a4-feb9-4952-b3e5-bb266820a87a\",\r\n        \"name\": \"Maria Walliser\",\r\n        \"email\": \"ivan.wolf+mariawalliser@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"texts\", \"prices\", \"pictures\"],\r\n    \"file\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\"\r\n}"
+							"raw": "{\r\n    \"name\": \"Denner Woche KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"file\",\r\n    \"created_by\": {\r\n        \"id\": \"dc3177a4-feb9-4952-b3e5-bb266820a87a\",\r\n        \"name\": \"Maria Walliser\",\r\n        \"email\": \"ivan.wolf+mariawalliser@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"texts\", \"prices\", \"pictures\"],\r\n    \"notification_mode\": \"inidividual\",\r\n    \"file\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\"\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles",
@@ -4357,7 +4357,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Manus KW 30/2017\",\n    \"deadline\": \"2018-03-01T14:30:00+0100\",\n    \"status\": \"complete\",\n    \"status_changed_by\": {\n      \"id\": \"4485ae99-ec38-4e1e-b483-4c60add29822\",\n      \"name\": \"Sonja Näf\",\n      \"email\": \"ivan.wolf+sonjanaef@detailnet.ch\"\n}\n}"
+							"raw": "{\n  \"name\": \"Manus KW 30/2017\",\n  \"deadline\": \"2018-03-01T14:30:00+0100\",\n    \"status\": \"complete\",\n    \"status_changed_by\": {\n      \"id\": \"4485ae99-ec38-4e1e-b483-4c60add29822\",\n      \"name\": \"Sonja Näf\",\n      \"email\": \"ivan.wolf+sonjanaef@detailnet.ch\"\n  },\n  \"notification_mode\": \"none\"\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}",
