@@ -5084,7 +5084,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": \"74ea86e4-7390-462c-a3c7-7b7027a03822\",\r\n    \"notification_preferences\": [\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"articles\",\r\n            \"opted_out\": true\r\n        }\r\n    ]\r\n}"
+							"raw": "{\r\n    \"id\": \"74ea86e4-7390-462c-a3c7-7b7027a03822\",\r\n    \"roles\": [\r\n        \"category-head\"\r\n    ],\r\n    \"notification_preferences\": [\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"articles\",\r\n            \"opted_out\": true\r\n        }\r\n    ]\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-collaborators",
@@ -5159,7 +5159,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"notification_preferences\": [\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"articles\",\r\n            \"opted_out\": false\r\n        },\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"file\",\r\n            \"opted_out\": true\r\n        }\r\n    ]\r\n}"
+							"raw": "{\r\n    \"roles\": [\r\n        \"category-manager\"\r\n    ],\r\n    \"notification_preferences\": [\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"articles\",\r\n            \"opted_out\": false\r\n        },\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"file\",\r\n            \"opted_out\": true\r\n        }\r\n    ]\r\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/proofreading-collaborators/{{collaborator_id}}",
