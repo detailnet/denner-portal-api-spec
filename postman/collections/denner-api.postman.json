@@ -4230,11 +4230,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4269,11 +4269,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4308,11 +4308,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							}
 						],
 						"body": {
@@ -4344,11 +4344,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4384,11 +4384,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4424,11 +4424,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							}
 						],
 						"body": {
@@ -4462,11 +4462,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4504,11 +4504,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4547,11 +4547,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							}
 						],
 						"body": {
@@ -4585,11 +4585,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4627,11 +4627,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4670,11 +4670,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4713,11 +4713,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4756,11 +4756,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4800,11 +4800,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4845,11 +4845,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4872,6 +4872,45 @@
 							]
 						},
 						"description": "Complete proofreading-cycle (Korrekturzyklus) for a department"
+					},
+					"response": []
+				},
+				{
+					"name": "/proofreading-file-uploads",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"DennerWoche_2017-10.pdf\",\r\n    \"mime_type\": \"pdf\"\r\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/proofreading-file-uploads",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"proofreading-file-uploads"
+							]
+						},
+						"description": "Create a file (Dokument) upload"
 					},
 					"response": []
 				},
@@ -4921,11 +4960,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -4960,11 +4999,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							}
 						],
 						"body": {
@@ -4996,11 +5035,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -5071,11 +5110,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -5110,11 +5149,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							}
 						],
 						"body": {
@@ -5146,11 +5185,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
@@ -5186,11 +5225,11 @@
 							},
 							{
 								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
+								"value": "{{advertising_header_app_id}}"
 							},
 							{
 								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
+								"value": "{{advertising_header_app_key}}"
 							},
 							{
 								"key": "Content-Type",
