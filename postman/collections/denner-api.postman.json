@@ -1884,7 +1884,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Test file 2\",\n  \"size\": 1024,\n  \"locale\": \"it\",\n  \"created_by\": \"Curzio\",\n  \"created_on\":\"2017-09-22T00:00:00+0200\"\n}"
+									"raw": "{\n  \"name\": \"Test file 2\",\n  \"size\": 1024,\n  \"locale\": \"it\",\n  \"url\": \"https://s3-eu-west-1.amazonaws.com/ivan-wolf/denner-assets/generated-files/de1f256e-3730-42fa-aa38-36b0779b3e67/31_A4_Plakate_de.pdf\",\n  \"created_by\": \"Curzio\",\n  \"created_on\": \"2017-09-22T00:00:00+0200\"\n}"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
