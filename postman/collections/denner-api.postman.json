@@ -3084,7 +3084,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Duplicate Publication\",\r\n  \"year\": 2017,\r\n  \"week\": 36,\r\n  \"validity\": {\r\n    \"from\": \"2017-08-29\",\r\n    \"to\": \"2017-09-04\"\r\n  },\r\n  \"template\": \"a4-poster\",\r\n  \"valid_from\": \"2017-08-29\",\r\n  \"valid_to\": \"2017-09-04\",\r\n  \"publication\": \"35e93dd5-c401-43ad-ba0f-d300c6e2dcff\"\r\n}"
+							"raw": "{\n  \"name\": \"Duplicate Publication\",\n  \"year\": 2017,\n  \"week\": 36,\n  \"template\": \"a4-poster\",\n  \"valid_from\": \"2017-08-29\",\n  \"valid_to\": \"2017-09-04\",\n  \"publication\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"articles\": [\n    \"44444444-aaaa-4444-aaaa-444444444444\"\n  ]\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/print-publication-duplications",
