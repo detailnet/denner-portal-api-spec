@@ -8,7 +8,6 @@
 	"item": [
 		{
 			"name": "advertising/newsletters",
-			"description": "Advertising: Newsletters",
 			"item": [
 				{
 					"name": "/newsletters",
@@ -615,11 +614,11 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Advertising: Newsletters"
 		},
 		{
 			"name": "advertising/online",
-			"description": "Advertising: Online publication",
 			"item": [
 				{
 					"name": "/online-publications",
@@ -731,7 +730,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Wochenaktionen KW 52/2015\",\n  \"year\": 2015,\n  \"week\": 52,\n  \"title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Wochenaktionen NEW\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Hits de la semaine NEW\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Promozioni della settimana NEW\"\n    }\n  ],\n  \"list_title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Weitere Wochenaktionen NEW\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Autre hits de la semaine NEW\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Altre promozioni della settimana NEW\"\n    }\n  ],\n  \"show_details_text\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Alle Wochenaktionen zeigen NEW\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"... NEW\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"... NEW\"\n    }\n  ],\n  \"valid_from\": \"2015-10-15\",\n  \"valid_to\": \"2015-10-20\",\n  \"filters\": [\n    {\n      \"filter\": \"3734ef1f-4c1a-428c-af24-7d85af7c5041\",\n      \"appearances\": [\n        {\n          \"from\": \"2015-10-20\",\n          \"to\": \"2015-10-25\"\n        }\n      ]\n    },\n    {\n      \"filter\": \"f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c\",\n      \"appearances\": [\n        {\n          \"from\": \"2015-10-25\",\n          \"to\": \"2015-10-30\"\n        }\n      ]\n    }\n  ],\n  \"sort_index\": 1,\n  \"articles\": [\n    {\n      \"id\": \"051273\",\n      \"name\": \"Mandorla Primitivo IGT Puglia\",\n      \"title\": [\n        {\n          \"locale\": \"de\",\n          \"value\": \"Mandorla Primitivo di Puglia IGT\"\n        },\n        {\n          \"locale\": \"fr\",\n          \"value\": \"Mandorla Primitivo di Puglia IGT\"\n        },\n        {\n          \"locale\": \"it\",\n          \"value\": \"Mandorla Primitivo di Puglia IGT\"\n        }\n      ],\n      \"description\": [\n        {\n          \"locale\": \"de\",\n          \"value\": \"2013, Apulien, Italien, 6 x 75 cl\"\n        },\n        {\n          \"locale\": \"fr\",\n          \"value\": \"2013, les Pouilles, Italie, 6 x 75 cl\"\n        },\n        {\n          \"locale\": \"it\",\n          \"value\": \"2013, Puglia, Italia, 6 x 75 cl\"\n        }\n      ],\n      \"prices\": {\n        \"sales\": 59.4,\n        \"instead\": 68.4,\n        \"base\": 1.32,\n        \"by_quantity\": [\n          {\n            \"quantity\": 1,\n            \"sales\": 9.9,\n            \"instead\": 11.4\n          },\n          {\n            \"quantity\": 6,\n            \"sales\": 59.4,\n            \"instead\": 68.4\n          }\n        ]\n      },\n      \"price_info\": [\n        {\n          \"locale\": \"de\",\n          \"value\": \"Konkurrenzvergleich\"\n        },\n        {\n          \"locale\": \"fr\",\n          \"value\": \"Comparaison concurrentielle\"\n        },\n        {\n          \"locale\": \"it\",\n          \"value\": \"Confronto con la concorrenza\"\n        }\n      ],\n      \"unit_price_info\": [\n        {\n          \"locale\": \"de\",\n          \"value\": \"Einzelflasche: 9.90 statt 11.40\"\n        },\n        {\n          \"locale\": \"fr\",\n          \"value\": \"9.90 la bouteille au lieu de 11.40\"\n        },\n        {\n          \"locale\": \"it\",\n          \"value\": \"9.90 a bottiglia invece di 11.40\"\n        }\n      ],\n      \"dot\": [\n        {\n          \"image_url\": \"https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.png\",\n          \"locale\": \"de\",\n          \"value\": \"1/2 Preis\\nWeinheit!\"\n        },\n        {\n          \"image_url\": \"https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.png\",\n          \"locale\": \"fr\",\n          \"value\": \"1/2 prix\\nLe top du vin!\"\n        },\n        {\n          \"image_url\": \"https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.png\",\n          \"locale\": \"it\",\n          \"value\": \"1/2 prezzo\\nSuperofferta vino!\"\n        }\n      ],\n      \"panel\": [\n        {\n          \"locale\": \"de\",\n          \"value\": \"9.- sparen\"\n        },\n        {\n          \"locale\": \"fr\",\n          \"value\": \"9.- éparmié\"\n        },\n        {\n          \"locale\": \"it\",\n          \"value\": \"9.- risparmiati\"\n        }\n      ],\n      \"quantity\": 6,\n      \"base\": {\n        \"text\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"10cl\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"10cl\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"10cl\"\n          }\n        ]\n      },\n      \"validity\": {\n        \"from\": \"2015-06-23\",\n        \"to\": \"2015-06-29\",\n        \"short_text\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Gültig von 23.06.–29.06.\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"...\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"...\"\n          }\n        ],\n        \"long_text\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Angebot gültig von 23.06.2015 bis 29.06.2015\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"...\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"...\"\n          }\n        ]\n      },\n      \"availability_limitations\": {\n        \"region\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Nur in der deutschen und französischen Schweiz erhältlich\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"...\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"...\"\n          }\n        ],\n        \"store\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Nur in Filialen mit Frischprodukten erhältlich\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"Disponible(s) uniquement dans les succursales aves des produits frais\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"...\"\n          }\n        ]\n      },\n      \"sort_index\": 0,\n      \"featured_sort_index\": 10,\n      \"featured\": true,\n      \"promoted\": true,\n      \"compared\": true,\n      \"cooling\": 0,\n      \"online_group\": {\n        \"id\": \"671988cc-ca5f-484e-8db8-23a65ea0044a\",\n        \"code\": 4003,\n        \"disabled\": false,\n        \"allow_featuring\": true,\n        \"allow_promotion\": true,\n        \"allow_background\": true,\n        \"title\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Wein\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"Vins\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"Vini\"\n          }\n        ],\n        \"parent\": {\n          \"id\": \"5b79391b-b436-45f9-b3e4-93ec3ae1fae2\",\n          \"code\": 4001,\n          \"disabled\": false,\n          \"allow_featuring\": true,\n          \"allow_promotion\": true,\n          \"allow_background\": true,\n          \"title\": [\n            {\n              \"locale\": \"de\",\n              \"value\": \"Tafelgetränke und Mineralwasser\"\n            },\n            {\n              \"locale\": \"fr\",\n              \"value\": \"Boissons table et eau minérale\"\n            },\n            {\n              \"locale\": \"it\",\n              \"value\": \"Bevande da tavola e acque minerali\"\n            }\n          ]\n        }\n      },\n      \"article_group\": {\n        \"id\": \"0c309757-5432-4652-8201-ec35f31c5260\",\n        \"code\": \"60-56\",\n        \"name\": \"Italien Rot 70 cl\",\n        \"parent\": {\n          \"id\": \"3f3df00f-6a7e-49a9-8eca-a36727ca4977\",\n          \"code\": \"60\",\n          \"name\": \"Weine\"\n        }\n      },\n      \"packshot\": {\n        \"image_url\": \"https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png\"\n      },\n      \"wine\": {\n        \"country\": {\n          \"id\": \"IT\",\n          \"title\": [\n            {\n              \"locale\": \"de\",\n              \"value\": \"Italien\"\n            },\n            {\n              \"locale\": \"fr\",\n              \"value\": \"Italie\"\n            },\n            {\n              \"locale\": \"it\",\n              \"value\": \"Italia\"\n            }\n          ]\n        },\n        \"region\": {\n          \"id\": \"b19c42bf-ed78-46ff-ad6f-fc688a059e6a\",\n          \"title\": [\n            {\n              \"locale\": \"de\",\n              \"value\": \"Apulien\"\n            },\n            {\n              \"locale\": \"fr\",\n              \"value\": \"Les Pouilles\"\n            },\n            {\n              \"locale\": \"it\",\n              \"value\": \"Puglia\"\n            }\n          ]\n        },\n        \"type\": {\n          \"id\": 2,\n          \"title\": [\n            {\n              \"locale\": \"de\",\n              \"value\": \"Rotwein\"\n            },\n            {\n              \"locale\": \"fr\",\n              \"value\": \"Vin rouge\"\n            },\n            {\n              \"locale\": \"it\",\n              \"value\": \"Vino rosso\"\n            }\n          ]\n        },\n        \"year\": 2013,\n        \"fits_with\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Pasta, Fleisch mit würzigen Saucen\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"Pâtes, viande aux sauces relevées\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"Pasta, carni accompagnate da salse aromatiche\"\n          }\n        ],\n        \"varietal\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Primitivo\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"Primitivo\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"Primitivo\"\n          }\n        ],\n        \"character\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen.\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse.\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato.\"\n          }\n        ],\n        \"temperature\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"16-18 °C\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"16-18 °C\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"16-18 °C\"\n          }\n        ],\n        \"awards\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"\"\n          }\n        ],\n        \"storage\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"3 Jahre\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"3 ans\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"3 anni\"\n          }\n        ],\n        \"rating\": {\n          \"value\": 4.45,\n          \"total\": 11,\n          \"valid\": true\n        },\n        \"stock\": {\n          \"value\": -15,\n          \"code\": 2,\n          \"message\": [\n            {\n              \"locale\": \"de\",\n              \"value\": \"Derzeit nicht bestellbar\"\n            },\n            {\n              \"locale\": \"fr\",\n              \"value\": \"Actuellement indisponible\"\n            },\n            {\n              \"locale\": \"it\",\n              \"value\": \"Attualmente non disponibile\"\n            }\n          ]\n        },\n        \"shop_url\": \"http://denner-wineshop.ch/mandorla-negroamaro-primitivo-di-puglia-igt.html\"\n      }\n    }\n  ]\n}"
+							"raw": "{\n  \"name\": \"Wochenaktionen KW 52/2015\",\n  \"year\": 2015,\n  \"week\": 52,\n  \"title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Wochenaktionen NEW\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Hits de la semaine NEW\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Promozioni della settimana NEW\"\n    }\n  ],\n  \"list_title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Weitere Wochenaktionen NEW\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Autre hits de la semaine NEW\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Altre promozioni della settimana NEW\"\n    }\n  ],\n  \"show_details_text\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Alle Wochenaktionen zeigen NEW\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"... NEW\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"... NEW\"\n    }\n  ],\n  \"valid_from\": \"2015-10-15\",\n  \"valid_to\": \"2015-10-20\",\n  \"filters\": [\n    {\n      \"filter\": \"3734ef1f-4c1a-428c-af24-7d85af7c5041\",\n      \"appearances\": [\n        {\n          \"from\": \"2015-10-20\",\n          \"to\": \"2015-10-25\"\n        }\n      ]\n    },\n    {\n      \"filter\": \"f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c\",\n      \"appearances\": [\n        {\n          \"from\": \"2015-10-25\",\n          \"to\": \"2015-10-30\"\n        }\n      ]\n    }\n  ],\n  \"sort_index\": 1,\n  \"articles\": [\n    {\n      \"id\": \"051273\",\n      \"name\": \"Mandorla Primitivo IGT Puglia\",\n      \"title\": [\n        {\n          \"locale\": \"de\",\n          \"value\": \"Mandorla Primitivo di Puglia IGT\"\n        },\n        {\n          \"locale\": \"fr\",\n          \"value\": \"Mandorla Primitivo di Puglia IGT\"\n        },\n        {\n          \"locale\": \"it\",\n          \"value\": \"Mandorla Primitivo di Puglia IGT\"\n        }\n      ],\n      \"description\": [\n        {\n          \"locale\": \"de\",\n          \"value\": \"2013, Apulien, Italien, 6 x 75 cl\"\n        },\n        {\n          \"locale\": \"fr\",\n          \"value\": \"2013, les Pouilles, Italie, 6 x 75 cl\"\n        },\n        {\n          \"locale\": \"it\",\n          \"value\": \"2013, Puglia, Italia, 6 x 75 cl\"\n        }\n      ],\n      \"prices\": {\n        \"sales\": 59.4,\n        \"instead\": 68.4,\n        \"base\": 1.32,\n        \"by_quantity\": [\n          {\n            \"quantity\": 1,\n            \"sales\": 9.9,\n            \"instead\": 11.4\n          },\n          {\n            \"quantity\": 6,\n            \"sales\": 59.4,\n            \"instead\": 68.4\n          }\n        ]\n      },\n      \"price_info\": [\n        {\n          \"locale\": \"de\",\n          \"value\": \"Konkurrenzvergleich\"\n        },\n        {\n          \"locale\": \"fr\",\n          \"value\": \"Comparaison concurrentielle\"\n        },\n        {\n          \"locale\": \"it\",\n          \"value\": \"Confronto con la concorrenza\"\n        }\n      ],\n      \"unit_price_info\": [\n        {\n          \"locale\": \"de\",\n          \"value\": \"Einzelflasche: 9.90 statt 11.40\"\n        },\n        {\n          \"locale\": \"fr\",\n          \"value\": \"9.90 la bouteille au lieu de 11.40\"\n        },\n        {\n          \"locale\": \"it\",\n          \"value\": \"9.90 a bottiglia invece di 11.40\"\n        }\n      ],\n      \"dot\": [\n        {\n          \"image_url\": \"https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.png\",\n          \"locale\": \"de\",\n          \"value\": \"1/2 Preis\\nWeinheit!\"\n        },\n        {\n          \"image_url\": \"https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.png\",\n          \"locale\": \"fr\",\n          \"value\": \"1/2 prix\\nLe top du vin!\"\n        },\n        {\n          \"image_url\": \"https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.png\",\n          \"locale\": \"it\",\n          \"value\": \"1/2 prezzo\\nSuperofferta vino!\"\n        }\n      ],\n      \"panel\": [\n        {\n          \"locale\": \"de\",\n          \"value\": \"9.- sparen\"\n        },\n        {\n          \"locale\": \"fr\",\n          \"value\": \"9.- éparmié\"\n        },\n        {\n          \"locale\": \"it\",\n          \"value\": \"9.- risparmiati\"\n        }\n      ],\n      \"quantity\": 6,\n      \"base\": {\n        \"text\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"10cl\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"10cl\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"10cl\"\n          }\n        ]\n      },\n      \"validity\": {\n        \"from\": \"2015-06-23\",\n        \"to\": \"2015-06-29\",\n        \"short_text\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Gültig von 23.06.–29.06.\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"...\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"...\"\n          }\n        ],\n        \"long_text\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Angebot gültig von 23.06.2015 bis 29.06.2015\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"...\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"...\"\n          }\n        ]\n      },\n      \"availability_limitations\": {\n        \"region\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Nur in der deutschen und französischen Schweiz erhältlich\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"...\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"...\"\n          }\n        ],\n        \"store\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Nur in Filialen mit Frischprodukten erhältlich\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"Disponible(s) uniquement dans les succursales aves des produits frais\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"...\"\n          }\n        ]\n      },\n      \"sort_index\": 0,\n      \"featured_sort_index\": 10,\n      \"featured\": true,\n      \"promoted\": true,\n      \"compared\": true,\n      \"cooling\": 0,\n      \"online_group\": {\n        \"id\": \"671988cc-ca5f-484e-8db8-23a65ea0044a\",\n        \"code\": 4003,\n        \"disabled\": false,\n        \"allow_featuring\": true,\n        \"allow_promotion\": true,\n        \"allow_background\": true,\n        \"title\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Wein\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"Vins\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"Vini\"\n          }\n        ],\n        \"parent\": {\n          \"id\": \"5b79391b-b436-45f9-b3e4-93ec3ae1fae2\",\n          \"code\": 4001,\n          \"disabled\": false,\n          \"allow_featuring\": true,\n          \"allow_promotion\": true,\n          \"allow_background\": true,\n          \"title\": [\n            {\n              \"locale\": \"de\",\n              \"value\": \"Tafelgetränke und Mineralwasser\"\n            },\n            {\n              \"locale\": \"fr\",\n              \"value\": \"Boissons table et eau minérale\"\n            },\n            {\n              \"locale\": \"it\",\n              \"value\": \"Bevande da tavola e acque minerali\"\n            }\n          ]\n        }\n      },\n      \"article_group\": {\n        \"id\": \"0c309757-5432-4652-8201-ec35f31c5260\",\n        \"code\": \"60-56\",\n        \"name\": \"Italien Rot 70 cl\",\n        \"parent\": {\n          \"id\": \"3f3df00f-6a7e-49a9-8eca-a36727ca4977\",\n          \"code\": \"60\",\n          \"name\": \"Weine\"\n        }\n      },\n      \"packshot\": {\n        \"image_url\": \"https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png\"\n      },\n      \"wine\": {\n        \"country\": {\n          \"id\": \"IT\",\n          \"title\": [\n            {\n              \"locale\": \"de\",\n              \"value\": \"Italien\"\n            },\n            {\n              \"locale\": \"fr\",\n              \"value\": \"Italie\"\n            },\n            {\n              \"locale\": \"it\",\n              \"value\": \"Italia\"\n            }\n          ]\n        },\n        \"region\": {\n          \"id\": \"b19c42bf-ed78-46ff-ad6f-fc688a059e6a\",\n          \"title\": [\n            {\n              \"locale\": \"de\",\n              \"value\": \"Apulien\"\n            },\n            {\n              \"locale\": \"fr\",\n              \"value\": \"Les Pouilles\"\n            },\n            {\n              \"locale\": \"it\",\n              \"value\": \"Puglia\"\n            }\n          ]\n        },\n        \"type\": {\n          \"id\": 2,\n          \"title\": [\n            {\n              \"locale\": \"de\",\n              \"value\": \"Rotwein\"\n            },\n            {\n              \"locale\": \"fr\",\n              \"value\": \"Vin rouge\"\n            },\n            {\n              \"locale\": \"it\",\n              \"value\": \"Vino rosso\"\n            }\n          ]\n        },\n        \"year\": 2013,\n        \"fits_with\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Pasta, Fleisch mit würzigen Saucen\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"Pâtes, viande aux sauces relevées\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"Pasta, carni accompagnate da salse aromatiche\"\n          }\n        ],\n        \"varietal\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Primitivo\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"Primitivo\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"Primitivo\"\n          }\n        ],\n        \"character\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen.\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse.\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato.\"\n          }\n        ],\n        \"temperature\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"16-18 °C\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"16-18 °C\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"16-18 °C\"\n          }\n        ],\n        \"awards\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"\"\n          }\n        ],\n        \"storage\": [\n          {\n            \"locale\": \"de\",\n            \"value\": \"3 Jahre\"\n          },\n          {\n            \"locale\": \"fr\",\n            \"value\": \"3 ans\"\n          },\n          {\n            \"locale\": \"it\",\n            \"value\": \"3 anni\"\n          }\n        ],\n        \"rating\": {\n          \"value\": 4.45,\n          \"total\": 11,\n          \"valid\": true\n        },\n        \"stock\": {\n          \"value\": -15,\n          \"code\": 2,\n          \"message\": [\n            {\n              \"locale\": \"de\",\n              \"value\": \"Derzeit nicht bestellbar\"\n            },\n            {\n              \"locale\": \"fr\",\n              \"value\": \"Actuellement indisponible\"\n            },\n            {\n              \"locale\": \"it\",\n              \"value\": \"Attualmente non disponibile\"\n            }\n          ]\n        },\n        \"shop_url\": \"http://denner-wineshop.ch/mandorla-negroamaro-primitivo-di-puglia-igt.html\"\n      }\n    }\n  ],\n  \"channels\": [\n  \t\"web\",\n  \t\"app-promotion\",\n  \t\"app-wine\"\n  ],\n  \"links\": [\n  \t{\n      \"locale\": \"de\",\n      \"url\": \"https://www.denner.ch/de/shop/wein/weine.html\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"url\": \"https://www.denner.ch/fr/shop/vin/vins.html\"\n    },\n    {\n      \"locale\": \"it\",\n      \"url\": \"https://www.denner.ch/it/shop/vino/vini.html\"\n    }\n  ]\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/online-publications",
@@ -806,7 +805,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Wochenaktionen KW 52/2015 UPDATE\",\n  \"year\": 2016,\n  \"week\": 32,\n  \"title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Wochenaktionen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Hits de la semaine UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Promozioni della settimana UPDATE\"\n    }\n  ],\n  \"list_title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Weitere Wochenaktionen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Autre hits de la semaine UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Altre promozioni della settimana UPDATE\"\n    }\n  ],\n  \"show_details_text\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Alle Wochenaktionen zeigen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"... UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"... UPDATE\"\n    }\n  ],\n  \"valid_from\": \"2016-08-18\",\n  \"valid_to\": \"2016-08-19\",\n  \"sort_index\": 33\n}"
+							"raw": "{\n  \"name\": \"Wochenaktionen KW 52/2015 UPDATE\",\n  \"year\": 2016,\n  \"week\": 32,\n  \"title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Wochenaktionen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Hits de la semaine UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Promozioni della settimana UPDATE\"\n    }\n  ],\n  \"list_title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Weitere Wochenaktionen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Autre hits de la semaine UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Altre promozioni della settimana UPDATE\"\n    }\n  ],\n  \"show_details_text\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Alle Wochenaktionen zeigen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"... UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"... UPDATE\"\n    }\n  ],\n  \"valid_from\": \"2016-08-18\",\n  \"valid_to\": \"2016-08-19\",\n  \"sort_index\": 33,\n  \"channels\": [\n  \t\"web\",\n  \t\"app-promotion\",\n  \t\"app-wine\"\n  ],\n  \"links\": [\n  \t{\n      \"locale\": \"de\",\n      \"url\": \"https://www.denner.ch/de/shop/wein/weine.html\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"url\": \"https://www.denner.ch/fr/shop/vin/vins.html\"\n    },\n    {\n      \"locale\": \"it\",\n      \"url\": \"https://www.denner.ch/it/shop/vino/vini.html\"\n    }\n  ]\n}"
 						},
 						"url": {
 							"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444",
@@ -1326,15 +1325,14 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Advertising: Online publication"
 		},
 		{
 			"name": "advertising/print",
-			"description": "Advertising: Print publication",
 			"item": [
 				{
 					"name": "by listing",
-					"description": null,
 					"item": [
 						{
 							"name": "/print-publications/{publication_id}/articles",
@@ -2076,7 +2074,6 @@
 				},
 				{
 					"name": "by positioning",
-					"description": null,
 					"item": [
 						{
 							"name": "/print-publications/{publication_id}/documents",
@@ -3571,11 +3568,11 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Advertising: Print publication"
 		},
 		{
 			"name": "advertising/screen",
-			"description": "Advertising: Screen publication",
 			"item": [
 				{
 					"name": "/screen-publications",
@@ -4057,11 +4054,11 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Advertising: Screen publication"
 		},
 		{
 			"name": "advertising/usages",
-			"description": null,
 			"item": [
 				{
 					"name": "/publication-article-usages",
@@ -4182,7 +4179,6 @@
 		},
 		{
 			"name": "advertising/proofreading",
-			"description": null,
 			"item": [
 				{
 					"name": "/proofreading-cycles",
@@ -5258,7 +5254,6 @@
 		},
 		{
 			"name": "appraisals",
-			"description": "Wine appraisals",
 			"item": [
 				{
 					"name": "/appraisals",
@@ -5485,11 +5480,11 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Wine appraisals"
 		},
 		{
 			"name": "articles",
-			"description": "Articles",
 			"item": [
 				{
 					"name": "/articles",
@@ -7271,11 +7266,11 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Articles"
 		},
 		{
 			"name": "assets",
-			"description": "Assets",
 			"item": [
 				{
 					"name": "/purposes",
@@ -8699,11 +8694,11 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Assets"
 		},
 		{
 			"name": "banners",
-			"description": "Banners",
 			"item": [
 				{
 					"name": "/banners",
@@ -8839,11 +8834,11 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Banners"
 		},
 		{
 			"name": "portal",
-			"description": null,
 			"item": [
 				{
 					"name": "/users",
@@ -9105,7 +9100,6 @@
 		},
 		{
 			"name": "stores",
-			"description": "Stores",
 			"item": [
 				{
 					"name": "/stores",
@@ -9254,7 +9248,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Stores"
 		}
 	]
 }
