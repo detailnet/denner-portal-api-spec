@@ -1278,6 +1278,16 @@ paths:
                     code: "FLUGBLATT"
                     name: "Dennerwoche"
                   sort_index: 0
+                  links:
+                    -
+                      locale: "de"
+                      url: "https://www.denner.ch/de/shop/wein/weine.html"
+                    -
+                      locale: "fr"
+                      url: "https://www.denner.ch/fr/shop/vin/vins.html"
+                    -
+                      locale: "it"
+                      url: "https://www.denner.ch/it/shop/vino/vini.html"
 
   /online-publications/{publication_id}:
     get:
@@ -1740,6 +1750,16 @@ paths:
                           locale: "it"
                           value: "Attualmente non disponibile"
                     shop_url: null
+              links:
+                -
+                  locale: "de"
+                  url: "https://www.denner.ch/de/shop/wein/weine.html"
+                -
+                  locale: "fr"
+                  url: "https://www.denner.ch/fr/shop/vin/vins.html"
+                -
+                  locale: "it"
+                  url: "https://www.denner.ch/it/shop/vino/vini.html"
 
   /online-filters:
     get:
@@ -3654,6 +3674,11 @@ definitions:
         $ref: '#/definitions/PromotionType'
       sort_index:
         $ref: '#/definitions/SortIndex'
+      links:
+        type: array
+        items:
+          $ref: '#/definitions/OnlinePublicationLink'
+        description: Links
 
   OnlinePublicationWithArticles:
     allOf:
@@ -3672,6 +3697,14 @@ definitions:
         description: Navision promotion type code
       name:
         type: string
+
+  OnlinePublicationLink:
+    type: object
+    properties:
+      locale:
+        $ref: '#/definitions/Locale'
+      url:
+        $ref: '#/definitions/Url'
 
   ### Online filter
   OnlineFilter:

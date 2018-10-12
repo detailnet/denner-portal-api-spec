@@ -624,6 +624,20 @@
                         "shop_url": null
                     }
                 }
+            ],
+            "links": [
+                {
+                    "locale": "de",
+                    "url": "https://www.denner.ch/de/shop/wein/weine.html"
+                },
+                {
+                    "locale": "fr",
+                    "url": "https://www.denner.ch/fr/shop/vin/vins.html"
+                },
+                {
+                    "locale": "it",
+                    "url": "https://www.denner.ch/it/shop/vino/vini.html"
+                }
             ]
         }
     ]
