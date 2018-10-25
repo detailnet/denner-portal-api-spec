@@ -2,29 +2,42 @@ swagger: '2.0'
 info:
   description: RESTful API for the Denner Portal
   version: 1.0.0
-  title: Denner Portal 2.0
+  # Caution: For development imports in API Gateway use your personal name acronym as version, i.e. "denner-api-iw"
+  title: "denner-api-cd"
   contact:
     name: DETAIL NET
     email: support+denner-api@detailnet.ch
 host: denner-api.detailnet.ch
 basePath: /v1
+x-detail-stage-variables:
+  prod:
+   - lambda_env: "prod"
+   - lambda_alias: "live"
+   - url_advertising: "denner-adv-new.frb.io/api"
+   - url_assets: "denner-ats-new.frb.io/api"
+   - url_articles: "denner-art-new.frb.io/api"
+   - url_stores: "denner-sts-new.frb.io/api"
+  test:
+   - lambda_env: "test"
+   - lambda_alias: "live"
+   - url_advertising: "denner-advertising-test.detailnet.ch/api"
+   - url_assets: "denner-assets-test.detailnet.ch/api"
+   - url_articles: "denner-articles-test.detailnet.ch/api"
+   - url_stores: "denner-stores-test.detailnet.ch/api"
 schemes:
   - https
-consumes:
-  - application/json
-produces:
-  - application/json
 securityDefinitions:
-  appId:
-    type: apiKey
-    description: Application identifier
-    name: App-ID
-    in: header
   appKey:
     type: apiKey
     description: Application key
     name: App-Key
     in: header
+    x-amazon-apigateway-authtype: "custom"
+    x-amazon-apigateway-authorizer:
+      authorizerUri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools_authorizeApiRequest:live/invocations"
+      authorizerCredentials: "arn:aws:iam::802555642192:role/aws-apigateway-role.denner-api"
+      authorizerResultTtlInSeconds: 3600 #todo Check this, in the other authorizers this is set to 300
+      type: "token"
 paths:
   ### Stores
   /stores:
@@ -35,12 +48,16 @@ paths:
       tags:
         - stores
       operationId: listStores
-      security:
-        - appKey: []
-        - appId: []
+      produces:
+        - application/json
       parameters:
+        - $ref: '#/parameters/AcceptHeader'
+        - $ref: '#/parameters/AppIdHeader'
+        - $ref: '#/parameters/AppKeyHeader'
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/FilterParam'
+        - $ref: '#/parameters/SortParam'
       responses:
         200:
           description: Successful listing
@@ -282,6 +299,49 @@ paths:
                       appearances:
                         -
                           from: "2013-01-01"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        416:
+          description: "416 response"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/stores"
+        responses:
+          200:
+            statusCode: "200"
+          403:
+            statusCode: "403"
+          5\d{2}:
+            statusCode: "500"
+          416:
+            statusCode: "416"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.only_opened: "'yes'"
+          integration.request.querystring.only_online_publishable: "'yes'"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "0pxdef"
+        cacheKeyParameters:
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        type: "http"
 
   /screen-stores:
     get:
@@ -2647,6 +2707,37 @@ paths:
               calculated_on: "2016-01-22T11:00:45"
 
 parameters:
+  AcceptHeader:
+    name: Accept
+    description: Accepted content type
+    in: header
+    type: string
+    required: true
+
+  ContentTypeHeader:
+    name: Content-Type
+    in: header
+    type: string
+    required: true
+    description: >
+      Request body content type
+
+  AppIdHeader:
+    name: App-ID
+    in: header
+    required: false
+    type: string
+    description: >
+      Identity App-ID
+
+  AppKeyHeader:
+    name: App-Key
+    in: header
+    required: false
+    type: string
+    description: >
+      Identity App-Key
+
   PageParam:
     name: page
     description: >
@@ -2658,6 +2749,7 @@ parameters:
     format: int32
     minimum: 0
     default: 1
+
   PageSizeUnlimitableParam:
     name: page_size
     description: >
@@ -2680,13 +2772,41 @@ parameters:
     minimum: 1
     maximum: 100
     default: 10
-  SortParam:
-    name: sort
-    description: >
-      Sort the results, e.g. "sort=name__desc" will sort by name (Z to A)
+
+  FilterParam:
+    name: filter
     in: query
     type: string
     required: false
+    description: |
+      Filters: JSON array of Filter object, urlencoded.
+
+      Filter object:
+      - property: Property to filter on.
+      - operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).
+      - type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).
+      - value: Value. Must be of the defined type.
+
+      Examples:
+      - [{"property":"id","operator":"in","type":"array","value":["7627150d-36bd-4867-89b2-091800a03d24","58afec5c-ece9-4b66-bc55-00d6dc1b65b8"]}]
+      - [{"property":"in_shop","operator":"eq","type":"boolean","value":true}]
+
+  SortParam:
+    name: sort
+    in: query
+    type: string
+    required: false
+    description: |
+      Sorters: JSON array of Sort object, urlencoded.
+
+      Sort object:
+      - property: Property to filter on.
+      - direction: Direction of sort. Enumeration ('asc', 'desc'). Optional default 'asc'.
+
+      Examples:
+      - [{"property":"canton_code","direction":"asc"},{"property":"code","direction":"desc"}]
+      - [{"property":"article_id"}]
+
   ArticleIdPathParam:
      name: article_id
      description: The unique identifier of an article
@@ -2715,23 +2835,6 @@ parameters:
     type: string
     required: true
     pattern: '/^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$/'
-  FilterParam:
-    name: filter
-    in: query
-    type: string
-    required: false
-    description: |
-      Filters: JSON array of Filter object, urlencoded.
-
-      Filter object:
-      - property: Property to filter on.
-      - operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).
-      - type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).
-      - value: Value. Must be of the defined type.
-
-      Examples:
-      - [{"property":"id","operator":"in","type":"array","value":["7627150d-36bd-4867-89b2-091800a03d24","58afec5c-ece9-4b66-bc55-00d6dc1b65b8"]}]
-      - [{"property":"in_shop","operator":"eq","type":"boolean","value":true}]
 
 definitions:
   ### Common
@@ -4206,6 +4309,22 @@ definitions:
       $ref: '#/definitions/RatingGrouped'
 
   ### Responses
+  EmptyResponse:
+    type: "object"
+    title: "Empty Schema"
+  ErrorResponse:
+    type: "object"
+    properties:
+      type:
+        type: "string"
+      title:
+        type: "string"
+      status:
+        type: "integer"
+      detail:
+        type: "string"
+    title: "Error Schema"
+
   StoresResponse:
     type: object
     properties:

@@ -1,0 +1,1920 @@
+---
+swagger: "2.0"
+info:
+  version: "2018-04-12T07:11:58Z"
+  title: "denner"
+host: "denner-api.detailnet.ch"
+basePath: "/v1"
+schemes:
+- "https"
+paths:
+  /advertised-articles:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/advertised-articles"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "dbyx1r"
+        cacheKeyParameters:
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        - "method.request.header.App-ID"
+        - "method.request.header.App-Key"
+        type: "http"
+  /advertised-articles/{advertised_article_id}:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "advertised_article_id"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/advertised-articles/{advertised_article_id}"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.path.advertised_article_id: "method.request.path.advertised_article_id"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "lxfelb"
+        cacheKeyParameters:
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        type: "http"
+  /appraisal-statistic:
+    get:
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      x-amazon-apigateway-integration:
+        uri: "http://denner-portal.detailnet.ch/data/appraisal_statistics.json"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        type: "http"
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+        type: "mock"
+  /appraisals:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "f.email"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listAppraisals:${stageVariables.lambda_alias}/invocations"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "#set($queryParams = $input.params().querystring)\r\n\
+            {\r\n  \"serialization\": {\"group\": \"portal-listing\"},\r\n  \"query\"\
+            : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
+            \r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "l16zra"
+        cacheKeyParameters:
+        - "method.request.querystring.f.email"
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.page"
+        type: "aws"
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+        type: "mock"
+  /appraisals/{appraisal_id}:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "appraisal_id"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listAppraisals:${stageVariables.lambda_alias}/invocations"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\r\n  \"mode\": \"findOne\",\r\n  \"serialization\"\
+            : {\"group\": \"portal-listing\"},\r\n  \"query\": \"f._id=$input.params().path.get('appraisal_id')\"\
+            \r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "iov04u"
+        cacheKeyParameters:
+        - "method.request.path.appraisal_id"
+        type: "aws"
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'GET,PATCH,OPTIONS'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+        type: "mock"
+    patch:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "appraisal_id"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_saveAppraisal:${stageVariables.lambda_alias}/invocations"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\r\n  \"serialization\": {\"group\": \"portal-listing\"\
+            },\r\n  \"appraisal_id\": \"$input.params().path.get('appraisal_id')\"\
+            ,\r\n  \"appraisal_data\": $input.json('$')\r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "iov04u"
+        cacheKeyParameters:
+        - "method.request.path.appraisal_id"
+        type: "aws"
+  /article-groups:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/article-groups"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "a4d8lg"
+        cacheKeyParameters:
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.sort"
+        - "method.request.querystring.filter"
+        - "method.request.header.App-ID"
+        - "method.request.header.App-Key"
+        type: "http"
+  /articles:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/articles"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "ckulow"
+        cacheKeyParameters:
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.sort"
+        - "method.request.querystring.filter"
+        type: "http"
+  /articles/{article_id}:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "article_id"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/articles/{article_id}"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.article_id: "method.request.path.article_id"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "ttsbci"
+        cacheKeyParameters:
+        - "method.request.header.App-ID"
+        - "method.request.header.App-Key"
+        - "method.request.path.article_id"
+        type: "http"
+  /articles/{article_id}/text-blocks:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "article_id"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/articles/{article_id}/text-blocks"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.article_id: "method.request.path.article_id"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "3rzs2v"
+        cacheKeyParameters:
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        type: "http"
+  /banners:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_listBanners:${stageVariables.lambda_alias}/invocations"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "#set($queryParams = $input.params().querystring)\r\n\
+            {\r\n  \"serialization\": {\"group\": \"portal-listing\"},\r\n  \"query\"\
+            : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
+            \r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        type: "aws"
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        201:
+          description: "201 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_saveBanner:${stageVariables.lambda_alias}/invocations"
+        responses:
+          default:
+            statusCode: "201"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\r\n  \"serialization\": {\"group\": \"portal-listing\"\
+            },\r\n  \"banner_data\": $input.json('$')\r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        type: "aws"
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'POST,GET,OPTIONS'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+        type: "mock"
+  /banners/{banner_id}:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "banner_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_listBanners:${stageVariables.lambda_alias}/invocations"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\r\n  \"mode\": \"findOne\",\r\n  \"serialization\"\
+            : {\"group\": \"portal-listing\"},\r\n  \"query\": \"f._id=$input.params().path.get('banner_id')\"\
+            \r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "1731ej"
+        cacheKeyParameters:
+        - "method.request.path.banner_id"
+        type: "aws"
+    delete:
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "banner_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        204:
+          description: "204 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "204"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+        cacheNamespace: "1731ej"
+        cacheKeyParameters:
+        - "method.request.path.banner_id"
+        type: "mock"
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'DELETE,GET,OPTIONS,PATCH'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+        type: "mock"
+    patch:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "banner_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_saveBanner:${stageVariables.lambda_alias}/invocations"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\r\n  \"serialization\": {\"group\": \"portal-listing\"\
+            },\r\n  \"banner_id\": \"$input.params().path.get('banner_id')\",\r\n\
+            \  \"banner_data\": $input.json('$')\r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "1731ej"
+        cacheKeyParameters:
+        - "method.request.header.App-Key"
+        - "method.request.path.banner_id"
+        type: "aws"
+  /mobile-wines:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/mobile-wines"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "uudpgz"
+        cacheKeyParameters:
+        - "method.request.querystring.filter"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.sort"
+        - "method.request.header.App-ID"
+        type: "http"
+  /online-filters:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+        500:
+          description: "500 response"
+        403:
+          description: "403 response"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_advertising}/online-filters"
+        responses:
+          200:
+            statusCode: "200"
+          403:
+            statusCode: "403"
+          5\d{2}:
+            statusCode: "500"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "e8bhi7"
+        cacheKeyParameters:
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        type: "http"
+  /online-groups:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/online-groups"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "6kao9x"
+        cacheKeyParameters:
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        - "method.request.querystring.sort"
+        - "method.request.header.App-ID"
+        - "method.request.header.App-Key"
+        type: "http"
+  /online-publications:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+        500:
+          description: "500 response"
+        403:
+          description: "403 response"
+        416:
+          description: "416 response"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_advertising}/online-publications"
+        responses:
+          200:
+            statusCode: "200"
+          403:
+            statusCode: "403"
+          5\d{2}:
+            statusCode: "500"
+          416:
+            statusCode: "416"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "526f2f"
+        cacheKeyParameters:
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        type: "http"
+  /online-publications/{publication_id}:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "publication_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+        500:
+          description: "500 response"
+        403:
+          description: "403 response"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_advertising}/online-publications/{publication_id}"
+        responses:
+          200:
+            statusCode: "200"
+          403:
+            statusCode: "403"
+          5\d{2}:
+            statusCode: "500"
+        requestParameters:
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.path.publication_id: "method.request.path.publication_id"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "76s57b"
+        cacheKeyParameters:
+        - "method.request.header.App-ID"
+        - "method.request.header.App-Key"
+        - "method.request.path.publication_id"
+        type: "http"
+  /online-specials:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/online-specials"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "pgucqf"
+        cacheKeyParameters:
+        - "method.request.querystring.filter"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.sort"
+        - "method.request.header.App-ID"
+        - "method.request.header.App-Key"
+        type: "http"
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+        type: "mock"
+  /promotion-types:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/promotion-types"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "1ooqzt"
+        cacheKeyParameters:
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        - "method.request.querystring.sort"
+        - "method.request.header.App-ID"
+        - "method.request.header.App-Key"
+        type: "http"
+  /promotions:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/promotions"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "lls4zt"
+        cacheKeyParameters:
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.sort"
+        - "method.request.querystring.filter"
+        - "method.request.header.App-ID"
+        - "method.request.header.App-Key"
+        type: "http"
+  /ratings:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "f.average"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "f.count"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listRatings:${stageVariables.lambda_alias}/invocations"
+        responses:
+          default:
+            statusCode: "200"
+            responseTemplates:
+              application/json: "#set($response = $input.path('$'))\n{\n    \"ratings\"\
+                : $response.ratings,\n    \"total_ratings\": $response.total_ratings,\n\
+                \    \"total_items\": $response.total_ratings\n}\n"
+        requestTemplates:
+          application/json: "#set($queryParams = $input.params().querystring)\r\n\
+            {\r\n  \"serialization\": {\"group\": \"portal-listing\"},\r\n  \"query\"\
+            : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
+            \r\n}"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        type: "aws"
+  /ratings/{article_id}:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "article_id"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listRatings:${stageVariables.lambda_alias}/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        requestTemplates:
+          application/json: "{\r\n  \"mode\": \"findOne\",\r\n  \"serialization\"\
+            : {\"group\": \"portal-listing\"},\r\n  \"query\": \"f._id=__streq_$input.params().path.get('article_id')\"\
+            \r\n}"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        type: "aws"
+  /screen-publications:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_advertising}/screen-publications"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "u50shc"
+        cacheKeyParameters:
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        - "method.request.querystring.sort"
+        - "method.request.header.App-ID"
+        - "method.request.header.App-Key"
+        type: "http"
+  /screen-publications/{publication_id}:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "publication_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_advertising}/screen-publications/{publication_id}"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.path.publication_id: "method.request.path.publication_id"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "jcgi97"
+        cacheKeyParameters:
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        - "method.request.path.publication_id"
+        type: "http"
+  /screen-stores:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/stores"
+        responses:
+          200:
+            statusCode: "200"
+            responseTemplates:
+              application/json: "#set($root = $input.path('$'))\n{\n  \"stores\":\
+                \ [\n#foreach($store in $root.stores)\n    {\n      \"id\": \"$store.id\"\
+                ,\n      \"code\": $store.code,\n      \"calendar_opening_times\"\
+                : $store.calendar_opening_times\n    }#if($foreach.hasNext),#end\n\
+                \n#end\n  ],\n  \"page_count\": $root.page_count,\n  \"page_size\"\
+                : $root.page_size,\n  \"total_items\": $root.total_items\n}\n"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "x92vt1"
+        cacheKeyParameters:
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        type: "http"
+  /shop-wines:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/shop-wines"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "s62tqc"
+        cacheKeyParameters:
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        - "method.request.querystring.filter"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.page"
+        - "method.request.querystring.sort"
+        type: "http"
+  /shop-wines/{article_id}:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "article_id"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_articles}/shop-wines/{article_id}"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.article_id: "method.request.path.article_id"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "m1pett"
+        cacheKeyParameters:
+        - "method.request.header.App-ID"
+        - "method.request.header.App-Key"
+        - "method.request.path.article_id"
+        type: "http"
+  /store-channels:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/Error"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/Error"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/store-channels"
+        responses:
+          200:
+            statusCode: "200"
+          403:
+            statusCode: "403"
+          5\d{2}:
+            statusCode: "500"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "ret4wy"
+        cacheKeyParameters:
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        type: "http"
+  /store-services:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/Error"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/Error"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/store-services"
+        responses:
+          200:
+            statusCode: "200"
+          403:
+            statusCode: "403"
+          5\d{2}:
+            statusCode: "500"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "r0t0eg"
+        cacheKeyParameters:
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        type: "http"
+  /stores:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "App-ID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/Error"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/Error"
+        416:
+          description: "416 response"
+          schema:
+            $ref: "#/definitions/Error"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/stores"
+        responses:
+          200:
+            statusCode: "200"
+          403:
+            statusCode: "403"
+          5\d{2}:
+            statusCode: "500"
+          416:
+            statusCode: "416"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.only_opened: "'yes'"
+          integration.request.querystring.only_online_publishable: "'yes'"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "0pxdef"
+        cacheKeyParameters:
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        type: "http"
+  /sweepstake-participants:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "App-Key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page_size"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "f.created_on"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "f.created_from"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "f.created_to"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listSweepstakeParticipants:${stageVariables.lambda_alias}/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        requestTemplates:
+          application/json: "#set($queryParams = $input.params().querystring)\r\n\
+            {\r\n  \"serialization\": {\"group\": \"portal-listing\"},\r\n  \"query\"\
+            : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
+            \r\n}"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        cacheNamespace: "ahyiw5"
+        cacheKeyParameters:
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.f.created_on"
+        - "method.request.querystring.f.created_from"
+        - "method.request.querystring.f.created_to"
+        type: "aws"
+securityDefinitions:
+  AppKeyHeader:
+    type: "apiKey"
+    name: "App-Key"
+    in: "header"
+    x-amazon-apigateway-authtype: "custom"
+    x-amazon-apigateway-authorizer:
+      authorizerUri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools_authorizeApiRequest:live/invocations"
+      authorizerCredentials: "arn:aws:iam::802555642192:role/aws-apigateway-role.denner-api"
+      authorizerResultTtlInSeconds: 3600
+      type: "token"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"
+  Error:
+    type: "object"
+    properties:
+      type:
+        type: "string"
+      title:
+        type: "string"
+      status:
+        type: "integer"
+      detail:
+        type: "string"
+    title: "Error Schema"
