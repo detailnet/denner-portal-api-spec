@@ -38,6 +38,10 @@ securityDefinitions:
       authorizerCredentials: "arn:aws:iam::802555642192:role/aws-apigateway-role.denner-api"
       authorizerResultTtlInSeconds: 3600 #todo Check this, in the other authorizers this is set to 300
       type: "token"
+x-amazon-apigateway-request-validators:
+  Validate query string parameters and headers:
+    validateRequestParameters: true
+    validateRequestBody: false
 paths:
   ### Stores
   /stores:
@@ -311,6 +315,7 @@ paths:
           description: "416 response"
           schema:
             $ref: "#/definitions/ErrorResponse"
+      x-amazon-apigateway-request-validator: "Validate query string parameters and headers"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_stores}/stores"
         responses:
