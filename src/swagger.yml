@@ -11,19 +11,19 @@ host: denner-api.detailnet.ch
 basePath: /v1
 x-detail-stage-variables:
   prod:
-   - lambda_env: "prod"
-   - lambda_alias: "live"
-   - url_advertising: "denner-adv-new.frb.io/api"
-   - url_assets: "denner-ats-new.frb.io/api"
-   - url_articles: "denner-art-new.frb.io/api"
-   - url_stores: "denner-sts-new.frb.io/api"
+    - lambda_env: "prod"
+    - lambda_alias: "live"
+    - url_advertising: "denner-adv-new.frb.io/api"
+    - url_assets: "denner-ats-new.frb.io/api"
+    - url_articles: "denner-art-new.frb.io/api"
+    - url_stores: "denner-sts-new.frb.io/api"
   test:
-   - lambda_env: "test"
-   - lambda_alias: "live"
-   - url_advertising: "denner-advertising-test.detailnet.ch/api"
-   - url_assets: "denner-assets-test.detailnet.ch/api"
-   - url_articles: "denner-articles-test.detailnet.ch/api"
-   - url_stores: "denner-stores-test.detailnet.ch/api"
+    - lambda_env: "test"
+    - lambda_alias: "live"
+    - url_advertising: "denner-advertising-test.detailnet.ch/api"
+    - url_assets: "denner-assets-test.detailnet.ch/api"
+    - url_articles: "denner-articles-test.detailnet.ch/api"
+    - url_stores: "denner-stores-test.detailnet.ch/api"
 schemes:
   - https
 securityDefinitions:
@@ -340,12 +340,12 @@ paths:
         httpMethod: "GET"
         cacheNamespace: "0pxdef"
         cacheKeyParameters:
-        - "method.request.querystring.sort"
-        - "method.request.querystring.page"
-        - "method.request.querystring.page_size"
-        - "method.request.querystring.filter"
-        - "method.request.header.App-Key"
-        - "method.request.header.App-ID"
+          - "method.request.querystring.sort"
+          - "method.request.querystring.page"
+          - "method.request.querystring.page_size"
+          - "method.request.querystring.filter"
+          - "method.request.header.App-Key"
+          - "method.request.header.App-ID"
         type: "http"
 
   /screen-stores:
@@ -356,10 +356,11 @@ paths:
       tags:
         - stores
       operationId: listScreenStores
-      security:
-        - appKey: []
-        - appId: []
+      produces:
+        - application/json
       parameters:
+        - $ref: '#/parameters/AppIdHeader'
+        - $ref: '#/parameters/AppKeyHeader'
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
       responses:
@@ -438,6 +439,32 @@ paths:
                       day: "2015-07-07"
                       open_from: "08:00:00"
                       open_to: "20:00:00"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/stores"
+        responses:
+          200:
+            statusCode: "200"
+            responseTemplates:
+              application/json: "#set($root = $input.path('$'))\n{\n  \"stores\":\
+                \ [\n#foreach($store in $root.stores)\n    {\n      \"id\": \"$store.id\"\
+                ,\n      \"code\": $store.code,\n      \"calendar_opening_times\"\
+                : $store.calendar_opening_times\n    }#if($foreach.hasNext),#end\n\
+                \n#end\n  ],\n  \"page_count\": $root.page_count,\n  \"page_size\"\
+                : $root.page_size,\n  \"total_items\": $root.total_items\n}\n"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "x92vt1"
+        cacheKeyParameters:
+          - "method.request.querystring.page"
+          - "method.request.querystring.page_size"
+          - "method.request.header.App-Key"
+          - "method.request.header.App-ID"
+        type: "http"
 
   /store-channels:
     get:
@@ -448,12 +475,15 @@ paths:
       tags:
         - stores
       operationId: listStoreChannels
-      security:
-        - appKey: []
-        - appId: []
+      produces:
+      - application/json
       parameters:
+        - $ref: '#/parameters/AppIdHeader'
+        - $ref: '#/parameters/AppKeyHeader'
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeUnlimitableParam'
+        - $ref: '#/parameters/FilterParam'
+        - $ref: '#/parameters/SortParam'
       responses:
         200:
           description: Successful listing
@@ -494,6 +524,41 @@ paths:
                       -
                         locale: "it"
                         value: "Satelliti Denner e Denner Express"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/store-channels"
+        responses:
+          200:
+            statusCode: "200"
+          403:
+            statusCode: "403"
+          5\d{2}:
+            statusCode: "500"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "ret4wy"
+        cacheKeyParameters:
+          - "method.request.querystring.sort"
+          - "method.request.querystring.page"
+          - "method.request.querystring.page_size"
+          - "method.request.querystring.filter"
+          - "method.request.header.App-Key"
+          - "method.request.header.App-ID"
+        type: "http"
 
   /store-services:
     get:
@@ -504,12 +569,15 @@ paths:
       tags:
         - stores
       operationId: listStoreServices
-      security:
-        - appKey: []
-        - appId: []
+      produces:
+        - application/json
       parameters:
+        - $ref: '#/parameters/AppIdHeader'
+        - $ref: '#/parameters/AppKeyHeader'
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeUnlimitableParam'
+        - $ref: '#/parameters/FilterParam'
+        - $ref: '#/parameters/SortParam'
       responses:
         200:
           description: Successful listing
@@ -592,6 +660,41 @@ paths:
                     -
                       locale: "it"
                       value: "Punto cottura"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/store-services"
+        responses:
+          200:
+            statusCode: "200"
+          403:
+            statusCode: "403"
+          5\d{2}:
+            statusCode: "500"
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "r0t0eg"
+        cacheKeyParameters:
+          - "method.request.header.App-Key"
+          - "method.request.header.App-ID"
+          - "method.request.querystring.sort"
+          - "method.request.querystring.page"
+          - "method.request.querystring.page_size"
+          - "method.request.querystring.filter"
+        type: "http"
 
   ### Articles/Promotions
   /article-groups:
