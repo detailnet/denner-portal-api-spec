@@ -9132,7 +9132,42 @@
 								"stores"
 							]
 						},
-						"description": "List stores (Filialen)"
+						"description": "Use this operation to get a list of all stores (Filialen).\n\nNotes:\n * On API-Gatway the queystring is integrated with: \n   * only_opened=yes\n   * only_online_publishable=yes"
+					},
+					"response": []
+				},
+				{
+					"name": "/screen-stores",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{stores_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{stores_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{stores_url_base}}/screen-stores",
+							"host": [
+								"{{stores_url_base}}"
+							],
+							"path": [
+								"screen-stores"
+							]
+						},
+						"description": "Use this operation to get a list of all screen stores (Filialen für Werbescreens).\n\nNotes: \n * This is an API-Gatway only resource \n * Is sent to the integration resource \"GET /stores\"\n * On API-Gatway the queystring does not integrates \"filter\" and \"sort\" params\n * On API-Gatway the respone is processed: only a few subset of store properties are propagated."
 					},
 					"response": []
 				},
@@ -9168,7 +9203,7 @@
 								"44444444-aaaa-4444-aaaa-444444444444"
 							]
 						},
-						"description": "Get a single store (Filiale)"
+						"description": "Get a single store (Filiale).\n\nNotes:\n * On API-Gatway this resource is not available"
 					},
 					"response": []
 				},
@@ -9209,7 +9244,7 @@
 								}
 							]
 						},
-						"description": "List store channels (Filialkanäle)"
+						"description": "Use this operation to get a list of all store channels (Filialkanäle; e.g. \"Denner\" or \"Denner Satellit\")."
 					},
 					"response": []
 				},
@@ -9244,7 +9279,7 @@
 								"store-services"
 							]
 						},
-						"description": "List store services (Filialangebote)"
+						"description": "Use this operation to get a list of all store services (Filialangebote; e.g. \"Humidor\" or \"Backstation\")."
 					},
 					"response": []
 				}
