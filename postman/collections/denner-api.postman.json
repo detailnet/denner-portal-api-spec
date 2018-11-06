@@ -1012,6 +1012,47 @@
 					"response": []
 				},
 				{
+					"name": "/online-publications/{publication_id}/article-deletions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"articles\": [\n  \t\"44444444-aaaa-4444-aaaa-444444444444\"\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/article-deletions",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"online-publications",
+								"44444444-aaaa-4444-aaaa-444444444444",
+								"article-deletions"
+							]
+						},
+						"description": "Delete multiple articles"
+					},
+					"response": []
+				},
+				{
 					"name": "/online-publications/{publication_id}/filters",
 					"request": {
 						"method": "GET",
