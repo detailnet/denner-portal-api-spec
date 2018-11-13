@@ -2416,6 +2416,51 @@
 							"response": []
 						},
 						{
+							"name": "/print-publications/{publication_id}/documents/{document_id}/sheets/{sheet_id}/items",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"source_sheet\": \"8395894d-fb4a-4a03-95fc-cb78e1203a25\",\n    \"source_item\": \"2323922e-22ff-4917-809d-4a59f29788ba\",\n    \"keep_copy\": false\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/sheets/{{sheet_id}}/items",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"print-publications",
+										"{{publication_id}}",
+										"documents",
+										"{{document_id}}",
+										"sheets",
+										"{{sheet_id}}",
+										"items"
+									]
+								},
+								"description": "Copy or move item"
+							},
+							"response": []
+						},
+						{
 							"name": "/print-publications/{publication_id}/documents/{document_id}/articles",
 							"event": [
 								{
