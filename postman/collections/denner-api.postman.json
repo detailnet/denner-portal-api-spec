@@ -3295,6 +3295,49 @@
 					"response": []
 				},
 				{
+					"name": "/print-publications/{publication_id}/exports",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"article-listing\"\n}"
+						},
+						"url": {
+							"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/exports",
+							"host": [
+								"{{advertising_url_base}}"
+							],
+							"path": [
+								"print-publications",
+								"{{publication_id}}",
+								"exports"
+							]
+						},
+						"description": "Generate a new export report for a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
 					"name": "/print-skeletons?file={file_id}",
 					"request": {
 						"method": "GET",
