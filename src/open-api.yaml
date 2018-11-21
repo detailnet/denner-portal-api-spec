@@ -1,0 +1,2662 @@
+openapi: '3.0.1'
+info:
+  description: RESTful API for the Denner Portal
+  version: 1.0.0
+  # Caution: For development imports in API Gateway use your personal name acronym as version, i.e. "denner-api-iw"
+  title: "denner-api-cd"
+  contact:
+    name: DETAIL NET
+    email: support+denner-api@detailnet.ch
+servers:
+- url: "https://denner-api.detailnet.ch/{basePath}"
+  variables:
+    basePath:
+      default: "/v1"
+x-detail-stage-variables:
+  prod:
+  - lambda_env: "prod"
+  - lambda_alias: "live"
+  - url_advertising: "denner-adv-new.frb.io/api"
+  - url_assets: "denner-ats-new.frb.io/api"
+  - url_articles: "denner-art-new.frb.io/api"
+  - url_stores: "denner-sts-new.frb.io/api"
+  test:
+  - lambda_env: "test"
+  - lambda_alias: "live"
+  - url_advertising: "denner-advertising-test.detailnet.ch/api"
+  - url_assets: "denner-assets-test.detailnet.ch/api"
+  - url_articles: "denner-articles-test.detailnet.ch/api"
+  - url_stores: "denner-stores-test.detailnet.ch/api"
+security: # @todo On import does not shows in the Authorizers, maybe until there is one route that really uses it?
+- appKey:
+    type: apiKey
+    description: Application key
+    name: App-Key
+    in: header
+    x-amazon-apigateway-authtype: "custom"
+    x-amazon-apigateway-authorizer:
+      authorizerUri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools_authorizeApiRequest:live/invocations"
+      authorizerCredentials: "arn:aws:iam::802555642192:role/aws-apigateway-role.denner-api"
+      authorizerResultTtlInSeconds: 3600 #todo Check this, in the other authorizers this is set to 300
+      type: "token"
+x-amazon-apigateway-request-validators:
+  all:
+    validateRequestBody: true
+    validateRequestParameters: true
+  params-only:
+    validateRequestBody: false
+    validateRequestParameters: true
+
+paths:
+  ### Stores
+  /stores:
+    get:
+      summary: List all stores
+      description: >
+        Use this operation to get a list of all stores (Filialen).
+      tags:
+      - stores
+      operationId: listStores
+      parameters:
+      - $ref: '#/components/parameters/AcceptHeader'
+      - $ref: '#/components/parameters/AppIdHeader'
+      - $ref: '#/components/parameters/AppKeyHeader'
+      - $ref: '#/components/parameters/PageParam'
+      - $ref: '#/components/parameters/PageSizeParam'
+      - $ref: '#/components/parameters/FilterParam'
+      - $ref: '#/components/parameters/SortParam'
+      responses:
+        200:
+          description: Successful listing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoresResponse'
+              example:
+                page_count: 1
+                page_size: 1
+                total_items: 1
+                stores:
+                -
+                  id: "bcb8a388-8998-4d08-85a6-4864199704ee"
+                  code: 302
+                  address: "Werdstrasse"
+                  number: "36"
+                  zip_code: 8004
+                  canton_code: "ZH"
+                  city: "Zürich"
+                  country: "CH"
+                  phone: "044 240 22 83"
+                  hotline: "0848 99 66 33"
+                  payment_types:
+                  - "cash"
+                  - "euro"
+                  - "maestro"
+                  - "post"
+                  credit_card: true
+                  open_from: "1998-08-01"
+                  open_to: null,
+                  renovation_from: "2015-06-25"
+                  renovation_to: "2015-06-26"
+                  latitude: 47.3728447
+                  longitude: 8.5295153
+                  language: "de"
+                  email: "info@denner.ch"
+                  homepage: "http://www.denner.ch"
+                  parking_count: 0
+                  channel:
+                    id: "5d1c3dd5-35a9-4c66-ab20-3409ea640334"
+                    code: 1
+                    name: "Denner"
+                    title:
+                    -
+                      locale: "de"
+                      value: "Denner"
+                    -
+                      locale: "fr"
+                      value: "Denner"
+                    -
+                      locale: "it"
+                      value: "Denner"
+                  opening_times:
+                  -
+                    weekday: 1
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    weekday: 2
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    weekday: 3
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    weekday: 4
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    weekday: 5
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    weekday: 6
+                    open_from: "08:00:00"
+                    open_to: "12:00:00"
+                  -
+                    weekday: 6
+                    open_from: "14:00:00"
+                    open_to: "20:00:00"
+                  special_opening_times:
+                  -
+                    day: "2015-06-25"
+                    reason:
+                    -
+                      locale: "de"
+                      value: "Umbau"
+                    -
+                      locale: "fr"
+                      value: "tbd"
+                    -
+                      locale: "it"
+                      value: "tbd"
+                    closed: true
+                  -
+                    day: "2015-06-26"
+                    reason:
+                    -
+                      locale: "de"
+                      value: "Umbau"
+                    -
+                      locale: "fr"
+                      value: "tbd"
+                    -
+                      locale: "it"
+                      value: "tbd"
+                    closed: true
+                  -
+                    day: "2015-06-28"
+                    open_from: "10:00:00"
+                    open_to: "16:00:00"
+                    reason:
+                    -
+                      locale: "de"
+                      value: "Sonntagsverkauf"
+                    -
+                      locale: "fr"
+                      value: "tbd"
+                    -
+                      locale: "it"
+                      value: "tbd"
+                    closed: false
+                  calendar_opening_times:
+                  -
+                    day: "2015-06-22"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-06-23"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-06-24"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-06-27"
+                    open_from: "08:00:00"
+                    open_to: "12:00:00"
+                  -
+                    day: "2015-06-27"
+                    open_from: "14:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-06-28"
+                    open_from: "10:00:00"
+                    open_to: "16:00:00"
+                  -
+                    day: "2015-06-29"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-06-30"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-01"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-02"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-03"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-04"
+                    open_from: "08:00:00"
+                    open_to: "12:00:00"
+                  -
+                    day: "2015-07-04"
+                    open_from: "14:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-06"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-07"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  services:
+                  -
+                    id: "acb911fb-b7e3-480f-ab91-1109e750892a"
+                    code: 1
+                    name: "Humidor"
+                    title:
+                    -
+                      locale: "de"
+                      value: "Humidor"
+                    -
+                      locale: "fr"
+                      value: "Humidor"
+                    -
+                      locale: "it"
+                      value: "Humidor"
+                    appearances:
+                    -
+                      from: "2015-06-01"
+                      to: "2015-06-30"
+                    -
+                      from: "2016-06-01"
+                      to: "2016-06-30"
+                  -
+                    id: "d7b4925e-79f8-415f-9436-0adb4a9cc4de"
+                    code: 3
+                    name: "Früchte und Gemüse"
+                    title:
+                    -
+                      locale: "de"
+                      value: "Früchte und Gemüse"
+                    -
+                      locale: "fr"
+                      value: "Fruits et Légumes"
+                    -
+                      locale: "it"
+                      value: "Frutta e verdura"
+                    appearances:
+                    -
+                      from: "2013-01-01"
+                  -
+                    id: "57d0301a-fd5d-4dce-ab0d-75dee1d16631"
+                    code: 5
+                    name: "Backstation"
+                    title:
+                    -
+                      locale: "de"
+                      value: "Backstation"
+                    -
+                      locale: "fr"
+                      value: "Four à pain"
+                    -
+                      locale: "it"
+                      value: "Punto cottura"
+                    appearances:
+                    -
+                      from: "2013-01-01"
+        500:
+          $ref: '#/components/responses/500'
+        403:
+          $ref: '#/components/responses/403'
+        406:
+          $ref: '#/components/responses/406'
+        416:
+          $ref: '#/components/responses/416'
+      x-amazon-apigateway-request-validator: 'params-only'
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/stores"
+        responses:
+          200:
+            statusCode: 200
+          403:
+            statusCode: 403
+          406:
+            statusCode: 406
+          416:
+            statusCode: 416
+          5\d{2}:
+            statusCode: 500
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.only_opened: "'yes'"
+          integration.request.querystring.only_online_publishable: "'yes'"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "0pxdef"
+        cacheKeyParameters:
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        type: "http"
+
+  /screen-stores:
+    get:
+      summary: List all screen stores
+      description: >
+        Use this operation to get a list of all screen stores (Filialen für Werbescreens).
+      tags:
+      - stores
+      operationId: listScreenStores
+      parameters:
+      - $ref: '#/components/parameters/AcceptHeader'
+      - $ref: '#/components/parameters/AppIdHeader'
+      - $ref: '#/components/parameters/AppKeyHeader'
+      - $ref: '#/components/parameters/PageParam'
+      - $ref: '#/components/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScreenStoresResponse'
+              example:
+                page_count: 1
+                page_size: 1
+                total_items: 1
+                stores:
+                -
+                  id: "bcb8a388-8998-4d08-85a6-4864199704ee"
+                  code: 302
+                  calendar_opening_times:
+                  -
+                    day: "2015-06-22"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-06-23"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-06-24"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-06-27"
+                    open_from: "08:00:00"
+                    open_to: "12:00:00"
+                  -
+                    day: "2015-06-27"
+                    open_from: "14:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-06-28"
+                    open_from: "10:00:00"
+                    open_to: "16:00:00"
+                  -
+                    day: "2015-06-29"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-06-30"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-01"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-02"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-03"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-04"
+                    open_from: "08:00:00"
+                    open_to: "12:00:00"
+                  -
+                    day: "2015-07-04"
+                    open_from: "14:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-06"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+                  -
+                    day: "2015-07-07"
+                    open_from: "08:00:00"
+                    open_to: "20:00:00"
+        500:
+          $ref: '#/components/responses/500'
+        403:
+          $ref: '#/components/responses/403'
+        406:
+          $ref: '#/components/responses/406'
+        416:
+          $ref: '#/components/responses/416'
+      x-amazon-apigateway-request-validator: 'params-only'
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/stores"
+        responses:
+          200:
+            statusCode: 200
+            responseTemplates:
+              application/json: "#set($root = $input.path('$'))\n{\n  \"stores\":\
+                \ [\n#foreach($store in $root.stores)\n    {\n      \"id\": \"$store.id\"\
+                ,\n      \"code\": $store.code,\n      \"calendar_opening_times\"\
+                : $store.calendar_opening_times\n    }#if($foreach.hasNext),#end\n\
+                \n#end\n  ],\n  \"page_count\": $root.page_count,\n  \"page_size\"\
+                : $root.page_size,\n  \"total_items\": $root.total_items\n}\n"
+          403:
+            statusCode: 403
+          406:
+            statusCode: 406
+          416:
+            statusCode: 416
+          5\d{2}:
+            statusCode: 500
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "x92vt1"
+        cacheKeyParameters:
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        type: "http"
+
+  /store-channels:
+    get:
+      summary: List all store channels
+      description: >
+        Use this operation to get a list of all store channels
+        (Filialkanäle; e.g. "Denner" or "Denner Satellit").
+      tags:
+      - stores
+      operationId: listStoreChannels
+      parameters:
+      - $ref: '#/components/parameters/AcceptHeader'
+      - $ref: '#/components/parameters/AppIdHeader'
+      - $ref: '#/components/parameters/AppKeyHeader'
+      - $ref: '#/components/parameters/PageParam'
+      - $ref: '#/components/parameters/PageSizeUnlimitableParam'
+      - $ref: '#/components/parameters/FilterParam'
+      - $ref: '#/components/parameters/SortParam'
+      responses:
+        200:
+          description: Successful listing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoreChannelsResponse'
+              example:
+                page_count: 1
+                page_size: 2
+                total_items: 2
+                store_channels:
+                -
+                  id: "5d1c3dd5-35a9-4c66-ab20-3409ea640334"
+                  code: 1
+                  name: "Denner"
+                  title:
+                  -
+                    locale: "de"
+                    value: "Denner"
+                  -
+                    locale: "fr"
+                    value: "Denner"
+                  -
+                    locale: "it"
+                    value: "Denner"
+                -
+                  id: "18549f95-6471-4e21-968f-8a0bf2e0f79b"
+                  code: 2
+                  name: "Denner Satellit und Denner Express"
+                  title:
+                  -
+                    locale: "de"
+                    value: "Denner Satellit und Denner Express"
+                  -
+                    locale: "fr"
+                    value: "Satellite Denner et Denner Express"
+                  -
+                    locale: "it"
+                    value: "Satelliti Denner e Denner Express"
+        500:
+          $ref: '#/components/responses/500'
+        403:
+          $ref: '#/components/responses/403'
+        406:
+          $ref: '#/components/responses/406'
+        416:
+          $ref: '#/components/responses/416'
+      x-amazon-apigateway-request-validator: 'params-only'
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/store-channels"
+        responses:
+          200:
+            statusCode: 200
+          403:
+            statusCode: 403
+          406:
+            statusCode: 406
+          416:
+            statusCode: 416
+          5\d{2}:
+            statusCode: 500
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "ret4wy"
+        cacheKeyParameters:
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        type: "http"
+
+  /store-services:
+    get:
+      summary: List all store services
+      description: >
+        Use this operation to get a list of all store services
+        (Filialangebote; e.g. "Humidor" or "Backstation").
+      tags:
+      - stores
+      operationId: listStoreServices
+      parameters:
+      - $ref: '#/components/parameters/AcceptHeader'
+      - $ref: '#/components/parameters/AppIdHeader'
+      - $ref: '#/components/parameters/AppKeyHeader'
+      - $ref: '#/components/parameters/PageParam'
+      - $ref: '#/components/parameters/PageSizeUnlimitableParam'
+      - $ref: '#/components/parameters/FilterParam'
+      - $ref: '#/components/parameters/SortParam'
+      responses:
+        200:
+          description: Successful listing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoreServicesResponse'
+              example:
+                page_count: 1
+                page_size: 5
+                total_items: 5
+                store_services:
+                -
+                  id: "acb911fb-b7e3-480f-ab91-1109e750892a"
+                  code: 1
+                  name: ""
+                  title:
+                  -
+                    locale: "de"
+                    value: "Humidor"
+                  -
+                    locale: "fr"
+                    value: "Humidor"
+                  -
+                    locale: "it"
+                    value: "Humidor"
+                -
+                  id: "85aa57ad-2bf3-48e5-a1a0-813889cbae26"
+                  code: 2
+                  name: "Bordeaux Grands Crus"
+                  title:
+                  -
+                    locale: "de"
+                    value: "Bordeaux Grands Crus"
+                  -
+                    locale: "fr"
+                    value: "Bordeaux Grands Crus"
+                  -
+                    locale: "it"
+                    value: "Bordeaux Grands Crus"
+                -
+                  id: "d7b4925e-79f8-415f-9436-0adb4a9cc4de"
+                  code: 3
+                  name: "Früchte und Gemüse"
+                  title:
+                  -
+                    locale: "de"
+                    value: "Früchte und Gemüse"
+                  -
+                    locale: "fr"
+                    value: "Fruits et Légumes"
+                  -
+                    locale: "it"
+                    value: "Frutta e verdura"
+                -
+                  id: "47191064-ad2e-482a-a5cf-2aa32d0b8116"
+                  code: 4
+                  name: "Früchte und Gemüse im Offenverkauf"
+                  title:
+                  -
+                    locale: "de"
+                    value: "Früchte und Gemüse im Offenverkauf"
+                  -
+                    locale: "fr"
+                    value: "Fruits et légumes en vrac"
+                  -
+                    locale: "it"
+                    value: "Frutta e verdura in vendita sfusa"
+                -
+                  id: "57d0301a-fd5d-4dce-ab0d-75dee1d16631"
+                  code: 5
+                  name: "Backstation"
+                  title:
+                  -
+                    locale: "de"
+                    value: "Backstation"
+                  -
+                    locale: "fr"
+                    value: "Four à pain"
+                  -
+                    locale: "it"
+                    value: "Punto cottura"
+        500:
+          $ref: '#/components/responses/500'
+        403:
+          $ref: '#/components/responses/403'
+        406:
+          $ref: '#/components/responses/406'
+        416:
+          $ref: '#/components/responses/416'
+      x-amazon-apigateway-request-validator: 'params-only'
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_stores}/store-services"
+        responses:
+          200:
+            statusCode: 200
+          403:
+            statusCode: 403
+          406:
+            statusCode: 406
+          416:
+            statusCode: 416
+          5\d{2}:
+            statusCode: 500
+        requestParameters:
+          integration.request.querystring.page: "method.request.querystring.page"
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.filter: "method.request.querystring.filter"
+          integration.request.querystring.page_size: "method.request.querystring.page_size"
+          integration.request.querystring.sort: "method.request.querystring.sort"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "r0t0eg"
+        cacheKeyParameters:
+        - "method.request.header.App-Key"
+        - "method.request.header.App-ID"
+        - "method.request.querystring.sort"
+        - "method.request.querystring.page"
+        - "method.request.querystring.page_size"
+        - "method.request.querystring.filter"
+        type: "http"
+
+
+components:
+  parameters:
+    AcceptHeader:
+      name: Accept
+      description: Accepted content type
+      in: header
+      required: true # Required or not, x-amazon-apigateway-request-validator does not takes effect on Accept header
+      schema:
+        type: string
+
+    ContentTypeHeader:
+      name: Content-Type
+      in: header
+      required: true
+      description: >
+        Request body content type
+      schema:
+        type: string
+
+    AppIdHeader:
+      name: App-ID
+      in: header
+      required: true
+      description: >
+        Identity App-ID
+      schema:
+        type: string
+
+    AppKeyHeader:
+      name: App-Key
+      in: header
+      required: true
+      description: >
+        Identity App-Key
+      schema:
+        type: string
+
+    PageParam:
+      name: page
+      description: >
+        The page number.
+        Default: 1
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int32
+        minimum: 0
+        default: 1
+
+    PageSizeUnlimitableParam:
+      name: page_size
+      description: >
+        The page size that might be unlimited.
+        Default: -1 (no limit)
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: -1
+    PageSizeParam:
+      name: page_size
+      description: >
+        The page size.
+        Default: 10
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 100
+        default: 10
+
+    FilterParam:
+      name: filter
+      in: query
+      required: false
+      description: |
+        Filters: JSON array of Filter object, urlencoded.
+
+        Filter object:
+        - property: Property to filter on.
+        - operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).
+        - type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).
+        - value: Value. Must be of the defined type.
+
+        Examples:
+        - [{"property":"id","operator":"in","type":"array","value":["7627150d-36bd-4867-89b2-091800a03d24","58afec5c-ece9-4b66-bc55-00d6dc1b65b8"]}]
+        - [{"property":"in_shop","operator":"eq","type":"boolean","value":true}]
+      schema:
+        type: string
+
+    SortParam:
+      name: sort
+      in: query
+      required: false
+      description: |
+        Sorters: JSON array of Sort object, urlencoded.
+
+        Sort object:
+        - property: Property to filter on.
+        - direction: Direction of sort. Enumeration ('asc', 'desc'). Optional default 'asc'.
+
+        Examples:
+        - [{"property":"canton_code","direction":"asc"},{"property":"code","direction":"desc"}]
+        - [{"property":"article_id"}]
+      schema:
+        type: string
+
+    ArticleIdPathParam:
+      name: article_id
+      description: The unique identifier of an article
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '/^[0-9]{6}$/'
+    PublicationIdPathParam:
+      name: publication_id
+      description: The unique identifier of an online publication
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+    AppraisalIdPathParam:
+      name: appraisal_id
+      description: The unique identifier of an appraisal
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+    DatePathParam:
+      name: date
+      description: The unique identifier of a date; Format YYYY-MM-DD'
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '/^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$/'
+
+  schemas:
+    ### Common
+    UUIDv4:
+      type: string
+      pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+      description: Unique identifier
+
+    Locale:
+      type: string
+      pattern: '/^(de|fr|it)$/'
+      description: Locale
+
+    Translation:
+      type: object
+      properties:
+        locale:
+          $ref: '#/components/schemas/Locale'
+        value:
+          type: string
+          description: Translated text value
+
+    Url:
+      type: string
+      description: Web URL address
+    #    pattern: @todo Fixed pattern?
+
+    CountryFlag:
+      type: object
+      description: Country flag
+      properties:
+        image_url:
+          $ref: '#/components/schemas/Url'
+
+    Country:
+      type: object
+      properties:
+        id:
+          type: string
+          pattern: '/^[A-Z]{2}$/'
+          description: Country code definition from ISO 3166
+        title:
+          $ref: '#/components/schemas/Translations'
+        flag:
+          $ref: '#/components/schemas/CountryFlag'
+      description: Country
+
+    Date:
+      type: string
+      format: date
+      description: 'Date; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
+
+    Time:
+      type: string
+      pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+      description: 'Time; Format HH:MM:SS'
+
+    DayOfWeek:
+      type: integer
+      format: int32
+      minimum: 0 # According to swagger definition should use minLength for integer type, but does not works correctly
+      maximum: 6 # According to swagger definition should use maxLength for integer type, but does not works correctly
+      description: Day of week; 0 = Sunday
+
+    Year:
+      type: integer
+      format: int32
+      minimum: 1800
+      description: Year
+
+    Week:
+      type: integer
+      format: int32
+      minimum: 1
+      maximum: 53
+      description: Week number (ISO 8601, week date system)
+
+    Price:
+      type: number
+      format: float
+      minimum: 0
+      description: Price in CHF
+
+    Quantity:
+      type: integer
+      format: int32
+      minimum: 0
+      description: Quantity
+
+    ContentSize:
+      type: number
+      format: float
+      minimum: 0
+      description: Content size
+
+    #  Removed because we cannot calculate a valid size, neither display a standardized unit
+    #  ContentUnit:
+    #    # @todo Define an pattern or standard reference (e.g. ISO 80000-3)?
+    #    type: integer
+    #    format: int32
+    #    description: Content unit code from navision
+
+    Cooling:
+      type: number
+      format: int32
+      minimum: 0
+      description: Cooling type (0 = no cooling, 1 = refrigerated, 2 = frozen)
+
+    Appearance:
+      type: object
+      properties:
+        from:
+          type: string
+          format: date
+        to:
+          type: string
+          format: date
+
+    Validity:
+      type: object
+      description: Generic validity based on dates (from/to) and a corresponding text
+      properties:
+        from:
+          $ref: '#/components/schemas/Date'
+        to:
+          $ref: '#/components/schemas/Date'
+        text:
+          $ref: '#/components/schemas/Translations'
+
+    ArticleValidity:
+      type: object
+      description: Article validity based on dates (from/to) and corresponding texts (short and long version)
+      properties:
+        from:
+          $ref: '#/components/schemas/Date'
+        to:
+          $ref: '#/components/schemas/Date'
+        short_text:
+          $ref: '#/components/schemas/Translations'
+        long_text:
+          $ref: '#/components/schemas/Translations'
+
+    StoreFilter:
+      type: object
+      properties:
+        id:
+          type: string
+          pattern: '/^(services|channels)$/'
+          description: Property ID to filter on
+        #      property:
+        #        type: string
+        #        description: Property to filter on
+        #      operator:
+        #        type: string
+        #        pattern: '/^(in|nin)$/'
+        #        description: Operation property
+        #      type:
+        #        type: string
+        #        pattern: '/^(string|integer|boolean|array)$/'
+        #        description: Type of value
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/UUIDv4'
+          description: Values to filter on. Array of UUids
+      required:
+      - id
+      - value
+
+    AvailabilityLimitations:
+      type: object
+      description: Texts for information about limited availability
+      properties:
+        region:
+          $ref: '#/components/schemas/Translations'
+        store:
+          $ref: '#/components/schemas/Translations'
+        store_filters:
+          $ref: '#/components/schemas/StoreFilters'
+
+    Phone:
+      type: string
+      #    pattern: @todo Fixed pattern?
+      description: Formatted phone number
+
+    SortIndex:
+      type: integer
+      format: int32
+      minimum: 0
+      description: Index for sorting
+
+    ### Store
+    Store:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        code:
+          type: integer
+          format: int32
+          description: Navision store code
+        name:
+          type: string
+          description: Name
+        address:
+          type: string
+          description: Street
+        number:
+          type: string
+          description: Street number
+        zip_code:
+          type: integer
+          format: int32
+          minimum: 1000
+          maximum: 9699
+          description: Zip code
+        city:
+          type: string
+          description: City
+        canton_code:
+          type: string
+          description: Canton (state) code
+        country:
+          type: string
+          pattern: '/^[A-Z]{2}$/'
+          description: Country code definition from ISO 3166
+        phone:
+          $ref: '#/components/schemas/Phone'
+        hotline:
+          $ref: '#/components/schemas/Phone'
+        payment_types:
+          type: array
+          description: Payment types
+          items:
+            $ref: '#/components/schemas/PaymentType'
+        credit_card:
+          type: boolean
+          description: Credit card can be used for payments?
+        open_from:
+          type: string
+          format: date
+          description: Opening on
+        open_to:
+          type: string
+          format: date
+          description: Closing on
+        renovation_from:
+          type: string
+          format: date
+          description: Renovation starting on
+        renovation_to:
+          type: string
+          format: date
+          description: Renovation ending on
+        longitude:
+          type: number
+          format: float
+          description: Geographic longitude
+        latitude:
+          type: number
+          format: float
+          description: Geographic latitude
+        language:
+          type: string
+          description: Language spoken in the store
+        email:
+          type: string
+          #        pattern: @todo Fixed pattern?
+          description: E-mail address
+        homepage:
+          $ref: '#/components/schemas/Url'
+        parking_count:
+          type: integer
+          format: int32
+          minimum: 0
+          description: Reserved parking places for customers
+        channel:
+          $ref: '#/components/schemas/StoreChannel'
+        opening_times:
+          type: array
+          description: Default opening times
+          items:
+            $ref: '#/components/schemas/OpeningTime'
+        special_opening_times:
+          type: array
+          items:
+            $ref: '#/components/schemas/SpecialOpeningTime'
+          description: Special opening times
+        calendar_opening_times:
+          type: array
+          items:
+            $ref: '#/components/schemas/CalendarOpeningTime'
+          description: Calendar opening times
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssignedStoreService'
+          description: Services provided by the store
+
+    ScreenStore:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        code:
+          type: integer
+          format: int32
+          description: Navision store code
+        calendar_opening_times:
+          type: array
+          items:
+            $ref: '#/components/schemas/CalendarOpeningTime'
+          description: Calendar opening times
+
+    PaymentType:
+      type: string
+      pattern: '/^(cash|euro|maestro|post")$/' # @todo Needed?
+      description: Payment type
+
+    OpeningTime:
+      type: object
+      properties:
+        weekday:
+          $ref: '#/components/schemas/DayOfWeek'
+        open_from:
+          $ref: '#/components/schemas/Time'
+        open_to:
+          $ref: '#/components/schemas/Time'
+
+    SpecialOpeningTime:
+      type: object
+      properties:
+        day:
+          $ref: '#/components/schemas/Date'
+        open_from:
+          $ref: '#/components/schemas/Time'
+        open_to:
+          $ref: '#/components/schemas/Time'
+        reason:
+          $ref: '#/components/schemas/Translations'
+        closed:
+          type: boolean
+          description: Is the store closed on this day?
+
+    CalendarOpeningTime:
+      type: object
+      properties:
+        day:
+          $ref: '#/components/schemas/Date'
+        open_from:
+          $ref: '#/components/schemas/Time'
+        open_to:
+          $ref: '#/components/schemas/Time'
+
+    ### Store Channel
+    StoreChannel:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        code:
+          type: integer
+          format: int32
+          description: Navision channel code
+        name:
+          type: string
+          description: Channel name
+        title:
+          $ref: '#/components/schemas/Translations'
+
+    ### Store Service
+    StoreService:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        code:
+          type: integer
+          description: Navision service code
+        name:
+          type: string
+          description: Service name
+        title:
+          $ref: '#/components/schemas/Translations'
+
+    AssignedStoreService:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        code:
+          type: integer
+          description: Navision service code
+        name:
+          type: string
+          description: Service name
+        title:
+          $ref: '#/components/schemas/Translations'
+        appearances:
+          $ref: '#/components/schemas/Appearances'
+
+    ### Article group
+    ArticleGroup:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        code:
+          type: string
+          pattern: '/^\d{2}(-\d{2,3})?$/'
+          description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
+        name:
+          type: string
+          description: Article group name
+        children:
+          $ref: '#/components/schemas/ArticleGroups'
+
+    AssignedArticleGroup:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        code:
+          type: string
+          pattern: '/^\d{2}(-\d{2,3})?$/'
+          description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
+        name:
+          type: string
+          description: Article group name
+        parent:
+          $ref: '#/components/schemas/AssignedArticleGroup'
+
+    ### Eco label
+    EcoLabel:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        code:
+          type: string
+          description: Navision identification code
+        name:
+          type: string
+          description: German name for the eco label
+
+    ### Purchasing department
+    PurchasingDepartment:
+      type: string
+      pattern: '/^[A-Z]{1,2}$/'
+      description: Denner purchasing depatment code (e.g. 'BC', 'DD', 'F', 'FG', 'FR', 'G', 'NF', 'TW', 'W')
+
+    ### Article
+    Article:
+      type: object
+      properties:
+        id:
+          type: string
+          pattern: '/^\d{6}$/'
+          description: Navision article code
+        name:
+          type: string
+          description: Article name
+        title:
+          $ref: '#/components/schemas/Translations'
+        description:
+          $ref: '#/components/schemas/Translations'
+        composite_description:
+          $ref: '#/components/schemas/Translations'
+        article_group:
+          $ref: '#/components/schemas/AssignedArticleGroup'
+        purchasing_department:
+          $ref: '#/components/schemas/PurchasingDepartment'
+        online_group:
+          $ref: '#/components/schemas/AssignedOnlineGroup'
+        prices:
+          $ref: '#/components/schemas/ArticlePrices'
+        barcodes:
+          $ref: '#/components/schemas/Barcodes'
+        content:
+          $ref: '#/components/schemas/Content'
+        base:
+          $ref: '#/components/schemas/BaseContent'
+        cooling:
+          $ref: '#/components/schemas/Cooling'
+        eco_labels:
+          $ref: '#/components/schemas/EcoLabels'
+        packshots:
+          $ref: '#/components/schemas/Packshots'
+        wine:
+          $ref: '#/components/schemas/ExtendedArticleWine'
+
+    ArticlePrices:
+      type: object
+      properties:
+        sales:
+          $ref: '#/components/schemas/Price'
+        list:
+          $ref: '#/components/schemas/Price'
+        instead:
+          $ref: '#/components/schemas/Price'
+        base:
+          $ref: '#/components/schemas/Price'
+        final:
+          type: boolean
+          description: Is the price final?
+        by_quantity:
+          $ref: '#/components/schemas/QuantityPrices'
+
+    QuantityPrices:
+      type: array
+      items:
+        $ref: '#/components/schemas/QuantityPrice'
+
+    QuantityPrice:
+      type: object
+      properties:
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+        sales:
+          $ref: '#/components/schemas/Price'
+        list:
+          $ref: '#/components/schemas/Price'
+        instead:
+          $ref: '#/components/schemas/Price'
+        final:
+          type: boolean
+          description: Is the price final?
+
+    Content:
+      type: object
+      properties:
+        size:
+          $ref: '#/components/schemas/ContentSize'
+        #      unit:
+        #        $ref: '#/components/schemas/ContentUnit'
+        label:
+          $ref: '#/components/schemas/Translations'
+        text:
+          $ref: '#/components/schemas/Translations'
+
+    BaseContent:
+      type: object
+      properties:
+        #      Removed because we cannot calculate a valid size, neither display a standardized unit
+        #      size:
+        #        $ref: '#/components/schemas/ContentSize'
+        #      unit:
+        #        $ref: '#/components/schemas/ContentUnit'
+        text:
+          $ref: '#/components/schemas/Translations'
+
+    Packshot:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        url:
+          $ref: '#/components/schemas/Url'
+        cdn_url:
+          $ref: '#/components/schemas/Url'
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+        created_on:
+          $ref: '#/components/schemas/Date'
+
+    BasicArticleWine:
+      #  Has no definitions/WineBox
+      #  Uses definitions/BasicShopInfo
+      type: object
+      properties:
+        country:
+          $ref: '#/components/schemas/Country'
+        region:
+          $ref: '#/components/schemas/Region'
+        type:
+          $ref: '#/components/schemas/WineType'
+        online_specials:
+          $ref: '#/components/schemas/OnlineSpecials'
+        box:
+          $ref: '#/components/schemas/WineBox'
+        year:
+          $ref: '#/components/schemas/Year'
+        fits_with:
+          $ref: '#/components/schemas/Translations'
+        varietal:
+          $ref: '#/components/schemas/Translations'
+        character:
+          $ref: '#/components/schemas/Translations'
+        temperature:
+          $ref: '#/components/schemas/Translations'
+        awards:
+          $ref: '#/components/schemas/Translations'
+        storage:
+          $ref: '#/components/schemas/Translations'
+        rating:
+          $ref: '#/components/schemas/Rating'
+        shop:
+          $ref: '#/components/schemas/BasicShopInfo'
+
+    ExtendedArticleWine:
+      #  Has definitions/WineBox
+      #  Uses definitions/ExtendedShopInfo
+      type: object
+      properties:
+        country:
+          $ref: '#/components/schemas/Country'
+        region:
+          $ref: '#/components/schemas/Region'
+        type:
+          $ref: '#/components/schemas/WineType'
+        online_specials:
+          $ref: '#/components/schemas/OnlineSpecials'
+        box:
+          $ref: '#/components/schemas/WineBox'
+        year:
+          $ref: '#/components/schemas/Year'
+        fits_with:
+          $ref: '#/components/schemas/Translations'
+        varietal:
+          $ref: '#/components/schemas/Translations'
+        character:
+          $ref: '#/components/schemas/Translations'
+        temperature:
+          $ref: '#/components/schemas/Translations'
+        awards:
+          $ref: '#/components/schemas/Translations'
+        storage:
+          $ref: '#/components/schemas/Translations'
+        rating:
+          $ref: '#/components/schemas/Rating'
+        shop:
+          $ref: '#/components/schemas/ExtendedShopInfo'
+
+    BasicShopInfo:
+      #  Has no title (shop title)
+      type: object
+      properties:
+        url:
+          $ref: '#/components/schemas/Url'
+        stock:
+          $ref: '#/components/schemas/Stock'
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+        prices:
+          $ref: '#/components/schemas/ArticlePrices'
+        discount:
+          $ref: '#/components/schemas/Translations'
+        packshot:
+          $ref: '#/components/schemas/Packshot'
+
+    ExtendedShopInfo:
+      #  Has title (shop title)
+      #    allOf:
+      #      - $ref: '#/components/schemas/BasicShopInfo'
+      #      - properties:
+      #        title:
+      #          $ref: '#/components/schemas/Translations'
+      type: object
+      properties:
+        url:
+          $ref: '#/components/schemas/Url'
+        stock:
+          $ref: '#/components/schemas/Stock'
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+        prices:
+          $ref: '#/components/schemas/ArticlePrices'
+        discount:
+          $ref: '#/components/schemas/Translations'
+        title:
+          $ref: '#/components/schemas/Translations'
+        packshot:
+          $ref: '#/components/schemas/Packshot'
+
+    Region:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        title:
+          $ref: '#/components/schemas/Translations'
+
+    WineType:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          minimum: 0
+          description: Navision wine type code
+        title:
+          $ref: '#/components/schemas/Translations'
+
+    Rating:
+      type: object
+      properties:
+        value:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 5
+          description: Rating value
+        total:
+          type: integer
+          format: int32
+          minimum: 0
+          description: Ratng count
+        valid:
+          type: boolean
+          description: Is a valid rating?
+
+    Stock:
+      type: object
+      properties:
+        value:
+          type: integer
+          format: int32
+          description: Navision stock count, might be negative
+        code:
+          type: integer
+          format: int32
+          minimum: 0
+          description: Navision stock code
+        message:
+          $ref: '#/components/schemas/Translations'
+
+    Barcode:
+      type: object
+      properties:
+        value:
+          type: string
+          description: Barcode text value (pattern according to type)
+        type:
+          type: string
+          description: Barcode type code (e.g. 'EAN13', 'UPC12', 'ITF14', 'EAN8', 'PLU')
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+        master:
+          type: boolean
+          description: Is master barcode?
+
+    WineBox:
+      type: object
+      properties:
+        code:
+          type: string
+          pattern: '/^[A-Z]{2}$/'
+          description: Denner box type code (e.g. 'KA', 'HA', 'HB')
+        batch_size:
+          type: integer
+          format: int32
+          minimum: 0
+          description: Batch size
+
+    ### Publicated article (both online and screen)
+    Output:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        type:
+          $ref: '#/components/schemas/OutputType'
+        text:
+          $ref: '#/components/schemas/Translations'
+        images:
+          $ref: '#/components/schemas/OutputImages'
+
+    OutputType:
+      type: object
+      description: Output type
+      properties:
+        id:
+          type: string
+          description: Output type id
+
+    OutputImage:
+      type: object
+      properties:
+        locale:
+          type: string
+          description: Locale for the image formats
+        formats:
+          $ref: '#/components/schemas/OutputImageFormats'
+
+    OutputImageFormat:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Mime type for the output image
+        url:
+          type: string
+          description: Image url which can be used, for example, in an 'img' tag
+
+    ### Online publicated article
+    OnlineArticle:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        article_id:
+          type: string
+          pattern: '/^\d{6}$/'
+          description: Navision article code
+        name:
+          type: string
+          description: Article name
+        title:
+          $ref: '#/components/schemas/Translations'
+        description:
+          $ref: '#/components/schemas/Translations'
+        prices:
+          $ref: '#/components/schemas/ArticlePrices'
+        price_info:
+          $ref: '#/components/schemas/Translations'
+        unit_price_info:
+          $ref: '#/components/schemas/Translations'
+        promotion_info:
+          $ref: '#/components/schemas/Translations'
+        dots:
+          $ref: '#/components/schemas/Dots'
+        panel:
+          $ref: '#/components/schemas/Translations'
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+        #      Removed because we cannot calculate a valid size, neither display a standardized unit
+        #      content:
+        #        $ref: '#/components/schemas/Content'
+        base:
+          $ref: '#/components/schemas/BaseContent'
+        validity:
+          $ref: '#/components/schemas/ArticleValidity'
+        availability_limitations:
+          $ref: '#/components/schemas/AvailabilityLimitations'
+        sort_index:
+          $ref: '#/components/schemas/SortIndex'
+        featured_sort_index:
+          $ref: '#/components/schemas/SortIndex'
+        featured:
+          type: boolean
+          description: Is it a featured article (should be displayed on the front/main/home page)?
+        promoted:
+          type: boolean
+          description: Is it a promoted article (should be displayed with full information)?
+        compared:
+          type: boolean
+          description: Is the article's price compared to an offer from an other company?
+        cooling:
+          $ref: '#/components/schemas/Cooling'
+        online_group:
+          $ref: '#/components/schemas/AssignedOnlineGroup'
+        article_group:
+          $ref: '#/components/schemas/AssignedArticleGroup'
+        eco_labels:
+          $ref: '#/components/schemas/EcoLabels'
+        packshot:
+          $ref: '#/components/schemas/Packshot'
+        wine:
+          $ref: '#/components/schemas/BasicArticleWine'
+
+    ScreenArticle:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        article_id:
+          type: string
+          pattern: '/^\d{6}$/'
+          description: Navision article code
+        name:
+          type: string
+          description: Article name
+        title:
+          $ref: '#/components/schemas/Translations'
+        description:
+          $ref: '#/components/schemas/Translations'
+        prices:
+          $ref: '#/components/schemas/ArticlePrices'
+        price_info:
+          $ref: '#/components/schemas/Translations'
+        unit_price_info:
+          $ref: '#/components/schemas/Translations'
+        dots:
+          $ref: '#/components/schemas/Dots'
+        panel:
+          $ref: '#/components/schemas/Translations'
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+        #      Removed because we cannot calculate a valid size, neither display a standardized unit
+        #      content:
+        #        $ref: '#/components/schemas/Content'
+        base:
+          $ref: '#/components/schemas/BaseContent'
+        validity:
+          $ref: '#/components/schemas/ArticleValidity'
+        availability_limitations:
+          $ref: '#/components/schemas/AvailabilityLimitations'
+        sort_index:
+          $ref: '#/components/schemas/SortIndex'
+        compared:
+          type: boolean
+          description: Is the article's price compared to an offer from an other company?
+        cooling:
+          $ref: '#/components/schemas/Cooling'
+        online_group:
+          $ref: '#/components/schemas/AssignedOnlineGroup'
+        article_group:
+          $ref: '#/components/schemas/AssignedArticleGroup'
+        packshot:
+          $ref: '#/components/schemas/Packshot'
+        wine:
+          $ref: '#/components/schemas/BasicArticleWine'
+
+    ### Online publication
+    OnlinePublication:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        name:
+          type: string
+        year:
+          $ref: '#/components/schemas/Year'
+        week:
+          $ref: '#/components/schemas/Week'
+        title:
+          $ref: '#/components/schemas/Translations'
+        list_title:
+          $ref: '#/components/schemas/Translations'
+        show_details_text:
+          $ref: '#/components/schemas/Translations'
+        validity:
+          $ref: '#/components/schemas/Validity'
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssignedOnlineFilter'
+          description: Online filter with appearances (and no localised title)
+        promotion_type:
+          $ref: '#/components/schemas/PromotionType'
+        sort_index:
+          $ref: '#/components/schemas/SortIndex'
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/OnlinePublicationLink'
+          description: Links
+
+    OnlinePublicationWithArticles:
+      allOf:
+      - $ref: '#/components/schemas/OnlinePublication'
+      - properties:
+          articles:
+            $ref: '#/components/schemas/OnlineArticles'
+
+    PromotionType:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        code:
+          type: string
+          description: Navision promotion type code
+        name:
+          type: string
+
+    OnlinePublicationLink:
+      type: object
+      properties:
+        locale:
+          $ref: '#/components/schemas/Locale'
+        url:
+          $ref: '#/components/schemas/Url'
+
+    ### Online filter
+    OnlineFilter:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        name:
+          type: string
+        title:
+          $ref: '#/components/schemas/Translations'
+        sort_index:
+          $ref: '#/components/schemas/SortIndex'
+
+    AssignedOnlineFilter:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        name:
+          type: string
+        appearances:
+          $ref: '#/components/schemas/Appearances'
+
+    ### Online group
+    OnlineGroup:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        code:
+          type: integer
+          format: int32
+          description: Navision online group code
+        sort_index:
+          $ref: '#/components/schemas/SortIndex'
+        allow_featuring:
+          type: boolean
+          description: Does the group allow the assigned articles to be featured (i.e. displayed on front/main/home page)?
+        allow_promotion:
+          type: boolean
+          description: Does the group allow the assigned articles to be promoted (i.e. displayed on a promotional page)?
+        allow_background:
+          type: boolean
+          description: Does the group allow the assigned articles to be displayed with a background (i.e. displayed on a page with a deceptive/trivializing background)?
+        title:
+          $ref: '#/components/schemas/Translations'
+        children:
+          $ref: '#/components/schemas/OnlineGroups'
+
+    AssignedOnlineGroup:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        code:
+          type: integer
+          format: int32
+          description: Navision online group code
+        disabled:
+          type: boolean
+          description: Is the group disabled?
+        allow_featuring:
+          type: boolean
+          description: Does the group allow the assigned articles to be featured (i.e. displayed on front/main/home page)?
+        allow_promotion:
+          type: boolean
+          description: Does the group allow the assigned articles to be promoted (i.e. displayed on a promotional page)?
+        allow_background:
+          type: boolean
+          description: Does the group allow the assigned articles to be displayed with a background (i.e. displayed on a page with a deceptive/trivializing background)?
+        title:
+          $ref: '#/components/schemas/Translations'
+        parent:
+          $ref: '#/components/schemas/AssignedOnlineGroup'
+
+    ### Online special
+    OnlineSpecial:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique ID
+        sort_index:
+          $ref: '#/components/schemas/SortIndex'
+        title:
+          $ref: '#/components/schemas/Translations'
+
+    ### Screen publication
+    ScreenPublication:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        name:
+          type: string
+        year:
+          $ref: '#/components/schemas/Year'
+        week:
+          $ref: '#/components/schemas/Week'
+        title:
+          $ref: '#/components/schemas/Translations'
+        validity:
+          $ref: '#/components/schemas/Validity'
+
+    ScreenPublicationWithArticles:
+      allOf:
+      - $ref: '#/components/schemas/ScreenPublication'
+      - properties:
+          articles:
+            $ref: '#/components/schemas/ScreenArticles'
+
+    ### Appraisal
+    Appraisal:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        created_on:
+          type: string
+          format: date-time
+          description: Timestamp
+        edited_on:
+          type: string
+          format: date-time
+          description: Timestamp
+        edited_by:
+          type: string
+          description: Editor's name
+        wine_year:
+          $ref: '#/components/schemas/Year'
+        title:
+          type: string
+          description: Title
+        description:
+          type: string
+          description: Description
+        original_title:
+          type: string
+          description: Title before edit
+        original_description:
+          type: string
+          description: Description before edit
+        rating:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 5
+          description: Given rating
+        display_name:
+          type: string
+          description: Person's (public) name
+        firstname:
+          type: string
+          description: Person's firstname
+        lastname:
+          type: string
+          description: Person's lastname
+        address:
+          type: string
+          description: Person's address
+        zip_code:
+          type: integer
+          format: int32
+          minimum: 1000
+          maximum: 9699
+          description: Person city's ZIP code
+        city:
+          type: string
+          description: Person's city
+        email:
+          type: string
+          #        pattern: @todo Fixed pattern?
+          description: Person's (public) e-mail address
+        gender:
+          type: string
+          #        pattern: '/^(male|female)$/'
+          enum:
+          - female
+          - male
+          description: Person's gender (male or female)
+        shop_user_id:
+          type: integer
+          format: int32
+          description: Person's shop ID
+        language:
+          type: string
+          description: Person's locale
+        article:
+          $ref: '#/components/schemas/AppraisalArticle'
+        marked:
+          type: boolean
+          description: Is appraisal marked?
+        processed:
+          type: boolean
+          description: Is appraisal processed?
+        approved:
+          type: boolean
+          description: Is appraisal approved?
+        approved_image:
+          type: boolean
+          description: Is image approved?
+        source:
+          type: string
+          #        pattern: '/^(web|mobile)$/'
+          description: Where the appraisal originated from ("web" or "mobile")
+        type:
+          type: string
+          #        pattern: '/^(article|wine_selfie)$/'
+          description: Type of appraisal ("article" or "wine_selfie")
+      required:
+      - id
+      - title
+      - rating
+      - article
+
+    AppraisalArticle:
+      type: object
+      properties:
+        id:
+          type: string
+          pattern: '/^\d{6}$/'
+          description: Navision article code
+        name:
+          type: string
+          description: Article name
+      required:
+      - id
+
+    AppraisalStatistic:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          description: Total number of appraisals
+        processed:
+          type: integer
+          format: int32
+          description: Total number of processed appraisals
+        not_processed:
+          type: integer
+          format: int32
+          description: Total number of unprocessed appraisals
+        approved:
+          type: integer
+          format: int32
+          description: Total number of approved appraisals
+        not_approved:
+          type: integer
+          format: int32
+          description: Total number of appraisals that have not been approved
+        unique:
+          type: integer
+          format: int32
+          description: Total number of individual persons that sent at least one appraisal (based on email addresses)
+        sweepstake_total:
+          type: integer
+          format: int32
+          description: Total number of sweepstake participations
+        sweepstake_unique:
+          type: integer
+          format: int32
+          description: Total number of individual persons that participated at least once in the sweepstake (based on email addresses)
+        rating:
+          $ref: '#/components/schemas/RatingsGrouped'
+
+    AppraisalArticleRating:
+      type: object
+      properties:
+        article_id:
+          type: string
+          pattern: '/^\d{6}$/'
+          description: Navision article code
+        value:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 5
+          description: Rating value
+        count:
+          type: integer
+          format: int32
+          minimum: 0
+          description: Ratng count
+        calculated_on:
+          $ref: '#/components/schemas/Date'
+      required:
+      - article_id
+      - value
+      - count
+
+    RatingGrouped:
+      type: object
+      description: Rating count for a given value
+      properties:
+        value:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 5
+        count:
+          type: integer
+          format: int32
+      required:
+      - value
+      - count
+
+    SweepstakeParticipant:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUIDv4'
+        created_on:
+          type: string
+          format: date-time
+          description: Timestamp
+        display_name:
+          type: string
+          description: Person's (public) name
+        firstname:
+          type: string
+          description: Person's firstname
+        lastname:
+          type: string
+          description: Person's lastname
+        address:
+          type: string
+          description: Person's address
+        zip_code:
+          type: integer
+          format: int32
+          minimum: 1000
+          maximum: 9699
+          description: Person city's ZIP code
+        city:
+          type: string
+          description: Person's city
+        email:
+          type: string
+          #        pattern: @todo Fixed pattern?
+          description: Person's (public) e-mail address
+        gender:
+          type: string
+          #        pattern: '/^(male|female)$/'
+          description: Person's gender (male or female)
+        shop_user_id:
+          type: integer
+          format: int32
+          description: Person's shop ID
+        language:
+          type: string
+          description: Person's locale
+      required:
+      - id
+      - firstname
+      - lastname
+      - address
+      - zip_code
+      - city
+      - email
+      - gender
+      - language
+
+    ### Collections
+    Translations:
+      type: array
+      items:
+        $ref: '#/components/schemas/Translation'
+
+    Appearances:
+      type: array
+      items:
+        $ref: '#/components/schemas/Appearance'
+
+    StoreFilters:
+      type: array
+      items:
+        $ref: '#/components/schemas/StoreFilter'
+
+    Stores:
+      type: array
+      items:
+        $ref: '#/components/schemas/Store'
+
+    ScreenStores:
+      type: array
+      items:
+        $ref: '#/components/schemas/ScreenStore'
+
+    StoreChannels:
+      type: array
+      items:
+        $ref: '#/components/schemas/StoreChannel'
+
+    StoreServices:
+      type: array
+      items:
+        $ref: '#/components/schemas/StoreService'
+
+    ArticleGroups:
+      type: array
+      items:
+        $ref: '#/components/schemas/ArticleGroup'
+
+    EcoLabels:
+      type: array
+      items:
+        $ref: '#/components/schemas/EcoLabel'
+
+    Packshots:
+      type: array
+      items:
+        $ref: '#/components/schemas/Packshot'
+
+    Barcodes:
+      type: array
+      items:
+        $ref: '#/components/schemas/Barcode'
+
+    Articles:
+      type: array
+      items:
+        $ref: '#/components/schemas/Article'
+
+    PromotionTypes:
+      type: array
+      items:
+        $ref: '#/components/schemas/PromotionType'
+
+    OutputImages:
+      type: array
+      items:
+        $ref: '#/components/schemas/OutputImage'
+
+    OutputImageFormats:
+      type: array
+      items:
+        $ref: '#/components/schemas/OutputImageFormat'
+
+    Dots:
+      type: array
+      items:
+        $ref: '#/components/schemas/Output'
+
+    OnlineArticles:
+      type: array
+      items:
+        $ref: '#/components/schemas/OnlineArticle'
+
+    ScreenArticles:
+      type: array
+      items:
+        $ref: '#/components/schemas/ScreenArticle'
+
+    OnlinePublications:
+      type: array
+      items:
+        $ref: '#/components/schemas/OnlinePublication'
+
+    OnlineFilters:
+      type: array
+      items:
+        $ref: '#/components/schemas/OnlineFilter'
+
+    OnlineGroups:
+      type: array
+      items:
+        $ref: '#/components/schemas/OnlineGroup'
+
+    OnlineSpecials:
+      type: array
+      items:
+        $ref: '#/components/schemas/OnlineSpecial'
+
+    ScreenPublications:
+      type: array
+      items:
+        $ref: '#/components/schemas/ScreenPublication'
+
+    Appraisals:
+      type: array
+      items:
+        $ref: '#/components/schemas/Appraisal'
+
+    SweepstakeParticipants:
+      type: array
+      items:
+        $ref: '#/components/schemas/SweepstakeParticipant'
+
+    AppraisalArticleRatings:
+      type: array
+      items:
+        $ref: '#/components/schemas/AppraisalArticleRating'
+
+    RatingsGrouped:
+      type: array
+      items:
+        $ref: '#/components/schemas/RatingGrouped'
+
+    ### Responses
+    EmptyResponse:
+      type: "object"
+      title: "Empty Schema"
+    ErrorResponse:
+      type: "object"
+      properties:
+        type:
+          type: "string"
+        title:
+          type: "string"
+        status:
+          type: "integer"
+        detail:
+          type: "string"
+      title: "Error Schema"
+
+    StoresResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        stores:
+          $ref: '#/components/schemas/Stores'
+
+    ScreenStoresResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        stores:
+          $ref: '#/components/schemas/ScreenStores'
+
+    StoreChannelsResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        store_channels:
+          $ref: '#/components/schemas/StoreChannels'
+
+    StoreServicesResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        store_services:
+          $ref: '#/components/schemas/StoreServices'
+
+    ArticleGroupsResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        article_groups:
+          $ref: '#/components/schemas/ArticleGroups'
+
+    ArticlesResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        articles:
+          $ref: '#/components/schemas/Articles'
+
+    PromotionTypesResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        promotion_types:
+          $ref: '#/components/schemas/PromotionTypes'
+
+    OnlineFiltersResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        online_filters:
+          $ref: '#/components/schemas/OnlineFilters'
+
+    OnlineGroupsResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        online_groups:
+          $ref: '#/components/schemas/OnlineGroups'
+
+    OnlineSpecialsResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        online_groups:
+          $ref: '#/components/schemas/OnlineSpecials'
+
+    OnlinePublicationsResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        online_publications:
+          $ref: '#/components/schemas/OnlinePublications'
+
+    ScreenPublicationsResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        screen_publications:
+          $ref: '#/components/schemas/ScreenPublications'
+
+    AppraisalsResponse:
+      type: object
+      properties:
+        #      page_count:
+        #        description: The number of pages
+        #        type: integer
+        #        format: int32
+        #      page_size:
+        #        description: The page size
+        #        type: integer
+        #        format: int32
+        total_appraisals:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        appraisals:
+          $ref: '#/components/schemas/Appraisals'
+
+    AppraisalStatisticResponse:
+      type: object
+      properties:
+        day:
+          $ref: '#/components/schemas/Date'
+        on_day:
+          $ref: '#/components/schemas/AppraisalStatistic'
+        overall:
+          $ref: '#/components/schemas/AppraisalStatistic'
+
+    SweepstakeParticipantsResponse:
+      type: object
+      properties:
+        #      page_count:
+        #        description: The number of pages
+        #        type: integer
+        #        format: int32
+        #      page_size:
+        #        description: The page size
+        #        type: integer
+        #        format: int32
+        total_participants:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        participants:
+          $ref: '#/components/schemas/SweepstakeParticipants'
+
+    AppraisalArticleRatingsResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        ratings:
+          $ref: '#/components/schemas/AppraisalArticleRatings'
+
+  responses:
+    500:
+      description: "HTTP 500 Internal Server Error"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    403:
+      description: "HTTP 403 Forbidden"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    406:
+      description: "HTTP 406 Not Acceptable"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    416:
+      description: "HTTP 416 Range Not Satisfiable"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
