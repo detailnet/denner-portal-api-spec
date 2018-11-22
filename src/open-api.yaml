@@ -27,18 +27,7 @@ x-detail-stage-variables:
   - url_assets: "denner-assets-test.detailnet.ch/api"
   - url_articles: "denner-articles-test.detailnet.ch/api"
   - url_stores: "denner-stores-test.detailnet.ch/api"
-security: # @todo On import does not shows in the Authorizers, maybe until there is one route that really uses it?
-- appKey:
-    type: apiKey
-    description: Application key
-    name: App-Key
-    in: header
-    x-amazon-apigateway-authtype: "custom"
-    x-amazon-apigateway-authorizer:
-      authorizerUri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools_authorizeApiRequest:live/invocations"
-      authorizerCredentials: "arn:aws:iam::802555642192:role/aws-apigateway-role.denner-api"
-      authorizerResultTtlInSeconds: 3600 #todo Check this, in the other authorizers this is set to 300
-      type: "token"
+
 x-amazon-apigateway-request-validators:
   all:
     validateRequestBody: true
@@ -723,6 +712,19 @@ paths:
 
 
 components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      description: Application key
+      name: App-Key
+      in: header
+      x-amazon-apigateway-authtype: "custom"
+      x-amazon-apigateway-authorizer:
+        authorizerUri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools_authorizeApiRequest:live/invocations"
+        authorizerCredentials: "arn:aws:iam::802555642192:role/aws-apigateway-role.denner-api"
+        authorizerResultTtlInSeconds: 3600 #todo Check this, in the other authorizers this is set to 300
+        type: "token"
+
   parameters:
     AcceptHeader:
       name: Accept
