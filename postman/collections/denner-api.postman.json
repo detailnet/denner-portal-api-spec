@@ -8798,7 +8798,7 @@
 							"raw": "{{responseToSubmit}}"
 						},
 						"url": {
-							"raw": "http://denner-assets.public.web01.detailnet.me/dws-fileconversion/receive-completed-job",
+							"raw": "{{base_url_schema}}{{assets_host}}/dws-fileconversion/receive-completed-job",
 							"protocol": "http",
 							"host": [
 								"denner-assets",
