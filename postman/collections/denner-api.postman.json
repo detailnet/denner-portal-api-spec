@@ -1923,7 +1923,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Test file 2\",\n  \"size\": 1024,\n  \"locale\": \"it\",\n  \"url\": \"https://s3-eu-west-1.amazonaws.com/ivan-wolf/denner-assets/generated-files/de1f256e-3730-42fa-aa38-36b0779b3e67/31_A4_Plakate_de.pdf\",\n  \"created_by\": \"Curzio\",\n  \"created_on\": \"2017-09-22T00:00:00+0200\"\n}"
+									"raw": ""
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
@@ -8656,22 +8656,19 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "6e0adac2-72b7-460a-85bd-6957a8f9da31",
 								"exec": [
 									"var rendererResponses = JSON.parse(postman.getGlobalVariable(\"rendererResponses\") || '{}');",
 									"console.log( rendererResponses);",
 									"",
-									"var doc = new DOMParser().parseFromString(responseBody,'text/html');",
-									"var iterator = doc.evaluate('//div/@data-id', doc, null, XPathResult.ANY_TYPE, null);",
+									"const $ = cheerio.load(responseBody); ",
 									"",
-									"try {",
-									"  var thisNode = iterator.iterateNext();",
-									"  ",
-									"  while (thisNode && thisNode.textContent) {",
-									"    var id = thisNode.textContent,",
-									"        contentResultNode=doc.evaluate('//div[@data-id=\"'+id+'\"]/pre/text()',  doc, null, XPathResult.ANY_TYPE, null),",
-									"        content=JSON.parse(contentResultNode.iterateNext().nodeValue);",
-									"    ",
+									"$('.request-body').each(function(i, elem) {",
+									"    var id = $(this).attr('data-id'),",
+									"        content = JSON.parse($(this).find('pre').text());",
+									"    console.log(id);",
+									"    console.log(content); ",
+									"",
 									"    if (!rendererResponses[id]) {",
 									"        rendererResponses[id] = {",
 									"            status: 'new',",
@@ -8686,19 +8683,14 @@
 									"            tests[\"Response id \"+ id + \" already fetched and sent\"] = true;",
 									"        }",
 									"    }",
-									"    ",
-									"    thisNode = iterator.iterateNext();",
-									"  }  ",
-									"}",
-									"catch (e) {",
-									" ",
-									"}",
+									"});",
 									"",
 									"//console.log(rendererResponses);",
 									"",
 									"postman.setGlobalVariable(\"rendererResponses\", JSON.stringify(rendererResponses));",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -8723,19 +8715,20 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://requestb.in/{your-reqwstb.in-id}?inspect=",
+							"raw": "https://requestbin.fullcontact.com/wabjuiwa?inspect",
 							"protocol": "https",
 							"host": [
-								"requestb",
-								"in"
+								"requestbin",
+								"fullcontact",
+								"com"
 							],
 							"path": [
-								"{your-reqwstb.in-id}"
+								"wabjuiwa"
 							],
 							"query": [
 								{
 									"key": "inspect",
-									"value": ""
+									"value": null
 								}
 							]
 						},
