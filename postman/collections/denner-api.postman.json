@@ -4596,1346 +4596,1779 @@
 			"name": "articles",
 			"item": [
 				{
-					"name": "/articles",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
+					"name": "articles",
+					"item": [
+						{
+							"name": "/articles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/articles",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"articles"
+									]
+								},
+								"description": "List articles (Artikel)"
 							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
+							"response": []
 						},
-						"url": {
-							"raw": "{{articles_url_base}}/articles",
-							"host": [
-								"{{articles_url_base}}"
+						{
+							"name": "/articles/{article_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "X-Denner-Broadcast",
+										"value": "UPDATE",
+										"description": "Request broadcast notifications for this article on updates",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/articles/022617",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"articles",
+										"022617"
+									]
+								},
+								"description": "List single article (Artikel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/articles/{article_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cooling\": 0\n}"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/articles/022617",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"articles",
+										"022617"
+									]
+								},
+								"description": "Edit an article (Artikel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/articles/{article_id}/text-blocks",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/articles/022617/text-blocks",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"articles",
+										"022617",
+										"text-blocks"
+									]
+								},
+								"description": "List all text blocks for an article"
+							},
+							"response": []
+						},
+						{
+							"name": "/articles/{article_id}/text-blocks",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"postman.setEnvironmentVariable(\"current_datetime\", (new Date()).toISOString().replace(/\\.\\d+Z$/,'Z'));"
+										]
+									}
+								}
 							],
-							"path": [
-								"articles"
-							]
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"name\": \"title\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW TEXT Mikado Chocolat au lait\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\",\n        \"from_translation\": false,\n        \"sources\": [\n          {\n            \"id\": \"print\",\n            \"change_approved\": true\n          },\n          {\n            \"id\": \"denner\",\n            \"linked\": false,\n            \"change_approved\": true\n          }\n        ]\n      },\n      {\n        \"locale\": \"fr\",\n        \"value\": \"NEW TEXT Mikado Chocolat au lait Lu\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\",\n        \"sources\": [\n          {\n            \"id\": \"print\"\n          },\n          {\n            \"id\": \"denner\",\n            \"linked\": false\n          }\n        ]\n      },\n      {\n        \"locale\": \"it\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\",\n        \"sources\": [\n          {\n            \"id\": \"print\"\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"name\": \"description\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW DESCRIPTION 75 g\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\"\n      }\n    ]\n  },\n  {\n    \"name\": \"new\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW BLOCK\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\"\n      }\n    ]\n  }\n]"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/articles/022617/text-blocks",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"articles",
+										"022617",
+										"text-blocks"
+									]
+								},
+								"description": "Edit text blocks for an article"
+							},
+							"response": []
 						},
-						"description": "List articles (Artikel)"
-					},
-					"response": []
+						{
+							"name": "/articles/{article_id}/packshot/{filename}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/articles/022617/packshot/022617.png?quantity=1&with-archived=true&imgix_w=250&imgix_h=250",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"articles",
+										"022617",
+										"packshot",
+										"022617.png"
+									],
+									"query": [
+										{
+											"key": "quantity",
+											"value": "1"
+										},
+										{
+											"key": "with-archived",
+											"value": "true"
+										},
+										{
+											"key": "imgix_w",
+											"value": "250"
+										},
+										{
+											"key": "imgix_h",
+											"value": "250"
+										}
+									]
+								},
+								"description": "Get article packshot image"
+							},
+							"response": []
+						},
+						{
+							"name": "/shop-wines",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/shop-wines",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"shop-wines"
+									]
+								},
+								"description": "List all wines currently targeted for the Wineshop"
+							},
+							"response": []
+						},
+						{
+							"name": "/shop-wines/{article_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/shop-wines/050006",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"shop-wines",
+										"050006"
+									]
+								},
+								"description": "Fetch wine targeted for the Wineshop"
+							},
+							"response": []
+						},
+						{
+							"name": "/mobile-wines",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/mobile-wines",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"mobile-wines"
+									]
+								},
+								"description": "List all wines currently targeted for the Mobile App"
+							},
+							"response": []
+						},
+						{
+							"name": "/mobile-wines/{article_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/mobile-wines/050006",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"mobile-wines",
+										"050006"
+									]
+								},
+								"description": "Fetch wine targeted for the Mobile App"
+							},
+							"response": []
+						},
+						{
+							"name": "/article-groups",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/article-groups?page_size=-1",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"article-groups"
+									],
+									"query": [
+										{
+											"key": "page_size",
+											"value": "-1"
+										}
+									]
+								},
+								"description": "List article groups (Warengruppen)"
+							},
+							"response": []
+						},
+						{
+							"name": "/online-groups",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/online-groups?page_size=-1",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"online-groups"
+									],
+									"query": [
+										{
+											"key": "page_size",
+											"value": "-1"
+										}
+									]
+								},
+								"description": "List online groups (Internet-Sortimente)"
+							},
+							"response": []
+						},
+						{
+							"name": "/online-specials",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/online-specials?page_size=-1",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"online-specials"
+									],
+									"query": [
+										{
+											"key": "page_size",
+											"value": "-1"
+										}
+									]
+								},
+								"description": "List online specials (Online-Specials)"
+							},
+							"response": []
+						},
+						{
+							"name": "/boxes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/boxes",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"boxes"
+									]
+								},
+								"description": "List all boxes"
+							},
+							"response": []
+						},
+						{
+							"name": "/price-regions",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/price-regions",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"price-regions"
+									]
+								},
+								"description": "List all price regions"
+							},
+							"response": []
+						},
+						{
+							"name": "/wine-growers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/wine-growers?query=test",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"wine-growers"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "test"
+										}
+									]
+								},
+								"description": "List wine-growers (Winzer)"
+							},
+							"response": []
+						},
+						{
+							"name": "/wine-growers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save created advertised article dots's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData) ? jsonData.id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
+											"",
+											"tests[\"Setup new advertised_article_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"{{wine_grower_id}}\",\n  \"name\" : \"Hans Muster\",\n  \"url\": \"http://www.muster.ch\",\n    \"picture\": {\n      \"id\":\"8b72a5de-f59a-4ceb-a9ac-2f84ef8da757\",\n      \"auto_assigned\":false,\n      \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n      \"preview_url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png?version=1\",\n      \"cdn_url\":\"https://ivan-wolf.imgix.net/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n      \"quantity\":1,\n      \"created_on\":\"2009-08-17T10:56:19+0200\",\n      \"images\":[\n        {\n          \"purpose\":\"print\",\n          \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n          \"created_on\":\"2009-08-17T10:56:19+0200\"\n        \n        },{\n          \"purpose\":\"web\",\n          \"url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n          \"created_on\":\"2016-12-01T13:46:03+0100\"\n        }\n      ]\n  },\n  \"descriptions\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Text de\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Text fr\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Text it\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/wine-growers",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"wine-growers"
+									]
+								},
+								"description": "Create a new wine-grower"
+							},
+							"response": []
+						},
+						{
+							"name": "/wine-growers/{wine_grower_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "X-Denner-Broadcast",
+										"value": "UPDATE",
+										"description": "Request broadcast notifications for this article on updates",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/wine-growers/{{wine_grower_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"wine-growers",
+										"{{wine_grower_id}}"
+									]
+								},
+								"description": "List single wine grower (Winzer)"
+							},
+							"response": []
+						},
+						{
+							"name": "/wine-growers/{wine_grower_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\" : \"Hans Meier\",\n  \"picture\": {\n    \"id\":\"8b72a5de-f59a-4ceb-a9ac-2f84ef8da757\",\n    \"auto_assigned\":false,\n    \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n    \"preview_url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png?version=1\",\n    \"cdn_url\":\"https://ivan-wolf.imgix.net/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n    \"quantity\":1,\n    \"created_on\":\"2009-08-17T10:56:19+0200\",\n    \"images\":[\n      {\n        \"purpose\":\"print\",\n        \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n        \"created_on\":\"2009-08-17T10:56:19+0200\"\n        \n      },{\n        \"purpose\":\"web\",\n        \"url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n        \"created_on\":\"2016-12-01T13:46:03+0100\"\n      }\n    ]\n  }\n}"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/wine-growers/{{wine_grower_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"wine-growers",
+										"{{wine_grower_id}}"
+									]
+								},
+								"description": "Edit a wine grower (Winzer)"
+							},
+							"response": []
+						},
+						{
+							"name": "/wine-growers/{wine_grower_id} ",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/wine-growers/{{wine_grower_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"wine-growers",
+										"{{wine_grower_id}}"
+									]
+								},
+								"description": "Delete a wine grower (Winzer)"
+							},
+							"response": []
+						}
+					],
+					"description": "Articles: Articles",
+					"_postman_isSubFolder": true
 				},
 				{
-					"name": "/articles/{article_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "X-Denner-Broadcast",
-								"value": "UPDATE",
-								"description": "Request broadcast notifications for this article on updates",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/articles/022617",
-							"host": [
-								"{{articles_url_base}}"
+					"name": "promotion",
+					"item": [
+						{
+							"name": "/advertised-articles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save first advertised-article's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData && jsonData.advertised_articles && jsonData.advertised_articles[0]) ? jsonData.advertised_articles[0].id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
+											"",
+											"tests[\"Setup first advertised_article_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
 							],
-							"path": [
-								"articles",
-								"022617"
-							]
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles"
+									]
+								},
+								"description": "List advertised articles (beworbene Artikel)"
+							},
+							"response": []
 						},
-						"description": "List single article (Artikel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/articles/{article_id}",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"cooling\": 0\n}"
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/articles/022617",
-							"host": [
-								"{{articles_url_base}}"
+						{
+							"name": "/advertised-articles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save created advertised article dots's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData) ? jsonData.id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
+											"",
+											"tests[\"Setup new advertised_article_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
 							],
-							"path": [
-								"articles",
-								"022617"
-							]
-						},
-						"description": "Edit an article (Artikel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/articles/{article_id}/text-blocks",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"article\" : \"054824\",\n  \"sold_from\": \"2017-02-27\",\n  \"valid_from\": \"2017-02-28\",\n  \"valid_to\": \"2017-03-06\",\n  \"quantity\": 24,\n  \"week\": {\n    \"year\": 2017, \n    \"number\": 9\n  }\n}"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles"
+									]
+								},
+								"description": "Create an advertised article"
 							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
+							"response": []
 						},
-						"url": {
-							"raw": "{{articles_url_base}}/articles/022617/text-blocks",
-							"host": [
-								"{{articles_url_base}}"
+						{
+							"name": "/advertised-articles/{year}-{week}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save first advertised-article's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData && jsonData.advertised_articles_by_week && jsonData.advertised_articles_by_week[0]) ? jsonData.advertised_articles_by_week[0].id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
+											"",
+											"tests[\"Setup first advertised_article_id in environment\"] = !!id;"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 ",
+											"// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js",
+											"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
+											"",
+											"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+										]
+									}
+								}
 							],
-							"path": [
-								"articles",
-								"022617",
-								"text-blocks"
-							]
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{current_week}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{current_week}}"
+									]
+								},
+								"description": "List advertised article depending on a specific combination of year and week"
+							},
+							"response": []
 						},
-						"description": "List all text blocks for an article"
-					},
-					"response": []
-				},
-				{
-					"name": "/articles/{article_id}/text-blocks",
+						{
+							"name": "/advertised-articles/{advertised_article_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "X-Denner-Broadcast",
+										"value": "UPDATE",
+										"description": "Request broadcast notifications for this advertised article on updates",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}"
+									]
+								},
+								"description": "List single advertised article (beworbene Artikel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/advertised-articles/{advertised_article_id}",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"postman.setEnvironmentVariable(\"current_datetime\", (new Date()).toISOString().replace(/\\.\\d+Z$/,'Z'));"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"promoted_override\": true,\n    \"hide_base_price_override\": true,\n    \"instead_prices\": [\n        {\n            \"quantity\": 1,\n            \"price\": 12.45\n        },\n        {\n            \"quantity\": 10,\n            \"price\": 144.5\n        }\n    ],\n    \"packshots\" : [\n        {\n            \"auto_assigned\": false,\n            \"id\": \"69ed5a6c-f800-42ce-886b-d7e0f3061747\",\n            \"url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"preview_url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg?version=4\",\n            \"cdn_url\" :\"https://curzio-della-santa.imgix.net/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"quantity\": 1,\n            \"created_on\": \"2016-08-24T18:11:12+0200\",\n            \"images\": [\n                {\n                    \"created_on\": \"2016-08-25T18:44:14+0200\",\n                    \"purpose\":\"web\",\n                    \"url\" : \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\"\n                }\n            ]\n        }\n    ],\n    \"composite_info\" : {\n        \"override_title\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite title\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"},\n            {\"locale\":\"fr\", \"value\": \"FR composite title\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"}\n        ],\n        \"override_description\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite description\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"},\n            {\"locale\":\"it\", \"value\": \"IT composite description\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"}\n        ]\n    },\n    \"hide_in_manuscript\": false,\n    \"price_region\": \"DF\",\n    \"store_availability\": [1, 2, 3, 4],\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"use_promotion_prices\": true,\n    \"promotion_price\": {\n        \"sales_price\": 4.3,\n        \"instead_price\": 5.75\n    }\n}"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}"
+									]
+								},
+								"description": "Edit an advertised article (Artikel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/advertised-articles/{advertised_article_id}/dots",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save first advertised-article dot's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData && jsonData.advertised_article_dots && jsonData.advertised_article_dots[0]) ? jsonData.advertised_article_dots[0].id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"dot_id\", id);",
+											"",
+											"tests[\"Setup first dot_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}",
+										"dots"
+									]
+								},
+								"description": "List dots of an advertised article"
+							},
+							"response": []
+						},
+						{
+							"name": "/advertised-articles/{advertised_article_id}/dots",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save created advertised article dots's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData) ? jsonData.id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"dot_id\", id);",
+											"",
+											"tests[\"Setup new dot_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\" : \"x_for_y\",\n    \"placeholders\": {\n        \"original_quantity\": 2\n    }\n}"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}",
+										"dots"
+									]
+								},
+								"description": "Create a dot within an advertised article"
+							},
+							"response": []
+						},
+						{
+							"name": "/advertised-articles/{advertised_article_id}/dots/{dot_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots/{{dot_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}",
+										"dots",
+										"{{dot_id}}"
+									]
+								},
+								"description": "Get a dot within an advertised article, (Re-)render on request"
+							},
+							"response": []
+						},
+						{
+							"name": "/advertised-articles/{advertised_article_id}/dots/{dot_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"inactive\" : false,\n    \"placeholders\": {\n        \"original_quantity\": 50\n    }\n}"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots/{{dot_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}",
+										"dots",
+										"{{dot_id}}"
+									]
+								},
+								"description": "Update a dot within an advertised article"
+							},
+							"response": []
+						},
+						{
+							"name": "/advertised-articles/{advertised_article_id}/dots/{dot_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots/{{dot_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}",
+										"dots",
+										"{{dot_id}}"
+									]
+								},
+								"description": "Delete a dot within an advertised article"
+							},
+							"response": []
+						},
+						{
+							"name": "/advertised-articles/{advertised_article_id}/stoppers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save first advertised-article stopper's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData && jsonData.advertised_article_stoppers && jsonData.advertised_article_stoppers[0]) ? jsonData.advertised_article_stoppers[0].id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"stopper_id\", id);",
+											"",
+											"tests[\"Setup first stopper_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}",
+										"stoppers"
+									]
+								},
+								"description": "List stoppers of an advertised article"
+							},
+							"response": []
+						},
+						{
+							"name": "/advertised-articles/{advertised_article_id}/stoppers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Save created advertised article stoppers's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData) ? jsonData.id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"stopper_id\", id);",
+											"",
+											"tests[\"Setup new stopper_id in environment\"] = !!id;",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\" : \"x_for_y\",\n    \"placeholders\": {\n        \"original_quantity\": 2\n    }\n}"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}",
+										"stoppers"
+									]
+								},
+								"description": "ROUTE STILL NOT ACTIVE: Create a stopper within an advertised article"
+							},
+							"response": []
+						},
+						{
+							"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}",
+										"stoppers",
+										"{{stopper_id}}"
+									]
+								},
+								"description": "ROUTE STILL NOT ACTIVE: Get a stopper within an advertised article, (Re-)render on request"
+							},
+							"response": []
+						},
+						{
+							"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"inactive\" : false,\n    \"placeholders\": {\n        \"original_quantity\": 50\n    }\n}"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}",
+										"stoppers",
+										"{{stopper_id}}"
+									]
+								},
+								"description": "Update a stopper within an advertised article"
+							},
+							"response": []
+						},
+						{
+							"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}",
+										"stoppers",
+										"{{stopper_id}}"
+									]
+								},
+								"description": "ROUTE STILL NOT ACTIVE: Delete a stopper within an advertised article"
+							},
+							"response": []
+						},
+						{
+							"name": "/promotion-types",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/promotion-types?page_size=-1",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"promotion-types"
+									],
+									"query": [
+										{
+											"key": "page_size",
+											"value": "-1"
+										}
+									]
+								},
+								"description": "List promotion types (Aktionstypen)"
+							},
+							"response": []
+						},
+						{
+							"name": "/promotions",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/promotions?page_size=-1",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"promotions"
+									],
+									"query": [
+										{
+											"key": "page_size",
+											"value": "-1"
+										}
+									]
+								},
+								"description": "List promotions (Aktionen)"
+							},
+							"response": []
+						},
+						{
+							"name": "/store-availabilities",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/store-availabilities",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"store-availabilities"
+									]
+								},
+								"description": "List all store availabilities"
+							},
+							"response": []
+						},
+						{
+							"name": "/discount-campaigns",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/discount-campaigns",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"discount-campaigns"
+									]
+								},
+								"description": "List discount campaigns (Rabattaktionen)"
+							},
+							"response": []
+						},
+						{
+							"name": "/discounts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/discounts?filter=[{\"property\":\"campaign_id\",\"value\":\"1706-KAMB\"}]",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"discounts"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"campaign_id\",\"value\":\"1706-KAMB\"}]"
+										}
+									]
+								},
+								"description": "List discounts (Rabatte)"
+							},
+							"response": []
+						}
+					],
+					"description": "Articles: Promotion",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "0e5fe7d1-97dd-4f5c-81b2-344390b10567",
 								"type": "text/javascript",
 								"exec": [
-									"postman.setEnvironmentVariable(\"current_datetime\", (new Date()).toISOString().replace(/\\.\\d+Z$/,'Z'));"
+									""
 								]
 							}
-						}
-					],
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "[\n  {\n    \"name\": \"title\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW TEXT Mikado Chocolat au lait\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\",\n        \"from_translation\": false,\n        \"sources\": [\n          {\n            \"id\": \"print\",\n            \"change_approved\": true\n          },\n          {\n            \"id\": \"denner\",\n            \"linked\": false,\n            \"change_approved\": true\n          }\n        ]\n      },\n      {\n        \"locale\": \"fr\",\n        \"value\": \"NEW TEXT Mikado Chocolat au lait Lu\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\",\n        \"sources\": [\n          {\n            \"id\": \"print\"\n          },\n          {\n            \"id\": \"denner\",\n            \"linked\": false\n          }\n        ]\n      },\n      {\n        \"locale\": \"it\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\",\n        \"sources\": [\n          {\n            \"id\": \"print\"\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"name\": \"description\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW DESCRIPTION 75 g\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\"\n      }\n    ]\n  },\n  {\n    \"name\": \"new\",\n    \"texts\": [\n      {\n        \"locale\": \"de\",\n        \"value\": \"NEW BLOCK\",\n        \"changed_by\":\"{{user_fullname}}\",\n        \"changed_on\": \"{{current_datetime}}\"\n      }\n    ]\n  }\n]"
 						},
-						"url": {
-							"raw": "{{articles_url_base}}/articles/022617/text-blocks",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"articles",
-								"022617",
-								"text-blocks"
-							]
-						},
-						"description": "Edit text blocks for an article"
-					},
-					"response": []
-				},
-				{
-					"name": "/articles/{article_id}/packshot/{filename}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "*/*"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/articles/022617/packshot/022617.png?quantity=1&with-archived=true&imgix_w=250&imgix_h=250",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"articles",
-								"022617",
-								"packshot",
-								"022617.png"
-							],
-							"query": [
-								{
-									"key": "quantity",
-									"value": "1"
-								},
-								{
-									"key": "with-archived",
-									"value": "true"
-								},
-								{
-									"key": "imgix_w",
-									"value": "250"
-								},
-								{
-									"key": "imgix_h",
-									"value": "250"
-								}
-							]
-						},
-						"description": "Get article packshot image"
-					},
-					"response": []
-				},
-				{
-					"name": "/shop-wines",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/shop-wines",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"shop-wines"
-							]
-						},
-						"description": "List all wines currently targeted for the Wineshop"
-					},
-					"response": []
-				},
-				{
-					"name": "/shop-wines/{article_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/shop-wines/050006",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"shop-wines",
-								"050006"
-							]
-						},
-						"description": "Fetch wine targeted for the Wineshop"
-					},
-					"response": []
-				},
-				{
-					"name": "/mobile-wines",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/mobile-wines",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"mobile-wines"
-							]
-						},
-						"description": "List all wines currently targeted for the Mobile App"
-					},
-					"response": []
-				},
-				{
-					"name": "/mobile-wines/{article_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/mobile-wines/050006",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"mobile-wines",
-								"050006"
-							]
-						},
-						"description": "Fetch wine targeted for the Mobile App"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles",
-					"event": [
 						{
 							"listen": "test",
 							"script": {
+								"id": "e1746fe7-be81-4830-af0d-49e4564bb6bd",
 								"type": "text/javascript",
 								"exec": [
-									"// Save first advertised-article's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.advertised_articles && jsonData.advertised_articles[0]) ? jsonData.advertised_articles[0].id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
-									"",
-									"tests[\"Setup first advertised_article_id in environment\"] = !!id;",
 									""
 								]
 							}
 						}
 					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles"
-							]
-						},
-						"description": "List advertised articles (beworbene Artikel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save created advertised article dots's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData) ? jsonData.id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
-									"",
-									"tests[\"Setup new advertised_article_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"article\" : \"054824\",\n  \"sold_from\": \"2017-02-27\",\n  \"valid_from\": \"2017-02-28\",\n  \"valid_to\": \"2017-03-06\",\n  \"quantity\": 24,\n  \"week\": {\n    \"year\": 2017, \n    \"number\": 9\n  }\n}"
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles"
-							]
-						},
-						"description": "Create an advertised article"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{year}-{week}",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save first advertised-article's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.advertised_articles_by_week && jsonData.advertised_articles_by_week[0]) ? jsonData.advertised_articles_by_week[0].id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
-									"",
-									"tests[\"Setup first advertised_article_id in environment\"] = !!id;"
-								]
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 ",
-									"// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js",
-									"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
-									"",
-									"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{current_week}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{current_week}}"
-							]
-						},
-						"description": "List advertised article depending on a specific combination of year and week"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "X-Denner-Broadcast",
-								"value": "UPDATE",
-								"description": "Request broadcast notifications for this advertised article on updates",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}"
-							]
-						},
-						"description": "List single advertised article (beworbene Artikel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"postman.setEnvironmentVariable(\"current_datetime\", (new Date()).toISOString().replace(/\\.\\d+Z$/,'Z'));"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"promoted_override\": true,\n    \"hide_base_price_override\": true,\n    \"instead_prices\": [\n        {\n            \"quantity\": 1,\n            \"price\": 12.45\n        },\n        {\n            \"quantity\": 10,\n            \"price\": 144.5\n        }\n    ],\n    \"packshots\" : [\n        {\n            \"auto_assigned\": false,\n            \"id\": \"69ed5a6c-f800-42ce-886b-d7e0f3061747\",\n            \"url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"preview_url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg?version=4\",\n            \"cdn_url\" :\"https://curzio-della-santa.imgix.net/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\",\n            \"quantity\": 1,\n            \"created_on\": \"2016-08-24T18:11:12+0200\",\n            \"images\": [\n                {\n                    \"created_on\": \"2016-08-25T18:44:14+0200\",\n                    \"purpose\":\"web\",\n                    \"url\" : \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/69ed5a6c-f800-42ce-886b-d7e0f3061747/Koala.jpg\"\n                }\n            ]\n        }\n    ],\n    \"composite_info\" : {\n        \"override_title\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite title\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"},\n            {\"locale\":\"fr\", \"value\": \"FR composite title\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"}\n        ],\n        \"override_description\" : [\n            {\"locale\":\"de\", \"value\": \"DE composite description\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"},\n            {\"locale\":\"it\", \"value\": \"IT composite description\", \"changed_by\":\"{{user_fullname}}\", \"changed_on\": \"{{current_datetime}}\"}\n        ]\n    },\n    \"hide_in_manuscript\": false,\n    \"price_region\": \"DF\",\n    \"store_availability\": [1, 2, 3, 4],\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"use_promotion_prices\": true,\n    \"promotion_price\": {\n        \"sales_price\": 4.3,\n        \"instead_price\": 5.75\n    }\n}"
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}"
-							]
-						},
-						"description": "Edit an advertised article (Artikel)"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}/dots",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save first advertised-article dot's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.advertised_article_dots && jsonData.advertised_article_dots[0]) ? jsonData.advertised_article_dots[0].id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"dot_id\", id);",
-									"",
-									"tests[\"Setup first dot_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}",
-								"dots"
-							]
-						},
-						"description": "List dots of an advertised article"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}/dots",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save created advertised article dots's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData) ? jsonData.id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"dot_id\", id);",
-									"",
-									"tests[\"Setup new dot_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"type\" : \"x_for_y\",\n    \"placeholders\": {\n        \"original_quantity\": 2\n    }\n}"
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}",
-								"dots"
-							]
-						},
-						"description": "Create a dot within an advertised article"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}/dots/{dot_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots/{{dot_id}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}",
-								"dots",
-								"{{dot_id}}"
-							]
-						},
-						"description": "Get a dot within an advertised article, (Re-)render on request"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}/dots/{dot_id}",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"inactive\" : false,\n    \"placeholders\": {\n        \"original_quantity\": 50\n    }\n}"
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots/{{dot_id}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}",
-								"dots",
-								"{{dot_id}}"
-							]
-						},
-						"description": "Update a dot within an advertised article"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}/dots/{dot_id}",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots/{{dot_id}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}",
-								"dots",
-								"{{dot_id}}"
-							]
-						},
-						"description": "Delete a dot within an advertised article"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}/stoppers",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save first advertised-article stopper's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData && jsonData.advertised_article_stoppers && jsonData.advertised_article_stoppers[0]) ? jsonData.advertised_article_stoppers[0].id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"stopper_id\", id);",
-									"",
-									"tests[\"Setup first stopper_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}",
-								"stoppers"
-							]
-						},
-						"description": "List stoppers of an advertised article"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}/stoppers",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save created advertised article stoppers's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData) ? jsonData.id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"stopper_id\", id);",
-									"",
-									"tests[\"Setup new stopper_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"type\" : \"x_for_y\",\n    \"placeholders\": {\n        \"original_quantity\": 2\n    }\n}"
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}",
-								"stoppers"
-							]
-						},
-						"description": "ROUTE STILL NOT ACTIVE: Create a stopper within an advertised article"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}",
-								"stoppers",
-								"{{stopper_id}}"
-							]
-						},
-						"description": "ROUTE STILL NOT ACTIVE: Get a stopper within an advertised article, (Re-)render on request"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id}",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"inactive\" : false,\n    \"placeholders\": {\n        \"original_quantity\": 50\n    }\n}"
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}",
-								"stoppers",
-								"{{stopper_id}}"
-							]
-						},
-						"description": "Update a stopper within an advertised article"
-					},
-					"response": []
-				},
-				{
-					"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id}",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"advertised-articles",
-								"{{advertised_article_id}}",
-								"stoppers",
-								"{{stopper_id}}"
-							]
-						},
-						"description": "ROUTE STILL NOT ACTIVE: Delete a stopper within an advertised article"
-					},
-					"response": []
-				},
-				{
-					"name": "/article-groups",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/article-groups?page_size=-1",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"article-groups"
-							],
-							"query": [
-								{
-									"key": "page_size",
-									"value": "-1"
-								}
-							]
-						},
-						"description": "List article groups (Warengruppen)"
-					},
-					"response": []
-				},
-				{
-					"name": "/online-groups",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/online-groups?page_size=-1",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"online-groups"
-							],
-							"query": [
-								{
-									"key": "page_size",
-									"value": "-1"
-								}
-							]
-						},
-						"description": "List online groups (Internet-Sortimente)"
-					},
-					"response": []
-				},
-				{
-					"name": "/online-specials",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/online-specials?page_size=-1",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"online-specials"
-							],
-							"query": [
-								{
-									"key": "page_size",
-									"value": "-1"
-								}
-							]
-						},
-						"description": "List online specials (Online-Specials)"
-					},
-					"response": []
-				},
-				{
-					"name": "/promotion-types",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/promotion-types?page_size=-1",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"promotion-types"
-							],
-							"query": [
-								{
-									"key": "page_size",
-									"value": "-1"
-								}
-							]
-						},
-						"description": "List promotion types (Aktionstypen)"
-					},
-					"response": []
-				},
-				{
-					"name": "/promotions",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/promotions?page_size=-1",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"promotions"
-							],
-							"query": [
-								{
-									"key": "page_size",
-									"value": "-1"
-								}
-							]
-						},
-						"description": "List promotions (Aktionen)"
-					},
-					"response": []
+					"_postman_isSubFolder": true
 				},
 				{
 					"name": "/languages",
@@ -5975,403 +6408,6 @@
 							]
 						},
 						"description": "List languages"
-					},
-					"response": []
-				},
-				{
-					"name": "/boxes",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/boxes",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"boxes"
-							]
-						},
-						"description": "List all boxes"
-					},
-					"response": []
-				},
-				{
-					"name": "/price-regions",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/price-regions",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"price-regions"
-							]
-						},
-						"description": "List all price regions"
-					},
-					"response": []
-				},
-				{
-					"name": "/store-availabilities",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/store-availabilities",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"store-availabilities"
-							]
-						},
-						"description": "List all store availabilities"
-					},
-					"response": []
-				},
-				{
-					"name": "/discount-campaigns",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/discount-campaigns",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"discount-campaigns"
-							]
-						},
-						"description": "List discount campaigns (Rabattaktionen)"
-					},
-					"response": []
-				},
-				{
-					"name": "/discounts",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/discounts?filter=[{\"property\":\"campaign_id\",\"value\":\"1706-KAMB\"}]",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"discounts"
-							],
-							"query": [
-								{
-									"key": "filter",
-									"value": "[{\"property\":\"campaign_id\",\"value\":\"1706-KAMB\"}]"
-								}
-							]
-						},
-						"description": "List discounts (Rabatte)"
-					},
-					"response": []
-				},
-				{
-					"name": "/wine-growers",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/wine-growers?query=test",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"wine-growers"
-							],
-							"query": [
-								{
-									"key": "query",
-									"value": "test"
-								}
-							]
-						},
-						"description": "List wine-growers (Winzer)"
-					},
-					"response": []
-				},
-				{
-					"name": "/wine-growers/{wine_grower_id}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "X-Denner-Broadcast",
-								"value": "UPDATE",
-								"description": "Request broadcast notifications for this article on updates",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/wine-growers/{{wine_grower_id}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"wine-growers",
-								"{{wine_grower_id}}"
-							]
-						},
-						"description": "List single wine grower (Winzer)"
-					},
-					"response": []
-				},
-				{
-					"name": "/wine-growers",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Save created advertised article dots's id in environment",
-									"var jsonData = JSON.parse(responseBody),",
-									"    id = (jsonData) ? jsonData.id : null;",
-									"    ",
-									"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
-									"",
-									"tests[\"Setup new advertised_article_id in environment\"] = !!id;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{wine_grower_id}}\",\n  \"name\" : \"Hans Muster\",\n  \"url\": \"http://www.muster.ch\",\n    \"picture\": {\n      \"id\":\"8b72a5de-f59a-4ceb-a9ac-2f84ef8da757\",\n      \"auto_assigned\":false,\n      \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n      \"preview_url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png?version=1\",\n      \"cdn_url\":\"https://ivan-wolf.imgix.net/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n      \"quantity\":1,\n      \"created_on\":\"2009-08-17T10:56:19+0200\",\n      \"images\":[\n        {\n          \"purpose\":\"print\",\n          \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n          \"created_on\":\"2009-08-17T10:56:19+0200\"\n        \n        },{\n          \"purpose\":\"web\",\n          \"url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n          \"created_on\":\"2016-12-01T13:46:03+0100\"\n        }\n      ]\n  },\n  \"descriptions\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Text de\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Text fr\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Text it\"\n    }\n  ]\n}"
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/wine-growers",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"wine-growers"
-							]
-						},
-						"description": "Create a new wine-grower"
-					},
-					"response": []
-				},
-				{
-					"name": "/wine-growers/{wine_grower_id}",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"name\" : \"Hans Meier\",\n  \"picture\": {\n    \"id\":\"8b72a5de-f59a-4ceb-a9ac-2f84ef8da757\",\n    \"auto_assigned\":false,\n    \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n    \"preview_url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png?version=1\",\n    \"cdn_url\":\"https://ivan-wolf.imgix.net/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n    \"quantity\":1,\n    \"created_on\":\"2009-08-17T10:56:19+0200\",\n    \"images\":[\n      {\n        \"purpose\":\"print\",\n        \"url\":\"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/800080_c_p_A.tif\",\n        \"created_on\":\"2009-08-17T10:56:19+0200\"\n        \n      },{\n        \"purpose\":\"web\",\n        \"url\":\"https://denner-assets.s3.amazonaws.com/assets/8b72a5de-f59a-4ceb-a9ac-2f84ef8da757/web/800080_c_p_A.png\",\n        \"created_on\":\"2016-12-01T13:46:03+0100\"\n      }\n    ]\n  }\n}"
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/wine-growers/{{wine_grower_id}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"wine-growers",
-								"{{wine_grower_id}}"
-							]
-						},
-						"description": "Edit a wine grower (Winzer)"
-					},
-					"response": []
-				},
-				{
-					"name": "/wine-growers/{wine_grower_id} ",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{articles_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{articles_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{articles_url_base}}/wine-growers/{{wine_grower_id}}",
-							"host": [
-								"{{articles_url_base}}"
-							],
-							"path": [
-								"wine-growers",
-								"{{wine_grower_id}}"
-							]
-						},
-						"description": "Delete a wine grower (Winzer)"
 					},
 					"response": []
 				}
