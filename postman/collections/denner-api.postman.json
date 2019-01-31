@@ -4614,6 +4614,12 @@
 									{
 										"key": "App-Key",
 										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "x-denner-broadcast",
+										"value": "update",
+										"type": "text",
+										"disabled": true
 									}
 								],
 								"body": {
@@ -4662,16 +4668,42 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{articles_url_base}}/articles/022617",
+									"raw": "{{articles_url_base}}/articles/022617?",
 									"host": [
 										"{{articles_url_base}}"
 									],
 									"path": [
 										"articles",
 										"022617"
+									],
+									"query": [
+										{
+											"key": "quantity",
+											"value": "4",
+											"description": "Get specific quantity (for texts and price)",
+											"disabled": true
+										},
+										{
+											"key": "price-selection[valid_on]",
+											"value": "2015-09-17",
+											"description": "Get specific price: for given day (default is current)",
+											"disabled": true
+										},
+										{
+											"key": "price-selection[level]",
+											"value": "0",
+											"description": "Get specific price: for given level",
+											"disabled": true
+										},
+										{
+											"key": "price-selection",
+											"value": "{\"valid_on\":\"2015-09-17\",\"level\":0}",
+											"description": "Get specific price (query formatted as JSON)",
+											"disabled": true
+										}
 									]
 								},
-								"description": "List single article (Artikel)"
+								"description": "List single article (Artikel)\n\nAdd query parameters for \"decorated\" article/wine"
 							},
 							"response": []
 						},
@@ -4857,6 +4889,51 @@
 									]
 								},
 								"description": "Get article packshot image"
+							},
+							"response": []
+						},
+						{
+							"name": "/articles/{article_id}/prices",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/articles/022617/prices",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"articles",
+										"022617",
+										"prices"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"valid_on\",\"value\":\"2019-01-15\"},{\"property\":\"quantity\",\"value\":1}]",
+											"description": "Filter by specific day and quantity",
+											"disabled": true
+										}
+									]
+								},
+								"description": "List article prices\n\nBy default the request is filterd by \"valid_on={today}\""
 							},
 							"response": []
 						},
