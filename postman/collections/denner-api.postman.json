@@ -1436,7 +1436,7 @@
 									"response": []
 								},
 								{
-									"name": "/print-publications/{publication_id}/articles",
+									"name": "/print-publications/{publication_id}/articles (advertised-article)",
 									"event": [
 										{
 											"listen": "test",
@@ -1478,6 +1478,66 @@
 										"body": {
 											"mode": "raw",
 											"raw": "{\n  \"advertised_article\": \"{{advertised_article_id}}\",\n  \"composite_article\": false\n}"
+										},
+										"url": {
+											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
+											"host": [
+												"{{advertising_url_base}}"
+											],
+											"path": [
+												"print-publications",
+												"{{publication_id}}",
+												"articles"
+											]
+										},
+										"description": "Add a new article (Artikel) to a print publication (Print-Werbemittel)"
+									},
+									"response": []
+								},
+								{
+									"name": "/print-publications/{publication_id}/articles (plain-article)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "0f373f69-8c1a-4c22-bc4e-7a975327480f",
+												"exec": [
+													"// Save created publication article's id in environment",
+													"var jsonData = JSON.parse(responseBody),",
+													"    id = (jsonData) ? jsonData.id : null;",
+													"    ",
+													"postman.setEnvironmentVariable(\"publication_article_id\", id);",
+													"",
+													"tests[\"Setup new publication_article_id in environment\"] = !!id;",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "{{header_accept}}"
+											},
+											{
+												"key": "App-ID",
+												"value": "{{advertising_header_app_id}}"
+											},
+											{
+												"key": "App-Key",
+												"value": "{{advertising_header_app_key}}"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"plain_article\": \"051051\",\n\t\"price_selection\": {\n\t\t\"valid_on\": \"2018-01-30\", \n\t\t\"level\": 0\n\t},\n\t\"quantity\": 6,\n\t\"valid_from\": \"2018-01-30\",\n\t\"valid_to\": \"2018-02-05\"\n}"
 										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
@@ -5485,6 +5545,108 @@
 									]
 								},
 								"description": "Delete a wine grower (Winzer)"
+							},
+							"response": []
+						},
+						{
+							"name": "/food-matches",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/food-matches",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"food-matches"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/grapes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/grapes",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"grapes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/wine-experts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/wine-experts",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"wine-experts"
+									]
+								}
 							},
 							"response": []
 						}
