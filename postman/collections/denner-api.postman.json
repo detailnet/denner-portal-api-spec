@@ -4372,6 +4372,1084 @@
 							"response": []
 						}
 					],
+					"description": "Advertising: Usages",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "proofreading",
+					"item": [
+						{
+							"name": "/proofreading-cycles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles"
+									]
+								},
+								"description": "List proofreading-cycles"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles (articles)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Manuskript KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"articles\",\r\n    \"created_by\": {\r\n        \"id\": \"cc21976e-16fc-40be-84f9-b3985c89a5b4\",\r\n        \"name\": \"Daniel Albrecht\",\r\n        \"email\": \"ivan.wolf+danielalbrecht@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"review\"],\r\n    \"departments\":[\r\n        {\r\n            \"id\":\"W\",\r\n            \"name\":\"Wein\",\r\n            \"recipients\":[\r\n                {\r\n                    \"id\":\"970790d0-e25f-4535-b43c-f5a12987091d\",\r\n                    \"name\":\"Marc Berthod\",\r\n                    \"email\":\"ivan.wolf+marcberthod@detailnet.ch\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"notification_mode\": \"single\",\r\n    \"week\":{\r\n        \"year\":2017,\r\n        \"number\":30\r\n    },\r\n    \"sample_delivery\": \"2018-03-15T10:00:00+0100\"\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles"
+									]
+								},
+								"description": "Create a proofreading-cycle (Korrekturzyklus) for advertised articles"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles (file)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Denner Woche KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"file\",\r\n    \"created_by\": {\r\n        \"id\": \"dc3177a4-feb9-4952-b3e5-bb266820a87a\",\r\n        \"name\": \"Maria Walliser\",\r\n        \"email\": \"ivan.wolf+mariawalliser@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"texts\", \"prices\", \"pictures\"],\r\n    \"notification_mode\": \"inidividual\",\r\n    \"file\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\"\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles"
+									]
+								},
+								"description": "Create a proofreading-cycle (Korrekturzyklus) for a file"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}"
+									]
+								},
+								"description": "List single proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Manus KW 30/2017\",\n  \"deadline\": \"2018-03-01T14:30:00+0100\",\n    \"status\": \"complete\",\n    \"status_changed_by\": {\n      \"id\": \"4485ae99-ec38-4e1e-b483-4c60add29822\",\n      \"name\": \"Sonja Näf\",\n      \"email\": \"ivan.wolf+sonjanaef@detailnet.ch\"\n  },\n  \"notification_mode\": \"none\"\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}"
+									]
+								},
+								"description": "Edit a proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}"
+									]
+								},
+								"description": "Delete a proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/documents/{document_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"documents",
+										"{{document_id}}"
+									]
+								},
+								"description": "List single document of given proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/documents/{document_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"status\": \"postprocessing\",\n  \"status_changed_by\": {\n        \"id\": \"01db66ca-5ace-4807-ab1c-b3f4915feaea\",\n        \"name\": \"Bruno Kernen\",\n        \"email\": \"ivan.wolf+brunokernen@detailnet.ch\"\n    },\n  \"discussion\": {\n    \"resolved\": true,\n    \"resolved_by\": {\n          \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n          \"name\": \"Urs Lehmann\",\n          \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n      }\n}\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"documents",
+										"{{document_id}}"
+									]
+								},
+								"description": "Update document of given proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/documents/{document_id}/comments",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"text\": \"Er schleicht geradezu um die Stangen\",\n  \"created_by\": {\n        \"id\": \"af1a5830-106e-4b78-893e-f5de315e6a7f\",\n        \"name\": \"Bernhard Russi\",\n        \"email\": \"ivan.wolf+bernhardrussi@detailnet.ch\"\n}\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}/comments",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"documents",
+										"{{document_id}}",
+										"comments"
+									]
+								},
+								"description": "Create a new comment in document and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}"
+									]
+								},
+								"description": "List single review of given proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Neuer Artikelname\",\n  \"sort_index\": 10,\n  \"discussion\": {\n    \"resolved\": true,\n    \"resolved_by\": {\n          \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n          \"name\": \"Urs Lehmann\",\n          \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n      }\n}\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}"
+									]
+								},
+								"description": "Update review of given proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/comments",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"text\": \"Bode Miller war heute einfach zu schnell\",\n  \"created_by\": {\n        \"id\": \"4285933d-2880-4c7b-bcf3-a88e1e6eeb7e\",\n        \"name\": \"Didier Cuche\",\n        \"email\": \"ivan.wolf+didiercuche@detailnet.ch\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/comments",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}",
+										"comments"
+									]
+								},
+								"description": "Create a new comment in given review and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/check-changes",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"prices\",\n    \"status\": \"accepted\",\n    \"created_by\": {\n        \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n        \"name\": \"Daniel Mahrer\",\n        \"email\": \"ivan.wolf+danielmahrer@detailnet.ch\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/check-changes",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}",
+										"check-changes"
+									]
+								},
+								"description": "Change (or create) a check in given review and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/items",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"title\",\n  \"comment\": {\n    \"text\": \"Schreibfehler\",\n    \"created_by\": {\n          \"id\": \"57c02b10-5003-4ca2-9ec2-21acd7bd4290\",\n          \"name\": \"Franz Heinzer\",\n          \"email\": \"ivan.wolf+franzheinzer@detailnet.ch\"\n      }\n  }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}",
+										"items"
+									]
+								},
+								"description": "Create a new item in given review and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/items/{item_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"discussion\": {\n    \"resolved\": true,\n    \"resolved_by\": {\n          \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n          \"name\": \"Urs Lehmann\",\n          \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n      }\n  }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items/{{item_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}",
+										"items",
+										"{{item_id}}"
+									]
+								},
+								"description": "Update item of given review and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/items/{item_id}/comments",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"text\": \"Schreibfehler korrigiert\",\n  \"created_by\": {\n        \"id\": \"27713fce-b1cc-4f30-86cf-5b6d575051b0\",\n        \"name\": \"Primin Zurbriggen\",\n        \"email\": \"ivan.wolf+priminzurbriggen@detailnet.ch\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items/{{item_id}}/comments",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}",
+										"items",
+										"{{item_id}}",
+										"comments"
+									]
+								},
+								"description": "Create a new comment in given item, review and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/completions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"department\": \"W\",\n    \"completed_by\": {\n        \"id\": \"cc167038-d42e-46bc-b7e9-1836dc71d27a\",\n        \"name\": \"Karin Roten\",\n        \"email\": \"ivan.wolf+karinroten@detailnet.ch\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/completions",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"completions"
+									]
+								},
+								"description": "Complete proofreading-cycle (Korrekturzyklus) for a department"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-file-uploads",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"DennerWoche_2017-10.pdf\",\r\n    \"mime_type\": \"pdf\"\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-file-uploads",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-file-uploads"
+									]
+								},
+								"description": "Create a file (Dokument) upload"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-files",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-files",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-files"
+									]
+								},
+								"description": "List files of a publication"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-files",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\",\r\n    \"name\": \"DennerWoche_2017-10.pdf\",\r\n    \"locale\": \"de\",\r\n    \"created_by\": {\r\n        \"id\": \"b21fb040-34cf-4a13-ae73-e702df0edd01\",\r\n        \"name\": \"Paul Accola\",\r\n        \"email\": \"ivan.wolf+paulaccola@detailnet.ch\"\r\n    },\r\n    \"url\": \"https://ivan-wolf.s3.eu-west-1.amazonaws.com/denner-assets/proofreadings/5b0a9d90-99de-43e6-bd74-7b1670d459db/DennerWoche_2017-10.pdf\",\r\n    \"size\": 5634,\r\n    \"publication\": \"87823e32-9e5f-4469-b1d6-953ea5200c5b\",\r\n    \"pages\": [2, 3, 8, 9],\r\n    \"recipients\": [\r\n        {\r\n          \"id\": \"e6729c2c-8340-4632-8bcd-6878497932a2\",\r\n            \"name\": \"Michael von Grünigen\",\r\n            \"email\": \"ivan.wolf+michaelvongruenigen@detailnet.ch\"\r\n        }\r\n    ],\r\n    \"locate_articles_strict\": false\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-files",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-files"
+									]
+								},
+								"description": "Create a file (Dokument)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-files/{file_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-files/{{file_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-files",
+										"{{file_id}}"
+									]
+								},
+								"description": "List single file (Dokument)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-files/{file_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-files/{{file_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-files",
+										"{{file_id}}"
+									]
+								},
+								"description": "Delete a file (Dokument)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-collaborators",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-collaborators",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-collaborators"
+									]
+								},
+								"description": "List collaborators"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-collaborators",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"74ea86e4-7390-462c-a3c7-7b7027a03822\",\r\n    \"roles\": [\r\n        \"category-head\"\r\n    ],\r\n    \"notification_preferences\": [\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"articles\",\r\n            \"opted_out\": true\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-collaborators",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-collaborators"
+									]
+								},
+								"description": "Create a collaborator"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-collaborators/{collaborator_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-collaborators/{{collaborator_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-collaborators",
+										"{{collaborator_id}}"
+									]
+								},
+								"description": "List single collaborator"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-collaborators/{collaborator_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"roles\": [\r\n        \"category-manager\"\r\n    ],\r\n    \"notification_preferences\": [\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"articles\",\r\n            \"opted_out\": false\r\n        },\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"file\",\r\n            \"opted_out\": true\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-collaborators/{{collaborator_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-collaborators",
+										"{{collaborator_id}}"
+									]
+								},
+								"description": "Update a collaborator"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-collaborators/{collaborator_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-collaborators/{{collaborator_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-collaborators",
+										"{{collaborator_id}}"
+									]
+								},
+								"description": "Delete a collaborator"
+							},
+							"response": []
+						}
+					],
+					"description": "Advertising: Proofreading",
 					"_postman_isSubFolder": true
 				}
 			],
