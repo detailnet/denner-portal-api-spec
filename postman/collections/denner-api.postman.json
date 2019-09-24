@@ -859,7 +859,7 @@
 							"response": []
 						},
 						{
-							"name": "/online-publications/{publication_id}/articles",
+							"name": "/online-publications/{publication_id}/articles (advertisied-article)",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -877,12 +877,19 @@
 									},
 									{
 										"key": "Content-Type",
-										"value": "application/json"
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"advertised_article\": \"{{advertised_article_id}}\"\n}"
+									"raw": "{\n    \"advertised_article\": \"{{advertised_article_id}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
@@ -895,7 +902,55 @@
 										"articles"
 									]
 								},
-								"description": "Add a new article to the online publication (Online-Werbemittel)"
+								"description": "Add a new article (Artikel) to the online publication (Online-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/online-publications/{publication_id}/articles (plain-article)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"plain_article\": \"051051\",\n    \"price_selection\": {\n        \"valid_on\": \"2019-01-01\"\n    },\n    \"quantity\": 6,\n    \"valid_from\": \"2019-01-01\",\n    \"valid_to\": \"2020-12-31\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"online-publications",
+										"44444444-aaaa-4444-aaaa-444444444444",
+										"articles"
+									]
+								},
+								"description": "Add a new plain-article (Stammartikel) to the online publication (Online-Werbemittel)"
 							},
 							"response": []
 						},
@@ -1385,7 +1440,7 @@
 										{
 											"listen": "test",
 											"script": {
-												"type": "text/javascript",
+												"id": "cc0b46c4-2e53-4a4f-b1bf-baa6e6a47ef7",
 												"exec": [
 													"// Save created publication article's id in environment",
 													"var jsonData = JSON.parse(responseBody),",
@@ -1395,7 +1450,8 @@
 													"",
 													"tests[\"Setup new publication_article_id in environment\"] = !!id;",
 													""
-												]
+												],
+												"type": "text/javascript"
 											}
 										}
 									],
@@ -1416,12 +1472,19 @@
 											},
 											{
 												"key": "Content-Type",
-												"value": "application/json"
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"advertised_article\": \"{{advertised_article_id}}\",\n  \"composite_article\": false\n}"
+											"raw": "{\n    \"advertised_article\": \"{{advertised_article_id}}\",\n    \"composite_article\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
 										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
@@ -1476,12 +1539,19 @@
 											},
 											{
 												"key": "Content-Type",
-												"value": "application/json"
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n\t\"plain_article\": \"051051\",\n\t\"price_selection\": {\n\t\t\"valid_on\": \"2018-01-30\", \n\t\t\"level\": 0\n\t},\n\t\"quantity\": 6,\n\t\"valid_from\": \"2018-01-30\",\n\t\"valid_to\": \"2018-02-05\"\n}"
+											"raw": "{\n    \"plain_article\": \"051051\",\n    \"price_selection\": {\n        \"valid_on\": \"2018-01-30\",\n        \"level\": 0\n    },\n    \"quantity\": 6,\n    \"valid_from\": \"2018-01-30\",\n    \"valid_to\": \"2018-02-05\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
 										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
@@ -1494,7 +1564,7 @@
 												"articles"
 											]
 										},
-										"description": "Add a new article (Artikel) to a print publication (Print-Werbemittel)"
+										"description": "Add a new plain-article (Stammartikel) to a print publication (Print-Werbemittel)"
 									},
 									"response": []
 								},
@@ -5538,7 +5608,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{articles_url_base}}/articles/051583",
+									"raw": "{{articles_url_base}}/articles/051583?wine-year=2016",
 									"host": [
 										"{{articles_url_base}}"
 									],
@@ -5574,8 +5644,7 @@
 										{
 											"key": "wine-year",
 											"value": "2016",
-											"description": "Get specific wine year (for medals/awards)",
-                                            "disabled": true
+											"description": "Get specific wine-year (for medals/awards)"
 										}
 									]
 								},
