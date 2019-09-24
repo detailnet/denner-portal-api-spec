@@ -30,10 +30,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters",
 									"host": [
@@ -80,10 +76,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters/{{current_week}}",
 									"host": [
@@ -155,10 +147,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters/44444444-aaaa-4444-aaaa-444444444444?publish=0",
 									"host": [
@@ -273,10 +261,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters/44444444-aaaa-4444-aaaa-444444444444/sections",
 									"host": [
@@ -351,10 +335,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters/44444444-aaaa-4444-aaaa-444444444444/sections/44444444-aaaa-4444-aaaa-444444444444",
 									"host": [
@@ -469,10 +449,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters/44444444-aaaa-4444-aaaa-444444444444/sections/44444444-aaaa-4444-aaaa-444444444444/articles",
 									"host": [
@@ -642,10 +618,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications",
 									"host": [
@@ -692,10 +664,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/{{current_week}}",
 									"host": [
@@ -767,10 +735,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444",
 									"host": [
@@ -879,10 +843,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
 									"host": [
@@ -957,10 +917,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
 									"host": [
@@ -1074,10 +1030,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/filters",
 									"host": [
@@ -1232,10 +1184,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-filters?page_size=-1",
 									"host": [
@@ -1416,10 +1364,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
 											"host": [
@@ -1572,10 +1516,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
 											"host": [
@@ -1690,10 +1630,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}/text-blocks",
 											"host": [
@@ -1772,10 +1708,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links",
 											"host": [
@@ -1809,10 +1741,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
 											"host": [
@@ -1986,10 +1914,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
 											"host": [
@@ -2082,10 +2006,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files/{{generated_file_id}}",
 											"host": [
@@ -2158,10 +2078,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-production-types",
 											"host": [
@@ -2217,10 +2133,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents",
 											"host": [
@@ -2561,10 +2473,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles",
 											"host": [
@@ -2600,10 +2508,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}",
 											"host": [
@@ -2684,10 +2588,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}/text-blocks",
 											"host": [
@@ -2788,10 +2688,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages",
 											"host": [
@@ -2827,10 +2723,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages/{{page_id}}",
 											"host": [
@@ -2911,10 +2803,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-schemes",
 											"host": [
@@ -2946,10 +2834,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/eye-catcher-templates",
 											"host": [
@@ -2999,10 +2883,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}",
 											"host": [
@@ -3058,10 +2938,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications",
 									"host": [
@@ -3124,10 +3000,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{current_week}}",
 									"host": [
@@ -3265,10 +3137,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}",
 									"host": [
@@ -3420,10 +3288,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-skeletons?file={{file_id}}",
 									"host": [
@@ -3461,10 +3325,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-skeletons?file={{file_id}}&page={{page_id}}",
 									"host": [
@@ -3506,10 +3366,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-skeletons?publication={{publication_id}}&language={{language}}",
 									"host": [
@@ -3551,10 +3407,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-skeletons?publication={{publication_id}}&language={{language}}&page={{page_id}}",
 									"host": [
@@ -3639,10 +3491,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-layouts",
 									"host": [
@@ -3674,10 +3522,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-layouts/listing",
 									"host": [
@@ -3710,10 +3554,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-formats",
 									"host": [
@@ -3745,10 +3585,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-styles",
 									"host": [
@@ -3787,10 +3623,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-publications",
 									"host": [
@@ -3876,10 +3708,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-publications/{{current_week}}",
 									"host": [
@@ -3931,10 +3759,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-publications/44444444-aaaa-4444-aaaa-444444444444",
 									"host": [
@@ -4043,10 +3867,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
 									"host": [
@@ -4121,10 +3941,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
 									"host": [
@@ -4197,10 +4013,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-designs",
 									"host": [
@@ -4232,10 +4044,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-templates",
 									"host": [
@@ -4274,10 +4082,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/publication-article-usages?filter=[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\",\"090093\",\"090094\",\"090095\",\"090096\",\"090097\",\"090099\"],\"operator\":\"in\",\"type\":\"array\"}]",
 									"host": [
@@ -4315,10 +4119,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/publication-article-usages/article/090098",
 									"host": [
@@ -4352,10 +4152,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/publication-article-usages/advertised-article/d090e97c-2238-480c-b5c5-700a9c858635",
 									"host": [
@@ -4396,10 +4192,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/proofreading-cycles",
 									"host": [
@@ -4509,10 +4301,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}",
 									"host": [
@@ -4625,10 +4413,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}",
 									"host": [
@@ -4748,10 +4532,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}",
 									"host": [
@@ -5126,10 +4906,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/proofreading-files",
 									"host": [
@@ -5200,10 +4976,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/proofreading-files/{{file_id}}",
 									"host": [
@@ -5276,10 +5048,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/proofreading-collaborators",
 									"host": [
@@ -5350,10 +5118,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/proofreading-collaborators/{{collaborator_id}}",
 									"host": [
@@ -5494,10 +5258,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/appraisals",
 							"host": [
@@ -5525,10 +5285,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/appraisals/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -5593,10 +5349,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/appraisal-statistics/2015-02-17",
 							"host": [
@@ -5625,10 +5377,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/sweepstake-participants",
 							"host": [
@@ -5656,10 +5404,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/ratings",
 							"host": [
@@ -5687,10 +5431,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/ratings/050202",
 							"host": [
@@ -5760,10 +5500,6 @@
 										"disabled": true
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/articles",
 									"host": [
@@ -5801,10 +5537,6 @@
 										"disabled": true
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/articles/022617?",
 									"host": [
@@ -5903,10 +5635,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/articles/022617/text-blocks",
 									"host": [
@@ -5992,10 +5720,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/articles/022617/packshot/022617.png?quantity=1&with-archived=true&imgix_w=250&imgix_h=250",
 									"host": [
@@ -6048,10 +5772,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/articles/022617/prices",
 									"host": [
@@ -6093,10 +5813,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/shop-wines",
 									"host": [
@@ -6128,10 +5844,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/shop-wines/050006",
 									"host": [
@@ -6164,10 +5876,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/mobile-wines",
 									"host": [
@@ -6199,10 +5907,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/mobile-wines/050006",
 									"host": [
@@ -6235,10 +5939,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/article-groups?page_size=-1",
 									"host": [
@@ -6276,10 +5976,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/online-groups?page_size=-1",
 									"host": [
@@ -6317,10 +6013,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/online-specials?page_size=-1",
 									"host": [
@@ -6358,10 +6050,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/boxes",
 									"host": [
@@ -6393,10 +6081,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/price-regions",
 									"host": [
@@ -6428,10 +6112,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/wine-growers?query=test",
 									"host": [
@@ -6532,10 +6212,6 @@
 										"disabled": true
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/wine-growers/{{wine_grower_id}}",
 									"host": [
@@ -6644,10 +6320,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/food-matches",
 									"host": [
@@ -6678,10 +6350,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/grapes",
 									"host": [
@@ -6712,10 +6380,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/wine-experts",
 									"host": [
@@ -6771,10 +6435,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles",
 									"host": [
@@ -6893,10 +6553,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{current_week}}",
 									"host": [
@@ -6935,10 +6591,6 @@
 										"disabled": true
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}",
 									"host": [
@@ -7040,10 +6692,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots",
 									"host": [
@@ -7136,10 +6784,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots/{{dot_id}}",
 									"host": [
@@ -7272,10 +6916,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers",
 									"host": [
@@ -7368,10 +7008,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
 									"host": [
@@ -7486,10 +7122,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/promotion-types?page_size=-1",
 									"host": [
@@ -7527,10 +7159,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/promotions?page_size=-1",
 									"host": [
@@ -7568,10 +7196,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/store-availabilities",
 									"host": [
@@ -7603,10 +7227,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/discount-campaigns",
 									"host": [
@@ -7638,10 +7258,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/discounts?filter=[{\"property\":\"campaign_id\",\"value\":\"1706-KAMB\"}]",
 									"host": [
@@ -7705,10 +7321,6 @@
 								"value": "{{articles_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{articles_url_base}}/languages?page_size=-1",
 							"host": [
@@ -7774,10 +7386,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/purposes?page_size=-1",
 							"host": [
@@ -7815,10 +7423,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/views?page_size=-1",
 							"host": [
@@ -7856,10 +7460,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/languages?page_size=-1",
 							"host": [
@@ -7897,10 +7497,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/file-types?page_size=-1",
 							"host": [
@@ -7938,10 +7534,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/asset-tags?page_size=-1",
 							"host": [
@@ -7979,10 +7571,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/asset-types?page_size=-1",
 							"host": [
@@ -8020,10 +7608,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/assets?page=1&page_size=5&filter=[{\"property\":\"articles\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"000000\",\"222222\"]}]&sort=[{\"property\":\"created_on\",\"direction\":\"asc\"}]&query=test",
 							"host": [
@@ -8197,10 +7781,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/assets/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -8428,10 +8008,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/assets/44444444-aaaa-4444-aaaa-444444444444/file-replacements",
 							"host": [
@@ -8545,10 +8121,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/asset-collections?page=1&page_size=5&sort=[{\"property\":\"created_on\",\"direction\":\"asc\"}]",
 							"host": [
@@ -8633,10 +8205,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/asset-collections/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -8825,10 +8393,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/asset-collections/44444444-aaaa-4444-aaaa-444444444444/links/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -9065,10 +8629,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "https://requestbin.fullcontact.com/wabjuiwa?inspect",
 							"protocol": "https",
@@ -9213,10 +8773,6 @@
 								"value": "{{banners_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{banners_url_base}}/banners",
 							"host": [
@@ -9244,10 +8800,6 @@
 								"value": "{{banners_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{banners_url_base}}/banners/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -9379,10 +8931,6 @@
 								"value": "{{portal_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{portal_url_base}}/users",
 							"host": [
@@ -9453,10 +9001,6 @@
 								"value": "{{portal_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{portal_url_base}}/users/{{user_id}}",
 							"host": [
@@ -9565,10 +9109,6 @@
 								"value": "{{portal_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{portal_url_base}}/roles",
 							"host": [
@@ -9600,10 +9140,6 @@
 								"value": "{{portal_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{portal_url_base}}/departments",
 							"host": [
@@ -9663,10 +9199,6 @@
 								"value": "{{stores_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{stores_url_base}}/stores",
 							"host": [
@@ -9698,10 +9230,6 @@
 								"value": "{{stores_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{stores_url_base}}/screen-stores",
 							"host": [
@@ -9733,10 +9261,6 @@
 								"value": "{{stores_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{stores_url_base}}/stores/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -9769,10 +9293,6 @@
 								"value": "{{stores_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{stores_url_base}}/store-channels?filter=[{\"property\":\"stores_count\",\"operator\":\">\",\"value\":0,\"type\":\"integer\"}]",
 							"host": [
@@ -9810,10 +9330,6 @@
 								"value": "{{stores_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{stores_url_base}}/store-services",
 							"host": [
