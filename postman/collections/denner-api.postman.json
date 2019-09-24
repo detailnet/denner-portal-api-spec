@@ -3458,7 +3458,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"language\": \"de\"\n}"
+									"raw": "{\n\t\"locale\": \"de\",\n\t\"template\":\"a4-base-poster\",\n\t\"header\":\"default\",\n\t\"title\": \"Le Confidentiel Costi\\u00e8res de N\\u00eemes AOP\",\n\t\"description\": \"2017, Costi\\u00e8res de N\\u00eemes, Frankreich, 6 x 75 cl\",\n\t\"valid_to\": \"2019-01-07\",\n\t\"valid_from\": \"2018-12-31\",\n\t\"sales_price\": \"47.70\",\n\t\"compared\":false,\n\t\"base_price_text\": \"10 cl = 1.06\",\n\t\"unit_price_text\":\"Einzelflasche 5.90\",\n\t\"awards\":\"Gold Gilbert & Gaillard\"\n}"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-skeletons",
