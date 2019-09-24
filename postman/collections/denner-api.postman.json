@@ -8589,8 +8589,11 @@
 									"const $ = cheerio.load(responseBody); ",
 									"",
 									"$('.request-body').each(function(i, elem) {",
+									"    if ($(this).find('pre').text()[0] !== '{') return;",
+									"    ",
 									"    var id = $(this).attr('data-id'),",
 									"        content = JSON.parse($(this).find('pre').text());",
+									"        ",
 									"    console.log(id);",
 									"    console.log(content); ",
 									"",
@@ -8636,7 +8639,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://requestbin.fullcontact.com/wabjuiwa?inspect",
+							"raw": "https://requestbin.fullcontact.com/{your-reqwstb.in-id}?inspect",
 							"protocol": "https",
 							"host": [
 								"requestbin",
@@ -8644,7 +8647,7 @@
 								"com"
 							],
 							"path": [
-								"wabjuiwa"
+								"{your-reqwstb.in-id}"
 							],
 							"query": [
 								{
