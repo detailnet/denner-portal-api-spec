@@ -5538,7 +5538,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{articles_url_base}}/articles/051583?wine-year=2016",
+									"raw": "{{articles_url_base}}/articles/051583",
 									"host": [
 										"{{articles_url_base}}"
 									],
