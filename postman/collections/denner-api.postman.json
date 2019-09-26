@@ -4309,6 +4309,66 @@
 										{
 											"key": "filter",
 											"value": "[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\",\"090093\",\"090094\",\"090095\",\"090096\",\"090097\",\"090099\"],\"operator\":\"in\",\"type\":\"array\"}]"
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"publication_type\", \"operator\":\"in\",\"value\":[\"online\",\"print\"]},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"value\":\"2017-46\"},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"value\":\"2017-12-01\"},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"operator\": \"in\", \"value\":[\"2017-46\",\"2018-50\"]},{\"property\":\"publication_type\", \"operator\":\"in\",\"value\":[\"online\"]},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"week_count\", \"value\":60},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"week_count\", \"value\":60},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"end_week\", \"value\":\"2018-50\"},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"end_week\", \"value\":\"2018-12-31\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"no_week\", \"value\":true},{\"property\":\"article_id\",\"value\":\"051630\"}]",
+											"disabled": true
 										}
 									]
 								},
@@ -4335,7 +4395,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{advertising_url_base}}/publication-article-usages/article/090098",
+									"raw": "{{advertising_url_base}}/publication-article-usages/article/090098?filter=[{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"start_week\",\"value\":\"25 weeks ago\"},{\"property\":\"week_count\", \"value\":30}]",
 									"host": [
 										"{{advertising_url_base}}"
 									],
@@ -4343,6 +4403,67 @@
 										"publication-article-usages",
 										"article",
 										"090098"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"start_week\",\"value\":\"25 weeks ago\"},{\"property\":\"week_count\", \"value\":30}]"
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"publication_type\", \"operator\":\"in\",\"value\":[\"online\",\"print\"]}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"value\":\"2017-46\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"value\":\"2017-12-01\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"operator\": \"in\", \"value\":[\"2017-46\",\"2018-50\"]},{\"property\":\"publication_type\", \"operator\":\"in\",\"value\":[\"online\"]}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"week_count\", \"value\":60},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"week_count\", \"value\":60},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"end_week\", \"value\":\"2018-50\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"end_week\", \"value\":\"2018-12-31\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"no_week\", \"value\":true}]",
+											"disabled": true
+										}
 									]
 								},
 								"description": "List publication article usages searching by article id"
