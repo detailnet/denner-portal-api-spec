@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2018-04-12T07:11:58Z"
+  version: "2019-10-10T06:41:17Z"
   title: "denner"
 host: "denner-api.detailnet.ch"
 basePath: "/v1"
@@ -89,6 +89,8 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
+        404:
+          description: "404 response"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -96,6 +98,8 @@ paths:
         responses:
           default:
             statusCode: "200"
+          404:
+            statusCode: "404"
         requestParameters:
           integration.request.header.App-Key: "method.request.header.App-Key"
           integration.request.path.advertised_article_id: "method.request.path.advertised_article_id"
@@ -266,6 +270,8 @@ paths:
           headers:
             Access-Control-Allow-Origin:
               type: "string"
+        404:
+          description: "404 response"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -275,6 +281,8 @@ paths:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          404:
+            statusCode: "404"
         passthroughBehavior: "when_no_match"
         httpMethod: "POST"
         cacheNamespace: "iov04u"
@@ -491,11 +499,15 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
+        404:
+          description: "404 response"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/articles/{article_id}"
         responses:
           default:
             statusCode: "200"
+          404:
+            statusCode: "404"
         requestParameters:
           integration.request.path.article_id: "method.request.path.article_id"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -530,11 +542,15 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
+        404:
+          description: "404 response"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/articles/{article_id}/text-blocks"
         responses:
           default:
             statusCode: "200"
+          404:
+            statusCode: "404"
         requestParameters:
           integration.request.path.article_id: "method.request.path.article_id"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -667,6 +683,8 @@ paths:
           headers:
             Access-Control-Allow-Origin:
               type: "string"
+        404:
+          description: "404 response"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -676,6 +694,8 @@ paths:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          404:
+            statusCode: "404"
         passthroughBehavior: "when_no_match"
         httpMethod: "POST"
         cacheNamespace: "1731ej"
@@ -1059,6 +1079,8 @@ paths:
           description: "500 response"
         403:
           description: "403 response"
+        404:
+          description: "404 response"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_advertising}/online-publications/{publication_id}"
         responses:
@@ -1066,6 +1088,8 @@ paths:
             statusCode: "200"
           403:
             statusCode: "403"
+          404:
+            statusCode: "404"
           5\d{2}:
             statusCode: "500"
         requestParameters:
@@ -1355,6 +1379,8 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
+        404:
+          description: "404 response"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -1362,6 +1388,8 @@ paths:
         responses:
           default:
             statusCode: "200"
+          404:
+            statusCode: "404"
         passthroughBehavior: "when_no_templates"
         httpMethod: "POST"
         requestTemplates:
@@ -1448,11 +1476,15 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
+        404:
+          description: "404 response"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_advertising}/screen-publications/{publication_id}"
         responses:
           default:
             statusCode: "200"
+          404:
+            statusCode: "404"
         requestParameters:
           integration.request.header.App-Key: "method.request.header.App-Key"
           integration.request.path.publication_id: "method.request.path.publication_id"
@@ -1596,11 +1628,15 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
+        404:
+          description: "404 response"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/shop-wines/{article_id}"
         responses:
           default:
             statusCode: "200"
+          404:
+            statusCode: "404"
         requestParameters:
           integration.request.path.article_id: "method.request.path.article_id"
           integration.request.header.App-Key: "method.request.header.App-Key"
