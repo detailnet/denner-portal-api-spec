@@ -30,10 +30,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters",
 									"host": [
@@ -80,10 +76,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters/{{current_week}}",
 									"host": [
@@ -155,10 +147,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters/44444444-aaaa-4444-aaaa-444444444444?publish=0",
 									"host": [
@@ -273,10 +261,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters/44444444-aaaa-4444-aaaa-444444444444/sections",
 									"host": [
@@ -351,10 +335,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters/44444444-aaaa-4444-aaaa-444444444444/sections/44444444-aaaa-4444-aaaa-444444444444",
 									"host": [
@@ -469,10 +449,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/newsletters/44444444-aaaa-4444-aaaa-444444444444/sections/44444444-aaaa-4444-aaaa-444444444444/articles",
 									"host": [
@@ -642,10 +618,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications",
 									"host": [
@@ -692,10 +664,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/{{current_week}}",
 									"host": [
@@ -767,10 +735,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444",
 									"host": [
@@ -879,10 +843,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
 									"host": [
@@ -899,7 +859,7 @@
 							"response": []
 						},
 						{
-							"name": "/online-publications/{publication_id}/articles",
+							"name": "/online-publications/{publication_id}/articles (advertisied-article)",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -917,12 +877,19 @@
 									},
 									{
 										"key": "Content-Type",
-										"value": "application/json"
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"advertised_article\": \"{{advertised_article_id}}\"\n}"
+									"raw": "{\n    \"advertised_article\": \"{{advertised_article_id}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
@@ -935,12 +902,60 @@
 										"articles"
 									]
 								},
-								"description": "Add a new article to the online publication (Online-Werbemittel)"
+								"description": "Add a new article (Artikel) to the online publication (Online-Werbemittel)"
 							},
 							"response": []
 						},
 						{
-							"name": "/online-publications/{publication_id}/articles/{publication_article_id}",
+							"name": "/online-publications/{publication_id}/articles (plain-article)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"plain_article\": \"051051\",\n    \"price_selection\": {\n        \"valid_on\": \"2019-01-01\"\n    },\n    \"quantity\": 6,\n    \"valid_from\": \"2019-01-01\",\n    \"valid_to\": \"2020-12-31\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"online-publications",
+										"44444444-aaaa-4444-aaaa-444444444444",
+										"articles"
+									]
+								},
+								"description": "Add a new plain-article (Stammartikel) to the online publication (Online-Werbemittel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/online-publications/{publication_id}/articles/{article_id}",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -957,20 +972,16 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
-									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
+									"raw": "{{advertising_url_base}}/online-publications/{{publication_id}}/articles/{{publication_article_id}}",
 									"host": [
 										"{{advertising_url_base}}"
 									],
 									"path": [
 										"online-publications",
-										"44444444-aaaa-4444-aaaa-444444444444",
+										"{{publication_id}}",
 										"articles",
-										"44444444-bbbb-4444-bbbb-444444444444"
+										"{{publication_article_id}}"
 									]
 								},
 								"description": "List a specific article for an online publication (Online-Werbemittel)"
@@ -978,7 +989,138 @@
 							"response": []
 						},
 						{
-							"name": "/online-publications/{publication_id}/articles/{publication_article_id}",
+							"name": "/online-publications/{publication_id}/articles/{article_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"valid_to\": \"2017-08-19\",\n  \"compared\": true,\n  \"promote_100g_price\": true,\n  \"base_price_display\": 2,\n  \"promotion_type\": \"WOCHENEND\",\n  \"stopper\": {\n    \"type\": \"x_percent\",\n    \"placeholders\": {\n      \"discount-percent\": 11\n      \n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/online-publications/{{publication_id}}/articles/{{publication_article_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"online-publications",
+										"{{publication_id}}",
+										"articles",
+										"{{publication_article_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/online-publications/{publication_id}/articles/{article_id}/text-blocks",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/online-publications/{{publication_id}}/articles/{{publication_article_id}}/text-blocks",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"online-publications",
+										"{{publication_id}}",
+										"articles",
+										"{{publication_article_id}}",
+										"text-blocks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/online-publications/{publication_id}/articles/{article_id}/text-blocks",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/online-publications/{{publication_id}}/articles/{{publication_article_id}}/text-blocks",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"online-publications",
+										"{{publication_id}}",
+										"articles",
+										"{{publication_article_id}}",
+										"text-blocks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/online-publications/{publication_id}/articles/{article_id}",
 							"request": {
 								"method": "DELETE",
 								"header": [
@@ -1000,15 +1142,15 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
+									"raw": "{{advertising_url_base}}/online-publications/{{publication_id}}/articles/{{publication_article_id}}",
 									"host": [
 										"{{advertising_url_base}}"
 									],
 									"path": [
 										"online-publications",
-										"44444444-aaaa-4444-aaaa-444444444444",
+										"{{publication_id}}",
 										"articles",
-										"44444444-bbbb-4444-bbbb-444444444444"
+										"{{publication_article_id}}"
 									]
 								},
 								"description": "Delete an online publication article from an online publication"
@@ -1074,10 +1216,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444/filters",
 									"host": [
@@ -1232,10 +1370,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-filters?page_size=-1",
 									"host": [
@@ -1416,10 +1550,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
 											"host": [
@@ -1436,12 +1566,12 @@
 									"response": []
 								},
 								{
-									"name": "/print-publications/{publication_id}/articles",
+									"name": "/print-publications/{publication_id}/articles (advertised-article)",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
-												"type": "text/javascript",
+												"id": "cc0b46c4-2e53-4a4f-b1bf-baa6e6a47ef7",
 												"exec": [
 													"// Save created publication article's id in environment",
 													"var jsonData = JSON.parse(responseBody),",
@@ -1451,7 +1581,8 @@
 													"",
 													"tests[\"Setup new publication_article_id in environment\"] = !!id;",
 													""
-												]
+												],
+												"type": "text/javascript"
 											}
 										}
 									],
@@ -1472,12 +1603,19 @@
 											},
 											{
 												"key": "Content-Type",
-												"value": "application/json"
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"advertised_article\": \"{{advertised_article_id}}\",\n  \"composite_article\": false\n}"
+											"raw": "{\n    \"advertised_article\": \"{{advertised_article_id}}\",\n    \"composite_article\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
 										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
@@ -1491,6 +1629,73 @@
 											]
 										},
 										"description": "Add a new article (Artikel) to a print publication (Print-Werbemittel)"
+									},
+									"response": []
+								},
+								{
+									"name": "/print-publications/{publication_id}/articles (plain-article)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "0f373f69-8c1a-4c22-bc4e-7a975327480f",
+												"exec": [
+													"// Save created publication article's id in environment",
+													"var jsonData = JSON.parse(responseBody),",
+													"    id = (jsonData) ? jsonData.id : null;",
+													"    ",
+													"postman.setEnvironmentVariable(\"publication_article_id\", id);",
+													"",
+													"tests[\"Setup new publication_article_id in environment\"] = !!id;",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "{{header_accept}}"
+											},
+											{
+												"key": "App-ID",
+												"value": "{{advertising_header_app_id}}"
+											},
+											{
+												"key": "App-Key",
+												"value": "{{advertising_header_app_key}}"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"plain_article\": \"051051\",\n    \"price_selection\": {\n        \"valid_on\": \"2018-01-30\",\n        \"level\": 0\n    },\n    \"quantity\": 6,\n    \"valid_from\": \"2018-01-30\",\n    \"valid_to\": \"2018-02-05\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
+											"host": [
+												"{{advertising_url_base}}"
+											],
+											"path": [
+												"print-publications",
+												"{{publication_id}}",
+												"articles"
+											]
+										},
+										"description": "Add a new plain-article (Stammartikel) to a print publication (Print-Werbemittel)"
 									},
 									"response": []
 								},
@@ -1512,10 +1717,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
 											"host": [
@@ -1551,12 +1752,19 @@
 											},
 											{
 												"key": "Content-Type",
-												"value": "application/json"
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"valid_to\": \"2017-08-19\",\n  \"compared\": true,\n  \"promote_100g_price\": true,\n  \"base_price_display\": 2,\n  \"promotion_type\": \"WOCHENEND\",\n  \"stopper\": {\n    \"type\": \"x_percent\",\n    \"placeholders\": {\n      \"discount-percent\": 11\n      \n    }\n  }\n}"
+											"raw": "{\n  \"valid_to\": \"2017-08-19\",\n  \"compared\": true,\n  \"promote_100g_price\": true,\n  \"base_price_display\": 2,\n  \"promotion_type\": \"WOCHENEND\",\n  \"stopper\": {\n    \"type\": \"x_percent\",\n    \"placeholders\": {\n      \"discount-percent\": 11\n      \n    }\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
 										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
@@ -1630,10 +1838,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}/text-blocks",
 											"host": [
@@ -1670,12 +1874,19 @@
 											},
 											{
 												"key": "Content-Type",
-												"value": "application/json"
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]"
+											"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
 										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}/text-blocks",
@@ -1712,10 +1923,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links",
 											"host": [
@@ -1749,10 +1956,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/links/{{link_id}}",
 											"host": [
@@ -1926,10 +2129,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files",
 											"host": [
@@ -2022,10 +2221,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/generated-files/{{generated_file_id}}",
 											"host": [
@@ -2098,10 +2293,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-production-types",
 											"host": [
@@ -2157,10 +2348,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents",
 											"host": [
@@ -2501,10 +2688,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles",
 											"host": [
@@ -2540,10 +2723,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}",
 											"host": [
@@ -2624,10 +2803,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}/text-blocks",
 											"host": [
@@ -2728,10 +2903,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages",
 											"host": [
@@ -2767,10 +2938,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/pages/{{page_id}}",
 											"host": [
@@ -2851,10 +3018,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-schemes",
 											"host": [
@@ -2886,10 +3049,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/eye-catcher-templates",
 											"host": [
@@ -2939,10 +3098,6 @@
 												"value": "{{advertising_header_app_key}}"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}",
 											"host": [
@@ -2998,10 +3153,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications",
 									"host": [
@@ -3064,10 +3215,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{current_week}}",
 									"host": [
@@ -3205,10 +3352,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}",
 									"host": [
@@ -3360,10 +3503,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-skeletons?file={{file_id}}",
 									"host": [
@@ -3401,10 +3540,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-skeletons?file={{file_id}}&page={{page_id}}",
 									"host": [
@@ -3446,10 +3581,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-skeletons?publication={{publication_id}}&language={{language}}",
 									"host": [
@@ -3491,10 +3622,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-skeletons?publication={{publication_id}}&language={{language}}&page={{page_id}}",
 									"host": [
@@ -3546,7 +3673,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"language\": \"de\"\n}"
+									"raw": "{\n\t\"locale\": \"de\",\n\t\"template\":\"a4-base-poster\",\n\t\"header\":\"default\",\n\t\"title\": \"Le Confidentiel Costi\\u00e8res de N\\u00eemes AOP\",\n\t\"description\": \"2017, Costi\\u00e8res de N\\u00eemes, Frankreich, 6 x 75 cl\",\n\t\"valid_to\": \"2019-01-07\",\n\t\"valid_from\": \"2018-12-31\",\n\t\"sales_price\": \"47.70\",\n\t\"compared\":false,\n\t\"base_price_text\": \"10 cl = 1.06\",\n\t\"unit_price_text\":\"Einzelflasche 5.90\",\n\t\"awards\":\"Gold Gilbert & Gaillard\"\n}"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-skeletons",
@@ -3579,10 +3706,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-layouts",
 									"host": [
@@ -3614,10 +3737,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-layouts/listing",
 									"host": [
@@ -3650,10 +3769,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-formats",
 									"host": [
@@ -3685,10 +3800,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/print-styles",
 									"host": [
@@ -3727,10 +3838,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-publications",
 									"host": [
@@ -3816,10 +3923,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-publications/{{current_week}}",
 									"host": [
@@ -3871,10 +3974,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-publications/44444444-aaaa-4444-aaaa-444444444444",
 									"host": [
@@ -3983,10 +4082,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
 									"host": [
@@ -4061,10 +4156,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
 									"host": [
@@ -4137,10 +4228,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-designs",
 									"host": [
@@ -4172,10 +4259,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/screen-templates",
 									"host": [
@@ -4214,10 +4297,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/publication-article-usages?filter=[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\",\"090093\",\"090094\",\"090095\",\"090096\",\"090097\",\"090099\"],\"operator\":\"in\",\"type\":\"array\"}]",
 									"host": [
@@ -4230,6 +4309,66 @@
 										{
 											"key": "filter",
 											"value": "[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\",\"090093\",\"090094\",\"090095\",\"090096\",\"090097\",\"090099\"],\"operator\":\"in\",\"type\":\"array\"}]"
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"publication_type\", \"operator\":\"in\",\"value\":[\"online\",\"print\"]},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"value\":\"2017-46\"},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"value\":\"2017-12-01\"},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"operator\": \"in\", \"value\":[\"2017-46\",\"2018-50\"]},{\"property\":\"publication_type\", \"operator\":\"in\",\"value\":[\"online\"]},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"week_count\", \"value\":60},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"week_count\", \"value\":60},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"end_week\", \"value\":\"2018-50\"},{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"article_id\",\"value\":\"090098\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"end_week\", \"value\":\"2018-12-31\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"no_week\", \"value\":true},{\"property\":\"article_id\",\"value\":\"051630\"}]",
+											"disabled": true
 										}
 									]
 								},
@@ -4255,12 +4394,8 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
-									"raw": "{{advertising_url_base}}/publication-article-usages/article/090098",
+									"raw": "{{advertising_url_base}}/publication-article-usages/article/090098?filter=[{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"start_week\",\"value\":\"25 weeks ago\"},{\"property\":\"week_count\", \"value\":30}]",
 									"host": [
 										"{{advertising_url_base}}"
 									],
@@ -4268,6 +4403,67 @@
 										"publication-article-usages",
 										"article",
 										"090098"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"publication_type\", \"value\":\"online\"},{\"property\":\"start_week\",\"value\":\"25 weeks ago\"},{\"property\":\"week_count\", \"value\":30}]"
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"publication_type\", \"operator\":\"in\",\"value\":[\"online\",\"print\"]}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"value\":\"2017-46\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"value\":\"2017-12-01\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"calendar_week\", \"operator\": \"in\", \"value\":[\"2017-46\",\"2018-50\"]},{\"property\":\"publication_type\", \"operator\":\"in\",\"value\":[\"online\"]}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"week_count\", \"value\":60},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"week_count\", \"value\":60},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-46\"},{\"property\":\"end_week\", \"value\":\"2018-50\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"start_week\", \"value\":\"2017-12-01\"},{\"property\":\"end_week\", \"value\":\"2018-12-31\"},{\"property\":\"publication_type\", \"value\":\"online\"}]",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"no_week\", \"value\":true}]",
+											"disabled": true
+										}
 									]
 								},
 								"description": "List publication article usages searching by article id"
@@ -4292,10 +4488,6 @@
 										"value": "{{advertising_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{advertising_url_base}}/publication-article-usages/advertised-article/d090e97c-2238-480c-b5c5-700a9c858635",
 									"host": [
@@ -4312,6 +4504,1052 @@
 							"response": []
 						}
 					],
+					"description": "Advertising: Usages",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "proofreading",
+					"item": [
+						{
+							"name": "/proofreading-cycles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles"
+									]
+								},
+								"description": "List proofreading-cycles"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles (articles)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Manuskript KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"articles\",\r\n    \"created_by\": {\r\n        \"id\": \"cc21976e-16fc-40be-84f9-b3985c89a5b4\",\r\n        \"name\": \"Daniel Albrecht\",\r\n        \"email\": \"ivan.wolf+danielalbrecht@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"review\"],\r\n    \"departments\":[\r\n        {\r\n            \"id\":\"W\",\r\n            \"name\":\"Wein\",\r\n            \"recipients\":[\r\n                {\r\n                    \"id\":\"970790d0-e25f-4535-b43c-f5a12987091d\",\r\n                    \"name\":\"Marc Berthod\",\r\n                    \"email\":\"ivan.wolf+marcberthod@detailnet.ch\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"notification_mode\": \"single\",\r\n    \"week\":{\r\n        \"year\":2017,\r\n        \"number\":30\r\n    },\r\n    \"sample_delivery\": \"2018-03-15T10:00:00+0100\"\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles"
+									]
+								},
+								"description": "Create a proofreading-cycle (Korrekturzyklus) for advertised articles"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles (file)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Denner Woche KW 30/2017\",\r\n    \"deadline\": \"2018-02-28T12:00:00+0100\",\r\n    \"type\": \"file\",\r\n    \"created_by\": {\r\n        \"id\": \"dc3177a4-feb9-4952-b3e5-bb266820a87a\",\r\n        \"name\": \"Maria Walliser\",\r\n        \"email\": \"ivan.wolf+mariawalliser@detailnet.ch\"\r\n    },\r\n    \"review_checks\": [\"texts\", \"prices\", \"pictures\"],\r\n    \"notification_mode\": \"inidividual\",\r\n    \"file\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\"\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles"
+									]
+								},
+								"description": "Create a proofreading-cycle (Korrekturzyklus) for a file"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}"
+									]
+								},
+								"description": "List single proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Manus KW 30/2017\",\n  \"deadline\": \"2018-03-01T14:30:00+0100\",\n    \"status\": \"complete\",\n    \"status_changed_by\": {\n      \"id\": \"4485ae99-ec38-4e1e-b483-4c60add29822\",\n      \"name\": \"Sonja Näf\",\n      \"email\": \"ivan.wolf+sonjanaef@detailnet.ch\"\n  },\n  \"notification_mode\": \"none\"\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}"
+									]
+								},
+								"description": "Edit a proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}"
+									]
+								},
+								"description": "Delete a proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/documents/{document_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"documents",
+										"{{document_id}}"
+									]
+								},
+								"description": "List single document of given proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/documents/{document_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"status\": \"postprocessing\",\n  \"status_changed_by\": {\n        \"id\": \"01db66ca-5ace-4807-ab1c-b3f4915feaea\",\n        \"name\": \"Bruno Kernen\",\n        \"email\": \"ivan.wolf+brunokernen@detailnet.ch\"\n    },\n  \"discussion\": {\n    \"resolved\": true,\n    \"resolved_by\": {\n          \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n          \"name\": \"Urs Lehmann\",\n          \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n      }\n}\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"documents",
+										"{{document_id}}"
+									]
+								},
+								"description": "Update document of given proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/documents/{document_id}/comments",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"text\": \"Er schleicht geradezu um die Stangen\",\n  \"created_by\": {\n        \"id\": \"af1a5830-106e-4b78-893e-f5de315e6a7f\",\n        \"name\": \"Bernhard Russi\",\n        \"email\": \"ivan.wolf+bernhardrussi@detailnet.ch\"\n}\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/documents/{{document_id}}/comments",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"documents",
+										"{{document_id}}",
+										"comments"
+									]
+								},
+								"description": "Create a new comment in document and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}"
+									]
+								},
+								"description": "List single review of given proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Neuer Artikelname\",\n  \"sort_index\": 10,\n  \"discussion\": {\n    \"resolved\": true,\n    \"resolved_by\": {\n          \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n          \"name\": \"Urs Lehmann\",\n          \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n      }\n}\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}"
+									]
+								},
+								"description": "Update review of given proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/comments",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"text\": \"Bode Miller war heute einfach zu schnell\",\n  \"created_by\": {\n        \"id\": \"4285933d-2880-4c7b-bcf3-a88e1e6eeb7e\",\n        \"name\": \"Didier Cuche\",\n        \"email\": \"ivan.wolf+didiercuche@detailnet.ch\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/comments",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}",
+										"comments"
+									]
+								},
+								"description": "Create a new comment in given review and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/check-changes",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"prices\",\n    \"status\": \"accepted\",\n    \"created_by\": {\n        \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n        \"name\": \"Daniel Mahrer\",\n        \"email\": \"ivan.wolf+danielmahrer@detailnet.ch\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/check-changes",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}",
+										"check-changes"
+									]
+								},
+								"description": "Change (or create) a check in given review and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/items",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"title\",\n  \"comment\": {\n    \"text\": \"Schreibfehler\",\n    \"created_by\": {\n          \"id\": \"57c02b10-5003-4ca2-9ec2-21acd7bd4290\",\n          \"name\": \"Franz Heinzer\",\n          \"email\": \"ivan.wolf+franzheinzer@detailnet.ch\"\n      }\n  }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}",
+										"items"
+									]
+								},
+								"description": "Create a new item in given review and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/items/{item_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"discussion\": {\n    \"resolved\": true,\n    \"resolved_by\": {\n          \"id\": \"3b98da05-e6c4-47f3-a68c-66b3b988cb25\",\n          \"name\": \"Urs Lehmann\",\n          \"email\": \"ivan.wolf+urslehmann@detailnet.ch\"\n      }\n  }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items/{{item_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}",
+										"items",
+										"{{item_id}}"
+									]
+								},
+								"description": "Update item of given review and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/reviews/{review_id}/items/{item_id}/comments",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"text\": \"Schreibfehler korrigiert\",\n  \"created_by\": {\n        \"id\": \"27713fce-b1cc-4f30-86cf-5b6d575051b0\",\n        \"name\": \"Primin Zurbriggen\",\n        \"email\": \"ivan.wolf+priminzurbriggen@detailnet.ch\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/reviews/{{review_id}}/items/{{item_id}}/comments",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"reviews",
+										"{{review_id}}",
+										"items",
+										"{{item_id}}",
+										"comments"
+									]
+								},
+								"description": "Create a new comment in given item, review and proofreading-cycle (Korrekturzyklus)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-cycles/{cycle_id}/completions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"department\": \"W\",\n    \"completed_by\": {\n        \"id\": \"cc167038-d42e-46bc-b7e9-1836dc71d27a\",\n        \"name\": \"Karin Roten\",\n        \"email\": \"ivan.wolf+karinroten@detailnet.ch\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-cycles/{{cycle_id}}/completions",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-cycles",
+										"{{cycle_id}}",
+										"completions"
+									]
+								},
+								"description": "Complete proofreading-cycle (Korrekturzyklus) for a department"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-file-uploads",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"DennerWoche_2017-10.pdf\",\r\n    \"mime_type\": \"pdf\"\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-file-uploads",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-file-uploads"
+									]
+								},
+								"description": "Create a file (Dokument) upload"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-files",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-files",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-files"
+									]
+								},
+								"description": "List files of a publication"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-files",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"5b0a9d90-99de-43e6-bd74-7b1670d459db\",\r\n    \"name\": \"DennerWoche_2017-10.pdf\",\r\n    \"locale\": \"de\",\r\n    \"created_by\": {\r\n        \"id\": \"b21fb040-34cf-4a13-ae73-e702df0edd01\",\r\n        \"name\": \"Paul Accola\",\r\n        \"email\": \"ivan.wolf+paulaccola@detailnet.ch\"\r\n    },\r\n    \"url\": \"https://ivan-wolf.s3.eu-west-1.amazonaws.com/denner-assets/proofreadings/5b0a9d90-99de-43e6-bd74-7b1670d459db/DennerWoche_2017-10.pdf\",\r\n    \"size\": 5634,\r\n    \"publication\": \"87823e32-9e5f-4469-b1d6-953ea5200c5b\",\r\n    \"pages\": [2, 3, 8, 9],\r\n    \"recipients\": [\r\n        {\r\n          \"id\": \"e6729c2c-8340-4632-8bcd-6878497932a2\",\r\n            \"name\": \"Michael von Grünigen\",\r\n            \"email\": \"ivan.wolf+michaelvongruenigen@detailnet.ch\"\r\n        }\r\n    ],\r\n    \"locate_articles_strict\": false\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-files",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-files"
+									]
+								},
+								"description": "Create a file (Dokument)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-files/{file_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-files/{{file_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-files",
+										"{{file_id}}"
+									]
+								},
+								"description": "List single file (Dokument)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-files/{file_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-files/{{file_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-files",
+										"{{file_id}}"
+									]
+								},
+								"description": "Delete a file (Dokument)"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-collaborators",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-collaborators",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-collaborators"
+									]
+								},
+								"description": "List collaborators"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-collaborators",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"74ea86e4-7390-462c-a3c7-7b7027a03822\",\r\n    \"roles\": [\r\n        \"category-head\"\r\n    ],\r\n    \"notification_preferences\": [\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"articles\",\r\n            \"opted_out\": true\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-collaborators",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-collaborators"
+									]
+								},
+								"description": "Create a collaborator"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-collaborators/{collaborator_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-collaborators/{{collaborator_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-collaborators",
+										"{{collaborator_id}}"
+									]
+								},
+								"description": "List single collaborator"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-collaborators/{collaborator_id}",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"roles\": [\r\n        \"category-manager\"\r\n    ],\r\n    \"notification_preferences\": [\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"articles\",\r\n            \"opted_out\": false\r\n        },\r\n        {\r\n            \"notification_name\": \"new-cycle\",\r\n            \"cycle_type\": \"file\",\r\n            \"opted_out\": true\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-collaborators/{{collaborator_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-collaborators",
+										"{{collaborator_id}}"
+									]
+								},
+								"description": "Update a collaborator"
+							},
+							"response": []
+						},
+						{
+							"name": "/proofreading-collaborators/{collaborator_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/proofreading-collaborators/{{collaborator_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"proofreading-collaborators",
+										"{{collaborator_id}}"
+									]
+								},
+								"description": "Delete a collaborator"
+							},
+							"response": []
+						}
+					],
+					"description": "Advertising: Proofreading",
 					"_postman_isSubFolder": true
 				}
 			],
@@ -4356,10 +5594,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/appraisals",
 							"host": [
@@ -4387,10 +5621,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/appraisals/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -4455,10 +5685,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/appraisal-statistics/2015-02-17",
 							"host": [
@@ -4487,10 +5713,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/sweepstake-participants",
 							"host": [
@@ -4518,10 +5740,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/ratings",
 							"host": [
@@ -4549,10 +5767,6 @@
 								"value": "{{appraisals_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{appraisals_url_base}}/ratings/050202",
 							"host": [
@@ -4622,10 +5836,6 @@
 										"disabled": true
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/articles",
 									"host": [
@@ -4663,18 +5873,14 @@
 										"disabled": true
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
-									"raw": "{{articles_url_base}}/articles/022617?",
+									"raw": "{{articles_url_base}}/articles/051583?wine-year=2016",
 									"host": [
 										"{{articles_url_base}}"
 									],
 									"path": [
 										"articles",
-										"022617"
+										"051583"
 									],
 									"query": [
 										{
@@ -4700,6 +5906,11 @@
 											"value": "{\"valid_on\":\"2015-09-17\",\"level\":0}",
 											"description": "Get specific price (query formatted as JSON)",
 											"disabled": true
+										},
+										{
+											"key": "wine-year",
+											"value": "2016",
+											"description": "Get specific wine-year (for medals/awards)"
 										}
 									]
 								},
@@ -4765,10 +5976,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/articles/022617/text-blocks",
 									"host": [
@@ -4854,10 +6061,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/articles/022617/packshot/022617.png?quantity=1&with-archived=true&imgix_w=250&imgix_h=250",
 									"host": [
@@ -4910,18 +6113,14 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
-									"raw": "{{articles_url_base}}/articles/022617/prices",
+									"raw": "{{articles_url_base}}/articles/051551/prices",
 									"host": [
 										"{{articles_url_base}}"
 									],
 									"path": [
 										"articles",
-										"022617",
+										"051551",
 										"prices"
 									],
 									"query": [
@@ -4929,6 +6128,12 @@
 											"key": "filter",
 											"value": "[{\"property\":\"valid_on\",\"value\":\"2019-01-15\"},{\"property\":\"quantity\",\"value\":1}]",
 											"description": "Filter by specific day and quantity",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"valid_on\",\"value\":\"2019-09-24\"},{\"property\":\"level\",\"value\":[0,5]},{\"property\":\"distinct_quantities\",\"value\":1}]",
+											"description": "Filter for online prices",
 											"disabled": true
 										}
 									]
@@ -4955,10 +6160,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/shop-wines",
 									"host": [
@@ -4990,10 +6191,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/shop-wines/050006",
 									"host": [
@@ -5026,10 +6223,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/mobile-wines",
 									"host": [
@@ -5061,10 +6254,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/mobile-wines/050006",
 									"host": [
@@ -5097,10 +6286,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/article-groups?page_size=-1",
 									"host": [
@@ -5138,10 +6323,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/online-groups?page_size=-1",
 									"host": [
@@ -5179,10 +6360,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/online-specials?page_size=-1",
 									"host": [
@@ -5220,10 +6397,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/boxes",
 									"host": [
@@ -5255,10 +6428,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/price-regions",
 									"host": [
@@ -5290,10 +6459,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/wine-growers?query=test",
 									"host": [
@@ -5394,10 +6559,6 @@
 										"disabled": true
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/wine-growers/{{wine_grower_id}}",
 									"host": [
@@ -5487,6 +6648,96 @@
 								"description": "Delete a wine grower (Winzer)"
 							},
 							"response": []
+						},
+						{
+							"name": "/food-matches",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{articles_url_base}}/food-matches",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"food-matches"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/grapes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{articles_url_base}}/grapes",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"grapes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/wine-experts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{articles_url_base}}/wine-experts",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"wine-experts"
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"description": "Articles: Articles",
@@ -5531,10 +6782,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles",
 									"host": [
@@ -5653,10 +6900,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{current_week}}",
 									"host": [
@@ -5695,10 +6938,6 @@
 										"disabled": true
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}",
 									"host": [
@@ -5800,10 +7039,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots",
 									"host": [
@@ -5896,10 +7131,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots/{{dot_id}}",
 									"host": [
@@ -6032,10 +7263,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers",
 									"host": [
@@ -6128,10 +7355,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
 									"host": [
@@ -6246,10 +7469,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/promotion-types?page_size=-1",
 									"host": [
@@ -6287,10 +7506,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/promotions?page_size=-1",
 									"host": [
@@ -6328,10 +7543,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/store-availabilities",
 									"host": [
@@ -6363,10 +7574,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/discount-campaigns",
 									"host": [
@@ -6398,10 +7605,6 @@
 										"value": "{{articles_header_app_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{articles_url_base}}/discounts?filter=[{\"property\":\"campaign_id\",\"value\":\"1706-KAMB\"}]",
 									"host": [
@@ -6465,10 +7668,6 @@
 								"value": "{{articles_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{articles_url_base}}/languages?page_size=-1",
 							"host": [
@@ -6534,10 +7733,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/purposes?page_size=-1",
 							"host": [
@@ -6575,10 +7770,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/views?page_size=-1",
 							"host": [
@@ -6616,10 +7807,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/languages?page_size=-1",
 							"host": [
@@ -6657,10 +7844,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/file-types?page_size=-1",
 							"host": [
@@ -6698,10 +7881,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/asset-tags?page_size=-1",
 							"host": [
@@ -6739,10 +7918,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/asset-types?page_size=-1",
 							"host": [
@@ -6780,10 +7955,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/assets?page=1&page_size=5&filter=[{\"property\":\"articles\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"000000\",\"222222\"]}]&sort=[{\"property\":\"created_on\",\"direction\":\"asc\"}]&query=test",
 							"host": [
@@ -6957,10 +8128,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/assets/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -7188,10 +8355,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/assets/44444444-aaaa-4444-aaaa-444444444444/file-replacements",
 							"host": [
@@ -7305,10 +8468,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/asset-collections?page=1&page_size=5&sort=[{\"property\":\"created_on\",\"direction\":\"asc\"}]",
 							"host": [
@@ -7393,10 +8552,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/asset-collections/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -7585,10 +8740,6 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{assets_url_base}}/asset-collections/44444444-aaaa-4444-aaaa-444444444444/links/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -7779,8 +8930,11 @@
 									"const $ = cheerio.load(responseBody); ",
 									"",
 									"$('.request-body').each(function(i, elem) {",
+									"    if ($(this).find('pre').text()[0] !== '{') return;",
+									"    ",
 									"    var id = $(this).attr('data-id'),",
 									"        content = JSON.parse($(this).find('pre').text());",
+									"        ",
 									"    console.log(id);",
 									"    console.log(content); ",
 									"",
@@ -7825,12 +8979,8 @@
 								"value": "{{assets_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
-							"raw": "https://requestbin.fullcontact.com/wabjuiwa?inspect",
+							"raw": "https://requestbin.fullcontact.com/{your-reqwstb.in-id}?inspect",
 							"protocol": "https",
 							"host": [
 								"requestbin",
@@ -7838,7 +8988,7 @@
 								"com"
 							],
 							"path": [
-								"wabjuiwa"
+								"{your-reqwstb.in-id}"
 							],
 							"query": [
 								{
@@ -7973,10 +9123,6 @@
 								"value": "{{banners_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{banners_url_base}}/banners",
 							"host": [
@@ -8004,10 +9150,6 @@
 								"value": "{{banners_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{banners_url_base}}/banners/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -8139,10 +9281,6 @@
 								"value": "{{portal_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{portal_url_base}}/users",
 							"host": [
@@ -8213,10 +9351,6 @@
 								"value": "{{portal_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{portal_url_base}}/users/{{user_id}}",
 							"host": [
@@ -8325,10 +9459,6 @@
 								"value": "{{portal_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{portal_url_base}}/roles",
 							"host": [
@@ -8360,10 +9490,6 @@
 								"value": "{{portal_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{portal_url_base}}/departments",
 							"host": [
@@ -8423,10 +9549,6 @@
 								"value": "{{stores_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{stores_url_base}}/stores",
 							"host": [
@@ -8458,10 +9580,6 @@
 								"value": "{{stores_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{stores_url_base}}/screen-stores",
 							"host": [
@@ -8493,10 +9611,6 @@
 								"value": "{{stores_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{stores_url_base}}/stores/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
@@ -8529,10 +9643,6 @@
 								"value": "{{stores_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{stores_url_base}}/store-channels?filter=[{\"property\":\"stores_count\",\"operator\":\">\",\"value\":0,\"type\":\"integer\"}]",
 							"host": [
@@ -8570,10 +9680,6 @@
 								"value": "{{stores_header_app_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{stores_url_base}}/store-services",
 							"host": [
