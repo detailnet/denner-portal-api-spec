@@ -36,6 +36,7 @@ The Denner Portal provides mostly advertising related data.
 
 #### Online
 * `/online-publications` (Online-Werbemittel, [example](examples/online-publications.json))
+* `/online-publication-articles/{article_id}` (Online-Werbemittel-Artikel, [example](examples/online-publication-article.json))
 * `/online-filters` (Angebotsfilter, [example](examples/online-filters.json))
 
 #### Screen
@@ -63,14 +64,18 @@ To build the specification we're using [swagger-codegen](https://github.com/swag
 
 Run the following commands in [Protobox](https://bitbucket.org/detailnet/protobox) to install it (and it's dependencies):
 
+        sudo apt-get update
         sudo apt-get install maven
         sudo apt-get install openjdk-7-jdk
         git clone git@github.com:swagger-api/swagger-codegen.git
         cd swagger-codegen
         mvn package
         
+If Maven reports loo low version on packaging, follow [those instructions](https://linuxize.com/post/how-to-install-apache-maven-on-debian-9/) to upgrade to latest version.        
+        
 You should also install the JSON processor utility for further data manipulation:
         
+        sudo apt-get install npm
         sudo npm install -g json
   
 

@@ -989,6 +989,38 @@
 							"response": []
 						},
 						{
+							"name": "/online-publication-articles/{article_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/online-publication-articles/{{publication_article_id}}",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"online-publication-articles",
+										"{{publication_article_id}}"
+									]
+								},
+								"description": "List a specific article for an online publication (Online-Werbemittel) directly (without passing from the  publication)"
+							},
+							"response": []
+						},
+						{
 							"name": "/online-publications/{publication_id}/articles/{article_id}",
 							"request": {
 								"method": "PATCH",

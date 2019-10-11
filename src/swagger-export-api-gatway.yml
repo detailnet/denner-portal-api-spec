@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2019-10-10T06:41:17Z"
+  version: "2019-10-11T14:05:19Z"
   title: "denner"
 host: "denner-api.detailnet.ch"
 basePath: "/v1"
@@ -981,6 +981,49 @@ paths:
           - "method.request.querystring.page_size"
           - "method.request.querystring.filter"
           - "method.request.querystring.sort"
+          - "method.request.header.App-ID"
+          - "method.request.header.App-Key"
+        type: "http"
+  /online-publication-articles/{article_id}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "article_id"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "App-ID"
+          in: "header"
+          required: false
+          type: "string"
+        - name: "App-Key"
+          in: "header"
+          required: false
+          type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+        404:
+          description: "404 response"
+      x-amazon-apigateway-integration:
+        uri: "https://${stageVariables.url_advertising}/online-publication-articles/{article_id}"
+        responses:
+          default:
+            statusCode: "200"
+          404:
+            statusCode: "404"
+        requestParameters:
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.path.article_id: "method.request.path.article_id"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        cacheNamespace: "90mhl8"
+        cacheKeyParameters:
+          - "method.request.path.article_id"
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
         type: "http"
