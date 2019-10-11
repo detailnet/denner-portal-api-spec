@@ -1014,7 +1014,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"valid_to\": \"2017-08-19\",\n  \"compared\": true,\n  \"promote_100g_price\": true,\n  \"base_price_display\": 2,\n  \"promotion_type\": \"WOCHENEND\",\n  \"stopper\": {\n    \"type\": \"x_percent\",\n    \"placeholders\": {\n      \"discount-percent\": 11\n      \n    }\n  }\n}",
+									"raw": "{\n    \"valid_to\": \"2017-08-19\",\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"base_price_display\": 2,\n    \"promotion_type\": \"WOCHENEND\",\n    \"stopper\": {\n        \"type\": \"x_percent\",\n        \"placeholders\": {\n            \"discount-percent\": 11\n        }\n    },\n    \"dots\": [\n        {\n            \"type\": \"online_special\"\n        },\n        {\n            \"type\": \"new\",\n            \"expires_on\": \"2020-01-01\"\n        }\n    ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1759,7 +1759,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"valid_to\": \"2017-08-19\",\n  \"compared\": true,\n  \"promote_100g_price\": true,\n  \"base_price_display\": 2,\n  \"promotion_type\": \"WOCHENEND\",\n  \"stopper\": {\n    \"type\": \"x_percent\",\n    \"placeholders\": {\n      \"discount-percent\": 11\n      \n    }\n  }\n}",
+											"raw": "{\n    \"valid_to\": \"2017-08-19\",\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"base_price_display\": 2,\n    \"promotion_type\": \"WOCHENEND\",\n    \"stopper\": {\n        \"type\": \"x_percent\",\n        \"placeholders\": {\n            \"discount-percent\": 11\n        }\n    },\n    \"dots\": [\n        {\n            \"type\": \"new\"\n        }\n    ]\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -2760,12 +2760,19 @@
 											},
 											{
 												"key": "Content-Type",
-												"value": "application/json"
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"valid_to\": \"2017-08-19\",\n  \"compared\": true,\n  \"promote_100g_price\": true,\n  \"base_price_display\": 2,\n  \"promotion_type\": \"WOCHENEND\",\n  \"stopper\": {\n    \"type\": \"x_percent\",\n    \"placeholders\": {\n      \"discount-percent\": 11\n      \n    }\n  }\n}"
+											"raw": "{\n    \"valid_to\": \"2017-08-19\",\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"base_price_display\": 2,\n    \"promotion_type\": \"WOCHENEND\",\n    \"stopper\": {\n        \"type\": \"x_percent\",\n        \"placeholders\": {\n            \"discount-percent\": 11\n        }\n    },\n    \"dots\": [\n        {\n            \"type\": \"new\"\n        }\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
 										},
 										"url": {
 											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}",
