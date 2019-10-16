@@ -1046,7 +1046,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"valid_to\": \"2017-08-19\",\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"base_price_display\": 2,\n    \"promotion_type\": \"WOCHENEND\",\n    \"stopper\": {\n        \"type\": \"x_percent\",\n        \"placeholders\": {\n            \"discount-percent\": 11\n        }\n    },\n    \"dots\": [\n        {\n            \"type\": \"online_special\"\n        },\n        {\n            \"type\": \"new\",\n            \"expires_on\": \"2020-01-01\"\n        }\n    ]\n}",
+									"raw": "{\n    \"valid_to\": \"2017-08-19\",\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"base_price_display\": 2,\n    \"promotion_type\": \"WOCHENEND\",\n    \"stopper\": {\n        \"type\": \"x_percent\",\n        \"placeholders\": {\n            \"discount-percent\": 11\n        }\n    },\n    \"dots\": [\n        {\n            \"type\": \"online_special\"\n        },\n        {\n            \"type\": \"new\",\n            \"expires_on\": \"2020-01-01\"\n        }\n    ],\n    \"packshot_override\": \"44444444-aaaa-4444-aaaa-444444444444\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1098,7 +1098,8 @@
 										"{{publication_article_id}}",
 										"text-blocks"
 									]
-								}
+								},
+								"description": "List article's text blocks from an online publication (Online-Werbemittel)"
 							},
 							"response": []
 						},
@@ -1148,6 +1149,41 @@
 										"text-blocks"
 									]
 								}
+							},
+							"response": []
+						},
+						{
+							"name": "/online-publications/{publication_id}/articles/{article_id}/packshots",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/online-publications/{{publication_id}}/articles/{{publication_article_id}}/packshots",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"online-publications",
+										"{{publication_id}}",
+										"articles",
+										"{{publication_article_id}}",
+										"packshots"
+									]
+								},
+								"description": "List article's packshots from an online publication (Online-Werbemittel)"
 							},
 							"response": []
 						},
@@ -1791,7 +1827,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"valid_to\": \"2017-08-19\",\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"base_price_display\": 2,\n    \"promotion_type\": \"WOCHENEND\",\n    \"stopper\": {\n        \"type\": \"x_percent\",\n        \"placeholders\": {\n            \"discount-percent\": 11\n        }\n    },\n    \"dots\": [\n        {\n            \"type\": \"new\"\n        }\n    ]\n}",
+											"raw": "{\n    \"valid_to\": \"2017-08-19\",\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"base_price_display\": 2,\n    \"promotion_type\": \"WOCHENEND\",\n    \"stopper\": {\n        \"type\": \"x_percent\",\n        \"placeholders\": {\n            \"discount-percent\": 11\n        }\n    },\n    \"dots\": [\n        {\n            \"type\": \"new\"\n        }\n    ],\n    \"packshot_override\": \"44444444-aaaa-4444-aaaa-444444444444\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1934,6 +1970,41 @@
 											]
 										},
 										"description": "Update article's override-texts from a print publication by listing (Print-Werbemittel)"
+									},
+									"response": []
+								},
+								{
+									"name": "/print-publications/{publication_id}/articles/{article_id}/packshots",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "{{header_accept}}"
+											},
+											{
+												"key": "App-ID",
+												"value": "{{advertising_header_app_id}}"
+											},
+											{
+												"key": "App-Key",
+												"value": "{{advertising_header_app_key}}"
+											}
+										],
+										"url": {
+											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}/packshots",
+											"host": [
+												"{{advertising_url_base}}"
+											],
+											"path": [
+												"print-publications",
+												"{{publication_id}}",
+												"articles",
+												"{{publication_article_id}}",
+												"packshots"
+											]
+										},
+										"description": "List article's packshots from a print publication (Print-Werbemittel)"
 									},
 									"response": []
 								},
@@ -2799,7 +2870,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"valid_to\": \"2017-08-19\",\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"base_price_display\": 2,\n    \"promotion_type\": \"WOCHENEND\",\n    \"stopper\": {\n        \"type\": \"x_percent\",\n        \"placeholders\": {\n            \"discount-percent\": 11\n        }\n    },\n    \"dots\": [\n        {\n            \"type\": \"new\"\n        }\n    ]\n}",
+											"raw": "{\n    \"valid_to\": \"2017-08-19\",\n    \"compared\": true,\n    \"promote_100g_price\": true,\n    \"base_price_display\": 2,\n    \"promotion_type\": \"WOCHENEND\",\n    \"stopper\": {\n        \"type\": \"x_percent\",\n        \"placeholders\": {\n            \"discount-percent\": 11\n        }\n    },\n    \"dots\": [\n        {\n            \"type\": \"new\"\n        }\n    ],\n    \"packshot_override\": \"44444444-aaaa-4444-aaaa-444444444444\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -2903,6 +2974,43 @@
 											]
 										},
 										"description": "Update article's override-texts from a document of a print publication by positioning (Print-Werbemittel)"
+									},
+									"response": []
+								},
+								{
+									"name": "/print-publications/{publication_id}/documents/{document_id}/articles/{article_id}/packshots",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "{{header_accept}}"
+											},
+											{
+												"key": "App-ID",
+												"value": "{{advertising_header_app_id}}"
+											},
+											{
+												"key": "App-Key",
+												"value": "{{advertising_header_app_key}}"
+											}
+										],
+										"url": {
+											"raw": "{{advertising_url_base}}/print-publications/{{publication_id}}/documents/{{document_id}}/articles/{{publication_article_id}}/packshots",
+											"host": [
+												"{{advertising_url_base}}"
+											],
+											"path": [
+												"print-publications",
+												"{{publication_id}}",
+												"documents",
+												"{{document_id}}",
+												"articles",
+												"{{publication_article_id}}",
+												"packshots"
+											]
+										},
+										"description": "List article's packshots from a document of a print publication by positioning (Print-Werbemittel)"
 									},
 									"response": []
 								},
