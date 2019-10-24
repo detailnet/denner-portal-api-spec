@@ -1,8 +1,11 @@
 ---
 swagger: "2.0"
 info:
-  version: "2019-10-11T14:05:19Z"
+  version: "2019-10-24T05:00:00Z"
   title: "denner"
+  contact:
+    name: DETAIL NET
+    email: support+denner-api@detailnet.ch
 host: "denner-api.detailnet.ch"
 basePath: "/v1"
 schemes:
@@ -39,9 +42,21 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -49,6 +64,12 @@ paths:
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -86,11 +107,25 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
         404:
-          description: "404 response"
+          description: "404 Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -98,8 +133,14 @@ paths:
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
           404:
             statusCode: "404"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.header.App-Key: "method.request.header.App-Key"
           integration.request.path.advertised_article_id: "method.request.path.advertised_article_id"
@@ -117,12 +158,24 @@ paths:
         - "application/json"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "http://denner-portal.detailnet.ch/data/appraisal_statistics.json"
         responses:
@@ -130,6 +183,12 @@ paths:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         passthroughBehavior: "when_no_match"
         httpMethod: "GET"
         type: "http"
@@ -191,12 +250,24 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listAppraisals:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -204,6 +275,12 @@ paths:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         passthroughBehavior: "when_no_match"
         httpMethod: "POST"
         cacheNamespace: "l16zra"
@@ -264,14 +341,28 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
         404:
-          description: "404 response"
+          description: "404 Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -281,8 +372,14 @@ paths:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
           404:
             statusCode: "404"
+          5\d{2}:
+            statusCode: "500"
         passthroughBehavior: "when_no_match"
         httpMethod: "POST"
         cacheNamespace: "iov04u"
@@ -338,12 +435,24 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -353,6 +462,12 @@ paths:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         passthroughBehavior: "when_no_match"
         httpMethod: "POST"
         cacheNamespace: "iov04u"
@@ -394,14 +509,32 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/article-groups"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -451,14 +584,32 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/articles"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -496,18 +647,38 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
         404:
-          description: "404 response"
+          description: "404 Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/articles/{article_id}"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
           404:
             statusCode: "404"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.path.article_id: "method.request.path.article_id"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -539,18 +710,38 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
         404:
-          description: "404 response"
+          description: "404 Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/articles/{article_id}/text-blocks"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
           404:
             statusCode: "404"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.path.article_id: "method.request.path.article_id"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -575,12 +766,24 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -590,6 +793,12 @@ paths:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         passthroughBehavior: "when_no_match"
         httpMethod: "POST"
         requestTemplates:
@@ -610,12 +819,24 @@ paths:
           type: "string"
       responses:
         201:
-          description: "201 response"
+          description: "201 Created"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -625,6 +846,12 @@ paths:
             statusCode: "201"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         passthroughBehavior: "when_no_match"
         httpMethod: "POST"
         requestTemplates:
@@ -677,14 +904,28 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
         404:
-          description: "404 response"
+          description: "404 Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -694,8 +935,14 @@ paths:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          403:
+            statusCode: "403"
           404:
             statusCode: "404"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         passthroughBehavior: "when_no_match"
         httpMethod: "POST"
         cacheNamespace: "1731ej"
@@ -780,12 +1027,24 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -795,6 +1054,12 @@ paths:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         passthroughBehavior: "when_no_match"
         httpMethod: "POST"
         cacheNamespace: "1731ej"
@@ -837,14 +1102,32 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/mobile-wines"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -893,20 +1176,30 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
-        500:
-          description: "500 response"
         403:
-          description: "403 response"
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_advertising}/online-filters"
         responses:
-          200:
+          default:
             statusCode: "200"
           403:
             statusCode: "403"
+          406:
+            statusCode: "406"
           5\d{2}:
             statusCode: "500"
         requestParameters:
@@ -958,14 +1251,32 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/online-groups"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -1003,18 +1314,38 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
         404:
-          description: "404 response"
+          description: "404 Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_advertising}/online-publication-articles/{article_id}"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
           404:
             statusCode: "404"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.header.App-Key: "method.request.header.App-Key"
           integration.request.path.article_id: "method.request.path.article_id"
@@ -1058,26 +1389,32 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
-        500:
-          description: "500 response"
         403:
-          description: "403 response"
-        416:
-          description: "416 response"
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_advertising}/online-publications"
         responses:
-          200:
+          default:
             statusCode: "200"
           403:
             statusCode: "403"
+          406:
+            statusCode: "406"
           5\d{2}:
             statusCode: "500"
-          416:
-            statusCode: "416"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -1115,24 +1452,36 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
-        500:
-          description: "500 response"
         403:
-          description: "403 response"
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
         404:
-          description: "404 response"
+          description: "404 Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_advertising}/online-publications/{publication_id}"
         responses:
-          200:
+          default:
             statusCode: "200"
           403:
             statusCode: "403"
           404:
             statusCode: "404"
+          406:
+            statusCode: "406"
           5\d{2}:
             statusCode: "500"
         requestParameters:
@@ -1178,14 +1527,32 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/online-specials"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -1264,14 +1631,32 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/promotion-types"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -1321,14 +1706,32 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/promotions"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -1380,9 +1783,21 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -1394,6 +1809,12 @@ paths:
               application/json: "#set($response = $input.path('$'))\n{\n    \"ratings\"\
                 : $response.ratings,\n    \"total_ratings\": $response.total_ratings,\n\
                 \    \"total_items\": $response.total_ratings\n}\n"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         passthroughBehavior: "when_no_templates"
         httpMethod: "POST"
         requestTemplates:
@@ -1419,11 +1840,25 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
         404:
-          description: "404 response"
+          description: "404 Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -1431,8 +1866,14 @@ paths:
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
           404:
             statusCode: "404"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         passthroughBehavior: "when_no_templates"
         httpMethod: "POST"
         requestTemplates:
@@ -1471,14 +1912,32 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_advertising}/screen-publications"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -1516,18 +1975,38 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
         404:
-          description: "404 response"
+          description: "404 Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_advertising}/screen-publications/{publication_id}"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
           404:
             statusCode: "404"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.header.App-Key: "method.request.header.App-Key"
           integration.request.path.publication_id: "method.request.path.publication_id"
@@ -1563,13 +2042,25 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_stores}/stores"
         responses:
-          200:
+          default:
             statusCode: "200"
             responseTemplates:
               application/json: "#set($root = $input.path('$'))\n{\n  \"stores\":\
@@ -1578,6 +2069,12 @@ paths:
                 : $store.calendar_opening_times\n    }#if($foreach.hasNext),#end\n\
                 \n#end\n  ],\n  \"page_count\": $root.page_count,\n  \"page_size\"\
                 : $root.page_size,\n  \"total_items\": $root.total_items\n}\n"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -1623,14 +2120,32 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/shop-wines"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -1668,18 +2183,38 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
         404:
-          description: "404 response"
+          description: "404 Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_articles}/shop-wines/{article_id}"
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
           404:
             statusCode: "404"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         requestParameters:
           integration.request.path.article_id: "method.request.path.article_id"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -1723,24 +2258,30 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
-        500:
-          description: "500 response"
+        403:
+          description: "403 Forbidden"
           schema:
             $ref: "#/definitions/Error"
-        403:
-          description: "403 response"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_stores}/store-channels"
         responses:
-          200:
+          default:
             statusCode: "200"
           403:
             statusCode: "403"
+          406:
+            statusCode: "406"
           5\d{2}:
             statusCode: "500"
         requestParameters:
@@ -1792,24 +2333,30 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
-        500:
-          description: "500 response"
+        403:
+          description: "403 Forbidden"
           schema:
             $ref: "#/definitions/Error"
-        403:
-          description: "403 response"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_stores}/store-services"
         responses:
-          200:
+          default:
             statusCode: "200"
           403:
             statusCode: "403"
+          406:
+            statusCode: "406"
           5\d{2}:
             statusCode: "500"
         requestParameters:
@@ -1861,32 +2408,32 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
-        500:
-          description: "500 response"
-          schema:
-            $ref: "#/definitions/Error"
         403:
-          description: "403 response"
+          description: "403 Forbidden"
           schema:
             $ref: "#/definitions/Error"
-        416:
-          description: "416 response"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_stores}/stores"
         responses:
-          200:
+          default:
             statusCode: "200"
           403:
             statusCode: "403"
+          406:
+            statusCode: "406"
           5\d{2}:
             statusCode: "500"
-          416:
-            statusCode: "416"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -1944,9 +2491,21 @@ paths:
           type: "string"
       responses:
         200:
-          description: "200 response"
+          description: "200 OK"
           schema:
             $ref: "#/definitions/Empty"
+        403:
+          description: "403 Forbidden"
+          schema:
+            $ref: "#/definitions/Error"
+        406:
+          description: "406 Not Acceptable"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 Internal Server Error"
+          schema:
+            $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
@@ -1954,6 +2513,12 @@ paths:
         responses:
           default:
             statusCode: "200"
+          403:
+            statusCode: "403"
+          406:
+            statusCode: "406"
+          5\d{2}:
+            statusCode: "500"
         passthroughBehavior: "when_no_templates"
         httpMethod: "POST"
         cacheNamespace: "ahyiw5"
