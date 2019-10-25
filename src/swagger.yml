@@ -945,6 +945,324 @@ paths:
                     code: "KA"
                     batch_size: 3
 
+  /articles/{article_id}:
+    get:
+      summary: Get single plain article (decorated for quantity, price and wine-year)
+      description: >
+        Use this operation to get a single plain article that contains prices and texts fro the
+        optionally defined decoration parameters (quantity, price-selection and wine-year),
+        e.g. AWS λ function to createBasePoster.
+      tags:
+        - articles
+      operationId: getArticle
+      security:
+        - appKey: []
+        - appId: []
+      parameters:
+        - $ref: '#/parameters/ArticleIdPathParam'
+        - name: quantity
+          description: Quantity for prices and texts
+          in: query
+          type: integer
+          required: false
+          format: int32
+          minimum: 1
+          default: 1
+        - name: price-selection
+          in: query
+          type: string
+          required: false
+          description: |
+            Filters: JSON of PriceSelection object, urlencoded.
+
+            PriceSelection object:
+            - valid_on: Date (mandatory). The day whose the price is valid on, formatted Y-m-d.
+            - level: Integer (optional). The price level, values from 0 to 9.
+            - channel: Integer (optional). The Price channel.
+            - regional_code: Integer (optional). The price region, enumeration ('D', 'F', 'I', 'DF', 'DI', 'FI').
+
+            Examples:
+            - {"valid_on":"2020-01-01"}
+            - {"valid_on":"2020-01-01", "level": 5}
+        - name: wine-year
+          description: Wine year for texts and avards
+          in: query
+          type: integer
+          required: false
+          format: int32
+          minimum: 1900
+      responses:
+        200:
+          description: Successful object
+          schema:
+            $ref: '#/definitions/Article'
+          examples:
+            application/json:
+              id: "051273"
+              name: "Mandorla Primitivo IGT Puglia"
+              title:
+                - locale: "de"
+                  value: "Mandorla Primitivo di Puglia IGT"
+                - locale: "fr"
+                  value: "Mandorla Primitivo di Puglia IGT"
+                - locale: "it"
+                  value: "Mandorla Primitivo di Puglia IGT"
+              description:
+                - locale: "de"
+                  value: "2013, Apulien, Italien, 6 x 75 cl"
+                - locale: "fr"
+                  value: "2013, les Pouilles, Italie, 6 x 75 cl"
+                - locale: "it"
+                  value: "2013, Puglia, Italia, 6 x 75 cl"
+              composite_description:
+                - locale: "de"
+                  value: ""
+                - locale: "fr"
+                  value: ""
+                - locale: "it"
+                  value: ""
+              article_group:
+                id: "0c309757-5432-4652-8201-ec35f31c5260"
+                code: "60-56"
+                name: "Italien Rot 70 cl"
+                parent:
+                  id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
+                  code: "60"
+                  name: "Weine"
+              purchasing_department: "W"
+              online_group:
+                id: "a2664d3a-93b4-4277-9e6e-c95ad8b6c6ee"
+                code: "2-9"
+                disabled: false
+                allow_featuring: true
+                allow_promotion: true
+                allow_background: true
+                title:
+                  - locale: "de"
+                    value: "Wein/Champagner"
+                  - locale: "fr"
+                    value: "Vins/champagnes"
+                  - locale: "it"
+                    value: "Vino/champagne"
+                parent:
+                  id: "8fd653c3-a86b-4529-bbb5-58d06919d484"
+                  code: "2"
+                  disabled: false
+                  allow_featuring: true
+                  allow_promotion: true
+                  allow_background: true
+                  title:
+                    - locale: "de"
+                      value: "Getränke"
+                    - locale: "fr"
+                      value: "Boissons"
+                    - locale: "it"
+                      value: "Bevande"
+              prices:
+                sales: 9.9
+                instead: 11.4
+                base: 1.32
+                final: true
+                by_quantity:
+                  - quantity: 1
+                    sales: 9.9
+                    instead: 11.4
+                    final: true
+                  - quantity: 6
+                    sales: 59.4
+                    instead: 68.4
+                    final: true
+              barcodes:
+                - value: "086003000094"
+                  type: "UPC12"
+                  quantity: 1
+                  master: false
+                - value: "086003004344"
+                  type: "UPC12"
+                  quantity: 6
+                  master: false
+                - value: "5010186016172"
+                  type: "EAN13"
+                  quantity: 1
+                  master: true
+                - value: "0860030043442"
+                  type: "EAN13"
+                  quantity: 6
+                  master: true
+              content:
+                size: 0.75
+                label:
+                  - locale: "de"
+                    value: "cl"
+                  - locale: "fr"
+                    value: "cl"
+                  - locale: "it"
+                    value: "cl"
+                text:
+                  - locale: "de"
+                    value: "75 cl"
+                  - locale: "fr"
+                    value: "75 cl"
+                  - locale: "it"
+                    value: "75 cl"
+              base:
+                text:
+                  - locale: "de"
+                    value: "10 cl"
+                  - locale: "fr"
+                    value: "10 cl"
+                  - locale: "it"
+                    value: "10 cl"
+              cooling: 0
+              eco_labels:
+                - id: "66d94617-bbd7-477e-ae66-183deb67ba5b"
+                  code: "bio"
+                  name: "Bio"
+              packshots:
+                - id: "5983a33d-ac61-49a8-a836-43259e78e9d0"
+                  url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
+                  cdn_url: "https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
+                  quantity: 6
+                  created_on: "2016-01-07T15:42:19+02:00"
+              wine:
+                country:
+                  id: "IT"
+                  title:
+                    - locale: "de"
+                      value: "Italien"
+                    - locale: "fr"
+                      value: "Italie"
+                    - locale: "it"
+                      value: "Italia"
+                  flag:
+                    image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/flags/IT.png"
+                region:
+                  id: "b19c42bf-ed78-46ff-ad6f-fc688a059e6a"
+                  title:
+                    - locale: "de"
+                      value: "Apulien"
+                    - locale: "fr"
+                      value: "Les Pouilles"
+                    - locale: "it"
+                      value: "Puglia"
+                type:
+                  id: 2
+                  title:
+                    - locale: "de"
+                      value: "Rotwein"
+                    - locale: "fr"
+                      value: "Vin rouge"
+                    - locale: "it"
+                      value: "Vino rosso"
+                online_specials:
+                  - id: wine
+                    sort_index: 10
+                    title:
+                      - locale: de
+                        value: Weine
+                      - locale: fr
+                        value: Vins
+                      - locale: it
+                        value: Vini
+                year: 2013
+                fits_with:
+                  - locale: "de"
+                    value: "Pasta, Fleisch mit würzigen Saucen"
+                  - locale: "fr"
+                    value: "Pâtes, viande aux sauces relevées"
+                  - locale: "it"
+                    value: "Pasta, carni accompagnate da salse aromatiche"
+                varietal:
+                  - locale: "de"
+                    value: "Primitivo"
+                  - locale: "fr"
+                    value: "Primitivo"
+                  - locale: "it"
+                    value: "Primitivo"
+                character:
+                  - locale: "de"
+                    value: "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
+                  - locale: "fr"
+                    value: "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
+                  - locale: "it"
+                    value: "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                temperature:
+                  - locale: "de"
+                    value: "16-18 °C"
+                  - locale: "fr"
+                    value: "16-18 °C"
+                  - locale: "it"
+                    value: "16-18 °C"
+                awards:
+                  - locale: "de"
+                    value: ""
+                  - locale: "fr"
+                    value: ""
+                  - locale: "it"
+                    value: ""
+                storage:
+                  - locale: "de"
+                    value: "3 Jahre"
+                  - locale: "fr"
+                    value: "3 ans"
+                  - locale: "it"
+                    value: "3 anni"
+                rating:
+                  value: 4.45
+                  total: 11
+                  valid: true
+                shop:
+                  url: "http://denner-wineshop.ch/skuredirect/051273/"
+                  stock:
+                    value: -15
+                    code: 2
+                    message:
+                      - locale: "de"
+                        value: "Derzeit nicht bestellbar"
+                      - locale: "fr"
+                        value: "Actuellement pas disponible"
+                      - locale: "it"
+                        value: "Attualmente non disponibile"
+                  quantity: 6
+                  prices:
+                    sales: 59.4
+                    instead: 68.4
+                    final: true
+                    by_quantity:
+                      - quantity: 1
+                        sales: 9.9
+                        instead: 11.4
+                        final: true
+                      - quantity: 6
+                        sales: 59.4
+                        instead: 68.4
+                        final: true
+                  discount:
+                    - locale: "de"
+                      value: "13%"
+                    - locale: "fr"
+                      value: "13%"
+                    - locale: "it"
+                      value: "13%"
+                  title:
+                    - locale: "de"
+                      value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                    - locale: "fr"
+                      value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                    - locale: "it"
+                      value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                  packshot:
+                    id: "5983a33d-ac61-49a8-a836-43259e78e9d0"
+                    url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
+                    cdn_url: "https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
+                    quantity: 6
+                    created_on: "2016-01-07T15:42:19+02:00"
+                box:
+                  code: "KA"
+                  batch_size: 3
+        404:
+          description: HTTP 404 Not Found
+
   /shop-wines:
     get:
       summary: List all wines currently targeted for the Wineshop

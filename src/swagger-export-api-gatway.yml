@@ -214,9 +214,9 @@ paths:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
-        passthroughBehavior: "when_no_match"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
         type: "mock"
   /appraisals:
     get:
@@ -278,14 +278,14 @@ paths:
             statusCode: "500"
           406:
             statusCode: "406"
-        passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
-        cacheNamespace: "l16zra"
         requestTemplates:
           application/json: "#set($queryParams = $input.params().querystring)\r\n\
             {\r\n  \"serialization\": {\"group\": \"portal-listing\"},\r\n  \"query\"\
             : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
             \r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "l16zra"
         cacheKeyParameters:
           - "method.request.querystring.f.email"
           - "method.request.querystring.sort"
@@ -317,9 +317,9 @@ paths:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
-        passthroughBehavior: "when_no_match"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
         type: "mock"
   /appraisals/{appraisal_id}:
     get:
@@ -377,13 +377,13 @@ paths:
             statusCode: "500"
           406:
             statusCode: "406"
-        passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
-        cacheNamespace: "iov04u"
         requestTemplates:
           application/json: "{\r\n  \"mode\": \"findOne\",\r\n  \"serialization\"\
             : {\"group\": \"portal-listing\"},\r\n  \"query\": \"f._id=$input.params().path.get('appraisal_id')\"\
             \r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "iov04u"
         cacheKeyParameters:
           - "method.request.path.appraisal_id"
         type: "aws"
@@ -412,9 +412,9 @@ paths:
               method.response.header.Access-Control-Allow-Methods: "'GET,PATCH,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
-        passthroughBehavior: "when_no_match"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
         type: "mock"
     patch:
       consumes:
@@ -465,13 +465,13 @@ paths:
             statusCode: "500"
           406:
             statusCode: "406"
-        passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
-        cacheNamespace: "iov04u"
         requestTemplates:
           application/json: "{\r\n  \"serialization\": {\"group\": \"portal-listing\"\
             },\r\n  \"appraisal_id\": \"$input.params().path.get('appraisal_id')\"\
             ,\r\n  \"appraisal_data\": $input.json('$')\r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "iov04u"
         cacheKeyParameters:
           - "method.request.path.appraisal_id"
         type: "aws"
@@ -630,6 +630,18 @@ paths:
       produces:
         - "application/json"
       parameters:
+        - name: "quantity"
+          in: "query"
+          required: false
+          type: "string"
+        - name: "App-Key"
+          in: "header"
+          required: false
+          type: "string"
+        - name: "wine-year"
+          in: "query"
+          required: false
+          type: "string"
         - name: "App-ID"
           in: "header"
           required: false
@@ -638,8 +650,8 @@ paths:
           in: "path"
           required: true
           type: "string"
-        - name: "App-Key"
-          in: "header"
+        - name: "price-selection"
+          in: "query"
           required: false
           type: "string"
       responses:
@@ -677,8 +689,11 @@ paths:
           406:
             statusCode: "406"
         requestParameters:
+          integration.request.querystring.price-selection: "method.request.querystring.price-selection"
+          integration.request.querystring.wine-year: "method.request.querystring.wine-year"
           integration.request.header.App-Key: "method.request.header.App-Key"
           integration.request.path.article_id: "method.request.path.article_id"
+          integration.request.querystring.quantity: "method.request.querystring.quantity"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
         httpMethod: "GET"
@@ -687,6 +702,9 @@ paths:
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
           - "method.request.path.article_id"
+          - "method.request.querystring.quantity"
+          - "method.request.querystring.wine-year"
+          - "method.request.querystring.price-selection"
         type: "http"
   /articles/{article_id}/text-blocks:
     get:
@@ -796,13 +814,13 @@ paths:
             statusCode: "500"
           406:
             statusCode: "406"
-        passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
         requestTemplates:
           application/json: "#set($queryParams = $input.params().querystring)\r\n\
             {\r\n  \"serialization\": {\"group\": \"portal-listing\"},\r\n  \"query\"\
             : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
             \r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
         type: "aws"
     post:
       consumes:
@@ -849,11 +867,11 @@ paths:
             statusCode: "500"
           406:
             statusCode: "406"
-        passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
         requestTemplates:
           application/json: "{\r\n  \"serialization\": {\"group\": \"portal-listing\"\
             },\r\n  \"banner_data\": $input.json('$')\r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
         type: "aws"
     options:
       consumes:
@@ -880,9 +898,9 @@ paths:
               method.response.header.Access-Control-Allow-Methods: "'POST,GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
-        passthroughBehavior: "when_no_match"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
         type: "mock"
   /banners/{banner_id}:
     get:
@@ -940,13 +958,13 @@ paths:
             statusCode: "500"
           406:
             statusCode: "406"
-        passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
-        cacheNamespace: "1731ej"
         requestTemplates:
           application/json: "{\r\n  \"mode\": \"findOne\",\r\n  \"serialization\"\
             : {\"group\": \"portal-listing\"},\r\n  \"query\": \"f._id=$input.params().path.get('banner_id')\"\
             \r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "1731ej"
         cacheKeyParameters:
           - "method.request.path.banner_id"
         type: "aws"
@@ -972,10 +990,10 @@ paths:
             statusCode: "204"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
-        passthroughBehavior: "when_no_match"
-        cacheNamespace: "1731ej"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+        cacheNamespace: "1731ej"
         cacheKeyParameters:
           - "method.request.path.banner_id"
         type: "mock"
@@ -1004,9 +1022,9 @@ paths:
               method.response.header.Access-Control-Allow-Methods: "'DELETE,GET,OPTIONS,PATCH'"
               method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
-        passthroughBehavior: "when_no_match"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
         type: "mock"
     patch:
       consumes:
@@ -1057,13 +1075,13 @@ paths:
             statusCode: "500"
           406:
             statusCode: "406"
-        passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
-        cacheNamespace: "1731ej"
         requestTemplates:
           application/json: "{\r\n  \"serialization\": {\"group\": \"portal-listing\"\
             },\r\n  \"banner_id\": \"$input.params().path.get('banner_id')\",\r\n\
             \  \"banner_data\": $input.json('$')\r\n}"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "1731ej"
         cacheKeyParameters:
           - "method.request.header.App-Key"
           - "method.request.path.banner_id"
@@ -1593,9 +1611,9 @@ paths:
               method.response.header.Access-Control-Allow-Methods: "'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT'"
               method.response.header.Access-Control-Allow-Headers: "'Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
-        passthroughBehavior: "when_no_match"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
         type: "mock"
   /promotion-types:
     get:
@@ -1812,13 +1830,13 @@ paths:
             statusCode: "500"
           406:
             statusCode: "406"
-        passthroughBehavior: "when_no_templates"
-        httpMethod: "POST"
         requestTemplates:
           application/json: "#set($queryParams = $input.params().querystring)\r\n\
             {\r\n  \"serialization\": {\"group\": \"portal-listing\"},\r\n  \"query\"\
             : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
             \r\n}"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
         type: "aws"
   /ratings/{article_id}:
     get:
@@ -1871,12 +1889,12 @@ paths:
             statusCode: "500"
           406:
             statusCode: "406"
-        passthroughBehavior: "when_no_templates"
-        httpMethod: "POST"
         requestTemplates:
           application/json: "{\r\n  \"mode\": \"findOne\",\r\n  \"serialization\"\
             : {\"group\": \"portal-listing\"},\r\n  \"query\": \"f._id=__streq_$input.params().path.get('article_id')\"\
             \r\n}"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
         type: "aws"
   /screen-publications:
     get:
@@ -2516,14 +2534,14 @@ paths:
             statusCode: "500"
           406:
             statusCode: "406"
-        passthroughBehavior: "when_no_templates"
-        httpMethod: "POST"
-        cacheNamespace: "ahyiw5"
         requestTemplates:
           application/json: "#set($queryParams = $input.params().querystring)\r\n\
             {\r\n  \"serialization\": {\"group\": \"portal-listing\"},\r\n  \"query\"\
             : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
             \r\n}"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        cacheNamespace: "ahyiw5"
         cacheKeyParameters:
           - "method.request.querystring.sort"
           - "method.request.querystring.page"
