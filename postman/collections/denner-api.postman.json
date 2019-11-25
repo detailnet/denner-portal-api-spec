@@ -743,6 +743,14 @@
 									"path": [
 										"online-publications",
 										"44444444-aaaa-4444-aaaa-444444444444"
+									],
+									"query": [
+										{
+											"key": "only-active-articles",
+											"value": "yes",
+											"description": "Only active articles",
+											"disabled": true
+										}
 									]
 								},
 								"description": "List single online publication (Online-Werbemittel)"
@@ -4445,7 +4453,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{advertising_url_base}}/publication-article-usages?filter=[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\",\"090093\",\"090094\",\"090095\",\"090096\",\"090097\",\"090099\"],\"operator\":\"in\",\"type\":\"array\"}]",
+									"raw": "{{advertising_url_base}}/publication-article-usages?filter=[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\"],\"operator\":\"in\"},{\"property\":\"start_week\", \"value\":\"20 week ago\"}]",
 									"host": [
 										"{{advertising_url_base}}"
 									],
@@ -4455,7 +4463,7 @@
 									"query": [
 										{
 											"key": "filter",
-											"value": "[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\",\"090093\",\"090094\",\"090095\",\"090096\",\"090097\",\"090099\"],\"operator\":\"in\",\"type\":\"array\"}]"
+											"value": "[{\"property\":\"article_id\",\"value\":[\"090098\",\"090000\",\"090091\",\"090092\"],\"operator\":\"in\"},{\"property\":\"start_week\", \"value\":\"20 week ago\"}]"
 										},
 										{
 											"key": "filter",

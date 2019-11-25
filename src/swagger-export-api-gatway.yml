@@ -1501,6 +1501,7 @@ paths:
             statusCode: "406"
         requestParameters:
           integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.only-active-articles: "'yes'"
           integration.request.path.publication_id: "method.request.path.publication_id"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
