@@ -1,7 +1,8 @@
 {
-    "id": "dfbc2b0d-0f47-4ac2-86e5-3bd4f9936ef6",
+    "id": "938f5d58-e9b0-439f-b5da-5cf086b5e412",
     "article_id": "051273",
-    "name": "Mandorla Primitivo IGT Puglia",
+    "advertised_article_id": "3ef799aa-3202-471f-8cc1-79f0293923d0",
+    "name": "Mandorla Primitivo Puglia IGT 75",
     "title": [
         {
             "locale": "de",
@@ -19,34 +20,258 @@
     "description": [
         {
             "locale": "de",
-            "value": "2013, Apulien, Italien, 6 x 75 cl"
+            "value": "2018, Apulien, Italien, 6 x 75 cl"
         },
         {
             "locale": "fr",
-            "value": "2013, les Pouilles, Italie, 6 x 75 cl"
+            "value": "2018, les Pouilles, Italie, 6 x 75 cl"
         },
         {
             "locale": "it",
-            "value": "2013, Puglia, Italia, 6 x 75 cl"
+            "value": "2018, Puglia, Italia, 6 x 75 cl"
         }
     ],
-    "prices": {
-        "sales": 59.4,
-        "instead": 68.4,
-        "base": 1.32,
-        "by_quantity": [
+    "content": {
+        "size": "0.75",
+        "label": [
             {
-                "quantity": 1,
-                "sales": 9.9,
-                "instead": 11.4
+                "locale": "de",
+                "value": "cl"
             },
             {
-                "quantity": 6,
-                "sales": 59.4,
-                "instead": 68.4
+                "locale": "fr",
+                "value": "cl"
+            },
+            {
+                "locale": "it",
+                "value": "cl"
+            }
+        ],
+        "text": [
+            {
+                "locale": "de",
+                "value": "75 cl"
+            },
+            {
+                "locale": "fr",
+                "value": "75 cl"
+            },
+            {
+                "locale": "it",
+                "value": "75 cl"
+            }
+        ],
+        "per_unit": [
+            {
+                "locale": "de",
+                "value": "per"
+            },
+            {
+                "locale": "fr",
+                "value": "le"
+            },
+            {
+                "locale": "it",
+                "value": "al"
             }
         ]
     },
+    "base": {
+        "text": [
+            {
+                "locale": "de",
+                "value": "10 cl"
+            },
+            {
+                "locale": "fr",
+                "value": "10 cl"
+            },
+            {
+                "locale": "it",
+                "value": "10 cl"
+            }
+        ]
+    },
+    "article_group": {
+        "id": "c43c6c08-5efc-41da-8472-3a45da1c8bb2",
+        "code": "60-56",
+        "name": "Italien Rot 70 cl",
+        "parent": {
+            "id": "cb1fad16-a420-4a3b-865b-b3e176a8edea",
+            "code": "60",
+            "name": "Weine"
+        }
+    },
+    "purchasing_department": "W",
+    "online_group": {
+        "id": "a2664d3a-93b4-4277-9e6e-c95ad8b6c6ee",
+        "code": "2-9",
+        "sort_index": 1,
+        "disabled": false,
+        "allow_featuring": true,
+        "allow_promotion": true,
+        "allow_background": true,
+        "title": [
+            {
+                "locale": "de",
+                "value": "Wein/Champagner"
+            },
+            {
+                "locale": "fr",
+                "value": "Vins/champagnes"
+            },
+            {
+                "locale": "it",
+                "value": "Vino/champagne"
+            }
+        ],
+        "parent": {
+            "id": "8fd653c3-a86b-4529-bbb5-58d06919d484",
+            "code": "2",
+            "sort_index": 2,
+            "disabled": false,
+            "allow_featuring": true,
+            "allow_promotion": true,
+            "allow_background": true,
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Getränke"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Boissons"
+                },
+                {
+                    "locale": "it",
+                    "value": "Bevande"
+                }
+            ]
+        }
+    },
+    "cooling": 0,
+    "eco_labels": [
+        {
+            "id": "suisse-garantie",
+            "name": "Suisse Garantie",
+            "image": {
+                "cdn_url": "https://denner.imgix.net/eco-labels/suisse-garantie.png"
+            }
+        },
+        {
+            "id": "utz",
+            "name": "UTZ",
+            "image": {
+                "cdn_url": "https://denner.imgix.net/eco-labels/utz.png"
+            }
+        }
+    ],
+    "quantity": 6,
+    "advertised_quantity": 6,
+    "validity": {
+        "from": "2019-08-14",
+        "to": "2019-08-20",
+        "short_text": [
+            {
+                "locale": "de",
+                "value": "Gültig vom 14.08.–20.08.2019"
+            },
+            {
+                "locale": "fr",
+                "value": "Valable du 14.08–20.08.2019"
+            },
+            {
+                "locale": "it",
+                "value": "Valida dal 14.08–20.08.2019"
+            }
+        ],
+        "long_text": [
+            {
+                "locale": "de",
+                "value": "Angebot gültig vom 14.08. bis 20.08.2019"
+            },
+            {
+                "locale": "fr",
+                "value": "Offre valable du 14.08 au 20.08.2019"
+            },
+            {
+                "locale": "it",
+                "value": "Offerta valida dal 14.08 al 20.08.2019"
+            }
+        ]
+    },
+    "week": {
+        "year": 2019,
+        "number": 33
+    },
+    "sort_code": "02W",
+    "sort_index": 114,
+    "featured_sort_index": 114,
+    "televised": false,
+    "featured": false,
+    "promoted": true,
+    "compared": false,
+    "promotion_info": [
+        {
+            "locale": "de",
+            "value": "Aktionspreise für Einzelflaschen nur in der jeweiligen Aktionswoche gültig"
+        },
+        {
+            "locale": "fr",
+            "value": "Les prix promotionnels sur les bouteilles vendues à la pièce ne sont valables que durant la semaine d’action"
+        },
+        {
+            "locale": "it",
+            "value": "I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva settimana promozionale"
+        }
+    ],
+    "packshot": {
+        "id": "c3391581-1159-4611-a5ca-d15cc27e79dc",
+        "quantity": 6,
+        "url": "https://denner-assets.s3.amazonaws.com/assets/c3391581-1159-4611-a5ca-d15cc27e79dc/web/051273_6.png",
+        "image_url": "https://denner-assets.s3.amazonaws.com/assets/c3391581-1159-4611-a5ca-d15cc27e79dc/web/051273_6.png",
+        "preview_url": "https://denner-assets.s3.amazonaws.com/assets/c3391581-1159-4611-a5ca-d15cc27e79dc/web/051273_6.png?version=1",
+        "cdn_url": "https://denner.imgix.net/assets/c3391581-1159-4611-a5ca-d15cc27e79dc/web/051273_6.png",
+        "archived": false,
+        "view": {
+            "id": "front"
+        }
+    },
+    "prices": {
+        "sales": 27.4,
+        "instead": 34.2,
+        "base": 0.61,
+        "final": true,
+        "by_quantity": [
+            {
+                "quantity": 1,
+                "sales": 4.55,
+                "instead": 5.7,
+                "final": true
+            },
+            {
+                "quantity": 6,
+                "sales": 27.4,
+                "instead": 34.2,
+                "final": true
+            }
+        ]
+    },
+    "sales_price": "27.40",
+    "instead_price": [
+        {
+            "locale": "de",
+            "value": "statt 34.20"
+        },
+        {
+            "locale": "fr",
+            "value": "au lieu de 34.20"
+        },
+        {
+            "locale": "it",
+            "value": "invece di 34.20"
+        }
+    ],
     "price_info": [
         {
             "locale": "de",
@@ -64,162 +289,48 @@
     "unit_price_info": [
         {
             "locale": "de",
-            "value": "Einzelflasche: 9.90 statt 11.40"
+            "value": "Flasche 4.55 statt 5.70"
         },
         {
             "locale": "fr",
-            "value": "9.90 la bouteille au lieu de 11.40"
+            "value": "4.55 la bouteille au lieu de 5.70"
         },
         {
             "locale": "it",
-            "value": "9.90 a bottiglia invece di 11.40"
-        }
-    ],
-    "promotion_info": [
-        {
-            "locale": "de",
-            "value": "Aktionspreise für Einzelflaschen nur in der jeweiligen Aktionswoche gültig"
-        },
-        {
-            "locale": "fr",
-            "value": "Les prix promotionnels sur les bouteilles vendues à la pièce ne sont valables que durant la semaine d’action"
-        },
-        {
-            "locale": "it",
-            "value": "I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva settimana promozionale"
-        }
-    ],
-    "dots": [
-        {
-            "id": "d4bca729-10ad-482c-bdda-b1a1398173b5",
-            "type": {
-                "id": "semi_price_winehit"
-            },
-            "text": [
-                {
-                    "locale": "de",
-                    "value": "1/2 Preis\nWeinheit!"
-                },
-                {
-                    "locale": "fr",
-                    "value": "1/2 prix\nLe top du vin!"
-                },
-                {
-                    "locale": "it",
-                    "value": "1/2 prezzo\nSuperofferta vino!"
-                }
-            ],
-            "images": [
-                {
-                    "locale": "de",
-                    "formats": [
-                        {
-                            "type": "image/svg+xml",
-                            "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.svg"
-                        }
-                    ]
-                },
-                {
-                    "locale": "fr",
-                    "formats": [
-                        {
-                            "type": "image/svg+xml",
-                            "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.svg"
-                        }
-                    ]
-                },
-                {
-                    "locale": "it",
-                    "formats": [
-                        {
-                            "type": "image/svg+xml",
-                            "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.svg"
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "panel": [
-        {
-            "locale": "de",
-            "value": "9.- sparen"
-        },
-        {
-            "locale": "fr",
-            "value": "9.- éparmié"
-        },
-        {
-            "locale": "it",
-            "value": "9.- risparmiati"
+            "value": "4.55 a bottiglia invece di 5.70"
         }
     ],
     "stopper": {
-        "id": "502d19d1-4d54-42ec-85c2-5e1608e4e231",
+        "id": "36f1d297-6e1f-48a8-a20d-b4f8913ae33c",
         "type": {
-            "id": "save_value"
+            "id": "x_percent_free"
         },
-        "text": [
+        "markup_text": [
             {
                 "locale": "de",
-                "value": "– 9 Fr."
+                "value": "20% <vertical>GRATIS*</vertical>"
             },
             {
                 "locale": "fr",
-                "value": "– 9 Fr."
+                "value": "20% <vertical>GRATUIT*</vertical>"
             },
             {
                 "locale": "it",
-                "value": "– 9 Fr."
-            }
-        ]
-    },
-    "quantity": 6,
-    "base": {
-        "text": [
-            {
-                "locale": "de",
-                "value": "10 cl"
-            },
-            {
-                "locale": "fr",
-                "value": "10 cl"
-            },
-            {
-                "locale": "it",
-                "value": "10 cl"
-            }
-        ]
-    },
-    "validity": {
-        "from": "2015-06-23",
-        "to": "2015-06-29",
-        "short_text": [
-            {
-                "locale": "de",
-                "value": "Gültig von 23.06.–29.06."
-            },
-            {
-                "locale": "fr",
-                "value": "..."
-            },
-            {
-                "locale": "it",
-                "value": "..."
+                "value": "20% <vertical>GRATIS*</vertical>"
             }
         ],
-        "long_text": [
+        "text": [
             {
                 "locale": "de",
-                "value": "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                "value": "20% GRATIS*"
             },
             {
                 "locale": "fr",
-                "value": "..."
+                "value": "20% GRATUIT*"
             },
             {
                 "locale": "it",
-                "value": "..."
+                "value": "20% GRATIS*"
             }
         ]
     },
@@ -245,107 +356,160 @@
             },
             {
                 "locale": "fr",
-                "value": "Disponible uniquement dans les succursales avec des produits frais, satellites Denner et Denner Express exclus"
+                "value": "Uniquement dans les succursales avec des produits frais, satellites Denner et Denner Express exclus"
             },
             {
                 "locale": "it",
-                "value": "Disponibile solo nelle filiali con prodotti freschi, exclusi i satelliti Denner e i Denner Express"
+                "value": "Solo nelle filiali con prodotti freschi, esclusi i satelliti Denner e i Denner Express"
             }
+        ],
+        "store_codes": [
+            1
         ],
         "store_filters": [
             {
                 "id": "services",
-                "value": ["7fefad45-81d2-4228-a0a1-ed618184b96e", "47191064-ad2e-482a-a5cf-2aa32d0b8116"]
+                "property": "services.id",
+                "value": [
+                    "7fefad45-81d2-4228-a0a1-ed618184b96e",
+                    "47191064-ad2e-482a-a5cf-2aa32d0b8116"
+                ]
             },
             {
                 "id": "channels",
-                "value": ["d247ecc8-ee06-47e7-b25c-1d267059cf18", "8afb451c-614b-412a-bd7b-03d3ab0e61ef", "a411c290-4b9c-42dd-b753-039918d66b51"]
+                "property": "channel",
+                "value": [
+                    "d247ecc8-ee06-47e7-b25c-1d267059cf18",
+                    "8afb451c-614b-412a-bd7b-03d3ab0e61ef",
+                    "a411c290-4b9c-42dd-b753-039918d66b51"
+                ]
             }
         ]
     },
-    "sort_index": 0,
-    "featured_sort_index": 10,
-    "featured": true,
-    "promoted": true,
-    "compared": true,
-    "cooling": 0,
-    "online_group": {
-        "id": "671988cc-ca5f-484e-8db8-23a65ea0044a",
-        "code": 4003,
-        "disabled": false,
-        "allow_featuring": true,
-        "allow_promotion": true,
-        "allow_background": true,
-        "title": [
-            {
-                "locale": "de",
-                "value": "Wein"
+    "dots": [
+        {
+            "id": "17c84bdc-37e8-4a08-836a-bb45dc3c9133",
+            "type": {
+                "id": "single_unit_price"
             },
-            {
-                "locale": "fr",
-                "value": "Vins"
-            },
-            {
-                "locale": "it",
-                "value": "Vini"
-            }
-        ],
-        "parent": {
-            "id": "5b79391b-b436-45f9-b3e4-93ec3ae1fae2",
-            "code": 4001,
-            "disabled": false,
-            "allow_featuring": true,
-            "allow_promotion": true,
-            "allow_background": true,
-            "title": [
+            "text": [
                 {
                     "locale": "de",
-                    "value": "Tafelgetränke und Mineralwasser"
+                    "value": "Flasche\n4.55\nstatt 5.70"
                 },
                 {
                     "locale": "fr",
-                    "value": "Boissons table et eau minérale"
+                    "value": "4.55\nla bouteille\nau lieu de\n5.70"
                 },
                 {
                     "locale": "it",
-                    "value": "Bevande da tavola e acque minerali"
+                    "value": "4.55\na bottiglia\ninvece di\n5.70"
+                }
+            ],
+            "images": [
+                {
+                    "locale": "de",
+                    "formats": [
+                        {
+                            "type": "image/svg+xml",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/74a4ce7d-20bb-4c1c-9c50-c40112edfed5/single_unit_price_de.svg"
+                        },
+                        {
+                            "type": "image/png",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/74a4ce7d-20bb-4c1c-9c50-c40112edfed5/single_unit_price_de.png"
+                        }
+                    ]
+                },
+                {
+                    "locale": "fr",
+                    "formats": [
+                        {
+                            "type": "image/svg+xml",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/b1d18179-fc75-4a94-a26c-dbd5a9687c3b/single_unit_price_fr.svg"
+                        },
+                        {
+                            "type": "image/png",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/b1d18179-fc75-4a94-a26c-dbd5a9687c3b/single_unit_price_fr.png"
+                        }
+                    ]
+                },
+                {
+                    "locale": "it",
+                    "formats": [
+                        {
+                            "type": "image/svg+xml",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/57921a6d-fd3c-4e2b-bbcb-84d599fec0d8/single_unit_price_it.svg"
+                        },
+                        {
+                            "type": "image/png",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/57921a6d-fd3c-4e2b-bbcb-84d599fec0d8/single_unit_price_it.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "c92c91aa-aaf8-4eb7-9ac3-b0c8f57f9556",
+            "type": {
+                "id": "new"
+            },
+            "text": [
+                {
+                    "locale": "de",
+                    "value": "NEU"
+                },
+                {
+                    "locale": "fr",
+                    "value": "NOUVEAU"
+                },
+                {
+                    "locale": "it",
+                    "value": "NOVITÀ"
+                }
+            ],
+            "images": [
+                {
+                    "locale": "de",
+                    "formats": [
+                        {
+                            "type": "image/svg+xml",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/0570da9e-e4ea-4041-ab13-a5a7b20d16a9/new_de.svg"
+                        },
+                        {
+                            "type": "image/png",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/0570da9e-e4ea-4041-ab13-a5a7b20d16a9/new_de.png"
+                        }
+                    ]
+                },
+                {
+                    "locale": "fr",
+                    "formats": [
+                        {
+                            "type": "image/svg+xml",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/4ff0c1f0-b3ce-4273-862f-62fe4a6db67d/new_fr.svg"
+                        },
+                        {
+                            "type": "image/png",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/4ff0c1f0-b3ce-4273-862f-62fe4a6db67d/new_fr.png"
+                        }
+                    ]
+                },
+                {
+                    "locale": "it",
+                    "formats": [
+                        {
+                            "type": "image/svg+xml",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/ff1b94c8-52ce-4092-811f-76e4ed2b24d0/new_it.svg"
+                        },
+                        {
+                            "type": "image/png",
+                            "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/ff1b94c8-52ce-4092-811f-76e4ed2b24d0/new_it.png"
+                        }
+                    ]
                 }
             ]
         }
-    },
-    "article_group": {
-        "id": "0c309757-5432-4652-8201-ec35f31c5260",
-        "code": "60-56",
-        "name": "Italien Rot 70 cl",
-        "parent": {
-            "id": "3f3df00f-6a7e-49a9-8eca-a36727ca4977",
-            "code": "60",
-            "name": "Weine"
-        }
-    },
-    "eco_labels": [
-        {
-            "id": "096ec6fc-2722-4907-82ef-8694b3f38240",
-            "name": "Suisse Garantie",
-            "image": {
-                "cdn_url": "https://denner.imgix.net/eco-labels/096ec6fc-2722-4907-82ef-8694b3f38240/suisse-garantie.png"
-            }
-        },
-        {
-            "id": "920795b5-3dbf-4a56-875b-76837cd4eca3",
-            "name": "UTZ",
-            "image": {
-                "cdn_url": "https://denner.imgix.net/eco-labels/920795b5-3dbf-4a56-875b-76837cd4eca3/utz.png"
-            }
-        }
     ],
-    "packshot": {
-        "id": "5983a33d-ac61-49a8-a836-43259e78e9d0",
-        "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png",
-        "cdn_url": "https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png",
-        "quantity": 6,
-        "created_on": "2016-01-07T15:42:19+02:00"
-    },
     "wine": {
         "country": {
             "id": "IT",
@@ -362,10 +526,13 @@
                     "locale": "it",
                     "value": "Italia"
                 }
-            ]
+            ],
+            "flag": {
+                "image_url": "https://denner-assets.s3-eu-west-1.amazonaws.com/flags/IT.png"
+            }
         },
         "region": {
-            "id": "b19c42bf-ed78-46ff-ad6f-fc688a059e6a",
+            "id": "f1cd9437-d240-4e9a-8eac-ff6e4f06acbf",
             "title": [
                 {
                     "locale": "de",
@@ -383,6 +550,7 @@
         },
         "type": {
             "id": 2,
+            "sort_index": 0,
             "title": [
                 {
                     "locale": "de",
@@ -400,36 +568,57 @@
         },
         "online_specials": [
             {
-                "id": "rarity",
+                "id": "bordeaux-stationary",
+                "name": "Bordeaux Grand Cru (Online & stationär)",
+                "sort_index": 35,
                 "title": [
                     {
                         "locale": "de",
-                        "value": "Rärität"
+                        "value": "Bordeaux Grand Cru (Online & stationär)"
                     },
                     {
                         "locale": "fr",
-                        "value": "Rareté"
+                        "value": "Bordeaux Grand Cru (Online & stationnaire)"
                     },
                     {
                         "locale": "it",
-                        "value": "Rarità"
+                        "value": "Bordeaux Grand Cru (Online & stazionario)"
+                    }
+                ]
+            },
+            {
+                "id": "online-specials",
+                "name": "Online Specials",
+                "sort_index": 50,
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Online Specials"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "Online Specials"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "Online Specials"
                     }
                 ]
             }
         ],
-        "year": 2013,
+        "year": 2018,
         "fits_with": [
             {
                 "locale": "de",
-                "value": "Pasta, Fleisch mit würzigen Saucen"
+                "value": "Suppe, rotes Fleisch, Gemüse, Pasta, Grilladen"
             },
             {
                 "locale": "fr",
-                "value": "Pâtes, viande aux sauces relevées"
+                "value": "Soupe, viande rouge, légumes, pâtes, grillades"
             },
             {
                 "locale": "it",
-                "value": "Pasta, carni accompagnate da salse aromatiche"
+                "value": "Zuppa, carne rossa, verdure, pasta, grigliate"
             }
         ],
         "varietal": [
@@ -463,15 +652,15 @@
         "temperature": [
             {
                 "locale": "de",
-                "value": "16-18 °C"
+                "value": "16–18 °C"
             },
             {
                 "locale": "fr",
-                "value": "16-18 °C"
+                "value": "16–18 °C"
             },
             {
                 "locale": "it",
-                "value": "16-18 °C"
+                "value": "16–18 °C"
             }
         ],
         "awards": [
@@ -491,40 +680,106 @@
         "storage": [
             {
                 "locale": "de",
-                "value": "3 Jahre"
+                "value": "1–3 Jahre"
             },
             {
                 "locale": "fr",
-                "value": "3 ans"
+                "value": "1–3 ans"
             },
             {
                 "locale": "it",
-                "value": "3 anni"
+                "value": "1–3 anni"
             }
         ],
         "rating": {
-            "value": 4.45,
-            "total": 11,
-            "valid": true
+            "value": 4.2424,
+            "total": 33,
+            "valid": true,
+            "stars": 4
         },
-        "stock": {
-            "value": -15,
-            "code": 2,
-            "message": [
+        "shop": {
+            "url": "https://www.denner.ch/sku/051273",
+            "for_sale": false,
+            "status": {
+                "level": 10
+            },
+            "stock": {
+                "value": 0,
+                "code": 2,
+                "message": [
+                    {
+                        "locale": "de",
+                        "value": "Derzeit nicht bestellbar"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "Actuellement indisponible"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "Attualmente non disponibile"
+                    }
+                ]
+            },
+            "quantity": 6,
+            "prices": {
+                "sales": 68.4,
+                "base": 1.52,
+                "final": true,
+                "by_quantity": [
+                    {
+                        "quantity": 6,
+                        "sales": 68.4,
+                        "final": true
+                    },
+                    {
+                        "quantity": 1,
+                        "sales": 11.4,
+                        "final": true
+                    }
+                ]
+            },
+            "discount": [],
+            "pictures": [
+                {
+                    "id": "e484026a-2860-4cd2-a268-1c5dd21d7990",
+                    "quantity": 1,
+                    "url": "https://denner-assets.s3.eu-west-1.amazonaws.com/assets/e484026a-2860-4cd2-a268-1c5dd21d7990/051273_2_c_K.tif",
+                    "image_url": "https://denner-assets.s3.amazonaws.com/assets/e484026a-2860-4cd2-a268-1c5dd21d7990/web/051273_2_c_K.png",
+                    "preview_url": "https://denner-assets.s3.amazonaws.com/assets/e484026a-2860-4cd2-a268-1c5dd21d7990/web/051273_2_c_K.png?version=1",
+                    "cdn_url": "https://denner.imgix.net/assets/e484026a-2860-4cd2-a268-1c5dd21d7990/web/051273_2_c_K.png",
+                    "archived": false,
+                    "view": {
+                        "id": "front"
+                    }
+                },
+                {
+                    "id": "57e21e1b-db4b-4dc1-b57b-c9c488ac7099",
+                    "quantity": 1,
+                    "url": "https://denner-assets.s3.eu-west-1.amazonaws.com/assets/57e21e1b-db4b-4dc1-b57b-c9c488ac7099/051273_2_c_K_back.tif",
+                    "image_url": "https://denner-assets.s3.amazonaws.com/assets/57e21e1b-db4b-4dc1-b57b-c9c488ac7099/web/051273_2_c_K_back.png",
+                    "preview_url": "https://denner-assets.s3.amazonaws.com/assets/57e21e1b-db4b-4dc1-b57b-c9c488ac7099/web/051273_2_c_K_back.png?version=1",
+                    "cdn_url": "https://denner.imgix.net/assets/57e21e1b-db4b-4dc1-b57b-c9c488ac7099/web/051273_2_c_K_back.png",
+                    "archived": false,
+                    "view": {
+                        "id": "back"
+                    }
+                }
+            ],
+            "notes": [
                 {
                     "locale": "de",
-                    "value": "Derzeit nicht bestellbar"
+                    "value": "Test <b>DE</b><i>Second</i> <u>line</u>Numbered:<ol><li>one</li><li>two</li></ol>Listing:<ul><li>first</li><li>second</li></ul><font color=\"#00ffff\">colored</font><span style=\"background-color: rgb(255, 255, 0);\">highlighted</span>"
                 },
                 {
                     "locale": "fr",
-                    "value": "Actuellement pas disponible"
+                    "value": "Test <b>FR</b>"
                 },
                 {
                     "locale": "it",
-                    "value": "Attualmente non disponibile"
+                    "value": "Test <b>IT</b>"
                 }
             ]
-        },
-        "shop_url": null
+        }
     }
 }

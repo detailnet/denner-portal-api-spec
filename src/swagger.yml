@@ -2102,376 +2102,472 @@ paths:
             $ref: '#/definitions/OnlineArticle'
           examples:
             application/json:
-              id: "dfbc2b0d-0f47-4ac2-86e5-3bd4f9936ef6"
-              article_id: "051273"
-              name: "Mandorla Primitivo IGT Puglia"
+              id: 938f5d58-e9b0-439f-b5da-5cf086b5e412
+              article_id: '051273'
+              advertised_article_id: 3ef799aa-3202-471f-8cc1-79f0293923d0
+              name: Mandorla Primitivo Puglia IGT 75
               title:
-                -
-                  locale: "de"
-                  value: "Mandorla Primitivo di Puglia IGT"
-                -
-                  locale: "fr"
-                  value: "Mandorla Primitivo di Puglia IGT"
-                -
-                  locale: "it"
-                  value: "Mandorla Primitivo di Puglia IGT"
+                - locale: de
+                  value: Mandorla Primitivo di Puglia IGT
+                - locale: fr
+                  value: Mandorla Primitivo di Puglia IGT
+                - locale: it
+                  value: Mandorla Primitivo di Puglia IGT
               description:
-                -
-                  locale: "de"
-                  value: "2013, Apulien, Italien, 6 x 75 cl"
-                -
-                  locale: "fr"
-                  value: "2013, les Pouilles, Italie, 6 x 75 cl"
-                -
-                  locale: "it"
-                  value: "2013, Puglia, Italia, 6 x 75 cl"
-              prices:
-                sales: 59.4
-                instead: 68.4
-                base: 1.32
-                by_quantity:
-                  -
-                    quantity: 1
-                    sales: 9.9
-                    instead: 11.4
-                  -
-                    quantity: 6
-                    sales: 59.4
-                    instead: 68.4
-              price_info:
-                -
-                  locale: "de"
-                  value: "Konkurrenzvergleich"
-                -
-                  locale: "fr"
-                  value: "Comparaison concurrentielle"
-                -
-                  locale: "it"
-                  value: "Confronto con la concorrenza"
-              unit_price_info:
-                -
-                  locale: "de"
-                  value: "Einzelflasche: 9.90 statt 11.40"
-                -
-                  locale: "fr"
-                  value: "9.90 la bouteille au lieu de 11.40"
-                -
-                  locale: "it"
-                  value: "9.90 a bottiglia invece di 11.40"
-              promotion_info:
-                -
-                  locale: "de"
-                  value: "Aktionspreise für Einzelflaschen nur in der jeweiligen Aktionswoche gültig"
-                -
-                  locale: "fr"
-                  value: "Les prix promotionnels sur les bouteilles vendues à la pièce ne sont valables que durant la semaine d’action"
-                -
-                  locale: "it"
-                  value: "I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva settimana promozionale"
-              dots:
-                -
-                  id: "d4bca729-10ad-482c-bdda-b1a1398173b5"
-                  type:
-                    id: "semi_price_winehit"
-                  text:
-                    -
-                      locale: "de"
-                      value: "1/2 Preis\nWeinheit!"
-                    -
-                      locale: "fr"
-                      value: "1/2 prix\nLe top du vin!"
-                    -
-                      locale: "it"
-                      value: "1/2 prezzo\nSuperofferta vino!"
-                  images:
-                    -
-                      locale: "de"
-                      formats:
-                        -
-                          type: "image/svg+xml"
-                          url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.svg"
-                    -
-                      locale: "fr"
-                      formats:
-                        -
-                          type: "image/svg+xml"
-                          url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.svg"
-                    -
-                      locale: "it"
-                      formats:
-                        -
-                          type: "image/svg+xml"
-                          url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.svg"
-              panel:
-                -
-                  locale: "de"
-                  value: "9.- sparen"
-                -
-                  locale: "fr"
-                  value: "9.- éparmié"
-                -
-                  locale: "it"
-                  value: "9.- risparmiati"
-              quantity: 6
-              #                  Removed because we cannot calculate a valid size, neither display a standardized unit
-              #                  content:
-              #                    size: 75
-              #                    unit: 170
-              base:
-                #                    Removed because we cannot calculate a valid size, neither display a standardized unit
-                #                    size: 10
-                #                    unit: 170
+                - locale: de
+                  value: 2018, Apulien, Italien, 6 x 75 cl
+                - locale: fr
+                  value: 2018, les Pouilles, Italie, 6 x 75 cl
+                - locale: it
+                  value: 2018, Puglia, Italia, 6 x 75 cl
+              content:
+                size: '0.75'
+                label:
+                  - locale: de
+                    value: cl
+                  - locale: fr
+                    value: cl
+                  - locale: it
+                    value: cl
                 text:
-                  -
-                    locale: "de"
-                    value: "10 cl"
-                  -
-                    locale: "fr"
-                    value: "10 cl"
-                  -
-                    locale: "it"
-                    value: "10 cl"
-              validity:
-                from: "2015-06-23"
-                to: "2015-06-29"
-                short_text:
-                  -
-                    locale: "de"
-                    value: "Gültig von 23.06.–29.06."
-                  -
-                    locale: "fr"
-                    value: "..."
-                  -
-                    locale: "it"
-                    value: "..."
-                long_text:
-                  -
-                    locale: "de"
-                    value: "Angebot gültig von 23.06.2015 bis 29.06.2015"
-                  -
-                    locale: "fr"
-                    value: "..."
-                  -
-                    locale: "it"
-                    value: "..."
-              availability_limitations:
-                region:
-                  -
-                    locale: "de"
-                    value: "Nur in der deutschen und französischen Schweiz erhältlich"
-                  -
-                    locale: "fr"
-                    value: "Disponible uniquement en Suisse alémanique et romande"
-                  -
-                    locale: "it"
-                    value: "Disponibile solo nella Svizzera tedesca e romanda"
-                store:
-                  -
-                    locale: "de"
-                    value: "Nur in Filialen mit Frischprodukten erhältlich, ohne Denner Satelliten / Denner Express"
-                  -
-                    locale: "fr"
-                    value: "Disponible uniquement dans les succursales avec des produits frais, satellites Denner et Denner Express exclus"
-                  -
-                    locale: "it"
-                    value: "Disponibile solo nelle filiali con prodotti freschi, exclusi i satelliti Denner e i Denner Express"
-                store_filters:
-                  -
-                    id: "services"
-                    value:
-                      - "7fefad45-81d2-4228-a0a1-ed618184b96e"
-                      - "47191064-ad2e-482a-a5cf-2aa32d0b8116"
-                  -
-                    id: "channels"
-                    value:
-                      - "d247ecc8-ee06-47e7-b25c-1d267059cf18"
-                      - "8afb451c-614b-412a-bd7b-03d3ab0e61ef"
-                      - "a411c290-4b9c-42dd-b753-039918d66b51"
-              sort_index: 0
-              featured_sort_index: 10
-              featured: true
-              promoted: true
-              compared: true
-              cooling: 0
+                  - locale: de
+                    value: 75 cl
+                  - locale: fr
+                    value: 75 cl
+                  - locale: it
+                    value: 75 cl
+                per_unit:
+                  - locale: de
+                    value: per
+                  - locale: fr
+                    value: le
+                  - locale: it
+                    value: al
+              base:
+                text:
+                  - locale: de
+                    value: 10 cl
+                  - locale: fr
+                    value: 10 cl
+                  - locale: it
+                    value: 10 cl
+              article_group:
+                id: c43c6c08-5efc-41da-8472-3a45da1c8bb2
+                code: 60-56
+                name: Italien Rot 70 cl
+                parent:
+                  id: cb1fad16-a420-4a3b-865b-b3e176a8edea
+                  code: '60'
+                  name: Weine
+              purchasing_department: W
               online_group:
-                id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
-                code: 4003
+                id: a2664d3a-93b4-4277-9e6e-c95ad8b6c6ee
+                code: 2-9
+                sort_index: 1
                 disabled: false
                 allow_featuring: true
                 allow_promotion: true
                 allow_background: true
                 title:
-                  -
-                    locale: "de"
-                    value: "Wein"
-                  -
-                    locale: "fr"
-                    value: "Vins"
-                  -
-                    locale: "it"
-                    value: "Vini"
+                  - locale: de
+                    value: Wein/Champagner
+                  - locale: fr
+                    value: Vins/champagnes
+                  - locale: it
+                    value: Vino/champagne
                 parent:
-                  id: "5b79391b-b436-45f9-b3e4-93ec3ae1fae2"
-                  code: 4001
+                  id: 8fd653c3-a86b-4529-bbb5-58d06919d484
+                  code: '2'
+                  sort_index: 2
                   disabled: false
                   allow_featuring: true
                   allow_promotion: true
                   allow_background: true
                   title:
-                    -
-                      locale: "de"
-                      value: "Tafelgetränke und Mineralwasser"
-                    -
-                      locale: "fr"
-                      value: "Boissons table et eau minérale"
-                    -
-                      locale: "it"
-                      value: "Bevande da tavola e acque minerali"
-              article_group:
-                id: "0c309757-5432-4652-8201-ec35f31c5260"
-                code: "60-56"
-                name: "Italien Rot 70 cl"
-                parent:
-                  id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
-                  code: "60"
-                  name: "Weine"
+                    - locale: de
+                      value: Getränke
+                    - locale: fr
+                      value: Boissons
+                    - locale: it
+                      value: Bevande
+              cooling: 0
               eco_labels:
-                -
-                  id: "66d94617-bbd7-477e-ae66-183deb67ba5b"
-                  code: "bio"
-                  name: "Bio"
+                - id: suisse-garantie
+                  name: Suisse Garantie
+                  image:
+                    cdn_url: https://denner.imgix.net/eco-labels/suisse-garantie.png
+                - id: utz
+                  name: UTZ
+                  image:
+                    cdn_url: https://denner.imgix.net/eco-labels/utz.png
+              quantity: 6
+              advertised_quantity: 6
+              validity:
+                from: '2019-08-14'
+                to: '2019-08-20'
+                short_text:
+                  - locale: de
+                    value: Gültig vom 14.08.–20.08.2019
+                  - locale: fr
+                    value: Valable du 14.08–20.08.2019
+                  - locale: it
+                    value: Valida dal 14.08–20.08.2019
+                long_text:
+                  - locale: de
+                    value: Angebot gültig vom 14.08. bis 20.08.2019
+                  - locale: fr
+                    value: Offre valable du 14.08 au 20.08.2019
+                  - locale: it
+                    value: Offerta valida dal 14.08 al 20.08.2019
+              week:
+                year: 2019
+                number: 33
+              sort_code: 02W
+              sort_index: 114
+              featured_sort_index: 114
+              televised: false
+              featured: false
+              promoted: true
+              compared: false
+              promotion_info:
+                - locale: de
+                  value: Aktionspreise für Einzelflaschen nur in der jeweiligen Aktionswoche gültig
+                - locale: fr
+                  value: Les prix promotionnels sur les bouteilles vendues à la pièce ne sont valables
+                    que durant la semaine d’action
+                - locale: it
+                  value: I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva
+                    settimana promozionale
               packshot:
-                id: "2059e18a-9e93-452e-9eef-f9d7605a31ad"
-                url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
-                cdn_url: "https://denner.imgix.net/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
+                id: c3391581-1159-4611-a5ca-d15cc27e79dc
                 quantity: 6
-                created_on: "2016-03-01T16:22:00+02:00"
+                url: https://denner-assets.s3.amazonaws.com/assets/c3391581-1159-4611-a5ca-d15cc27e79dc/web/051273_6.png
+                image_url: https://denner-assets.s3.amazonaws.com/assets/c3391581-1159-4611-a5ca-d15cc27e79dc/web/051273_6.png
+                preview_url: https://denner-assets.s3.amazonaws.com/assets/c3391581-1159-4611-a5ca-d15cc27e79dc/web/051273_6.png?version=1
+                cdn_url: https://denner.imgix.net/assets/c3391581-1159-4611-a5ca-d15cc27e79dc/web/051273_6.png
+                archived: false
+                view:
+                  id: front
+              prices:
+                sales: 27.4
+                instead: 34.2
+                base: 0.61
+                final: true
+                by_quantity:
+                  - quantity: 1
+                    sales: 4.55
+                    instead: 5.7
+                    final: true
+                  - quantity: 6
+                    sales: 27.4
+                    instead: 34.2
+                    final: true
+              sales_price: '27.40'
+              instead_price:
+                - locale: de
+                  value: statt 34.20
+                - locale: fr
+                  value: au lieu de 34.20
+                - locale: it
+                  value: invece di 34.20
+              price_info:
+                - locale: de
+                  value: Konkurrenzvergleich
+                - locale: fr
+                  value: Comparaison concurrentielle
+                - locale: it
+                  value: Confronto con la concorrenza
+              unit_price_info:
+                - locale: de
+                  value: Flasche 4.55 statt 5.70
+                - locale: fr
+                  value: 4.55 la bouteille au lieu de 5.70
+                - locale: it
+                  value: 4.55 a bottiglia invece di 5.70
+              stopper:
+                id: 36f1d297-6e1f-48a8-a20d-b4f8913ae33c
+                type:
+                  id: x_percent_free
+                placeholders: []
+                markup_text:
+                  - locale: de
+                    value: 20% <vertical>GRATIS*</vertical>
+                  - locale: fr
+                    value: 20% <vertical>GRATUIT*</vertical>
+                  - locale: it
+                    value: 20% <vertical>GRATIS*</vertical>
+                text:
+                  - locale: de
+                    value: 20% GRATIS*
+                  - locale: fr
+                    value: 20% GRATUIT*
+                  - locale: it
+                    value: 20% GRATIS*
+              availability_limitations:
+                region:
+                  - locale: de
+                    value: Nur in der deutschen und französischen Schweiz erhältlich
+                  - locale: fr
+                    value: Disponible uniquement en Suisse alémanique et romande
+                  - locale: it
+                    value: Disponibile solo nella Svizzera tedesca e romanda
+                store:
+                  - locale: de
+                    value: Nur in Filialen mit Frischprodukten erhältlich, ohne Denner Satelliten
+                      / Denner Express
+                  - locale: fr
+                    value: Uniquement dans les succursales avec des produits frais, satellites Denner
+                      et Denner Express exclus
+                  - locale: it
+                    value: Solo nelle filiali con prodotti freschi, esclusi i satelliti Denner e i
+                      Denner Express
+                store_codes:
+                  - 1
+                store_filters:
+                  - id: services
+                    property: services.id
+                    value:
+                      - 7fefad45-81d2-4228-a0a1-ed618184b96e
+                      - 47191064-ad2e-482a-a5cf-2aa32d0b8116
+                  - id: channels
+                    property: channel
+                    value:
+                      - d247ecc8-ee06-47e7-b25c-1d267059cf18
+                      - 8afb451c-614b-412a-bd7b-03d3ab0e61ef
+                      - a411c290-4b9c-42dd-b753-039918d66b51
+              dots:
+                - id: 17c84bdc-37e8-4a08-836a-bb45dc3c9133
+                  type:
+                    id: single_unit_price
+                  placeholders: []
+                  text:
+                    - locale: de
+                      value: |-
+                        Flasche
+                        4.55
+                        statt 5.70
+                    - locale: fr
+                      value: |-
+                        4.55
+                        la bouteille
+                        au lieu de
+                        5.70
+                    - locale: it
+                      value: |-
+                        4.55
+                        a bottiglia
+                        invece di
+                        5.70
+                  images:
+                    - locale: de
+                      formats:
+                        - type: image/svg+xml
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/74a4ce7d-20bb-4c1c-9c50-c40112edfed5/single_unit_price_de.svg
+                        - type: image/png
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/74a4ce7d-20bb-4c1c-9c50-c40112edfed5/single_unit_price_de.png
+                    - locale: fr
+                      formats:
+                        - type: image/svg+xml
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/b1d18179-fc75-4a94-a26c-dbd5a9687c3b/single_unit_price_fr.svg
+                        - type: image/png
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/b1d18179-fc75-4a94-a26c-dbd5a9687c3b/single_unit_price_fr.png
+                    - locale: it
+                      formats:
+                        - type: image/svg+xml
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/57921a6d-fd3c-4e2b-bbcb-84d599fec0d8/single_unit_price_it.svg
+                        - type: image/png
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/57921a6d-fd3c-4e2b-bbcb-84d599fec0d8/single_unit_price_it.png
+                - id: c92c91aa-aaf8-4eb7-9ac3-b0c8f57f9556
+                  type:
+                    id: new
+                  placeholders: []
+                  text:
+                    - locale: de
+                      value: NEU
+                    - locale: fr
+                      value: NOUVEAU
+                    - locale: it
+                      value: NOVITÀ
+                  images:
+                    - locale: de
+                      formats:
+                        - type: image/svg+xml
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/0570da9e-e4ea-4041-ab13-a5a7b20d16a9/new_de.svg
+                        - type: image/png
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/0570da9e-e4ea-4041-ab13-a5a7b20d16a9/new_de.png
+                    - locale: fr
+                      formats:
+                        - type: image/svg+xml
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/4ff0c1f0-b3ce-4273-862f-62fe4a6db67d/new_fr.svg
+                        - type: image/png
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/4ff0c1f0-b3ce-4273-862f-62fe4a6db67d/new_fr.png
+                    - locale: it
+                      formats:
+                        - type: image/svg+xml
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/ff1b94c8-52ce-4092-811f-76e4ed2b24d0/new_it.svg
+                        - type: image/png
+                          url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/ff1b94c8-52ce-4092-811f-76e4ed2b24d0/new_it.png
+              dots_expired: []
               wine:
                 country:
-                  id: "IT"
+                  id: IT
                   title:
-                    -
-                      locale: "de"
-                      value: "Italien"
-                    -
-                      locale: "fr"
-                      value: "Italie"
-                    -
-                      locale: "it"
-                      value: "Italia"
+                    - locale: de
+                      value: Italien
+                    - locale: fr
+                      value: Italie
+                    - locale: it
+                      value: Italia
+                  flag:
+                    image_url: https://denner-assets.s3-eu-west-1.amazonaws.com/flags/IT.png
                 region:
-                  id: "b19c42bf-ed78-46ff-ad6f-fc688a059e6a"
+                  id: f1cd9437-d240-4e9a-8eac-ff6e4f06acbf
                   title:
-                    -
-                      locale: "de"
-                      value: "Apulien"
-                    -
-                      locale: "fr"
-                      value: "Les Pouilles"
-                    -
-                      locale: "it"
-                      value: "Puglia"
+                    - locale: de
+                      value: Apulien
+                    - locale: fr
+                      value: Les Pouilles
+                    - locale: it
+                      value: Puglia
                 type:
                   id: 2
+                  sort_index: 0
                   title:
-                    -
-                      locale: "de"
-                      value: "Rotwein"
-                    -
-                      locale: "fr"
-                      value: "Vin rouge"
-                    -
-                      locale: "it"
-                      value: "Vino rosso"
+                    - locale: de
+                      value: Rotwein
+                    - locale: fr
+                      value: Vin rouge
+                    - locale: it
+                      value: Vino rosso
                 online_specials:
-                  - id: wine
-                    sort_index: 10
+                  - id: bordeaux-stationary
+                    name: Bordeaux Grand Cru (Online & stationär)
+                    sort_index: 35
                     title:
                       - locale: de
-                        value: Weine
+                        value: Bordeaux Grand Cru (Online & stationär)
                       - locale: fr
-                        value: Vins
+                        value: Bordeaux Grand Cru (Online & stationnaire)
                       - locale: it
-                        value: Vini
-                year: 2013
+                        value: Bordeaux Grand Cru (Online & stazionario)
+                  - id: online-specials
+                    name: Online Specials
+                    sort_index: 50
+                    title:
+                      - locale: de
+                        value: Online Specials
+                      - locale: fr
+                        value: Online Specials
+                      - locale: it
+                        value: Online Specials
+                year: 2018
                 fits_with:
-                  -
-                    locale: "de"
-                    value: "Pasta, Fleisch mit würzigen Saucen"
-                  -
-                    locale: "fr"
-                    value: "Pâtes, viande aux sauces relevées"
-                  -
-                    locale: "it"
-                    value: "Pasta, carni accompagnate da salse aromatiche"
+                  - locale: de
+                    value: Suppe, rotes Fleisch, Gemüse, Pasta, Grilladen
+                  - locale: fr
+                    value: Soupe, viande rouge, légumes, pâtes, grillades
+                  - locale: it
+                    value: Zuppa, carne rossa, verdure, pasta, grigliate
                 varietal:
-                  -
-                    locale: "de"
-                    value: "Primitivo"
-                  -
-                    locale: "fr"
-                    value: "Primitivo"
-                  -
-                    locale: "it"
-                    value: "Primitivo"
+                  - locale: de
+                    value: Primitivo
+                  - locale: fr
+                    value: Primitivo
+                  - locale: it
+                    value: Primitivo
                 character:
-                  -
-                    locale: "de"
-                    value: "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
-                  -
-                    locale: "fr"
-                    value: "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
-                  -
-                    locale: "it"
-                    value: "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                  - locale: de
+                    value: Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen
+                      und Brombeeren. Geschmeidig im Gaumen.
+                  - locale: fr
+                    value: Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres.
+                      Bouche moelleuse.
+                  - locale: it
+                    value: Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more.
+                      Morbido al palato.
                 temperature:
-                  -
-                    locale: "de"
-                    value: "16-18 °C"
-                  -
-                    locale: "fr"
-                    value: "16-18 °C"
-                  -
-                    locale: "it"
-                    value: "16-18 °C"
+                  - locale: de
+                    value: 16–18 °C
+                  - locale: fr
+                    value: 16–18 °C
+                  - locale: it
+                    value: 16–18 °C
                 awards:
-                  -
-                    locale: "de"
-                    value: ""
-                  -
-                    locale: "fr"
-                    value: ""
-                  -
-                    locale: "it"
-                    value: ""
+                  - locale: de
+                    value: ''
+                  - locale: fr
+                    value: ''
+                  - locale: it
+                    value: ''
                 storage:
-                  -
-                    locale: "de"
-                    value: "3 Jahre"
-                  -
-                    locale: "fr"
-                    value: "3 ans"
-                  -
-                    locale: "it"
-                    value: "3 anni"
+                  - locale: de
+                    value: 1–3 Jahre
+                  - locale: fr
+                    value: 1–3 ans
+                  - locale: it
+                    value: 1–3 anni
                 rating:
-                  value: 4.45
-                  total: 11
+                  value: 4.2424
+                  total: 33
                   valid: true
-                stock:
-                  value: -15
-                  code: 2
-                  message:
-                    -
-                      locale: "de"
-                      value: "Derzeit nicht bestellbar"
-                    -
-                      locale: "fr"
-                      value: "Actuellement pas disponible"
-                    -
-                      locale: "it"
-                      value: "Attualmente non disponibile"
-                shop_url: null
+                  stars: 4
+                shop:
+                  url: https://www.denner.ch/sku/051273
+                  for_sale: false
+                  status:
+                    level: 10
+                  stock:
+                    value: 0
+                    code: 2
+                    message:
+                      - locale: de
+                        value: Derzeit nicht bestellbar
+                      - locale: fr
+                        value: Actuellement indisponible
+                      - locale: it
+                        value: Attualmente non disponibile
+                  quantity: 6
+                  prices:
+                    sales: 68.4
+                    base: 1.52
+                    final: true
+                    by_quantity:
+                      - quantity: 6
+                        sales: 68.4
+                        final: true
+                      - quantity: 1
+                        sales: 11.4
+                        final: true
+                  discount: []
+                  pictures:
+                    - id: e484026a-2860-4cd2-a268-1c5dd21d7990
+                      quantity: 1
+                      url: https://denner-assets.s3.eu-west-1.amazonaws.com/assets/e484026a-2860-4cd2-a268-1c5dd21d7990/051273_2_c_K.tif
+                      image_url: https://denner-assets.s3.amazonaws.com/assets/e484026a-2860-4cd2-a268-1c5dd21d7990/web/051273_2_c_K.png
+                      preview_url: https://denner-assets.s3.amazonaws.com/assets/e484026a-2860-4cd2-a268-1c5dd21d7990/web/051273_2_c_K.png?version=1
+                      cdn_url: https://denner.imgix.net/assets/e484026a-2860-4cd2-a268-1c5dd21d7990/web/051273_2_c_K.png
+                      archived: false
+                      view:
+                        id: front
+                    - id: 57e21e1b-db4b-4dc1-b57b-c9c488ac7099
+                      quantity: 1
+                      url: https://denner-assets.s3.eu-west-1.amazonaws.com/assets/57e21e1b-db4b-4dc1-b57b-c9c488ac7099/051273_2_c_K_back.tif
+                      image_url: https://denner-assets.s3.amazonaws.com/assets/57e21e1b-db4b-4dc1-b57b-c9c488ac7099/web/051273_2_c_K_back.png
+                      preview_url: https://denner-assets.s3.amazonaws.com/assets/57e21e1b-db4b-4dc1-b57b-c9c488ac7099/web/051273_2_c_K_back.png?version=1
+                      cdn_url: https://denner.imgix.net/assets/57e21e1b-db4b-4dc1-b57b-c9c488ac7099/web/051273_2_c_K_back.png
+                      archived: false
+                      view:
+                        id: back
+                  notes:
+                    - locale: de
+                      value: 'Test <b>DE</b><i>Second</i> <u>line</u>Numbered:<ol><li>one</li><li>two</li></ol>Listing:<ul><li>first</li><li>second</li></ul><font
+                      color="#00ffff">colored</font><span style="background-color: rgb(255, 255, 0);">highlighted</span>'
+                    - locale: fr
+                      value: Test <b>FR</b>
+                    - locale: it
+                      value: Test <b>IT</b>
+
+
         404:
           description: HTTP 404 Not Found
 
@@ -3530,6 +3626,14 @@ definitions:
     maximum: 53
     description: Week number (ISO 8601, week date system)
 
+  FullWeek:
+    type: object
+    properties:
+      year:
+        $ref: '#/definitions/Year'
+      number:
+        $ref: '#/definitions/Week'
+
   Price:
     type: number
     format: float
@@ -3541,6 +3645,18 @@ definitions:
     format: int32
     minimum: 0
     description: Quantity
+
+  SoldQuantity:
+    type: integer
+    format: int32
+    minimum: 0
+    description: Sold quantity (for texts and prices)
+
+  AdvertisedQuantity:
+    type: integer
+    format: int32
+    minimum: 0
+    description: Advertised quantity (for images)
 
   ContentSize:
     type: number
@@ -3602,9 +3718,9 @@ definitions:
         type: string
         pattern: '/^(services|channels)$/'
         description: Property ID to filter on
-#      property:
-#        type: string
-#        description: Property to filter on
+      property:
+        type: string
+        description: Property to filter on
 #      operator:
 #        type: string
 #        pattern: '/^(in|nin)$/'
@@ -3630,6 +3746,13 @@ definitions:
         $ref: '#/definitions/Translations'
       store:
         $ref: '#/definitions/Translations'
+      store_codes:
+        type: array
+        items:
+          type: integer
+          format: int32
+          description: >
+            Store availability code, currently supported: 1 => 'fresh bread', 2 => 'fresh products', 3 => 'humidor', 4 => 'limited'
       store_filters:
         $ref: '#/definitions/StoreFilters'
 
@@ -3643,6 +3766,10 @@ definitions:
     format: int32
     minimum: 0
     description: Index for sorting
+
+  SortCode:
+    type: string
+    description: Navision sort code for promotion planning (e.g. '02W')
 
   ### Store
   Store:
@@ -3890,13 +4017,16 @@ definitions:
     type: object
     properties:
       id:
-        $ref: '#/definitions/UUIDv4'
-      code:
         type: string
-        description: Navision identification code
+        description: Eco label ID (e.g. 'suisse-garantie', 'utz')
       name:
         type: string
         description: German name for the eco label
+      image:
+        type: object
+        properties:
+          cdn_url:
+            $ref: '#/definitions/Url'
 
   ### Purchasing department
   PurchasingDepartment:
@@ -3992,6 +4122,8 @@ definitions:
         $ref: '#/definitions/Translations'
       text:
         $ref: '#/definitions/Translations'
+      per_unit:
+        $ref: '#/definitions/Translations'
 
   BaseContent:
     type: object
@@ -4009,14 +4141,38 @@ definitions:
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
+      quantity:
+        $ref: '#/definitions/Quantity'
       url:
+        $ref: '#/definitions/Url'
+      image_url:
+        $ref: '#/definitions/Url'
+      preview_url:
         $ref: '#/definitions/Url'
       cdn_url:
         $ref: '#/definitions/Url'
-      quantity:
-        $ref: '#/definitions/Quantity'
+      archived:
+        type: boolean
+        description: Is the packshot archived?
+      view:
+        $ref: '#/definitions/PackshotView'
       created_on:
         $ref: '#/definitions/Date'
+    required:
+      - id
+      - url
+      - cdn_url
+
+  PackshotView:
+    type: object
+    properties:
+      id:
+        type: string
+#        pattern: '/^(front|back)$/'
+        enum:
+          - front
+          - back
+        description: View ID that is represented in packshot
 
   BasicArticleWine:
 #  Has no definitions/WineBox
@@ -4031,8 +4187,6 @@ definitions:
         $ref: '#/definitions/WineType'
       online_specials:
         $ref: '#/definitions/OnlineSpecials'
-      box:
-        $ref: '#/definitions/WineBox'
       year:
         $ref: '#/definitions/Year'
       fits_with:
@@ -4092,6 +4246,16 @@ definitions:
     properties:
       url:
         $ref: '#/definitions/Url'
+      for_sale:
+        type: boolean
+        description: Is the wine for sale?
+      status:
+        type: object
+        properties:
+          level:
+            type: integer
+            format: int32
+            description: Navision wine status level
       stock:
         $ref: '#/definitions/Stock'
       quantity:
@@ -4100,32 +4264,26 @@ definitions:
         $ref: '#/definitions/ArticlePrices'
       discount:
         $ref: '#/definitions/Translations'
-      packshot:
-        $ref: '#/definitions/Packshot'
+      pictures:
+        type: array
+#        minItems: 0
+#        maxItems: 2
+        items:
+          $ref: '#/definitions/Packshot'
+        description: Wine pictures, currently contains up to 2 packshots, one for 'front' and one for 'back' views
+      notes:
+        allOf:
+          - $ref: '#/definitions/Translations'
+          - description: Shop notes, migtht contain HTML formatting elements
 
   ExtendedShopInfo:
 #  Has title (shop title)
-#    allOf:
-#      - $ref: '#/definitions/BasicShopInfo'
-#      - properties:
-#        title:
-#          $ref: '#/definitions/Translations'
-    type: object
-    properties:
-      url:
-        $ref: '#/definitions/Url'
-      stock:
-        $ref: '#/definitions/Stock'
-      quantity:
-        $ref: '#/definitions/Quantity'
-      prices:
-        $ref: '#/definitions/ArticlePrices'
-      discount:
-        $ref: '#/definitions/Translations'
-      title:
-        $ref: '#/definitions/Translations'
-      packshot:
-        $ref: '#/definitions/Packshot'
+    allOf:
+      - $ref: '#/definitions/BasicShopInfo'
+      - type: object
+        properties:
+          title:
+            $ref: '#/definitions/Translations'
 
   Region:
     type: object
@@ -4155,6 +4313,12 @@ definitions:
         minimum: 0
         maximum: 5
         description: Rating value
+      stars:
+        type: number
+        format: float
+        minimum: 0
+        maximum: 5
+        description: Rating stars (value rounded to nearest 'half' star), validity is takein into account (empty if not valid)
       total:
         type: integer
         format: int32
@@ -4170,7 +4334,8 @@ definitions:
       value:
         type: integer
         format: int32
-        description: Navision stock count, might be negative
+        minimum: 0
+        description: Navision stock count
       code:
         type: integer
         format: int32
@@ -4247,6 +4412,16 @@ definitions:
         type: string
         description: Image url which can be used, for example, in an 'img' tag
 
+  Stopper:
+    allOf:
+      - $ref: '#/definitions/Output'
+      - type: object
+        properties:
+          markup_text:
+            allOf:
+              - $ref: '#/definitions/Translations'
+              - description: Markup text for visual effects
+
   ### Online publicated article
   OnlineArticle:
     type: object
@@ -4264,33 +4439,37 @@ definitions:
         $ref: '#/definitions/Translations'
       description:
         $ref: '#/definitions/Translations'
-      prices:
-        $ref: '#/definitions/ArticlePrices'
-      price_info:
-        $ref: '#/definitions/Translations'
-      unit_price_info:
-        $ref: '#/definitions/Translations'
-      promotion_info:
-        $ref: '#/definitions/Translations'
-      dots:
-        $ref: '#/definitions/Dots'
-      panel:
-        $ref: '#/definitions/Translations'
-      quantity:
-        $ref: '#/definitions/Quantity'
-#      Removed because we cannot calculate a valid size, neither display a standardized unit
-#      content:
-#        $ref: '#/definitions/Content'
+      content:
+        $ref: '#/definitions/Content'
       base:
         $ref: '#/definitions/BaseContent'
+      article_group:
+        $ref: '#/definitions/AssignedArticleGroup'
+      purchasing_department:
+        $ref: '#/definitions/PurchasingDepartment'
+      online_group:
+        $ref: '#/definitions/AssignedOnlineGroup'
+      cooling:
+        $ref: '#/definitions/Cooling'
+      eco_labels:
+        $ref: '#/definitions/EcoLabels'
+      quantity:
+        $ref: '#/definitions/SoldQuantity'
+      advertised_quantity:
+        $ref: '#/definitions/AdvertisedQuantity'
       validity:
         $ref: '#/definitions/ArticleValidity'
-      availability_limitations:
-        $ref: '#/definitions/AvailabilityLimitations'
+      week:
+        $ref: '#/definitions/FullWeek'
+      sort_code:
+        $ref: '#/definitions/SortCode'
       sort_index:
         $ref: '#/definitions/SortIndex'
       featured_sort_index:
         $ref: '#/definitions/SortIndex'
+      televised:
+        type: boolean
+        description: Is it a televised article (is planned to be promoted on national television broadcasting)?
       featured:
         type: boolean
         description: Is it a featured article (should be displayed on the front/main/home page)?
@@ -4300,16 +4479,40 @@ definitions:
       compared:
         type: boolean
         description: Is the article's price compared to an offer from an other company?
-      cooling:
-        $ref: '#/definitions/Cooling'
-      online_group:
-        $ref: '#/definitions/AssignedOnlineGroup'
-      article_group:
-        $ref: '#/definitions/AssignedArticleGroup'
-      eco_labels:
-        $ref: '#/definitions/EcoLabels'
+      promotion_info:
+        $ref: '#/definitions/Translations'
       packshot:
         $ref: '#/definitions/Packshot'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      sales_price:
+        type: string
+#        pattern: '/^(\d+|–)\.(\d[05]|–)$/'
+        description: Formatted sales price for display (might contain a zero lead dash or a zero decimals dash)
+      instead_price:
+        allOf:
+          - $ref: '#/definitions/Translations'
+          - description: >
+              Localized instead price string for display (includes 'instead' translation
+              and price might contain a zero lead dash or a zero decimals dash)
+      price_info:
+        allOf:
+          - $ref: '#/definitions/Translations'
+          - description: Localized information on price (currently can be the localized texts for 'compared')
+      unit_price_info:
+        allOf:
+          - $ref: '#/definitions/Translations'
+          - description: >
+              Localized information on single unit price, currently available for a 'bottle' (wines) or a 'package' (cigarettes).
+              Note: might be deprecated in future in favor of a 'unit_price' object containing the placeholders and message.
+#      panel: Does not exists anymore
+#        $ref: '#/definitions/Translations'
+      stopper:
+        $ref: '#/definitions/Stopper'
+      availability_limitations:
+        $ref: '#/definitions/AvailabilityLimitations'
+      dots:
+        $ref: '#/definitions/Dots'
       wine:
         $ref: '#/definitions/BasicArticleWine'
 
@@ -4509,6 +4712,8 @@ definitions:
       id:
         type: string
         description: Unique ID
+#      name:
+#        type: string
       sort_index:
         $ref: '#/definitions/SortIndex'
       title:
