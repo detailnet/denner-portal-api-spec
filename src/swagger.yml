@@ -2288,7 +2288,6 @@ paths:
                 id: 36f1d297-6e1f-48a8-a20d-b4f8913ae33c
                 type:
                   id: x_percent_free
-                placeholders: []
                 markup_text:
                   - locale: de
                     value: 20% <vertical>GRATIS*</vertical>
@@ -2303,43 +2302,10 @@ paths:
                     value: 20% GRATUIT*
                   - locale: it
                     value: 20% GRATIS*
-              availability_limitations:
-                region:
-                  - locale: de
-                    value: Nur in der deutschen und französischen Schweiz erhältlich
-                  - locale: fr
-                    value: Disponible uniquement en Suisse alémanique et romande
-                  - locale: it
-                    value: Disponibile solo nella Svizzera tedesca e romanda
-                store:
-                  - locale: de
-                    value: Nur in Filialen mit Frischprodukten erhältlich, ohne Denner Satelliten
-                      / Denner Express
-                  - locale: fr
-                    value: Uniquement dans les succursales avec des produits frais, satellites Denner
-                      et Denner Express exclus
-                  - locale: it
-                    value: Solo nelle filiali con prodotti freschi, esclusi i satelliti Denner e i
-                      Denner Express
-                store_codes:
-                  - 1
-                store_filters:
-                  - id: services
-                    property: services.id
-                    value:
-                      - 7fefad45-81d2-4228-a0a1-ed618184b96e
-                      - 47191064-ad2e-482a-a5cf-2aa32d0b8116
-                  - id: channels
-                    property: channel
-                    value:
-                      - d247ecc8-ee06-47e7-b25c-1d267059cf18
-                      - 8afb451c-614b-412a-bd7b-03d3ab0e61ef
-                      - a411c290-4b9c-42dd-b753-039918d66b51
               dots:
                 - id: 17c84bdc-37e8-4a08-836a-bb45dc3c9133
                   type:
                     id: single_unit_price
-                  placeholders: []
                   text:
                     - locale: de
                       value: |-
@@ -2380,7 +2346,6 @@ paths:
                 - id: c92c91aa-aaf8-4eb7-9ac3-b0c8f57f9556
                   type:
                     id: new
-                  placeholders: []
                   text:
                     - locale: de
                       value: NEU
@@ -2407,7 +2372,38 @@ paths:
                           url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/ff1b94c8-52ce-4092-811f-76e4ed2b24d0/new_it.svg
                         - type: image/png
                           url: https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/ff1b94c8-52ce-4092-811f-76e4ed2b24d0/new_it.png
-              dots_expired: []
+              availability_limitations:
+                region:
+                  - locale: de
+                    value: Nur in der deutschen und französischen Schweiz erhältlich
+                  - locale: fr
+                    value: Disponible uniquement en Suisse alémanique et romande
+                  - locale: it
+                    value: Disponibile solo nella Svizzera tedesca e romanda
+                store:
+                  - locale: de
+                    value: Nur in Filialen mit Frischprodukten erhältlich, ohne Denner Satelliten
+                      / Denner Express
+                  - locale: fr
+                    value: Uniquement dans les succursales avec des produits frais, satellites Denner
+                      et Denner Express exclus
+                  - locale: it
+                    value: Solo nelle filiali con prodotti freschi, esclusi i satelliti Denner e i
+                      Denner Express
+                store_codes:
+                  - 1
+                store_filters:
+                  - id: services
+                    property: services.id
+                    value:
+                      - 7fefad45-81d2-4228-a0a1-ed618184b96e
+                      - 47191064-ad2e-482a-a5cf-2aa32d0b8116
+                  - id: channels
+                    property: channel
+                    value:
+                      - d247ecc8-ee06-47e7-b25c-1d267059cf18
+                      - 8afb451c-614b-412a-bd7b-03d3ab0e61ef
+                      - a411c290-4b9c-42dd-b753-039918d66b51
               wine:
                 country:
                   id: IT
@@ -4504,15 +4500,14 @@ definitions:
           - $ref: '#/definitions/Translations'
           - description: >
               Localized information on single unit price, currently available for a 'bottle' (wines) or a 'package' (cigarettes).
-              Note: might be deprecated in future in favor of a 'unit_price' object containing the placeholders and message.
 #      panel: Does not exists anymore
 #        $ref: '#/definitions/Translations'
       stopper:
         $ref: '#/definitions/Stopper'
-      availability_limitations:
-        $ref: '#/definitions/AvailabilityLimitations'
       dots:
         $ref: '#/definitions/Dots'
+      availability_limitations:
+        $ref: '#/definitions/AvailabilityLimitations'
       wine:
         $ref: '#/definitions/BasicArticleWine'
 
