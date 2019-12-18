@@ -6097,16 +6097,16 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"cooling\": 0\n}"
+									"raw": "{\n  \"cooling\": 0,\n  \"online_specials\" : [\n  \t\"bordeaux\",\n  \t\"online-specials\"\n  ],\n  \"availability\": \"online-only\"\n}"
 								},
 								"url": {
-									"raw": "{{articles_url_base}}/articles/022617",
+									"raw": "{{articles_url_base}}/articles/051051",
 									"host": [
 										"{{articles_url_base}}"
 									],
 									"path": [
 										"articles",
-										"022617"
+										"051051"
 									]
 								},
 								"description": "Edit an article (Artikel)"
@@ -6531,6 +6531,43 @@
 									]
 								},
 								"description": "List online specials (Online-Specials)"
+							},
+							"response": []
+						},
+						{
+							"name": "/wine-availabilities",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{articles_url_base}}/wine-availabilities?page_size=-1",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"wine-availabilities"
+									],
+									"query": [
+										{
+											"key": "page_size",
+											"value": "-1"
+										}
+									]
+								},
+								"description": "List wine availabilities (Wein-Verfügbarkeit)"
 							},
 							"response": []
 						},
