@@ -1798,16 +1798,6 @@ paths:
                             -
                               type: "image/svg+xml"
                               url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.svg"
-                  panel:
-                    -
-                      locale: "de"
-                      value: "9.- sparen"
-                    -
-                      locale: "fr"
-                      value: "9.- éparmié"
-                    -
-                      locale: "it"
-                      value: "9.- risparmiati"
                   quantity: 6
 #                  Removed because we cannot calculate a valid size, neither display a standardized unit
 #                  content:
@@ -2202,16 +2192,6 @@ paths:
                         -
                           type: "image/svg+xml"
                           url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.svg"
-              panel:
-                -
-                  locale: "de"
-                  value: "9.- sparen"
-                -
-                  locale: "fr"
-                  value: "9.- éparmié"
-                -
-                  locale: "it"
-                  value: "9.- risparmiati"
               quantity: 6
               #                  Removed because we cannot calculate a valid size, neither display a standardized unit
               #                  content:
@@ -2734,16 +2714,6 @@ paths:
                             -
                               type: "image/png"
                               url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.png"
-                  panel:
-                    -
-                      locale: "de"
-                      value: "9.- sparen"
-                    -
-                      locale: "fr"
-                      value: "9.- éparmié"
-                    -
-                      locale: "it"
-                      value: "9.- risparmiati"
                   quantity: 6
 #                  Removed because we cannot calculate a valid size, neither display a standardized unit
 #                  content:
@@ -4274,8 +4244,6 @@ definitions:
         $ref: '#/definitions/Translations'
       dots:
         $ref: '#/definitions/Dots'
-      panel:
-        $ref: '#/definitions/Translations'
       quantity:
         $ref: '#/definitions/Quantity'
 #      Removed because we cannot calculate a valid size, neither display a standardized unit
@@ -4337,8 +4305,6 @@ definitions:
         $ref: '#/definitions/Translations'
       dots:
         $ref: '#/definitions/Dots'
-      panel:
-        $ref: '#/definitions/Translations'
       quantity:
         $ref: '#/definitions/Quantity'
 #      Removed because we cannot calculate a valid size, neither display a standardized unit

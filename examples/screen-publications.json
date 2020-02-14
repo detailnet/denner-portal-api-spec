@@ -198,20 +198,6 @@
                         }
                     ],
                     "sales_price": "76.70",
-                    "panel": [
-                        {
-                            "locale": "de",
-                            "value": "3.30 sparen"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "3.30 éparmié"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "3.30 risparmiati"
-                        }
-                    ],
                     "stopper": {
                         "id": "a5849cf6-8507-4fc3-b158-b6c5fbc9378c",
                         "type": {
@@ -374,20 +360,6 @@
                     "composite_description": [],
                     "dots": [],
                     "sales_price": "76.70",
-                    "panel": [
-                        {
-                            "locale": "de",
-                            "value": "3.30 sparen"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "3.30 éparmié"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "3.30 risparmiati"
-                        }
-                    ],
                     "stopper": {
                         "id": "c91ec1ae-47b9-4d86-870f-232dc06fa400",
                         "type": {
@@ -510,20 +482,6 @@
                     ],
                     "dots": [],
                     "sales_price": "7.90",
-                    "panel": [
-                        {
-                            "locale": "de",
-                            "value": "Aktion"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Action"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Azione"
-                        }
-                    ],
                     "stopper": {
                         "id": "591e77dc-68f3-47e5-bc92-7f2a578bc6ca",
                         "type": {
@@ -638,7 +596,6 @@
                     "composite_description": [],
                     "dots": [],
                     "sales_price": "7.90",
-                    "panel": [],
                     "instead_price": [
                         {
                             "locale": "de",
