@@ -6902,6 +6902,45 @@
 							"response": []
 						},
 						{
+							"name": "/wine-characteristics",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{articles_url_base}}/wine-characteristics",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"wine-characteristics"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "[{\"property\":\"valid_on\",\"value\":\"2020-07-20\"},{\"property\":\"level\",\"value\":[0,5]},{\"property\":\"distinct_quantities\",\"value\":1}]",
+											"description": "Filter for online prices",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Linsing of wine characteristics (Wein-Gesmacksprofil)"
+							},
+							"response": []
+						},
+						{
 							"name": "/wine-experts",
 							"request": {
 								"method": "GET",
@@ -9742,7 +9781,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{stores_url_base}}/stores?",
+							"raw": "{{stores_url_base}}/stores",
 							"host": [
 								"{{stores_url_base}}"
 							],
