@@ -27,82 +27,58 @@
             "title": [
                 {
                     "locale": "de",
-                    "value": "Parisienne Limited Edition",
-                    "changed_on": "2020-06-02T08:00:31+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Parisienne Limited Edition"
                 },
                 {
                     "locale": "fr",
-                    "value": "Parisienne Limited Edition",
-                    "changed_on": "2020-06-02T08:00:31+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Parisienne Limited Edition"
                 },
                 {
                     "locale": "it",
-                    "value": "Parisienne Limited Edition",
-                    "changed_on": "2020-06-02T08:00:31+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Parisienne Limited Edition"
                 }
             ],
             "description": [
                 {
                     "locale": "de",
-                    "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 20 Zigaretten",
-                    "changed_on": "2020-06-02T08:00:31+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 20 Zigaretten"
                 },
                 {
                     "locale": "fr",
-                    "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 20 cigarettes",
-                    "changed_on": "2020-06-02T08:00:31+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 20 cigarettes"
                 },
                 {
                     "locale": "it",
-                    "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 20 sigarette",
-                    "changed_on": "2020-06-02T08:00:31+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 20 sigarette"
                 }
             ],
             "composite_info": {
                 "title": [
                     {
                         "locale": "de",
-                        "value": "Parisienne Limited Edition",
-                        "changed_on": "2020-06-02T08:00:31+0200",
-                        "changed_by": "Annina Berweger"
+                        "value": "Parisienne Limited Edition"
                     },
                     {
                         "locale": "fr",
-                        "value": "Parisienne Limited Edition",
-                        "changed_on": "2020-06-02T08:00:31+0200",
-                        "changed_by": "Annina Berweger"
+                        "value": "Parisienne Limited Edition"
                     },
                     {
                         "locale": "it",
-                        "value": "Parisienne Limited Edition",
-                        "changed_on": "2020-06-02T08:00:31+0200",
-                        "changed_by": "Annina Berweger"
+                        "value": "Parisienne Limited Edition"
                     }
                 ],
                 "description": [
                     {
                         "locale": "de",
-                        "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 20 Zigaretten",
-                        "changed_on": "2020-06-02T08:00:31+0200",
-                        "changed_by": "Annina Berweger"
+                        "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 20 Zigaretten"
                     },
                     {
                         "locale": "fr",
-                        "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 20 cigarettes",
-                        "changed_on": "2020-06-02T08:00:31+0200",
-                        "changed_by": "Annina Berweger"
+                        "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 20 cigarettes"
                     },
                     {
                         "locale": "it",
-                        "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 20 sigarette",
-                        "changed_on": "2020-06-02T08:00:31+0200",
-                        "changed_by": "Annina Berweger"
+                        "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 20 sigarette"
                     }
                 ]
             },
@@ -233,41 +209,29 @@
             "title": [
                 {
                     "locale": "de",
-                    "value": "Parisienne Limited Edition Orange Ohne",
-                    "changed_on": "2019-09-10T09:58:14+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Parisienne Limited Edition Orange Ohne"
                 },
                 {
                     "locale": "fr",
-                    "value": "Parisienne Limited Edition Orange Sans",
-                    "changed_on": "2019-10-02T13:26:30+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "Parisienne Limited Edition Orange Sans"
                 },
                 {
                     "locale": "it",
-                    "value": "Parisienne Limited Edition Orange Senza",
-                    "changed_on": "2019-09-16T09:05:00+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Parisienne Limited Edition Orange Senza"
                 }
             ],
             "description": [
                 {
                     "locale": "de",
-                    "value": "Box, 20 Zigaretten",
-                    "changed_on": "2019-09-10T10:00:44+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 20 Zigaretten"
                 },
                 {
                     "locale": "fr",
-                    "value": "Box, 20 cigarettes",
-                    "changed_on": "2019-09-10T10:00:44+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 20 cigarettes"
                 },
                 {
                     "locale": "it",
-                    "value": "Box, 20 sigarette",
-                    "changed_on": "2019-09-10T10:00:44+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 20 sigarette"
                 }
             ],
             "eco_labels": [],
@@ -397,41 +361,29 @@
             "title": [
                 {
                     "locale": "de",
-                    "value": "Parisienne Limited Edition Verte Ohne",
-                    "changed_on": "2019-09-10T09:59:04+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Parisienne Limited Edition Verte Ohne"
                 },
                 {
                     "locale": "fr",
-                    "value": "Parisienne Limited Edition Verte Sans",
-                    "changed_on": "2019-10-02T13:26:44+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "Parisienne Limited Edition Verte Sans"
                 },
                 {
                     "locale": "it",
-                    "value": "Parisienne Limited Edition Verte Senza",
-                    "changed_on": "2019-09-16T09:05:00+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Parisienne Limited Edition Verte Senza"
                 }
             ],
             "description": [
                 {
                     "locale": "de",
-                    "value": "Box, 20 Zigaretten",
-                    "changed_on": "2019-09-10T10:01:53+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 20 Zigaretten"
                 },
                 {
                     "locale": "fr",
-                    "value": "Box, 20 cigarettes",
-                    "changed_on": "2019-09-10T10:01:53+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 20 cigarettes"
                 },
                 {
                     "locale": "it",
-                    "value": "Box, 20 sigarette",
-                    "changed_on": "2019-09-10T10:01:53+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 20 sigarette"
                 }
             ],
             "eco_labels": [],
@@ -561,41 +513,29 @@
             "title": [
                 {
                     "locale": "de",
-                    "value": "Parisienne Limited Edition Blonde",
-                    "changed_on": "2019-09-26T09:31:08+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "Parisienne Limited Edition Blonde"
                 },
                 {
                     "locale": "fr",
-                    "value": "Parisienne Limited Edition Blonde",
-                    "changed_on": "2019-09-26T09:31:08+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "Parisienne Limited Edition Blonde"
                 },
                 {
                     "locale": "it",
-                    "value": "Parisienne Limited Edition Blonde",
-                    "changed_on": "2019-09-26T09:31:08+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "Parisienne Limited Edition Blonde"
                 }
             ],
             "description": [
                 {
                     "locale": "de",
-                    "value": "Box, 20 Zigaretten",
-                    "changed_on": "2018-08-22T10:24:13+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Box, 20 Zigaretten"
                 },
                 {
                     "locale": "fr",
-                    "value": "Box, 20 cigarettes",
-                    "changed_on": "2018-08-22T10:24:13+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Box, 20 cigarettes"
                 },
                 {
                     "locale": "it",
-                    "value": "Box, 20 sigarette",
-                    "changed_on": "2018-08-22T10:24:13+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Box, 20 sigarette"
                 }
             ],
             "eco_labels": [],
@@ -725,82 +665,58 @@
             "title": [
                 {
                     "locale": "de",
-                    "value": "Parisienne Limited Edition",
-                    "changed_on": "2020-06-02T08:00:07+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Parisienne Limited Edition"
                 },
                 {
                     "locale": "fr",
-                    "value": "Parisienne Limited Edition",
-                    "changed_on": "2020-06-02T08:00:07+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Parisienne Limited Edition"
                 },
                 {
                     "locale": "it",
-                    "value": "Parisienne Limited Edition",
-                    "changed_on": "2020-06-02T08:00:07+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Parisienne Limited Edition"
                 }
             ],
             "description": [
                 {
                     "locale": "de",
-                    "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 10 x 20 Zigaretten",
-                    "changed_on": "2019-09-26T09:31:08+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 10 x 20 Zigaretten"
                 },
                 {
                     "locale": "fr",
-                    "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 10 x 20 cigarettes",
-                    "changed_on": "2019-09-26T09:31:08+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 10 x 20 cigarettes"
                 },
                 {
                     "locale": "it",
-                    "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 10 x 20 sigarette",
-                    "changed_on": "2019-09-26T09:31:08+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 10 x 20 sigarette"
                 }
             ],
             "composite_info": {
                 "title": [
                     {
                         "locale": "de",
-                        "value": "Parisienne Limited Edition",
-                        "changed_on": "2020-06-02T08:00:07+0200",
-                        "changed_by": "Annina Berweger"
+                        "value": "Parisienne Limited Edition"
                     },
                     {
                         "locale": "fr",
-                        "value": "Parisienne Limited Edition",
-                        "changed_on": "2020-06-02T08:00:07+0200",
-                        "changed_by": "Annina Berweger"
+                        "value": "Parisienne Limited Edition"
                     },
                     {
                         "locale": "it",
-                        "value": "Parisienne Limited Edition",
-                        "changed_on": "2020-06-02T08:00:07+0200",
-                        "changed_by": "Annina Berweger"
+                        "value": "Parisienne Limited Edition"
                     }
                 ],
                 "description": [
                     {
                         "locale": "de",
-                        "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 10 x 20 Zigaretten",
-                        "changed_on": "2019-09-26T09:31:08+0200",
-                        "changed_by": "Lea Binetti"
+                        "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 10 x 20 Zigaretten"
                     },
                     {
                         "locale": "fr",
-                        "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 10 x 20 cigarettes",
-                        "changed_on": "2019-09-26T09:31:08+0200",
-                        "changed_by": "Lea Binetti"
+                        "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 10 x 20 cigarettes"
                     },
                     {
                         "locale": "it",
-                        "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 10 x 20 sigarette",
-                        "changed_on": "2019-09-26T09:31:08+0200",
-                        "changed_by": "Lea Binetti"
+                        "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 10 x 20 sigarette"
                     }
                 ]
             },
@@ -931,41 +847,29 @@
             "title": [
                 {
                     "locale": "de",
-                    "value": "Parisienne Limited Edition Orange Ohne",
-                    "changed_on": "2019-09-10T09:58:14+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Parisienne Limited Edition Orange Ohne"
                 },
                 {
                     "locale": "fr",
-                    "value": "Parisienne Limited Edition Orange Sans",
-                    "changed_on": "2019-10-02T13:26:30+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "Parisienne Limited Edition Orange Sans"
                 },
                 {
                     "locale": "it",
-                    "value": "Parisienne Limited Edition Orange Senza",
-                    "changed_on": "2019-09-16T09:05:00+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Parisienne Limited Edition Orange Senza"
                 }
             ],
             "description": [
                 {
                     "locale": "de",
-                    "value": "Box, 10 x 20 Zigaretten",
-                    "changed_on": "2019-09-10T09:58:36+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 10 x 20 Zigaretten"
                 },
                 {
                     "locale": "fr",
-                    "value": "Box, 10 x 20 cigarettes",
-                    "changed_on": "2019-09-10T10:00:44+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 10 x 20 cigarettes"
                 },
                 {
                     "locale": "it",
-                    "value": "Box, 10 x 20 sigarette",
-                    "changed_on": "2019-09-10T10:00:44+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 10 x 20 sigarette"
                 }
             ],
             "eco_labels": [],
@@ -1095,41 +999,29 @@
             "title": [
                 {
                     "locale": "de",
-                    "value": "Parisienne Limited Edition Verte Ohne",
-                    "changed_on": "2019-09-10T09:59:04+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Parisienne Limited Edition Verte Ohne"
                 },
                 {
                     "locale": "fr",
-                    "value": "Parisienne Limited Edition Verte Sans",
-                    "changed_on": "2019-10-02T13:26:44+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "Parisienne Limited Edition Verte Sans"
                 },
                 {
                     "locale": "it",
-                    "value": "Parisienne Limited Edition Verte Senza",
-                    "changed_on": "2019-09-16T09:05:00+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Parisienne Limited Edition Verte Senza"
                 }
             ],
             "description": [
                 {
                     "locale": "de",
-                    "value": "Box, 10 x 20 Zigaretten",
-                    "changed_on": "2019-09-10T09:58:47+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 10 x 20 Zigaretten"
                 },
                 {
                     "locale": "fr",
-                    "value": "Box, 10 x 20 cigarettes",
-                    "changed_on": "2019-09-10T10:01:25+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 10 x 20 cigarettes"
                 },
                 {
                     "locale": "it",
-                    "value": "Box, 10 x 20 sigarette",
-                    "changed_on": "2019-09-10T10:01:25+0200",
-                    "changed_by": "Cheryl Müller"
+                    "value": "Box, 10 x 20 sigarette"
                 }
             ],
             "eco_labels": [],
@@ -1259,41 +1151,29 @@
             "title": [
                 {
                     "locale": "de",
-                    "value": "Parisienne Limited Edition Blonde",
-                    "changed_on": "2019-09-26T09:31:08+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "Parisienne Limited Edition Blonde"
                 },
                 {
                     "locale": "fr",
-                    "value": "Parisienne Limited Edition Blonde",
-                    "changed_on": "2019-09-26T09:31:08+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "Parisienne Limited Edition Blonde"
                 },
                 {
                     "locale": "it",
-                    "value": "Parisienne Limited Edition Blonde",
-                    "changed_on": "2019-09-26T09:31:08+0200",
-                    "changed_by": "Lea Binetti"
+                    "value": "Parisienne Limited Edition Blonde"
                 }
             ],
             "description": [
                 {
                     "locale": "de",
-                    "value": "Box, 10 x 20 Zigaretten",
-                    "changed_on": "2018-08-22T10:24:13+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Box, 10 x 20 Zigaretten"
                 },
                 {
                     "locale": "fr",
-                    "value": "Box, 10 x 20 cigarettes",
-                    "changed_on": "2018-08-22T10:24:13+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Box, 10 x 20 cigarettes"
                 },
                 {
                     "locale": "it",
-                    "value": "Box, 10 x 20 sigarette",
-                    "changed_on": "2018-08-22T10:24:13+0200",
-                    "changed_by": "Annina Berweger"
+                    "value": "Box, 10 x 20 sigarette"
                 }
             ],
             "eco_labels": [],

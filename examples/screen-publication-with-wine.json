@@ -27,41 +27,29 @@
             "title": [
                 {
                     "locale": "de",
-                    "value": "Argento Selección Malbec",
-                    "changed_on": "2016-06-29T14:36:58+0200",
-                    "changed_by": "Noemi Campanile"
+                    "value": "Argento Selección Malbec"
                 },
                 {
                     "locale": "fr",
-                    "value": "Argento Selección Malbec",
-                    "changed_on": "2016-06-29T14:36:58+0200",
-                    "changed_by": "Noemi Campanile"
+                    "value": "Argento Selección Malbec"
                 },
                 {
                     "locale": "it",
-                    "value": "Argento Selección Malbec",
-                    "changed_on": "2016-06-29T14:36:58+0200",
-                    "changed_by": "Noemi Campanile"
+                    "value": "Argento Selección Malbec"
                 }
             ],
             "description": [
                 {
                     "locale": "de",
-                    "value": "2019, Mendoza, Argentinien, 6 x 75 cl",
-                    "changed_on": "2020-02-20T13:39:02+0100",
-                    "changed_by": "Annina Berweger"
+                    "value": "2019, Mendoza, Argentinien, 6 x 75 cl"
                 },
                 {
                     "locale": "fr",
-                    "value": "2019, Mendoza, Argentine, 6 x 75 cl",
-                    "changed_on": "2020-02-20T13:39:02+0100",
-                    "changed_by": "Annina Berweger"
+                    "value": "2019, Mendoza, Argentine, 6 x 75 cl"
                 },
                 {
                     "locale": "it",
-                    "value": "2019, Mendoza, Argentina, 6 x 75 cl",
-                    "changed_on": "2020-02-20T13:39:02+0100",
-                    "changed_by": "Annina Berweger"
+                    "value": "2019, Mendoza, Argentina, 6 x 75 cl"
                 }
             ],
             "eco_labels": [],
