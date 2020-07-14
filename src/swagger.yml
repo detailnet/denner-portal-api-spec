@@ -4379,6 +4379,21 @@ definitions:
     minimum: 0
     description: Index for sorting
 
+  CompositeInfo:
+    type: object
+    properties:
+      title:
+        $ref: '#/definitions/Translations'
+      description:
+        $ref: '#/definitions/Translations'
+
+  Supplier:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+
   ### Store
   Store:
     type: object
@@ -4898,6 +4913,12 @@ definitions:
       valid:
         type: boolean
         description: Is a valid rating?
+      stars:
+        type: number
+        format: float
+        minimum: 0
+        maximum: 5
+        description: Stars, rounded to the half integer
 
   Stock:
     type: object
@@ -4954,6 +4975,13 @@ definitions:
         $ref: '#/definitions/Translations'
       images:
         $ref: '#/definitions/OutputImages'
+
+  Stopper:
+    allOf:
+      - $ref: '#/definitions/Output'
+      - properties:
+          markup_text:
+            $ref: '#/definitions/Translations'
 
   OutputType:
     type: object
@@ -5046,57 +5074,6 @@ definitions:
       wine:
         $ref: '#/definitions/BasicArticleWine'
 
-  ScreenArticle:
-    type: object
-    properties:
-      id:
-        $ref: '#/definitions/UUIDv4'
-      article_id:
-        type: string
-        pattern: '/^\d{6}$/'
-        description: Navision article code
-      name:
-        type: string
-        description: Article name
-      title:
-        $ref: '#/definitions/Translations'
-      description:
-        $ref: '#/definitions/Translations'
-      prices:
-        $ref: '#/definitions/ArticlePrices'
-      price_info:
-        $ref: '#/definitions/Translations'
-      unit_price_info:
-        $ref: '#/definitions/Translations'
-      dots:
-        $ref: '#/definitions/Dots'
-      quantity:
-        $ref: '#/definitions/Quantity'
-#      Removed because we cannot calculate a valid size, neither display a standardized unit
-#      content:
-#        $ref: '#/definitions/Content'
-      base:
-        $ref: '#/definitions/BaseContent'
-      validity:
-        $ref: '#/definitions/ArticleValidity'
-      availability_limitations:
-        $ref: '#/definitions/AvailabilityLimitations'
-      sort_index:
-        $ref: '#/definitions/SortIndex'
-      compared:
-        type: boolean
-        description: Is the article's price compared to an offer from an other company?
-      cooling:
-        $ref: '#/definitions/Cooling'
-      online_group:
-        $ref: '#/definitions/AssignedOnlineGroup'
-      article_group:
-        $ref: '#/definitions/AssignedArticleGroup'
-      packshot:
-        $ref: '#/definitions/Packshot'
-      wine:
-        $ref: '#/definitions/BasicArticleWine'
-
   ### Online publication
   OnlinePublication:
     type: object
@@ -5136,8 +5113,8 @@ definitions:
     allOf:
       - $ref: '#/definitions/OnlinePublication'
       - properties:
-         articles:
-           $ref: '#/definitions/OnlineArticles'
+          articles:
+            $ref: '#/definitions/OnlineArticles'
 
   PromotionType:
     type: object
@@ -5246,11 +5223,69 @@ definitions:
         $ref: '#/definitions/Translations'
 
   ### Screen publication
+  ScreenArticle:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      article_id:
+        type: string
+        pattern: '/^\d{6}$/'
+        description: Navision article code
+      advertised_article_id:
+        $ref: '#/definitions/UUIDv4'
+      quantity:
+        $ref: '#/definitions/Quantity'
+      advertised_quantity:
+        $ref: '#/definitions/Quantity'
+      name:
+        type: string
+        description: Article name
+      title:
+        $ref: '#/definitions/Translations'
+      description:
+        $ref: '#/definitions/Translations'
+      composite_info:
+        $ref: '#/definitions/CompositeInfo'
+      eco_labels:
+        $ref: '#/definitions/EcoLabels'
+      dots:
+        $ref: '#/definitions/Dots'
+      sales_price:
+        type: string
+      stopper:
+        $ref: '#/definitions/Stopper'
+      instead_price:
+        $ref: '#/definitions/Translations'
+      price_info:
+        $ref: '#/definitions/Translations'
+      price_unit:
+        $ref: '#/definitions/Translations'
+      promotion_info:
+        $ref: '#/definitions/Translations'
+      compared:
+        type: boolean
+        description: Is the article's price compared to an offer from an other company?
+      article_group:
+        $ref: '#/definitions/AssignedArticleGroup'
+      packshot:
+        $ref: '#/definitions/Packshot'
+      supplier:
+        $ref: '#/definitions/Supplier'
+      country:
+        $ref: '#/definitions/Country'
+      rating:
+        $ref: '#/definitions/Rating'
+
+
   ScreenScreen:
     type: object
     properties:
       id:
         type: string
+        description: Unique ID
       name:
         type: string
 
@@ -5287,16 +5322,34 @@ definitions:
         $ref: '#/definitions/Year'
       week:
         $ref: '#/definitions/Week'
-      title:
-        $ref: '#/definitions/Translations'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      created_on:
+        $ref: '#/definitions/Date'
       validity:
         $ref: '#/definitions/Validity'
+      promotion_type:
+        $ref: '#/definitions/PromotionType'
+      automatic:
+        type: boolean
       screen:
         $ref: '#/definitions/ScreenScreen'
       design:
         $ref: '#/definitions/ScreenDesign'
       template:
         $ref: '#/definitions/ScreenTemplate'
+      title:
+        $ref: '#/definitions/Translations'
+      footer:
+        $ref: '#/definitions/Translations'
+
+  ScreenPublicationWithArticleCount:
+    allOf:
+      - $ref: '#/definitions/ScreenPublication'
+      - properties:
+          article_count:
+            type: integer
+            format: int32
 
   ScreenPublicationWithArticles:
     allOf:
@@ -5671,7 +5724,7 @@ definitions:
   ScreenPublications:
     type: array
     items:
-      $ref: '#/definitions/ScreenPublication'
+      $ref: '#/definitions/ScreenPublicationWithArticleCount'
 
   Appraisals:
     type: array
