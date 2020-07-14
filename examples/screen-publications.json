@@ -1,27 +1,105 @@
 {
     "screen_publications": [
         {
-            "id": "f410c33f-844f-43ca-ab2c-4dccf6905f7e",
-            "name": "Parisienne KW 06/2016 für Werbescreens",
-            "year": 2016,
-            "week": 6,
+            "id": "372bd590-1781-4905-beb4-5eeaeee6cf19",
+            "name": "Parisienne Limited Edition Jaune (KW 29/2020) für Werbescreens",
+            "year": 2020,
+            "week": 29,
+            "sort_index": 250,
+            "created_on": "2020-06-15T00:11:21+0200",
+            "validity": {
+                "from": "2020-07-14",
+                "to": "2020-07-20",
+                "text": []
+            },
+            "promotion_type": {
+                "id": "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
+                "code": "FLUGBLATT",
+                "name": "Dennerwoche"
+            },
+            "automatic": true,
+            "article_count": 8,
+            "design": {
+                "id": "a59f84d6-f779-4075-95fe-5803aceae2f1",
+                "code": 1,
+                "name": "Standard"
+            },
+            "template": {
+                "id": "week-hit",
+                "code": 1,
+                "name": "Wo-Hit"
+            },
             "title": [
                 {
                     "locale": "de",
-                    "value": "Parisienne"
+                    "value": "Parisienne Limited Edition Jaune"
                 },
                 {
                     "locale": "fr",
-                    "value": "Parisienne"
+                    "value": "Parisienne Limited Edition Jaune"
                 },
                 {
                     "locale": "it",
-                    "value": "Parisienne"
+                    "value": "Parisienne Limited Edition Jaune"
                 }
             ],
+            "footer": []
+        },
+        {
+            "id": "2559ed38-02d6-43b7-9c0d-756719b053db",
+            "name": "Jack Daniel's Whiskey (KW 29/2020) für Werbescreens",
+            "year": 2020,
+            "week": 29,
+            "sort_index": 2150,
+            "created_on": "2020-06-15T00:11:21+0200",
             "validity": {
-                "from": "2016-01-29",
-                "to": "2016-01-30",
+                "from": "2020-07-14",
+                "to": "2020-07-20",
+                "text": []
+            },
+            "promotion_type": {
+                "id": "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
+                "code": "FLUGBLATT",
+                "name": "Dennerwoche"
+            },
+            "automatic": true,
+            "article_count": 1,
+            "design": {
+                "id": "a59f84d6-f779-4075-95fe-5803aceae2f1",
+                "code": 1,
+                "name": "Standard"
+            },
+            "template": {
+                "id": "spirit",
+                "code": 5,
+                "name": "Spiri"
+            },
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Jack Daniel's Whiskey"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Jack Daniel's Whiskey"
+                },
+                {
+                    "locale": "it",
+                    "value": "Jack Daniel's Whiskey"
+                }
+            ],
+            "footer": []
+        },
+        {
+            "id": "bffa7c0b-592a-494e-9363-8788e6100d1b",
+            "name": "Chesterfield Orange (KW 29/2020) für Werbescreens",
+            "year": 2020,
+            "week": 29,
+            "sort_index": 5600,
+            "created_on": "2020-06-15T00:11:21+0200",
+            "validity": {
+                "from": "2020-07-17",
+                "to": "2020-07-18",
                 "text": [
                     {
                         "locale": "de",
@@ -29,11 +107,11 @@
                     },
                     {
                         "locale": "fr",
-                        "value": "tbd"
+                        "value": "Valable vendredi + samedi"
                     },
                     {
                         "locale": "it",
-                        "value": "tbd"
+                        "value": "Valido venerdì + sabato"
                     }
                 ]
             },
@@ -42,16 +120,17 @@
                 "code": "WOCHENEND",
                 "name": "Wochenend-Knaller"
             },
-            "sort_index": 0,
+            "automatic": true,
+            "article_count": 8,
             "banner": {
-                "id": "011d855f-dc7f-480e-997f-341057f09d1b",
                 "images": [
                     {
                         "locale": "de",
                         "formats": [
                             {
                                 "type": "image/png",
-                                "url": "https:/denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png"
+                                "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/screen-banners/week-end_DE.png",
+                                "created_on": "2020-06-15T00:11:21+0200"
                             }
                         ]
                     },
@@ -60,7 +139,8 @@
                         "formats": [
                             {
                                 "type": "image/png",
-                                "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png"
+                                "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/screen-banners/week-end_FR.png",
+                                "created_on": "2020-06-15T00:11:21+0200"
                             }
                         ]
                     },
@@ -69,588 +149,86 @@
                         "formats": [
                             {
                                 "type": "image/png",
-                                "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png"
+                                "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/screen-banners/week-end_IT.png",
+                                "created_on": "2020-06-15T00:11:21+0200"
                             }
                         ]
                     }
                 ]
             },
             "design": {
-                "id": "007a0f50-3ab0-41e3-848d-5beae1c3ff6c",
-                "code": 3,
-                "name": "Ostern"
+                "id": "a59f84d6-f779-4075-95fe-5803aceae2f1",
+                "code": 1,
+                "name": "Standard"
             },
             "template": {
-                "id": "6e0ef2f3-0114-4b1d-9274-e5acf0c8ffba",
-                "code": 1,
-                "name": "Wochenhit"
+                "id": "weekend",
+                "code": 4,
+                "name": "WE-Knaller"
             },
-            "footer": [
+            "title": [
                 {
                     "locale": "de",
-                    "value": "maximal 5 Stangen pro Person/Einkauf"
+                    "value": "Chesterfield Orange"
                 },
                 {
                     "locale": "fr",
-                    "value": "au maximum 5 cartouches par personne/achat"
+                    "value": "Chesterfield Orange"
                 },
                 {
                     "locale": "it",
-                    "value": "tbd"
+                    "value": "Chesterfield Orange"
                 }
             ],
-            "articles": [
+            "footer": []
+        },
+        {
+            "id": "ad4a6d47-2506-41a7-9cdc-b9f81bc5b56c",
+            "name": "Argento Selección Malbec (KW 29/2020) für Werbescreens",
+            "year": 2020,
+            "week": 29,
+            "sort_index": 325,
+            "created_on": "2020-07-01T08:41:27+0200",
+            "validity": {
+                "from": "2020-07-14",
+                "to": "2020-07-20",
+                "text": []
+            },
+            "promotion_type": {
+                "id": "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
+                "code": "FLUGBLATT",
+                "name": "Dennerwoche"
+            },
+            "automatic": true,
+            "article_count": 1,
+            "design": {
+                "id": "a59f84d6-f779-4075-95fe-5803aceae2f1",
+                "code": 1,
+                "name": "Standard"
+            },
+            "template": {
+                "id": "non-tobacco",
+                "code": 6,
+                "name": "Nicht-Tabak"
+            },
+            "title": [
                 {
-                    "id": "4b2dbb18-d79b-4439-a2c6-68f187005917",
-                    "article_id": "091121",
-                    "name": "Parisienne Jaune Soft 20",
-                    "title": [
-                        {
-                            "locale": "de",
-                            "value": "Parisienne"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Parisienne"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Parisienne"
-                        }
-                    ],
-                    "description": [
-                        {
-                            "locale": "de",
-                            "value": "Jaune, Soft Pack, 10 x 20 Zigaretten"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Jaune, Soft Pack, 10 x 20 Zigaretten"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Jaune, Soft Pack, 10 x 20 Zigaretten"
-                        }
-                    ],
-                    "composite_description": [
-                        {
-                            "locale": "de",
-                            "value": "- Jaune\n- Orange\nSoft Pack,\n10 x 20 Zigaretten"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "- Jaune\n- Orange\nSoft Pack,\n10 x 20 cigarettes"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "- Jaune\n- Orange\nSoft Pack,\n10 x 20 sigarette"
-                        }
-                    ],
-                    "dots": [
-                        {
-                            "id": "d4bca729-10ad-482c-bdda-b1a1398173b5",
-                            "type": {
-                                "id": "semi_price_winehit"
-                            },
-                            "text": [
-                                {
-                                    "locale": "de",
-                                    "value": "1/2 Preis\nWeinheit!"
-                                },
-                                {
-                                    "locale": "fr",
-                                    "value": "1/2 prix\nLe top du vin!"
-                                },
-                                {
-                                    "locale": "it",
-                                    "value": "1/2 prezzo\nSuperofferta vino!"
-                                }
-                            ],
-                            "images": [
-                                {
-                                    "locale": "de",
-                                    "formats": [
-                                        {
-                                            "type": "image/png",
-                                            "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.png"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locale": "fr",
-                                    "formats": [
-                                        {
-                                            "type": "image/png",
-                                            "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.png"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locale": "it",
-                                    "formats": [
-                                        {
-                                            "type": "image/png",
-                                            "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.png"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "sales_price": "76.70",
-                    "stopper": {
-                        "id": "a5849cf6-8507-4fc3-b158-b6c5fbc9378c",
-                        "type": {
-                            "id": "save_value"
-                        },
-                        "text": [
-                            {
-                                "locale": "de",
-                                "value": "– 3.30"
-                            },
-                            {
-                                "locale": "fr",
-                                "value": "– 3.30"
-                            },
-                            {
-                                "locale": "it",
-                                "value": "– 3.30"
-                            }
-                        ]
-                    },
-                    "instead_price": [
-                        {
-                            "locale": "de",
-                            "value": "statt 80.-"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "au lieu de 80.-"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "invece di 80.-"
-                        }
-                    ],
-                    "price_info": [
-                        {
-                            "locale": "de",
-                            "value": "Konkurrenzvergleich"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Comparaison concurrentielle"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Confronto con la concorrenza"
-                        }
-                    ],
-                    "price_unit": [
-                        {
-                            "locale": "de",
-                            "value": "Pro Stange"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Par cartouche"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Per stecca"
-                        }
-                    ],
-                    "quantity": 10,
-                    "sort_index": 0,
-                    "compared": true,
-                    "article_group": {
-                        "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
-                        "code": "79-02",
-                        "name": "Zigaretten",
-                        "parent": {
-                            "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
-                            "code": "79",
-                            "name": "Rauchwaren"
-                        }
-                    },
-                    "eco_labels": [
-                        {
-                            "id": "096ec6fc-2722-4907-82ef-8694b3f38240",
-                            "name": "Suisse Garantie",
-                            "image": {
-                                "cdn_url": "https://denner.imgix.net/eco-labels/096ec6fc-2722-4907-82ef-8694b3f38240/suisse-garantie.png"
-                            }
-                        },
-                        {
-                            "id": "920795b5-3dbf-4a56-875b-76837cd4eca3",
-                            "name": "UTZ",
-                            "image": {
-                                "cdn_url": "https://denner.imgix.net/eco-labels/920795b5-3dbf-4a56-875b-76837cd4eca3/utz.png"
-                            }
-                        }
-                    ],
-                    "packshot": {
-                        "id": "5054223d-3830-4abb-a2aa-4de55250d6a4",
-                        "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5054223d-3830-4abb-a2aa-4de55250d6a4/091121.png",
-                        "cdn_url": "https://denner.imgix.net/assets/5054223d-3830-4abb-a2aa-4de55250d6a4/091121.png",
-                        "quantity": 1,
-                        "created_on": "2016-01-07T15:42:19+02:00"
-                    },
-                    "supplier": {
-                        "code": 36323
-                    },
-                    "country": {
-                        "id": "AR",
-                        "title": [
-                            {
-                                "locale": "de",
-                                "value": "Argentinien"
-                            },
-                            {
-                                "locale": "fr",
-                                "value": "l'Argentine"
-                            },
-                            {
-                                "locale": "it",
-                                "value": "Argentina"
-                            }
-                        ],
-                        "flag": {
-                            "image_url": "https://denner-assets.s3-eu-west-1.amazonaws.com/flags/AR.png"
-                        }
-                    }
+                    "locale": "de",
+                    "value": "Argento Selección Malbec"
                 },
                 {
-                    "id": "aaae6cc5-e998-470f-b2e7-a81b75308a65",
-                    "article_id": "090072",
-                    "name": "Parisienne Orange Soft 20",
-                    "parent": {
-                        "id": "4b2dbb18-d79b-4439-a2c6-68f187005917",
-                        "article_id": "091121",
-                        "name": "Parisienne Jaune Soft 20"
-                    },
-                    "title": [
-                        {
-                            "locale": "de",
-                            "value": "Parisienne"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Parisienne"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Parisienne"
-                        }
-                    ],
-                    "description": [
-                        {
-                            "locale": "de",
-                            "value": "Orange, Soft Pack, 10 x 20 Zigaretten"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Orange, Soft Pack, 10 x 20 Zigaretten"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Orange, Soft Pack, 10 x 20 Zigaretten"
-                        }
-                    ],
-                    "composite_description": [],
-                    "dots": [],
-                    "sales_price": "76.70",
-                    "stopper": {
-                        "id": "c91ec1ae-47b9-4d86-870f-232dc06fa400",
-                        "type": {
-                            "id": "save_value"
-                        },
-                        "text": [
-                            {
-                                "locale": "de",
-                                "value": "– 3.30"
-                            },
-                            {
-                                "locale": "fr",
-                                "value": "– 3.30"
-                            },
-                            {
-                                "locale": "it",
-                                "value": "– 3.30"
-                            }
-                        ]
-                    },
-                    "instead_price": [
-                        {
-                            "locale": "de",
-                            "value": "statt 80.-"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "au lieu de 80.-"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "invece di 80.-"
-                        }
-                    ],
-                    "price_info": [],
-                    "price_unit": [
-                        {
-                            "locale": "de",
-                            "value": "Pro Stange"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Par cartouche"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Per stecca"
-                        }
-                    ],
-                    "quantity": 10,
-                    "sort_index": 1,
-                    "compared": false,
-                    "article_group": {
-                        "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
-                        "code": "79-02",
-                        "name": "Zigaretten",
-                        "parent": {
-                            "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
-                            "code": "79",
-                            "name": "Rauchwaren"
-                        }
-                    },
-                    "eco_labels": [],
-                    "packshot": {
-                        "id": "bef741d6-e734-41b0-ac06-3d3fe3f4fc0e",
-                        "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png",
-                        "cdn_url": "https://denner.imgix.net/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png",
-                        "quantity": 1,
-                        "created_on": "2016-01-07T15:42:19+02:00"
-                    },
-                    "supplier": {
-                        "code": 36323
-                    }
+                    "locale": "fr",
+                    "value": "Argento Selección Malbec"
                 },
                 {
-                    "id": "92276cf5-8913-45a0-8bb7-5c67d646a24f",
-                    "article_id": "091121",
-                    "name": "Parisienne Jaune Soft 20",
-                    "title": [
-                        {
-                            "locale": "de",
-                            "value": "Parisienne"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Parisienne"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Parisienne"
-                        }
-                    ],
-                    "description": [
-                        {
-                            "locale": "de",
-                            "value": "Jaune, Soft Pack, 20 Zigaretten"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Jaune, Soft Pack, 20 Zigaretten"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Jaune, Soft Pack, 20 Zigaretten"
-                        }
-                    ],
-                    "composite_description": [
-                        {
-                            "locale": "de",
-                            "value": "- Jaune\n- Orange\nSoft Pack,\n20 Zigaretten"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "- Jaune\n- Orange\nSoft Pack,\n20 cigarettes"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "- Jaune\n- Orange\nSoft Pack,\n20 sigarette"
-                        }
-                    ],
-                    "dots": [],
-                    "sales_price": "7.90",
-                    "stopper": {
-                        "id": "591e77dc-68f3-47e5-bc92-7f2a578bc6ca",
-                        "type": {
-                            "id": "promotion"
-                        },
-                        "text": [
-                            {
-                                "locale": "de",
-                                "value": "AKTION"
-                            },
-                            {
-                                "locale": "fr",
-                                "value": "ACTION"
-                            },
-                            {
-                                "locale": "it",
-                                "value": "AZIONE"
-                            }
-                        ]
-                    },
-                    "instead_price": [
-                        {
-                            "locale": "de",
-                            "value": "statt 8.-"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "au lieu de 8.-"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "invece di 8.-"
-                        }
-                    ],
-                    "price_info": [],
-                    "price_unit": [
-                        {
-                            "locale": "de",
-                            "value": "Pro Paket"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Par paquet"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Per pacchetto"
-                        }
-                    ],
-                    "quantity": 1,
-                    "sort_index": 2,
-                    "compared": false,
-                    "article_group": {
-                        "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
-                        "code": "79-02",
-                        "name": "Zigaretten",
-                        "parent": {
-                            "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
-                            "code": "79",
-                            "name": "Rauchwaren"
-                        }
-                    },
-                    "eco_labels": [],
-                    "packshot": {
-                        "id": "5054223d-3830-4abb-a2aa-4de55250d6a4",
-                        "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5054223d-3830-4abb-a2aa-4de55250d6a4/091121.png",
-                        "cdn_url": "https://denner.imgix.net/assets/5054223d-3830-4abb-a2aa-4de55250d6a4/091121.png",
-                        "quantity": 1,
-                        "created_on": "2016-01-07T15:42:19+02:00"
-                    },
-                    "supplier": {
-                        "code": 36323
-                    }
-                },
-                {
-                    "id": "0276601e-6b4e-4c27-8215-246acfc19b2d",
-                    "article_id": "090072",
-                    "name": "Parisienne Orange Soft 20",
-                    "parent": {
-                        "id": "92276cf5-8913-45a0-8bb7-5c67d646a24f",
-                        "article_id": "091121",
-                        "name": "Parisienne Jaune Soft 20"
-                    },
-                    "title": [
-                        {
-                            "locale": "de",
-                            "value": "Parisienne"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Parisienne"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Parisienne"
-                        }
-                    ],
-                    "description": [
-                        {
-                            "locale": "de",
-                            "value": "Orange, Soft Pack, 20 Zigaretten"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Orange, Soft Pack, 20 Zigaretten"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Orange, Soft Pack, 20 Zigaretten"
-                        }
-                    ],
-                    "composite_description": [],
-                    "dots": [],
-                    "sales_price": "7.90",
-                    "instead_price": [
-                        {
-                            "locale": "de",
-                            "value": "statt 8.-"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "au lieu de 8.-"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "invece di 8.-"
-                        }
-                    ],
-                    "price_info": [],
-                    "price_unit": [
-                        {
-                            "locale": "de",
-                            "value": "Pro Paket"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Par paquet"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Per pacchetto"
-                        }
-                    ],
-                    "quantity": 1,
-                    "sort_index": 3,
-                    "compared": false,
-                    "article_group": {
-                        "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
-                        "code": "79-02",
-                        "name": "Zigaretten",
-                        "parent": {
-                            "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
-                            "code": "79",
-                            "name": "Rauchwaren"
-                        }
-                    },
-                    "eco_labels": [],
-                    "packshot": {
-                        "id": "bef741d6-e734-41b0-ac06-3d3fe3f4fc0e",
-                        "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png",
-                        "cdn_url": "https://denner.imgix.net/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png",
-                        "quantity": 1,
-                        "created_on": "2016-01-07T15:42:19+02:00"
-                    },
-                    "supplier": {
-                        "code": 36323
-                    }
+                    "locale": "it",
+                    "value": "Argento Selección Malbec"
                 }
-            ]
+            ],
+            "footer": []
         }
-    ]
+    ],
+    "page_count": 1,
+    "page_size": 10,
+    "total_items": 4
 }

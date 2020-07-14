@@ -1,0 +1,1441 @@
+{
+    "id": "372bd590-1781-4905-beb4-5eeaeee6cf19",
+    "name": "Parisienne Limited Edition Jaune (KW 29/2020) für Werbescreens",
+    "year": 2020,
+    "week": 29,
+    "sort_index": 250,
+    "created_on": "2020-06-15T00:11:21+0200",
+    "validity": {
+        "from": "2020-07-14",
+        "to": "2020-07-20",
+        "text": []
+    },
+    "promotion_type": {
+        "id": "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
+        "code": "FLUGBLATT",
+        "name": "Dennerwoche"
+    },
+    "articles": [
+        {
+            "id": "d62a78d1-520a-47cb-875c-e147c4b55499",
+            "sort_index": 1,
+            "article_id": "098000",
+            "advertised_article_id": "6c1911ac-05c3-417b-8f27-09a0a43ae38f",
+            "quantity": 1,
+            "advertised_quantity": 1,
+            "name": "Parisienne Jaune Box LEP 20",
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Parisienne Limited Edition",
+                    "changed_on": "2020-06-02T08:00:31+0200",
+                    "changed_by": "Annina Berweger"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Parisienne Limited Edition",
+                    "changed_on": "2020-06-02T08:00:31+0200",
+                    "changed_by": "Annina Berweger"
+                },
+                {
+                    "locale": "it",
+                    "value": "Parisienne Limited Edition",
+                    "changed_on": "2020-06-02T08:00:31+0200",
+                    "changed_by": "Annina Berweger"
+                }
+            ],
+            "description": [
+                {
+                    "locale": "de",
+                    "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 20 Zigaretten",
+                    "changed_on": "2020-06-02T08:00:31+0200",
+                    "changed_by": "Annina Berweger"
+                },
+                {
+                    "locale": "fr",
+                    "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 20 cigarettes",
+                    "changed_on": "2020-06-02T08:00:31+0200",
+                    "changed_by": "Annina Berweger"
+                },
+                {
+                    "locale": "it",
+                    "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 20 sigarette",
+                    "changed_on": "2020-06-02T08:00:31+0200",
+                    "changed_by": "Annina Berweger"
+                }
+            ],
+            "composite_info": {
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Parisienne Limited Edition",
+                        "changed_on": "2020-06-02T08:00:31+0200",
+                        "changed_by": "Annina Berweger"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "Parisienne Limited Edition",
+                        "changed_on": "2020-06-02T08:00:31+0200",
+                        "changed_by": "Annina Berweger"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "Parisienne Limited Edition",
+                        "changed_on": "2020-06-02T08:00:31+0200",
+                        "changed_by": "Annina Berweger"
+                    }
+                ],
+                "description": [
+                    {
+                        "locale": "de",
+                        "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 20 Zigaretten",
+                        "changed_on": "2020-06-02T08:00:31+0200",
+                        "changed_by": "Annina Berweger"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 20 cigarettes",
+                        "changed_on": "2020-06-02T08:00:31+0200",
+                        "changed_by": "Annina Berweger"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 20 sigarette",
+                        "changed_on": "2020-06-02T08:00:31+0200",
+                        "changed_by": "Annina Berweger"
+                    }
+                ]
+            },
+            "eco_labels": [],
+            "dots": [],
+            "sales_price": "7.–",
+            "stopper": {
+                "id": "c36a0cc5-e7a2-4909-9e17-cd5bfca94c21",
+                "type": {
+                    "id": "promotion"
+                },
+                "markup_text": [
+                    {
+                        "locale": "de",
+                        "value": "AKTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "ACTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "AZIONE",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "AKTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "ACTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "AZIONE",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "images": []
+            },
+            "instead_price": [
+                {
+                    "locale": "de",
+                    "value": "statt 8.–"
+                },
+                {
+                    "locale": "fr",
+                    "value": "au lieu de 8.–"
+                },
+                {
+                    "locale": "it",
+                    "value": "invece di 8.–"
+                }
+            ],
+            "price_info": [
+                {
+                    "locale": "de",
+                    "value": "Konkurrenzvergleich"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Comparaison concurrentielle"
+                },
+                {
+                    "locale": "it",
+                    "value": "Confronto con la concorrenza"
+                }
+            ],
+            "price_unit": [
+                {
+                    "locale": "de",
+                    "value": "Pro Packung"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Par paquet"
+                },
+                {
+                    "locale": "it",
+                    "value": "Per pacchetto"
+                }
+            ],
+            "promotion_info": [],
+            "compared": true,
+            "article_group": {
+                "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
+                "code": "79-02",
+                "name": "Zigaretten",
+                "parent": {
+                    "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
+                    "code": "79",
+                    "name": "Rauchwaren"
+                }
+            },
+            "packshot": {
+                "id": "e9297375-8ac5-4af3-9caa-f9aa5e023586",
+                "quantity": 1,
+                "url": "https://denner-assets.s3.amazonaws.com/assets/e9297375-8ac5-4af3-9caa-f9aa5e023586/web/098000_9_c_K.png",
+                "image_url": "https://denner-assets.s3.amazonaws.com/assets/e9297375-8ac5-4af3-9caa-f9aa5e023586/web/098000_9_c_K.png",
+                "preview_url": "https://denner-assets.s3.amazonaws.com/assets/e9297375-8ac5-4af3-9caa-f9aa5e023586/web/098000_9_c_K.png?version=1",
+                "cdn_url": "https://denner.imgix.net/assets/e9297375-8ac5-4af3-9caa-f9aa5e023586/web/098000_9_c_K.png",
+                "archived": false,
+                "auto_assigned": false,
+                "created_on": "2020-05-22T17:19:16+0200",
+                "view": {
+                    "id": "front"
+                }
+            },
+            "supplier": {
+                "code": 31770
+            }
+        },
+        {
+            "id": "2d553701-a1ea-4848-8d26-808e4389ed17",
+            "sort_index": 5,
+            "article_id": "090392",
+            "advertised_article_id": "a5b7eb20-4159-475f-95c9-ce21c36a4e6b",
+            "quantity": 1,
+            "advertised_quantity": 1,
+            "name": "Parisienne OHNE Orange LEP 20",
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Parisienne Limited Edition Orange Ohne",
+                    "changed_on": "2019-09-10T09:58:14+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Parisienne Limited Edition Orange Sans",
+                    "changed_on": "2019-10-02T13:26:30+0200",
+                    "changed_by": "Lea Binetti"
+                },
+                {
+                    "locale": "it",
+                    "value": "Parisienne Limited Edition Orange Senza",
+                    "changed_on": "2019-09-16T09:05:00+0200",
+                    "changed_by": "Cheryl Müller"
+                }
+            ],
+            "description": [
+                {
+                    "locale": "de",
+                    "value": "Box, 20 Zigaretten",
+                    "changed_on": "2019-09-10T10:00:44+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Box, 20 cigarettes",
+                    "changed_on": "2019-09-10T10:00:44+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "it",
+                    "value": "Box, 20 sigarette",
+                    "changed_on": "2019-09-10T10:00:44+0200",
+                    "changed_by": "Cheryl Müller"
+                }
+            ],
+            "eco_labels": [],
+            "dots": [],
+            "sales_price": "7.–",
+            "stopper": {
+                "id": "e871dd7a-4204-4845-b978-48586d55b480",
+                "type": {
+                    "id": "promotion"
+                },
+                "markup_text": [
+                    {
+                        "locale": "de",
+                        "value": "AKTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "ACTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "AZIONE",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "AKTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "ACTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "AZIONE",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "images": []
+            },
+            "instead_price": [
+                {
+                    "locale": "de",
+                    "value": "statt 8.–"
+                },
+                {
+                    "locale": "fr",
+                    "value": "au lieu de 8.–"
+                },
+                {
+                    "locale": "it",
+                    "value": "invece di 8.–"
+                }
+            ],
+            "price_info": [
+                {
+                    "locale": "de",
+                    "value": "Konkurrenzvergleich"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Comparaison concurrentielle"
+                },
+                {
+                    "locale": "it",
+                    "value": "Confronto con la concorrenza"
+                }
+            ],
+            "price_unit": [
+                {
+                    "locale": "de",
+                    "value": "Pro Packung"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Par paquet"
+                },
+                {
+                    "locale": "it",
+                    "value": "Per pacchetto"
+                }
+            ],
+            "promotion_info": [],
+            "compared": true,
+            "article_group": {
+                "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
+                "code": "79-02",
+                "name": "Zigaretten",
+                "parent": {
+                    "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
+                    "code": "79",
+                    "name": "Rauchwaren"
+                }
+            },
+            "packshot": {
+                "id": "18787f78-f88f-437c-90da-dea98f5cb650",
+                "quantity": 1,
+                "url": "https://denner-assets.s3.amazonaws.com/assets/18787f78-f88f-437c-90da-dea98f5cb650/web/090392_3_c_K.png",
+                "image_url": "https://denner-assets.s3.amazonaws.com/assets/18787f78-f88f-437c-90da-dea98f5cb650/web/090392_3_c_K.png",
+                "preview_url": "https://denner-assets.s3.amazonaws.com/assets/18787f78-f88f-437c-90da-dea98f5cb650/web/090392_3_c_K.png?version=1",
+                "cdn_url": "https://denner.imgix.net/assets/18787f78-f88f-437c-90da-dea98f5cb650/web/090392_3_c_K.png",
+                "archived": false,
+                "auto_assigned": true,
+                "created_on": "2020-05-22T17:19:15+0200",
+                "view": {
+                    "id": "front"
+                }
+            },
+            "supplier": {
+                "code": 31770
+            }
+        },
+        {
+            "id": "1a2dea4d-1054-472e-ac55-cb6525aac8e8",
+            "sort_index": 7,
+            "article_id": "090393",
+            "advertised_article_id": "6a6d5477-236d-430f-8c4f-1d5f4a5ba50e",
+            "quantity": 1,
+            "advertised_quantity": 1,
+            "name": "Parisienne OHNE Verte LEP 20",
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Parisienne Limited Edition Verte Ohne",
+                    "changed_on": "2019-09-10T09:59:04+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Parisienne Limited Edition Verte Sans",
+                    "changed_on": "2019-10-02T13:26:44+0200",
+                    "changed_by": "Lea Binetti"
+                },
+                {
+                    "locale": "it",
+                    "value": "Parisienne Limited Edition Verte Senza",
+                    "changed_on": "2019-09-16T09:05:00+0200",
+                    "changed_by": "Cheryl Müller"
+                }
+            ],
+            "description": [
+                {
+                    "locale": "de",
+                    "value": "Box, 20 Zigaretten",
+                    "changed_on": "2019-09-10T10:01:53+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Box, 20 cigarettes",
+                    "changed_on": "2019-09-10T10:01:53+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "it",
+                    "value": "Box, 20 sigarette",
+                    "changed_on": "2019-09-10T10:01:53+0200",
+                    "changed_by": "Cheryl Müller"
+                }
+            ],
+            "eco_labels": [],
+            "dots": [],
+            "sales_price": "7.–",
+            "stopper": {
+                "id": "d8564a9f-e7c7-479b-a049-4d8ccde37233",
+                "type": {
+                    "id": "promotion"
+                },
+                "markup_text": [
+                    {
+                        "locale": "de",
+                        "value": "AKTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "ACTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "AZIONE",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "AKTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "ACTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "AZIONE",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "images": []
+            },
+            "instead_price": [
+                {
+                    "locale": "de",
+                    "value": "statt 8.–"
+                },
+                {
+                    "locale": "fr",
+                    "value": "au lieu de 8.–"
+                },
+                {
+                    "locale": "it",
+                    "value": "invece di 8.–"
+                }
+            ],
+            "price_info": [
+                {
+                    "locale": "de",
+                    "value": "Konkurrenzvergleich"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Comparaison concurrentielle"
+                },
+                {
+                    "locale": "it",
+                    "value": "Confronto con la concorrenza"
+                }
+            ],
+            "price_unit": [
+                {
+                    "locale": "de",
+                    "value": "Pro Packung"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Par paquet"
+                },
+                {
+                    "locale": "it",
+                    "value": "Per pacchetto"
+                }
+            ],
+            "promotion_info": [],
+            "compared": true,
+            "article_group": {
+                "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
+                "code": "79-02",
+                "name": "Zigaretten",
+                "parent": {
+                    "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
+                    "code": "79",
+                    "name": "Rauchwaren"
+                }
+            },
+            "packshot": {
+                "id": "17c81f69-3d45-46e9-91d3-cd9b124adede",
+                "quantity": 1,
+                "url": "https://denner-assets.s3.amazonaws.com/assets/17c81f69-3d45-46e9-91d3-cd9b124adede/web/090393_3_c_K.png",
+                "image_url": "https://denner-assets.s3.amazonaws.com/assets/17c81f69-3d45-46e9-91d3-cd9b124adede/web/090393_3_c_K.png",
+                "preview_url": "https://denner-assets.s3.amazonaws.com/assets/17c81f69-3d45-46e9-91d3-cd9b124adede/web/090393_3_c_K.png?version=1",
+                "cdn_url": "https://denner.imgix.net/assets/17c81f69-3d45-46e9-91d3-cd9b124adede/web/090393_3_c_K.png",
+                "archived": false,
+                "auto_assigned": true,
+                "created_on": "2020-05-22T17:19:15+0200",
+                "view": {
+                    "id": "front"
+                }
+            },
+            "supplier": {
+                "code": 31770
+            }
+        },
+        {
+            "id": "90d6f99e-9a9a-4d1d-85bd-df6b1a8b880e",
+            "sort_index": 3,
+            "article_id": "098001",
+            "advertised_article_id": "46c453bb-6bea-4566-949e-23667b2cc0f6",
+            "quantity": 1,
+            "advertised_quantity": 1,
+            "name": "Parisienne Blonde Box LEP 20",
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Parisienne Limited Edition Blonde",
+                    "changed_on": "2019-09-26T09:31:08+0200",
+                    "changed_by": "Lea Binetti"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Parisienne Limited Edition Blonde",
+                    "changed_on": "2019-09-26T09:31:08+0200",
+                    "changed_by": "Lea Binetti"
+                },
+                {
+                    "locale": "it",
+                    "value": "Parisienne Limited Edition Blonde",
+                    "changed_on": "2019-09-26T09:31:08+0200",
+                    "changed_by": "Lea Binetti"
+                }
+            ],
+            "description": [
+                {
+                    "locale": "de",
+                    "value": "Box, 20 Zigaretten",
+                    "changed_on": "2018-08-22T10:24:13+0200",
+                    "changed_by": "Annina Berweger"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Box, 20 cigarettes",
+                    "changed_on": "2018-08-22T10:24:13+0200",
+                    "changed_by": "Annina Berweger"
+                },
+                {
+                    "locale": "it",
+                    "value": "Box, 20 sigarette",
+                    "changed_on": "2018-08-22T10:24:13+0200",
+                    "changed_by": "Annina Berweger"
+                }
+            ],
+            "eco_labels": [],
+            "dots": [],
+            "sales_price": "7.–",
+            "stopper": {
+                "id": "dd1b56ae-f9f0-4564-a54e-6b62404d24ef",
+                "type": {
+                    "id": "promotion"
+                },
+                "markup_text": [
+                    {
+                        "locale": "de",
+                        "value": "AKTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "ACTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "AZIONE",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "AKTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "ACTION",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "AZIONE",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "images": []
+            },
+            "instead_price": [
+                {
+                    "locale": "de",
+                    "value": "statt 8.–"
+                },
+                {
+                    "locale": "fr",
+                    "value": "au lieu de 8.–"
+                },
+                {
+                    "locale": "it",
+                    "value": "invece di 8.–"
+                }
+            ],
+            "price_info": [
+                {
+                    "locale": "de",
+                    "value": "Konkurrenzvergleich"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Comparaison concurrentielle"
+                },
+                {
+                    "locale": "it",
+                    "value": "Confronto con la concorrenza"
+                }
+            ],
+            "price_unit": [
+                {
+                    "locale": "de",
+                    "value": "Pro Packung"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Par paquet"
+                },
+                {
+                    "locale": "it",
+                    "value": "Per pacchetto"
+                }
+            ],
+            "promotion_info": [],
+            "compared": true,
+            "article_group": {
+                "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
+                "code": "79-02",
+                "name": "Zigaretten",
+                "parent": {
+                    "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
+                    "code": "79",
+                    "name": "Rauchwaren"
+                }
+            },
+            "packshot": {
+                "id": "f19771e8-2aac-47f2-8347-00031e9c576d",
+                "quantity": 1,
+                "url": "https://denner-assets.s3.amazonaws.com/assets/f19771e8-2aac-47f2-8347-00031e9c576d/web/098001_9_c_K.png",
+                "image_url": "https://denner-assets.s3.amazonaws.com/assets/f19771e8-2aac-47f2-8347-00031e9c576d/web/098001_9_c_K.png",
+                "preview_url": "https://denner-assets.s3.amazonaws.com/assets/f19771e8-2aac-47f2-8347-00031e9c576d/web/098001_9_c_K.png?version=1",
+                "cdn_url": "https://denner.imgix.net/assets/f19771e8-2aac-47f2-8347-00031e9c576d/web/098001_9_c_K.png",
+                "archived": false,
+                "auto_assigned": false,
+                "created_on": "2020-05-22T17:19:16+0200",
+                "view": {
+                    "id": "front"
+                }
+            },
+            "supplier": {
+                "code": 31770
+            }
+        },
+        {
+            "id": "a49ab603-d6a1-44e5-9c86-e9cffd204fe3",
+            "sort_index": 0,
+            "article_id": "098000",
+            "advertised_article_id": "66008d35-e331-43db-bdd2-d6110d550c59",
+            "quantity": 10,
+            "advertised_quantity": 10,
+            "name": "Parisienne Jaune Box LEP 20",
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Parisienne Limited Edition",
+                    "changed_on": "2020-06-02T08:00:07+0200",
+                    "changed_by": "Annina Berweger"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Parisienne Limited Edition",
+                    "changed_on": "2020-06-02T08:00:07+0200",
+                    "changed_by": "Annina Berweger"
+                },
+                {
+                    "locale": "it",
+                    "value": "Parisienne Limited Edition",
+                    "changed_on": "2020-06-02T08:00:07+0200",
+                    "changed_by": "Annina Berweger"
+                }
+            ],
+            "description": [
+                {
+                    "locale": "de",
+                    "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 10 x 20 Zigaretten",
+                    "changed_on": "2019-09-26T09:31:08+0200",
+                    "changed_by": "Lea Binetti"
+                },
+                {
+                    "locale": "fr",
+                    "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 10 x 20 cigarettes",
+                    "changed_on": "2019-09-26T09:31:08+0200",
+                    "changed_by": "Lea Binetti"
+                },
+                {
+                    "locale": "it",
+                    "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 10 x 20 sigarette",
+                    "changed_on": "2019-09-26T09:31:08+0200",
+                    "changed_by": "Lea Binetti"
+                }
+            ],
+            "composite_info": {
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Parisienne Limited Edition",
+                        "changed_on": "2020-06-02T08:00:07+0200",
+                        "changed_by": "Annina Berweger"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "Parisienne Limited Edition",
+                        "changed_on": "2020-06-02T08:00:07+0200",
+                        "changed_by": "Annina Berweger"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "Parisienne Limited Edition",
+                        "changed_on": "2020-06-02T08:00:07+0200",
+                        "changed_by": "Annina Berweger"
+                    }
+                ],
+                "description": [
+                    {
+                        "locale": "de",
+                        "value": "- Jaune\n- Blonde\n- Orange Ohne\n- Verte Ohne\nBox, 10 x 20 Zigaretten",
+                        "changed_on": "2019-09-26T09:31:08+0200",
+                        "changed_by": "Lea Binetti"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "- Jaune\n- Blonde\n- Orange Sans\n- Verte Sans\nBox, 10 x 20 cigarettes",
+                        "changed_on": "2019-09-26T09:31:08+0200",
+                        "changed_by": "Lea Binetti"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "- Jaune\n- Blonde\n- Orange Senza\n- Verte Senza\nBox, 10 x 20 sigarette",
+                        "changed_on": "2019-09-26T09:31:08+0200",
+                        "changed_by": "Lea Binetti"
+                    }
+                ]
+            },
+            "eco_labels": [],
+            "dots": [],
+            "sales_price": "70.–",
+            "stopper": {
+                "id": "fe2bccd3-8ff4-49df-9f98-402e75ea2e2d",
+                "type": {
+                    "id": "save_value"
+                },
+                "markup_text": [
+                    {
+                        "locale": "de",
+                        "value": "– 10 Fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "– 10 Fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "images": []
+            },
+            "instead_price": [
+                {
+                    "locale": "de",
+                    "value": "statt 80.–"
+                },
+                {
+                    "locale": "fr",
+                    "value": "au lieu de 80.–"
+                },
+                {
+                    "locale": "it",
+                    "value": "invece di 80.–"
+                }
+            ],
+            "price_info": [
+                {
+                    "locale": "de",
+                    "value": "Konkurrenzvergleich"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Comparaison concurrentielle"
+                },
+                {
+                    "locale": "it",
+                    "value": "Confronto con la concorrenza"
+                }
+            ],
+            "price_unit": [
+                {
+                    "locale": "de",
+                    "value": "Pro Stange"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Par cartouche"
+                },
+                {
+                    "locale": "it",
+                    "value": "Per stecca"
+                }
+            ],
+            "promotion_info": [],
+            "compared": true,
+            "article_group": {
+                "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
+                "code": "79-02",
+                "name": "Zigaretten",
+                "parent": {
+                    "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
+                    "code": "79",
+                    "name": "Rauchwaren"
+                }
+            },
+            "packshot": {
+                "id": "8eeb5a82-ee31-418a-a41c-55df0976853f",
+                "quantity": 1,
+                "url": "https://denner-assets.s3.amazonaws.com/assets/8eeb5a82-ee31-418a-a41c-55df0976853f/web/098000_8_c_K.png",
+                "image_url": "https://denner-assets.s3.amazonaws.com/assets/8eeb5a82-ee31-418a-a41c-55df0976853f/web/098000_8_c_K.png",
+                "preview_url": "https://denner-assets.s3.amazonaws.com/assets/8eeb5a82-ee31-418a-a41c-55df0976853f/web/098000_8_c_K.png?version=1",
+                "cdn_url": "https://denner.imgix.net/assets/8eeb5a82-ee31-418a-a41c-55df0976853f/web/098000_8_c_K.png",
+                "archived": false,
+                "auto_assigned": false,
+                "created_on": "2020-05-22T17:19:16+0200",
+                "view": {
+                    "id": "front"
+                }
+            },
+            "supplier": {
+                "code": 31770
+            }
+        },
+        {
+            "id": "4868b9f1-53b3-4c2d-a395-af3dbce5ce76",
+            "sort_index": 4,
+            "article_id": "090392",
+            "advertised_article_id": "81455753-e25c-482f-8b11-29098c32b6c9",
+            "quantity": 10,
+            "advertised_quantity": 10,
+            "name": "Parisienne OHNE Orange LEP 20",
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Parisienne Limited Edition Orange Ohne",
+                    "changed_on": "2019-09-10T09:58:14+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Parisienne Limited Edition Orange Sans",
+                    "changed_on": "2019-10-02T13:26:30+0200",
+                    "changed_by": "Lea Binetti"
+                },
+                {
+                    "locale": "it",
+                    "value": "Parisienne Limited Edition Orange Senza",
+                    "changed_on": "2019-09-16T09:05:00+0200",
+                    "changed_by": "Cheryl Müller"
+                }
+            ],
+            "description": [
+                {
+                    "locale": "de",
+                    "value": "Box, 10 x 20 Zigaretten",
+                    "changed_on": "2019-09-10T09:58:36+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Box, 10 x 20 cigarettes",
+                    "changed_on": "2019-09-10T10:00:44+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "it",
+                    "value": "Box, 10 x 20 sigarette",
+                    "changed_on": "2019-09-10T10:00:44+0200",
+                    "changed_by": "Cheryl Müller"
+                }
+            ],
+            "eco_labels": [],
+            "dots": [],
+            "sales_price": "70.–",
+            "stopper": {
+                "id": "f78f02d8-df36-493d-9f35-931dd4711147",
+                "type": {
+                    "id": "save_value"
+                },
+                "markup_text": [
+                    {
+                        "locale": "de",
+                        "value": "– 10 Fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "– 10 Fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "images": []
+            },
+            "instead_price": [
+                {
+                    "locale": "de",
+                    "value": "statt 80.–"
+                },
+                {
+                    "locale": "fr",
+                    "value": "au lieu de 80.–"
+                },
+                {
+                    "locale": "it",
+                    "value": "invece di 80.–"
+                }
+            ],
+            "price_info": [
+                {
+                    "locale": "de",
+                    "value": "Konkurrenzvergleich"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Comparaison concurrentielle"
+                },
+                {
+                    "locale": "it",
+                    "value": "Confronto con la concorrenza"
+                }
+            ],
+            "price_unit": [
+                {
+                    "locale": "de",
+                    "value": "Pro Stange"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Par cartouche"
+                },
+                {
+                    "locale": "it",
+                    "value": "Per stecca"
+                }
+            ],
+            "promotion_info": [],
+            "compared": true,
+            "article_group": {
+                "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
+                "code": "79-02",
+                "name": "Zigaretten",
+                "parent": {
+                    "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
+                    "code": "79",
+                    "name": "Rauchwaren"
+                }
+            },
+            "packshot": {
+                "id": "f8d6bccf-7650-40cb-b91a-ec40c9cae67b",
+                "quantity": 1,
+                "url": "https://denner-assets.s3.amazonaws.com/assets/f8d6bccf-7650-40cb-b91a-ec40c9cae67b/web/090221_2_c_K.png",
+                "image_url": "https://denner-assets.s3.amazonaws.com/assets/f8d6bccf-7650-40cb-b91a-ec40c9cae67b/web/090221_2_c_K.png",
+                "preview_url": "https://denner-assets.s3.amazonaws.com/assets/f8d6bccf-7650-40cb-b91a-ec40c9cae67b/web/090221_2_c_K.png?version=1",
+                "cdn_url": "https://denner.imgix.net/assets/f8d6bccf-7650-40cb-b91a-ec40c9cae67b/web/090221_2_c_K.png",
+                "archived": false,
+                "auto_assigned": false,
+                "created_on": "2017-07-17T10:18:52+0200",
+                "view": {
+                    "id": "front"
+                }
+            },
+            "supplier": {
+                "code": 31770
+            }
+        },
+        {
+            "id": "0f27ce16-c5f4-4050-8ecd-e3797239b160",
+            "sort_index": 6,
+            "article_id": "090393",
+            "advertised_article_id": "07734cc6-257d-43da-bcbf-e21701a827e1",
+            "quantity": 10,
+            "advertised_quantity": 10,
+            "name": "Parisienne OHNE Verte LEP 20",
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Parisienne Limited Edition Verte Ohne",
+                    "changed_on": "2019-09-10T09:59:04+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Parisienne Limited Edition Verte Sans",
+                    "changed_on": "2019-10-02T13:26:44+0200",
+                    "changed_by": "Lea Binetti"
+                },
+                {
+                    "locale": "it",
+                    "value": "Parisienne Limited Edition Verte Senza",
+                    "changed_on": "2019-09-16T09:05:00+0200",
+                    "changed_by": "Cheryl Müller"
+                }
+            ],
+            "description": [
+                {
+                    "locale": "de",
+                    "value": "Box, 10 x 20 Zigaretten",
+                    "changed_on": "2019-09-10T09:58:47+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Box, 10 x 20 cigarettes",
+                    "changed_on": "2019-09-10T10:01:25+0200",
+                    "changed_by": "Cheryl Müller"
+                },
+                {
+                    "locale": "it",
+                    "value": "Box, 10 x 20 sigarette",
+                    "changed_on": "2019-09-10T10:01:25+0200",
+                    "changed_by": "Cheryl Müller"
+                }
+            ],
+            "eco_labels": [],
+            "dots": [],
+            "sales_price": "70.–",
+            "stopper": {
+                "id": "601a67bb-b786-4b2b-a918-941e9649979a",
+                "type": {
+                    "id": "save_value"
+                },
+                "markup_text": [
+                    {
+                        "locale": "de",
+                        "value": "– 10 Fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "– 10 Fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "images": []
+            },
+            "instead_price": [
+                {
+                    "locale": "de",
+                    "value": "statt 80.–"
+                },
+                {
+                    "locale": "fr",
+                    "value": "au lieu de 80.–"
+                },
+                {
+                    "locale": "it",
+                    "value": "invece di 80.–"
+                }
+            ],
+            "price_info": [
+                {
+                    "locale": "de",
+                    "value": "Konkurrenzvergleich"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Comparaison concurrentielle"
+                },
+                {
+                    "locale": "it",
+                    "value": "Confronto con la concorrenza"
+                }
+            ],
+            "price_unit": [
+                {
+                    "locale": "de",
+                    "value": "Pro Stange"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Par cartouche"
+                },
+                {
+                    "locale": "it",
+                    "value": "Per stecca"
+                }
+            ],
+            "promotion_info": [],
+            "compared": true,
+            "article_group": {
+                "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
+                "code": "79-02",
+                "name": "Zigaretten",
+                "parent": {
+                    "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
+                    "code": "79",
+                    "name": "Rauchwaren"
+                }
+            },
+            "packshot": {
+                "id": "7a6bb759-f6d8-4574-849a-676650078eee",
+                "quantity": 1,
+                "url": "https://denner-assets.s3.amazonaws.com/assets/7a6bb759-f6d8-4574-849a-676650078eee/web/090220_2_c_K.png",
+                "image_url": "https://denner-assets.s3.amazonaws.com/assets/7a6bb759-f6d8-4574-849a-676650078eee/web/090220_2_c_K.png",
+                "preview_url": "https://denner-assets.s3.amazonaws.com/assets/7a6bb759-f6d8-4574-849a-676650078eee/web/090220_2_c_K.png?version=1",
+                "cdn_url": "https://denner.imgix.net/assets/7a6bb759-f6d8-4574-849a-676650078eee/web/090220_2_c_K.png",
+                "archived": false,
+                "auto_assigned": false,
+                "created_on": "2017-07-17T10:18:42+0200",
+                "view": {
+                    "id": "front"
+                }
+            },
+            "supplier": {
+                "code": 31770
+            }
+        },
+        {
+            "id": "ee8d736e-c74b-47cd-86e0-beb411725b6d",
+            "sort_index": 2,
+            "article_id": "098001",
+            "advertised_article_id": "b6837cf8-8b99-4c25-99c5-6d9e1becb63b",
+            "quantity": 10,
+            "advertised_quantity": 10,
+            "name": "Parisienne Blonde Box LEP 20",
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Parisienne Limited Edition Blonde",
+                    "changed_on": "2019-09-26T09:31:08+0200",
+                    "changed_by": "Lea Binetti"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Parisienne Limited Edition Blonde",
+                    "changed_on": "2019-09-26T09:31:08+0200",
+                    "changed_by": "Lea Binetti"
+                },
+                {
+                    "locale": "it",
+                    "value": "Parisienne Limited Edition Blonde",
+                    "changed_on": "2019-09-26T09:31:08+0200",
+                    "changed_by": "Lea Binetti"
+                }
+            ],
+            "description": [
+                {
+                    "locale": "de",
+                    "value": "Box, 10 x 20 Zigaretten",
+                    "changed_on": "2018-08-22T10:24:13+0200",
+                    "changed_by": "Annina Berweger"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Box, 10 x 20 cigarettes",
+                    "changed_on": "2018-08-22T10:24:13+0200",
+                    "changed_by": "Annina Berweger"
+                },
+                {
+                    "locale": "it",
+                    "value": "Box, 10 x 20 sigarette",
+                    "changed_on": "2018-08-22T10:24:13+0200",
+                    "changed_by": "Annina Berweger"
+                }
+            ],
+            "eco_labels": [],
+            "dots": [],
+            "sales_price": "70.–",
+            "stopper": {
+                "id": "ba5286cd-346c-493c-89bf-c48206b62c50",
+                "type": {
+                    "id": "save_value"
+                },
+                "markup_text": [
+                    {
+                        "locale": "de",
+                        "value": "– 10 Fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "– 10 Fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "– 10 fr.",
+                        "created_on": "2020-07-14T15:11:17+0200"
+                    }
+                ],
+                "images": []
+            },
+            "instead_price": [
+                {
+                    "locale": "de",
+                    "value": "statt 80.–"
+                },
+                {
+                    "locale": "fr",
+                    "value": "au lieu de 80.–"
+                },
+                {
+                    "locale": "it",
+                    "value": "invece di 80.–"
+                }
+            ],
+            "price_info": [
+                {
+                    "locale": "de",
+                    "value": "Konkurrenzvergleich"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Comparaison concurrentielle"
+                },
+                {
+                    "locale": "it",
+                    "value": "Confronto con la concorrenza"
+                }
+            ],
+            "price_unit": [
+                {
+                    "locale": "de",
+                    "value": "Pro Stange"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Par cartouche"
+                },
+                {
+                    "locale": "it",
+                    "value": "Per stecca"
+                }
+            ],
+            "promotion_info": [],
+            "compared": true,
+            "article_group": {
+                "id": "163e8f02-105b-494e-8ba3-73ed9007eef3",
+                "code": "79-02",
+                "name": "Zigaretten",
+                "parent": {
+                    "id": "548c44b8-8f7d-4c08-8b41-4a2a65432861",
+                    "code": "79",
+                    "name": "Rauchwaren"
+                }
+            },
+            "packshot": {
+                "id": "68c5bffe-c66b-4071-8836-4ef8c5348b59",
+                "quantity": 1,
+                "url": "https://denner-assets.s3.amazonaws.com/assets/68c5bffe-c66b-4071-8836-4ef8c5348b59/web/098001_8_c_K.png",
+                "image_url": "https://denner-assets.s3.amazonaws.com/assets/68c5bffe-c66b-4071-8836-4ef8c5348b59/web/098001_8_c_K.png",
+                "preview_url": "https://denner-assets.s3.amazonaws.com/assets/68c5bffe-c66b-4071-8836-4ef8c5348b59/web/098001_8_c_K.png?version=1",
+                "cdn_url": "https://denner.imgix.net/assets/68c5bffe-c66b-4071-8836-4ef8c5348b59/web/098001_8_c_K.png",
+                "archived": false,
+                "auto_assigned": false,
+                "created_on": "2020-05-22T17:19:16+0200",
+                "view": {
+                    "id": "front"
+                }
+            },
+            "supplier": {
+                "code": 31770
+            }
+        }
+    ],
+    "design": {
+        "id": "a59f84d6-f779-4075-95fe-5803aceae2f1",
+        "code": 1,
+        "name": "Standard"
+    },
+    "template": {
+        "id": "week-hit",
+        "code": 1,
+        "name": "Wo-Hit"
+    },
+    "title": [
+        {
+            "locale": "de",
+            "value": "Parisienne Limited Edition Jaune"
+        },
+        {
+            "locale": "fr",
+            "value": "Parisienne Limited Edition Jaune"
+        },
+        {
+            "locale": "it",
+            "value": "Parisienne Limited Edition Jaune"
+        }
+    ],
+    "footer": []
+}
