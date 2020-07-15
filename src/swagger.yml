@@ -2541,9 +2541,11 @@ paths:
                     name: Dennerwoche
                   automatic: true
                   article_count: 8
-                  screen:
-                    id: tobacco
-                    name: Tabak
+                  screens:
+                    - id: tobacco
+                      name: Tabak
+                    - id: pos
+                      name: POS
                   design:
                     id: a59f84d6-f779-4075-95fe-5803aceae2f1
                     code: 1
@@ -2576,9 +2578,9 @@ paths:
                     name: Dennerwoche
                   automatic: true
                   article_count: 1
-                  screen:
-                    id: tobacco
-                    name: Tabak
+                  screens:
+                    - id: tobacco
+                      name: Tabak
                   design:
                     id: a59f84d6-f779-4075-95fe-5803aceae2f1
                     code: 1
@@ -2634,9 +2636,9 @@ paths:
                           - type: image/png
                             url: https://s3-eu-west-1.amazonaws.com/denner-assets/screen-banners/week-end_IT.png
                             created_on: '2020-06-15T00:11:21+0200'
-                  screen:
-                    id: tobacco
-                    name: Tabak
+                  screens:
+                    - id: tobacco
+                      name: Tabak
                   design:
                     id: a59f84d6-f779-4075-95fe-5803aceae2f1
                     code: 1
@@ -2669,9 +2671,9 @@ paths:
                     name: Dennerwoche
                   automatic: true
                   article_count: 1
-                  screen:
-                    id: pos
-                    name: POS
+                  screens:
+                    - id: pos
+                      name: POS
                   design:
                     id: a59f84d6-f779-4075-95fe-5803aceae2f1
                     code: 1
@@ -3571,9 +3573,9 @@ paths:
                       id: front
                   supplier:
                     code: 31770
-              screen:
-                id: tobacco
-                name: Tabak
+              screens:
+                - id: tobacco
+                  name: Tabak
               design:
                 id: a59f84d6-f779-4075-95fe-5803aceae2f1
                 code: 1
@@ -5203,7 +5205,7 @@ definitions:
     properties:
       id:
         type: string
-        description: Unique ID (e.g.:"tobacco" ,"pos")
+        description: Unique ID (e.g. "tobacco" ,"pos")
 #        pattern: '/^(tobacco|pos)$/'
       name:
         type: string
@@ -5251,8 +5253,8 @@ definitions:
         $ref: '#/definitions/PromotionType'
       automatic:
         type: boolean
-      screen:
-        $ref: '#/definitions/ScreenScreen'
+      screens:
+        $ref: '#/definitions/ScreenScreens'
       design:
         $ref: '#/definitions/ScreenDesign'
       template:
@@ -5664,6 +5666,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/RatingGrouped'
+
+  ScreenScreens:
+    type: array
+    items:
+      $ref: '#/definitions/ScreenScreen'
 
   ### Responses
   StoresResponse:

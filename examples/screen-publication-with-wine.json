@@ -265,10 +265,12 @@
             }
         }
     ],
-    "screen": {
-        "id": "pos",
-        "name": "POS"
-    },
+    "screens": [
+        {
+            "id": "pos",
+            "name": "POS"
+        }
+    ],
     "design": {
         "id": "a59f84d6-f779-4075-95fe-5803aceae2f1",
         "code": 1,
