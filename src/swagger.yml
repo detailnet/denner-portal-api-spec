@@ -4953,12 +4953,6 @@ definitions:
         minimum: 0
         maximum: 5
         description: Rating value
-      stars:
-        type: number
-        format: float
-        minimum: 0
-        maximum: 5
-        description: Rating stars (value rounded to nearest 'half' star), validity is takein into account (empty if not valid)
       total:
         type: integer
         format: int32
@@ -4972,7 +4966,7 @@ definitions:
         format: float
         minimum: 0
         maximum: 5
-        description: Stars, rounded to the half integer
+        description: Rating stars (value rounded to nearest 'half' star), validity is takein into account (empty if not valid)
 
   Stock:
     type: object
@@ -5067,16 +5061,6 @@ definitions:
       url:
         type: string
         description: Image url which can be used, for example, in an 'img' tag
-
-  Stopper:
-    allOf:
-      - $ref: '#/definitions/Output'
-      - type: object
-        properties:
-          markup_text:
-            allOf:
-              - $ref: '#/definitions/Translations'
-              - description: Markup text for visual effects
 
   ### Online publicated article
   OnlineArticle:
