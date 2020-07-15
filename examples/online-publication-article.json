@@ -458,6 +458,55 @@
             ]
         }
     ],
+    "quantity": 6,
+    "base": {
+        "text": [
+            {
+                "locale": "de",
+                "value": "10 cl"
+            },
+            {
+                "locale": "fr",
+                "value": "10 cl"
+            },
+            {
+                "locale": "it",
+                "value": "10 cl"
+            }
+        ]
+    },
+    "validity": {
+        "from": "2015-06-23",
+        "to": "2015-06-29",
+        "short_text": [
+            {
+                "locale": "de",
+                "value": "Gültig von 23.06.–29.06."
+            },
+            {
+                "locale": "fr",
+                "value": "..."
+            },
+            {
+                "locale": "it",
+                "value": "..."
+            }
+        ],
+        "long_text": [
+            {
+                "locale": "de",
+                "value": "Angebot gültig von 23.06.2015 bis 29.06.2015"
+            },
+            {
+                "locale": "fr",
+                "value": "..."
+            },
+            {
+                "locale": "it",
+                "value": "..."
+            }
+        ]
+    },
     "availability_limitations": {
         "region": [
             {
