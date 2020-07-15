@@ -2670,7 +2670,7 @@ paths:
                   automatic: true
                   article_count: 1
                   screen:
-                    id: cache-register
+                    id: pos
                     name: POS
                   design:
                     id: a59f84d6-f779-4075-95fe-5803aceae2f1
@@ -5203,7 +5203,8 @@ definitions:
     properties:
       id:
         type: string
-        description: Unique ID
+        description: Unique ID (e.g.:"tobacco" ,"pos")
+#        pattern: '/^(tobacco|pos)$/'
       name:
         type: string
 

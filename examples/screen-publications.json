@@ -214,7 +214,7 @@
             "automatic": true,
             "article_count": 1,
             "screen": {
-                "id": "cache-register",
+                "id": "pos",
                 "name": "POS"
             },
             "design": {
