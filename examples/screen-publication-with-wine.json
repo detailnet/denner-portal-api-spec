@@ -1,0 +1,297 @@
+{
+    "id": "ad4a6d47-2506-41a7-9cdc-b9f81bc5b56c",
+    "name": "Argento Selección Malbec (KW 29/2020) für Werbescreens",
+    "year": 2020,
+    "week": 29,
+    "sort_index": 325,
+    "created_on": "2020-07-01T08:41:27+0200",
+    "validity": {
+        "from": "2020-07-14",
+        "to": "2020-07-20",
+        "text": []
+    },
+    "promotion_type": {
+        "id": "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
+        "code": "FLUGBLATT",
+        "name": "Dennerwoche"
+    },
+    "articles": [
+        {
+            "id": "16823a95-dbd3-4dbf-8951-c43085bb4f3a",
+            "sort_index": 0,
+            "article_id": "051303",
+            "advertised_article_id": "0cb3f745-4eb8-4ac0-bfde-a78492ace19e",
+            "quantity": 6,
+            "advertised_quantity": 6,
+            "name": "Argento Seleccion Malbec 75",
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Argento Selección Malbec"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Argento Selección Malbec"
+                },
+                {
+                    "locale": "it",
+                    "value": "Argento Selección Malbec"
+                }
+            ],
+            "description": [
+                {
+                    "locale": "de",
+                    "value": "2019, Mendoza, Argentinien, 6 x 75 cl"
+                },
+                {
+                    "locale": "fr",
+                    "value": "2019, Mendoza, Argentine, 6 x 75 cl"
+                },
+                {
+                    "locale": "it",
+                    "value": "2019, Mendoza, Argentina, 6 x 75 cl"
+                }
+            ],
+            "eco_labels": [],
+            "dots": [
+                {
+                    "id": "63879334-d320-42ff-b6df-93f2b7474d3b",
+                    "type": {
+                        "id": "single_unit_price"
+                    },
+                    "text": [
+                        {
+                            "locale": "de",
+                            "value": "Flasche\n5.50\nstatt 10.95",
+                            "created_on": "2020-03-31T08:15:37+0200"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "5.50\nla bouteille\nau lieu de\n10.95",
+                            "created_on": "2020-03-31T08:15:37+0200"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "5.50\na bottiglia\ninvece di\n10.95",
+                            "created_on": "2020-03-31T08:15:37+0200"
+                        }
+                    ],
+                    "images": [
+                        {
+                            "locale": "de",
+                            "design": {
+                                "id": "white",
+                                "priority": 1
+                            },
+                            "formats": [
+                                {
+                                    "type": "image/svg+xml",
+                                    "url": "https://denner-assets.s3.eu-west-1.amazonaws.com/dots/9551de47-f32f-4bdb-9761-eee347a540a9/single_unit_price_de_white.svg",
+                                    "created_on": "2020-06-10T15:06:10+0200"
+                                },
+                                {
+                                    "type": "image/png",
+                                    "url": "https://denner-assets.s3.eu-west-1.amazonaws.com/dots/9551de47-f32f-4bdb-9761-eee347a540a9/single_unit_price_de_white.png",
+                                    "created_on": "2020-06-10T15:06:10+0200"
+                                }
+                            ]
+                        },
+                        {
+                            "locale": "fr",
+                            "design": {
+                                "id": "white",
+                                "priority": 1
+                            },
+                            "formats": [
+                                {
+                                    "type": "image/svg+xml",
+                                    "url": "https://denner-assets.s3.eu-west-1.amazonaws.com/dots/1e7c5a69-77ce-4db1-b3f5-4680e9d61dcf/single_unit_price_fr_white.svg",
+                                    "created_on": "2020-06-10T15:06:10+0200"
+                                },
+                                {
+                                    "type": "image/png",
+                                    "url": "https://denner-assets.s3.eu-west-1.amazonaws.com/dots/1e7c5a69-77ce-4db1-b3f5-4680e9d61dcf/single_unit_price_fr_white.png",
+                                    "created_on": "2020-06-10T15:06:10+0200"
+                                }
+                            ]
+                        },
+                        {
+                            "locale": "it",
+                            "design": {
+                                "id": "white",
+                                "priority": 1
+                            },
+                            "formats": [
+                                {
+                                    "type": "image/svg+xml",
+                                    "url": "https://denner-assets.s3.eu-west-1.amazonaws.com/dots/11141051-e533-417f-b7f7-ac819710cf75/single_unit_price_it_white.svg",
+                                    "created_on": "2020-06-10T15:06:10+0200"
+                                },
+                                {
+                                    "type": "image/png",
+                                    "url": "https://denner-assets.s3.eu-west-1.amazonaws.com/dots/11141051-e533-417f-b7f7-ac819710cf75/single_unit_price_it_white.png",
+                                    "created_on": "2020-06-10T15:06:10+0200"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "sales_price": "32.85",
+            "stopper": {
+                "id": "e019dda8-71c4-4252-9df2-6299602cfc78",
+                "type": {
+                    "id": "x_percent"
+                },
+                "markup_text": [
+                    {
+                        "locale": "de",
+                        "value": "50%",
+                        "created_on": "2020-07-14T16:41:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "50%",
+                        "created_on": "2020-07-14T16:41:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "50%",
+                        "created_on": "2020-07-14T16:41:17+0200"
+                    }
+                ],
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "50%",
+                        "created_on": "2020-07-14T16:41:17+0200"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "50%",
+                        "created_on": "2020-07-14T16:41:17+0200"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "50%",
+                        "created_on": "2020-07-14T16:41:17+0200"
+                    }
+                ],
+                "images": []
+            },
+            "instead_price": [
+                {
+                    "locale": "de",
+                    "value": "statt 65.70"
+                },
+                {
+                    "locale": "fr",
+                    "value": "au lieu de 65.70"
+                },
+                {
+                    "locale": "it",
+                    "value": "invece di 65.70"
+                }
+            ],
+            "price_info": [],
+            "price_unit": [],
+            "promotion_info": [
+                {
+                    "locale": "de",
+                    "value": "Aktionspreise für Einzelflaschen nur in der jeweiligen Aktionswoche gültig"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Les prix promotionnels sur les bouteilles vendues à la pièce ne sont valables que durant la semaine d’action"
+                },
+                {
+                    "locale": "it",
+                    "value": "I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva settimana promozionale"
+                }
+            ],
+            "compared": false,
+            "article_group": {
+                "id": "f72444d7-32a7-45ec-94f8-aa5d94e38b84",
+                "code": "60-72",
+                "name": "Südamerika Rot 70 cl",
+                "parent": {
+                    "id": "cb1fad16-a420-4a3b-865b-b3e176a8edea",
+                    "code": "60",
+                    "name": "Weine"
+                }
+            },
+            "packshot": {
+                "id": "58b6248c-3799-4ff3-8b99-f17b24450102",
+                "quantity": 1,
+                "url": "https://denner-assets.s3.amazonaws.com/assets/58b6248c-3799-4ff3-8b99-f17b24450102/web/051303_6_c_K.png",
+                "image_url": "https://denner-assets.s3.amazonaws.com/assets/58b6248c-3799-4ff3-8b99-f17b24450102/web/051303_6_c_K.png",
+                "preview_url": "https://denner-assets.s3.amazonaws.com/assets/58b6248c-3799-4ff3-8b99-f17b24450102/web/051303_6_c_K.png?version=1",
+                "cdn_url": "https://denner.imgix.net/assets/58b6248c-3799-4ff3-8b99-f17b24450102/web/051303_6_c_K.png",
+                "archived": false,
+                "auto_assigned": true,
+                "created_on": "2019-07-30T15:38:51+0200",
+                "view": {
+                    "id": "front"
+                }
+            },
+            "supplier": {
+                "code": 36887
+            },
+            "country": {
+                "id": "AR",
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Argentinien"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "Argentine"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "Argentina"
+                    }
+                ],
+                "flag": {
+                    "image_url": "https://denner-assets.s3-eu-west-1.amazonaws.com/flags/AR.png"
+                }
+            },
+            "rating": {
+                "value": 4.3074,
+                "total": 475,
+                "valid": true,
+                "stars": 4.5
+            }
+        }
+    ],
+    "screen": {
+        "id": "pos",
+        "name": "POS"
+    },
+    "design": {
+        "id": "a59f84d6-f779-4075-95fe-5803aceae2f1",
+        "code": 1,
+        "name": "Standard"
+    },
+    "template": {
+        "id": "non-tobacco",
+        "code": 6,
+        "name": "Nicht-Tabak"
+    },
+    "title": [
+        {
+            "locale": "de",
+            "value": "Argento Selección Malbec"
+        },
+        {
+            "locale": "fr",
+            "value": "Argento Selección Malbec"
+        },
+        {
+            "locale": "it",
+            "value": "Argento Selección Malbec"
+        }
+    ],
+    "footer": []
+}

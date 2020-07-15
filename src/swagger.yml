@@ -401,34 +401,34 @@ paths:
               page_size: 2
               total_items: 2
               store_channels:
-                  -
-                    id: "5d1c3dd5-35a9-4c66-ab20-3409ea640334"
-                    code: 1
-                    name: "Denner"
-                    title:
-                      -
-                        locale: "de"
-                        value: "Denner"
-                      -
-                        locale: "fr"
-                        value: "Denner"
-                      -
-                        locale: "it"
-                        value: "Denner"
-                  -
-                    id: "18549f95-6471-4e21-968f-8a0bf2e0f79b"
-                    code: 2
-                    name: "Denner Satellit und Denner Express"
-                    title:
-                      -
-                        locale: "de"
-                        value: "Denner Satellit und Denner Express"
-                      -
-                        locale: "fr"
-                        value: "Satellite Denner et Denner Express"
-                      -
-                        locale: "it"
-                        value: "Satelliti Denner e Denner Express"
+                -
+                  id: "5d1c3dd5-35a9-4c66-ab20-3409ea640334"
+                  code: 1
+                  name: "Denner"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Denner"
+                    -
+                      locale: "fr"
+                      value: "Denner"
+                    -
+                      locale: "it"
+                      value: "Denner"
+                -
+                  id: "18549f95-6471-4e21-968f-8a0bf2e0f79b"
+                  code: 2
+                  name: "Denner Satellit und Denner Express"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Denner Satellit und Denner Express"
+                    -
+                      locale: "fr"
+                      value: "Satellite Denner et Denner Express"
+                    -
+                      locale: "it"
+                      value: "Satelliti Denner e Denner Express"
 
   /store-services:
     get:
@@ -611,68 +611,51 @@ paths:
               page_size: 1
               total_items: 1
               articles:
-              -
-                id: "051273"
-                name: "Mandorla Primitivo IGT Puglia"
-                title:
-                  -
-                    locale: "de"
-                    value: "Mandorla Primitivo di Puglia IGT"
-                  -
-                    locale: "fr"
-                    value: "Mandorla Primitivo di Puglia IGT"
-                  -
-                    locale: "it"
-                    value: "Mandorla Primitivo di Puglia IGT"
-                description:
-                  -
-                    locale: "de"
-                    value: "2013, Apulien, Italien, 6 x 75 cl"
-                  -
-                    locale: "fr"
-                    value: "2013, les Pouilles, Italie, 6 x 75 cl"
-                  -
-                    locale: "it"
-                    value: "2013, Puglia, Italia, 6 x 75 cl"
-                composite_description:
-                  -
-                    locale: "de"
-                    value: ""
-                  -
-                    locale: "fr"
-                    value: ""
-                  -
-                    locale: "it"
-                    value: ""
-                article_group:
-                  id: "0c309757-5432-4652-8201-ec35f31c5260"
-                  code: "60-56"
-                  name: "Italien Rot 70 cl"
-                  parent:
-                    id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
-                    code: "60"
-                    name: "Weine"
-                purchasing_department: "W"
-                online_group:
-                  id: "a2664d3a-93b4-4277-9e6e-c95ad8b6c6ee"
-                  code: "2-9"
-                  disabled: false
-                  allow_featuring: true
-                  allow_promotion: true
-                  allow_background: true
+                -
+                  id: "051273"
+                  name: "Mandorla Primitivo IGT Puglia"
                   title:
                     -
                       locale: "de"
-                      value: "Wein/Champagner"
+                      value: "Mandorla Primitivo di Puglia IGT"
                     -
                       locale: "fr"
-                      value: "Vins/champagnes"
+                      value: "Mandorla Primitivo di Puglia IGT"
                     -
                       locale: "it"
-                      value: "Vino/champagne"
-                  parent:
-                    id: "8fd653c3-a86b-4529-bbb5-58d06919d484"
-                    code: "2"
+                      value: "Mandorla Primitivo di Puglia IGT"
+                  description:
+                    -
+                      locale: "de"
+                      value: "2013, Apulien, Italien, 6 x 75 cl"
+                    -
+                      locale: "fr"
+                      value: "2013, les Pouilles, Italie, 6 x 75 cl"
+                    -
+                      locale: "it"
+                      value: "2013, Puglia, Italia, 6 x 75 cl"
+                  composite_description:
+                    -
+                      locale: "de"
+                      value: ""
+                    -
+                      locale: "fr"
+                      value: ""
+                    -
+                      locale: "it"
+                      value: ""
+                  article_group:
+                    id: "0c309757-5432-4652-8201-ec35f31c5260"
+                    code: "60-56"
+                    name: "Italien Rot 70 cl"
+                    parent:
+                      id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
+                      code: "60"
+                      name: "Weine"
+                  purchasing_department: "W"
+                  online_group:
+                    id: "a2664d3a-93b4-4277-9e6e-c95ad8b6c6ee"
+                    code: "2-9"
                     disabled: false
                     allow_featuring: true
                     allow_promotion: true
@@ -680,270 +663,287 @@ paths:
                     title:
                       -
                         locale: "de"
-                        value: "Getränke"
+                        value: "Wein/Champagner"
                       -
                         locale: "fr"
-                        value: "Boissons"
+                        value: "Vins/champagnes"
                       -
                         locale: "it"
-                        value: "Bevande"
-                prices:
-                  sales: 9.9
-                  instead: 11.4
-                  base: 1.32
-                  final: true
-                  by_quantity:
-                    -
-                      quantity: 1
-                      sales: 9.9
-                      instead: 11.4
-                      final: true
-                    -
-                      quantity: 6
-                      sales: 59.4
-                      instead: 68.4
-                      final: true
-                barcodes:
-                  -
-                    value: "086003000094"
-                    type: "UPC12"
-                    quantity: 1
-                    master: false
-                  -
-                    value: "086003004344"
-                    type: "UPC12"
-                    quantity: 6
-                    master: false
-                  -
-                    value: "5010186016172"
-                    type: "EAN13"
-                    quantity: 1
-                    master: true
-                  -
-                    value: "0860030043442"
-                    type: "EAN13"
-                    quantity: 6
-                    master: true
-                content:
-                  size: 0.75
-                  label:
-                    -
-                      locale: "de"
-                      value: "cl"
-                    -
-                      locale: "fr"
-                      value: "cl"
-                    -
-                      locale: "it"
-                      value: "cl"
-                  text:
-                    -
-                      locale: "de"
-                      value: "75 cl"
-                    -
-                      locale: "fr"
-                      value: "75 cl"
-                    -
-                      locale: "it"
-                      value: "75 cl"
-                base:
-                  text:
-                    -
-                      locale: "de"
-                      value: "10 cl"
-                    -
-                      locale: "fr"
-                      value: "10 cl"
-                    -
-                      locale: "it"
-                      value: "10 cl"
-                cooling: 0
-                eco_labels:
-                  -
-                    id: "66d94617-bbd7-477e-ae66-183deb67ba5b"
-                    code: "bio"
-                    name: "Bio"
-                packshots:
-                  -
-                    id: "5983a33d-ac61-49a8-a836-43259e78e9d0"
-                    url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
-                    cdn_url: "https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
-                    quantity: 6
-                    created_on: "2016-01-07T15:42:19+02:00"
-                wine:
-                  country:
-                    id: "IT"
-                    title:
-                      -
-                        locale: "de"
-                        value: "Italien"
-                      -
-                        locale: "fr"
-                        value: "Italie"
-                      -
-                        locale: "it"
-                        value: "Italia"
-                    flag:
-                      image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/flags/IT.png"
-                  region:
-                    id: "b19c42bf-ed78-46ff-ad6f-fc688a059e6a"
-                    title:
-                      -
-                        locale: "de"
-                        value: "Apulien"
-                      -
-                        locale: "fr"
-                        value: "Les Pouilles"
-                      -
-                        locale: "it"
-                        value: "Puglia"
-                  type:
-                    id: 2
-                    title:
-                      -
-                        locale: "de"
-                        value: "Rotwein"
-                      -
-                        locale: "fr"
-                        value: "Vin rouge"
-                      -
-                        locale: "it"
-                        value: "Vino rosso"
-                  online_specials:
-                    - id: wine
-                      sort_index: 10
+                        value: "Vino/champagne"
+                    parent:
+                      id: "8fd653c3-a86b-4529-bbb5-58d06919d484"
+                      code: "2"
+                      disabled: false
+                      allow_featuring: true
+                      allow_promotion: true
+                      allow_background: true
                       title:
-                        - locale: de
-                          value: Weine
-                        - locale: fr
-                          value: Vins
-                        - locale: it
-                          value: Vini
-                  year: 2013
-                  fits_with:
-                    -
-                      locale: "de"
-                      value: "Pasta, Fleisch mit würzigen Saucen"
-                    -
-                      locale: "fr"
-                      value: "Pâtes, viande aux sauces relevées"
-                    -
-                      locale: "it"
-                      value: "Pasta, carni accompagnate da salse aromatiche"
-                  varietal:
-                    -
-                      locale: "de"
-                      value: "Primitivo"
-                    -
-                      locale: "fr"
-                      value: "Primitivo"
-                    -
-                      locale: "it"
-                      value: "Primitivo"
-                  character:
-                    -
-                      locale: "de"
-                      value: "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
-                    -
-                      locale: "fr"
-                      value: "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
-                    -
-                      locale: "it"
-                      value: "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
-                  temperature:
-                    -
-                      locale: "de"
-                      value: "16-18 °C"
-                    -
-                      locale: "fr"
-                      value: "16-18 °C"
-                    -
-                      locale: "it"
-                      value: "16-18 °C"
-                  awards:
-                    -
-                      locale: "de"
-                      value: ""
-                    -
-                      locale: "fr"
-                      value: ""
-                    -
-                      locale: "it"
-                      value: ""
-                  storage:
-                    -
-                      locale: "de"
-                      value: "3 Jahre"
-                    -
-                      locale: "fr"
-                      value: "3 ans"
-                    -
-                      locale: "it"
-                      value: "3 anni"
-                  rating:
-                    value: 4.45
-                    total: 11
-                    valid: true
-                  shop:
-                    url: "http://denner-wineshop.ch/skuredirect/051273/"
-                    stock:
-                      value: -15
-                      code: 2
-                      message:
                         -
                           locale: "de"
-                          value: "Derzeit nicht bestellbar"
+                          value: "Getränke"
                         -
                           locale: "fr"
-                          value: "Actuellement pas disponible"
+                          value: "Boissons"
                         -
                           locale: "it"
-                          value: "Attualmente non disponibile"
-                    quantity: 6
-                    prices:
-                      sales: 59.4
-                      instead: 68.4
-                      final: true
-                      by_quantity:
-                        -
-                          quantity: 1
-                          sales: 9.9
-                          instead: 11.4
-                          final: true
-                        -
-                          quantity: 6
-                          sales: 59.4
-                          instead: 68.4
-                          final: true
-                    discount:
+                          value: "Bevande"
+                  prices:
+                    sales: 9.9
+                    instead: 11.4
+                    base: 1.32
+                    final: true
+                    by_quantity:
+                      -
+                        quantity: 1
+                        sales: 9.9
+                        instead: 11.4
+                        final: true
+                      -
+                        quantity: 6
+                        sales: 59.4
+                        instead: 68.4
+                        final: true
+                  barcodes:
+                    -
+                      value: "086003000094"
+                      type: "UPC12"
+                      quantity: 1
+                      master: false
+                    -
+                      value: "086003004344"
+                      type: "UPC12"
+                      quantity: 6
+                      master: false
+                    -
+                      value: "5010186016172"
+                      type: "EAN13"
+                      quantity: 1
+                      master: true
+                    -
+                      value: "0860030043442"
+                      type: "EAN13"
+                      quantity: 6
+                      master: true
+                  content:
+                    size: 0.75
+                    label:
                       -
                         locale: "de"
-                        value: "13%"
+                        value: "cl"
                       -
                         locale: "fr"
-                        value: "13%"
+                        value: "cl"
                       -
                         locale: "it"
-                        value: "13%"
-                    title:
+                        value: "cl"
+                    text:
                       -
                         locale: "de"
-                        value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                        value: "75 cl"
                       -
                         locale: "fr"
-                        value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                        value: "75 cl"
                       -
                         locale: "it"
-                        value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
-                    packshot:
+                        value: "75 cl"
+                  base:
+                    text:
+                      -
+                        locale: "de"
+                        value: "10 cl"
+                      -
+                        locale: "fr"
+                        value: "10 cl"
+                      -
+                        locale: "it"
+                        value: "10 cl"
+                  cooling: 0
+                  eco_labels:
+                    -
+                      id: "66d94617-bbd7-477e-ae66-183deb67ba5b"
+                      code: "bio"
+                      name: "Bio"
+                  packshots:
+                    -
                       id: "5983a33d-ac61-49a8-a836-43259e78e9d0"
                       url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
                       cdn_url: "https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
                       quantity: 6
                       created_on: "2016-01-07T15:42:19+02:00"
-                  box:
-                    code: "KA"
-                    batch_size: 3
+                  wine:
+                    country:
+                      id: "IT"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Italien"
+                        -
+                          locale: "fr"
+                          value: "Italie"
+                        -
+                          locale: "it"
+                          value: "Italia"
+                      flag:
+                        image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/flags/IT.png"
+                    region:
+                      id: "b19c42bf-ed78-46ff-ad6f-fc688a059e6a"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Apulien"
+                        -
+                          locale: "fr"
+                          value: "Les Pouilles"
+                        -
+                          locale: "it"
+                          value: "Puglia"
+                    type:
+                      id: 2
+                      title:
+                        -
+                          locale: "de"
+                          value: "Rotwein"
+                        -
+                          locale: "fr"
+                          value: "Vin rouge"
+                        -
+                          locale: "it"
+                          value: "Vino rosso"
+                    online_specials:
+                      - id: wine
+                        sort_index: 10
+                        title:
+                          - locale: de
+                            value: Weine
+                          - locale: fr
+                            value: Vins
+                          - locale: it
+                            value: Vini
+                    year: 2013
+                    fits_with:
+                      -
+                        locale: "de"
+                        value: "Pasta, Fleisch mit würzigen Saucen"
+                      -
+                        locale: "fr"
+                        value: "Pâtes, viande aux sauces relevées"
+                      -
+                        locale: "it"
+                        value: "Pasta, carni accompagnate da salse aromatiche"
+                    varietal:
+                      -
+                        locale: "de"
+                        value: "Primitivo"
+                      -
+                        locale: "fr"
+                        value: "Primitivo"
+                      -
+                        locale: "it"
+                        value: "Primitivo"
+                    character:
+                      -
+                        locale: "de"
+                        value: "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
+                      -
+                        locale: "fr"
+                        value: "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
+                      -
+                        locale: "it"
+                        value: "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                    temperature:
+                      -
+                        locale: "de"
+                        value: "16-18 °C"
+                      -
+                        locale: "fr"
+                        value: "16-18 °C"
+                      -
+                        locale: "it"
+                        value: "16-18 °C"
+                    awards:
+                      -
+                        locale: "de"
+                        value: ""
+                      -
+                        locale: "fr"
+                        value: ""
+                      -
+                        locale: "it"
+                        value: ""
+                    storage:
+                      -
+                        locale: "de"
+                        value: "3 Jahre"
+                      -
+                        locale: "fr"
+                        value: "3 ans"
+                      -
+                        locale: "it"
+                        value: "3 anni"
+                    rating:
+                      value: 4.45
+                      total: 11
+                      valid: true
+                    shop:
+                      url: "http://denner-wineshop.ch/skuredirect/051273/"
+                      stock:
+                        value: -15
+                        code: 2
+                        message:
+                          -
+                            locale: "de"
+                            value: "Derzeit nicht bestellbar"
+                          -
+                            locale: "fr"
+                            value: "Actuellement pas disponible"
+                          -
+                            locale: "it"
+                            value: "Attualmente non disponibile"
+                      quantity: 6
+                      prices:
+                        sales: 59.4
+                        instead: 68.4
+                        final: true
+                        by_quantity:
+                          -
+                            quantity: 1
+                            sales: 9.9
+                            instead: 11.4
+                            final: true
+                          -
+                            quantity: 6
+                            sales: 59.4
+                            instead: 68.4
+                            final: true
+                      discount:
+                        -
+                          locale: "de"
+                          value: "13%"
+                        -
+                          locale: "fr"
+                          value: "13%"
+                        -
+                          locale: "it"
+                          value: "13%"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                        -
+                          locale: "fr"
+                          value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                        -
+                          locale: "it"
+                          value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                      packshot:
+                        id: "5983a33d-ac61-49a8-a836-43259e78e9d0"
+                        url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
+                        cdn_url: "https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
+                        quantity: 6
+                        created_on: "2016-01-07T15:42:19+02:00"
+                    box:
+                      code: "KA"
+                      batch_size: 3
 
   /articles/{article_id}:
     get:
@@ -1363,85 +1363,85 @@ paths:
                   name: "Wochenend-Knaller"
 
   /online-groups:
-      get:
-        summary: List all online groups
-        description: >
-          Use this operation to get a list of all online groups (Internet-Sortimente).
-        tags:
-          - advertising
-        operationId: listOnlineGroups
-        security:
-          - appKey: []
-          - appId: []
-        parameters:
-          - $ref: '#/parameters/PageParam'
-          - $ref: '#/parameters/PageSizeUnlimitableParam'
-        responses:
-          200:
-            description: Successful listing
-            schema:
-              $ref: '#/definitions/OnlineGroupsResponse'
-            examples:
-              application/json:
+    get:
+      summary: List all online groups
+      description: >
+        Use this operation to get a list of all online groups (Internet-Sortimente).
+      tags:
+        - advertising
+      operationId: listOnlineGroups
+      security:
+        - appKey: []
+        - appId: []
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/OnlineGroupsResponse'
+          examples:
+            application/json:
 
-                page_count: 1
-                page_size: 1
-                total_items: 1
-                online_groups:
-                  -
-                    id: "7627150d-36bd-4867-89b2-091800a03d24"
-                    code: 1001
-                    sort_index: 0
-                    allow_featuring: true
-                    allow_promotion: true
-                    allow_background: true
-                    title:
-                      -
-                        locale: "de"
-                        value: "Frischprodukte"
-                      -
-                        locale: "fr"
-                        value: "Produits frais"
-                      -
-                        locale: "it"
-                        value: "Prodotti freschi"
-                    children:
-                      -
-                        id: "58afec5c-ece9-4b66-bc55-00d6dc1b65b8"
-                        code: 1001
-                        sort_index: 0
-                        allow_featuring: true
-                        allow_promotion: true
-                        allow_background: true
-                        title:
-                          -
-                            locale: "de"
-                            value: "Milchprodukte"
-                          -
-                            locale: "fr"
-                            value: "Produits laitiers"
-                          -
-                            locale: "it"
-                            value: "Latticini"
-                        children: []
-                      -
-                        id: "e5216167-9da5-41d6-b7b3-96362b60de89"
-                        code: 1002
-                        sort_index: 1
-                        allow_featuring: true
-                        allow_promotion: true
-                        allow_background: true
-                        title:
-                          -
-                            locale: "de"
-                            value: "Eier"
-                          -
-                            locale: "fr"
-                            value: "Oeufs"
-                          -
-                            locale: "it"
-                            value: "Uova"
-                        children: []
+              page_count: 1
+              page_size: 1
+              total_items: 1
+              online_groups:
+                -
+                  id: "7627150d-36bd-4867-89b2-091800a03d24"
+                  code: 1001
+                  sort_index: 0
+                  allow_featuring: true
+                  allow_promotion: true
+                  allow_background: true
+                  title:
+                    -
+                      locale: "de"
+                      value: "Frischprodukte"
+                    -
+                      locale: "fr"
+                      value: "Produits frais"
+                    -
+                      locale: "it"
+                      value: "Prodotti freschi"
+                  children:
+                    -
+                      id: "58afec5c-ece9-4b66-bc55-00d6dc1b65b8"
+                      code: 1001
+                      sort_index: 0
+                      allow_featuring: true
+                      allow_promotion: true
+                      allow_background: true
+                      title:
+                        -
+                          locale: "de"
+                          value: "Milchprodukte"
+                        -
+                          locale: "fr"
+                          value: "Produits laitiers"
+                        -
+                          locale: "it"
+                          value: "Latticini"
+                      children: []
+                    -
+                      id: "e5216167-9da5-41d6-b7b3-96362b60de89"
+                      code: 1002
+                      sort_index: 1
+                      allow_featuring: true
+                      allow_promotion: true
+                      allow_background: true
+                      title:
+                        -
+                          locale: "de"
+                          value: "Eier"
+                        -
+                          locale: "fr"
+                          value: "Oeufs"
+                        -
+                          locale: "it"
+                          value: "Uova"
+                      children: []
 
   /online-specials:
     get:
@@ -2193,14 +2193,7 @@ paths:
                           type: "image/svg+xml"
                           url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.svg"
               quantity: 6
-              #                  Removed because we cannot calculate a valid size, neither display a standardized unit
-              #                  content:
-              #                    size: 75
-              #                    unit: 170
               base:
-                #                    Removed because we cannot calculate a valid size, neither display a standardized unit
-                #                    size: 10
-                #                    unit: 170
                 text:
                   -
                     locale: "de"
@@ -2531,38 +2524,173 @@ paths:
           examples:
             application/json:
 
-              page_count: 1
-              page_size: 1
-              total_items: 1
               screen_publications:
-                -
-                  id: "f410c33f-844f-43ca-ab2c-4dccf6905f7e"
-                  name: "Wochenaktionen KW 26/2015 für Werbescreens"
-                  year: 2015
-                  week: 26
-                  title:
-                    -
-                      locale: "de"
-                      value: "Wochenaktionen"
-                    -
-                      locale: "fr"
-                      value: "Hits de la semaine"
-                    -
-                      locale: "it"
-                      value: "Promozioni della settimana"
+                - id: 372bd590-1781-4905-beb4-5eeaeee6cf19
+                  name: Parisienne Limited Edition Jaune (KW 29/2020) für Werbescreens
+                  year: 2020
+                  week: 29
+                  sort_index: 250
+                  created_on: '2020-06-15T00:11:21+0200'
                   validity:
-                    from: "2015-06-23"
-                    to: "2015-06-29"
+                    from: '2020-07-14'
+                    to: '2020-07-20'
+                    text: []
+                  promotion_type:
+                    id: 089f8537-981a-42ba-9b0a-b3cba4a1c7d5
+                    code: FLUGBLATT
+                    name: Dennerwoche
+                  automatic: true
+                  article_count: 8
+                  screen:
+                    id: tobacco
+                    name: Tabak
+                  design:
+                    id: a59f84d6-f779-4075-95fe-5803aceae2f1
+                    code: 1
+                    name: Standard
+                  template:
+                    id: week-hit
+                    code: 1
+                    name: Wo-Hit
+                  title:
+                    - locale: de
+                      value: Parisienne Limited Edition Jaune
+                    - locale: fr
+                      value: Parisienne Limited Edition Jaune
+                    - locale: it
+                      value: Parisienne Limited Edition Jaune
+                  footer: []
+                - id: 2559ed38-02d6-43b7-9c0d-756719b053db
+                  name: Jack Daniel's Whiskey (KW 29/2020) für Werbescreens
+                  year: 2020
+                  week: 29
+                  sort_index: 2150
+                  created_on: '2020-06-15T00:11:21+0200'
+                  validity:
+                    from: '2020-07-14'
+                    to: '2020-07-20'
+                    text: []
+                  promotion_type:
+                    id: 089f8537-981a-42ba-9b0a-b3cba4a1c7d5
+                    code: FLUGBLATT
+                    name: Dennerwoche
+                  automatic: true
+                  article_count: 1
+                  screen:
+                    id: tobacco
+                    name: Tabak
+                  design:
+                    id: a59f84d6-f779-4075-95fe-5803aceae2f1
+                    code: 1
+                    name: Standard
+                  template:
+                    id: spirit
+                    code: 5
+                    name: Spiri
+                  title:
+                    - locale: de
+                      value: Jack Daniel's Whiskey
+                    - locale: fr
+                      value: Jack Daniel's Whiskey
+                    - locale: it
+                      value: Jack Daniel's Whiskey
+                  footer: []
+                - id: bffa7c0b-592a-494e-9363-8788e6100d1b
+                  name: Chesterfield Orange (KW 29/2020) für Werbescreens
+                  year: 2020
+                  week: 29
+                  sort_index: 5600
+                  created_on: '2020-06-15T00:11:21+0200'
+                  validity:
+                    from: '2020-07-17'
+                    to: '2020-07-18'
                     text:
-                      -
-                        locale: "de"
-                        value: "23.06.2015 bis 29.06.2015, solange Vorrat"
-                      -
-                        locale: "fr"
-                        value: "tbd"
-                      -
-                        locale: "it"
-                        value: "tbd"
+                      - locale: de
+                        value: Gültig am Freitag + Samstag
+                      - locale: fr
+                        value: Valable vendredi + samedi
+                      - locale: it
+                        value: Valido venerdì + sabato
+                  promotion_type:
+                    id: 37f205e5-0661-424f-bcd9-a68ce93016cb
+                    code: WOCHENEND
+                    name: Wochenend-Knaller
+                  automatic: true
+                  article_count: 8
+                  banner:
+                    images:
+                      - locale: de
+                        formats:
+                          - type: image/png
+                            url: https://s3-eu-west-1.amazonaws.com/denner-assets/screen-banners/week-end_DE.png
+                            created_on: '2020-06-15T00:11:21+0200'
+                      - locale: fr
+                        formats:
+                          - type: image/png
+                            url: https://s3-eu-west-1.amazonaws.com/denner-assets/screen-banners/week-end_FR.png
+                            created_on: '2020-06-15T00:11:21+0200'
+                      - locale: it
+                        formats:
+                          - type: image/png
+                            url: https://s3-eu-west-1.amazonaws.com/denner-assets/screen-banners/week-end_IT.png
+                            created_on: '2020-06-15T00:11:21+0200'
+                  screen:
+                    id: tobacco
+                    name: Tabak
+                  design:
+                    id: a59f84d6-f779-4075-95fe-5803aceae2f1
+                    code: 1
+                    name: Standard
+                  template:
+                    id: weekend
+                    code: 4
+                    name: WE-Knaller
+                  title:
+                    - locale: de
+                      value: Chesterfield Orange
+                    - locale: fr
+                      value: Chesterfield Orange
+                    - locale: it
+                      value: Chesterfield Orange
+                  footer: []
+                - id: ad4a6d47-2506-41a7-9cdc-b9f81bc5b56c
+                  name: Argento Selección Malbec (KW 29/2020) für Werbescreens
+                  year: 2020
+                  week: 29
+                  sort_index: 325
+                  created_on: '2020-07-01T08:41:27+0200'
+                  validity:
+                    from: '2020-07-14'
+                    to: '2020-07-20'
+                    text: []
+                  promotion_type:
+                    id: 089f8537-981a-42ba-9b0a-b3cba4a1c7d5
+                    code: FLUGBLATT
+                    name: Dennerwoche
+                  automatic: true
+                  article_count: 1
+                  screen:
+                    id: pos
+                    name: POS
+                  design:
+                    id: a59f84d6-f779-4075-95fe-5803aceae2f1
+                    code: 1
+                    name: Standard
+                  template:
+                    id: non-tobacco
+                    code: 6
+                    name: Nicht-Tabak
+                  title:
+                    - locale: de
+                      value: Argento Selección Malbec
+                    - locale: fr
+                      value: Argento Selección Malbec
+                    - locale: it
+                      value: Argento Selección Malbec
+                  footer: []
+              page_count: 1
+              page_size: 10
+              total_items: 4
 
   /screen-publications/{publication_id}:
     get:
@@ -2586,375 +2714,884 @@ paths:
           examples:
             application/json:
 
-              id: "f410c33f-844f-43ca-ab2c-4dccf6905f7e"
-              name: "Wochenaktionen KW 26/2015 für Werbescreens"
-              year: 2015
-              week: 26
-              title:
-                -
-                  locale: "de"
-                  value: "Wochenaktionen"
-                -
-                  locale: "fr"
-                  value: "Hits de la semaine"
-                -
-                  locale: "it"
-                  value: "Promozioni della settimana"
+              id: 372bd590-1781-4905-beb4-5eeaeee6cf19
+              name: Parisienne Limited Edition Jaune (KW 29/2020) für Werbescreens
+              year: 2020
+              week: 29
+              sort_index: 250
+              created_on: '2020-06-15T00:11:21+0200'
               validity:
-                from: "2015-06-23"
-                to: "2015-06-29"
-                text:
-                  -
-                    locale: "de"
-                    value: "23.06.2015 bis 29.06.2015, solange Vorrat"
-                  -
-                    locale: "fr"
-                    value: "tbd"
-                  -
-                    locale: "it"
-                    value: "tbd"
+                from: '2020-07-14'
+                to: '2020-07-20'
+                text: []
+              promotion_type:
+                id: 089f8537-981a-42ba-9b0a-b3cba4a1c7d5
+                code: FLUGBLATT
+                name: Dennerwoche
               articles:
-                -
-                  id: "b2d29de4-dcd5-4f3a-8e1a-811e42573f5f"
-                  article_id: "051273"
-                  name: "Mandorla Primitivo IGT Puglia"
+                - id: d62a78d1-520a-47cb-875c-e147c4b55499
+                  sort_index: 1
+                  article_id: 098000
+                  advertised_article_id: 6c1911ac-05c3-417b-8f27-09a0a43ae38f
+                  quantity: 1
+                  advertised_quantity: 1
+                  name: Parisienne Jaune Box LEP 20
                   title:
-                    -
-                      locale: "de"
-                      value: "Mandorla Primitivo di Puglia IGT"
-                    -
-                      locale: "fr"
-                      value: "Mandorla Primitivo di Puglia IGT"
-                    -
-                      locale: "it"
-                      value: "Mandorla Primitivo di Puglia IGT"
+                    - locale: de
+                      value: Parisienne Limited Edition
+                    - locale: fr
+                      value: Parisienne Limited Edition
+                    - locale: it
+                      value: Parisienne Limited Edition
                   description:
-                    -
-                      locale: "de"
-                      value: "2013, Apulien, Italien, 6 x 75 cl"
-                    -
-                      locale: "fr"
-                      value: "2013, les Pouilles, Italie, 6 x 75 cl"
-                    -
-                      locale: "it"
-                      value: "2013, Puglia, Italia, 6 x 75 cl"
-                  prices:
-                    sales: 59.4
-                    instead: 68.4
-                    base: 1.32
-                    by_quantity:
-                      -
-                        quantity: 1
-                        sales: 9.9
-                        instead: 11.4
-                      -
-                        quantity: 6
-                        sales: 59.4
-                        instead: 68.4
-                  price_info:
-                    -
-                      locale: "de"
-                      value: "Konkurrenzvergleich"
-                    -
-                      locale: "fr"
-                      value: "Comparaison concurrentielle"
-                    -
-                      locale: "it"
-                      value: "Confronto con la concorrenza"
-                  unit_price_info:
-                    -
-                      locale: "de"
-                      value: "Einzelflasche: 9.90 statt 11.40"
-                    -
-                      locale: "fr"
-                      value: "9.90 la bouteille au lieu de 11.40"
-                    -
-                      locale: "it"
-                      value: "9.90 a bottiglia invece di 11.40"
-                  dots:
-                    -
-                      id: "d4bca729-10ad-482c-bdda-b1a1398173b5"
-                      type:
-                        id: "semi_price_winehit"
-                      text:
-                        -
-                          locale: "de"
-                          value: "1/2 Preis\nWeinheit!"
-                        -
-                          locale: "fr"
-                          value: "1/2 prix\nLe top du vin!"
-                        -
-                          locale: "it"
-                          value: "1/2 prezzo\nSuperofferta vino!"
-                      images:
-                        -
-                          locale: "de"
-                          formats:
-                            -
-                              type: "image/svg+xml"
-                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.svg"
-                            -
-                              type: "image/png"
-                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.png"
-                        -
-                          locale: "fr"
-                          formats:
-                            -
-                              type: "image/svg+xml"
-                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.svg"
-                            -
-                              type: "image/png"
-                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.png"
-                        -
-                          locale: "it"
-                          formats:
-                            -
-                              type: "image/svg+xml"
-                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.svg"
-                            -
-                              type: "image/png"
-                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.png"
-                  quantity: 6
-#                  Removed because we cannot calculate a valid size, neither display a standardized unit
-#                  content:
-#                    size: 75
-#                    unit: 170
-                  base:
-#                    Removed because we cannot calculate a valid size, neither display a standardized unit
-#                    size: 10
-#                    unit: 170
-                    text:
-                      -
-                        locale: "de"
-                        value: "10 cl"
-                      -
-                        locale: "fr"
-                        value: "10 cl"
-                      -
-                        locale: "it"
-                        value: "10 cl"
-                  validity:
-                    from: "2015-06-23"
-                    to: "2015-06-29"
-                    short_text:
-                      -
-                        locale: "de"
-                        value: "Gültig von 23.06.–29.06."
-                      -
-                        locale: "fr"
-                        value: "..."
-                      -
-                        locale: "it"
-                        value: "..."
-                    long_text:
-                      -
-                        locale: "de"
-                        value: "Angebot gültig von 23.06.2015 bis 29.06.2015"
-                      -
-                        locale: "fr"
-                        value: "..."
-                      -
-                        locale: "it"
-                        value: "..."
-                  availability_limitations:
-                    region:
-                      -
-                        locale: "de"
-                        value: "Nur in der deutschen und französischen Schweiz erhältlich"
-                      -
-                        locale: "fr"
-                        value: "..."
-                      -
-                        locale: "it"
-                        value: "..."
-                    store:
-                      -
-                        locale: "de"
-                        value: "Nur in Filialen mit Frischprodukten erhältlich"
-                      -
-                        locale: "fr"
-                        value: "Disponible(s) uniquement dans les succursales aves des produits frais"
-                      -
-                        locale: "it"
-                        value: "..."
-                  sort_index: 0
-                  compared: true
-                  cooling: 0
-                  online_group:
-                    id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
-                    code: 4003
-                    disabled: false
-                    allow_featuring: true
-                    allow_promotion: true
-                    allow_background: true
+                    - locale: de
+                      value: |-
+                        - Jaune
+                        - Blonde
+                        - Orange Ohne
+                        - Verte Ohne
+                        Box, 20 Zigaretten
+                    - locale: fr
+                      value: |-
+                        - Jaune
+                        - Blonde
+                        - Orange Sans
+                        - Verte Sans
+                        Box, 20 cigarettes
+                    - locale: it
+                      value: |-
+                        - Jaune
+                        - Blonde
+                        - Orange Senza
+                        - Verte Senza
+                        Box, 20 sigarette
+                  composite_info:
                     title:
-                      -
-                        locale: "de"
-                        value: "Wein"
-                      -
-                        locale: "fr"
-                        value: "Vins"
-                      -
-                        locale: "it"
-                        value: "Vini"
-                    parent:
-                      id: "5b79391b-b436-45f9-b3e4-93ec3ae1fae2"
-                      code: 4001
-                      disabled: false
-                      allow_featuring: true
-                      allow_promotion: true
-                      allow_background: true
-                      title:
-                        -
-                          locale: "de"
-                          value: "Tafelgetränke und Mineralwasser"
-                        -
-                          locale: "fr"
-                          value: "Boissons table et eau minérale"
-                        -
-                          locale: "it"
-                          value: "Bevande da tavola e acque minerali"
-                  article_group:
-                    id: "0c309757-5432-4652-8201-ec35f31c5260"
-                    code: "60-56"
-                    name: "Italien Rot 70 cl"
-                    parent:
-                      id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
-                      code: "60"
-                      name: "Weine"
-                  packshot:
-                    id: "2059e18a-9e93-452e-9eef-f9d7605a31ad"
-                    url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
-                    cdn_url: "https://denner.imgix.net/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
-                    quantity: 6
-                    created_on: "2016-03-01T16:22:00+02:00"
-                  wine:
-                    country:
-                      id: "IT"
-                      title:
-                        -
-                          locale: "de"
-                          value: "Italien"
-                        -
-                          locale: "fr"
-                          value: "Italie"
-                        -
-                          locale: "it"
-                          value: "Italia"
-                    region:
-                      id: "b19c42bf-ed78-46ff-ad6f-fc688a059e6a"
-                      title:
-                        -
-                          locale: "de"
-                          value: "Apulien"
-                        -
-                          locale: "fr"
-                          value: "Les Pouilles"
-                        -
-                          locale: "it"
-                          value: "Puglia"
+                      - locale: de
+                        value: Parisienne Limited Edition
+                      - locale: fr
+                        value: Parisienne Limited Edition
+                      - locale: it
+                        value: Parisienne Limited Edition
+                    description:
+                      - locale: de
+                        value: |-
+                          - Jaune
+                          - Blonde
+                          - Orange Ohne
+                          - Verte Ohne
+                          Box, 20 Zigaretten
+                      - locale: fr
+                        value: |-
+                          - Jaune
+                          - Blonde
+                          - Orange Sans
+                          - Verte Sans
+                          Box, 20 cigarettes
+                      - locale: it
+                        value: |-
+                          - Jaune
+                          - Blonde
+                          - Orange Senza
+                          - Verte Senza
+                          Box, 20 sigarette
+                  eco_labels: []
+                  dots: []
+                  sales_price: 7.–
+                  stopper:
+                    id: c36a0cc5-e7a2-4909-9e17-cd5bfca94c21
                     type:
-                      id: 2
-                      title:
-                        -
-                          locale: "de"
-                          value: "Rotwein"
-                        -
-                          locale: "fr"
-                          value: "Vin rouge"
-                        -
-                          locale: "it"
-                          value: "Vino rosso"
-                    online_specials:
-                      - id: wine
-                        sort_index: 10
-                        title:
-                          - locale: de
-                            value: Weine
-                          - locale: fr
-                            value: Vins
-                          - locale: it
-                            value: Vini
-                    year: 2013
-                    fits_with:
-                      -
-                        locale: "de"
-                        value: "Pasta, Fleisch mit würzigen Saucen"
-                      -
-                        locale: "fr"
-                        value: "Pâtes, viande aux sauces relevées"
-                      -
-                        locale: "it"
-                        value: "Pasta, carni accompagnate da salse aromatiche"
-                    varietal:
-                      -
-                        locale: "de"
-                        value: "Primitivo"
-                      -
-                        locale: "fr"
-                        value: "Primitivo"
-                      -
-                        locale: "it"
-                        value: "Primitivo"
-                    character:
-                      -
-                        locale: "de"
-                        value: "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
-                      -
-                        locale: "fr"
-                        value: "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
-                      -
-                        locale: "it"
-                        value: "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
-                    temperature:
-                      -
-                        locale: "de"
-                        value: "16-18 °C"
-                      -
-                        locale: "fr"
-                        value: "16-18 °C"
-                      -
-                        locale: "it"
-                        value: "16-18 °C"
-                    awards:
-                      -
-                        locale: "de"
-                        value: ""
-                      -
-                        locale: "fr"
-                        value: ""
-                      -
-                        locale: "it"
-                        value: ""
-                    storage:
-                      -
-                        locale: "de"
-                        value: "3 Jahre"
-                      -
-                        locale: "fr"
-                        value: "3 ans"
-                      -
-                        locale: "it"
-                        value: "3 anni"
-                    rating:
-                      value: 4.45
-                      total: 11
-                      valid: true
-                    stock:
-                      value: -15
-                      code: 2
-                      message:
-                        -
-                          locale: "de"
-                          value: "Derzeit nicht bestellbar"
-                        -
-                          locale: "fr"
-                          value: "Actuellement pas disponible"
-                        -
-                          locale: "it"
-                          value: "Attualmente non disponibile"
-                    shop_url: null
-  # Appraisals
+                      id: promotion
+                    markup_text:
+                      - locale: de
+                        value: AKTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: ACTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: AZIONE
+                        created_on: '2020-07-14T15:11:17+0200'
+                    text:
+                      - locale: de
+                        value: AKTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: ACTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: AZIONE
+                        created_on: '2020-07-14T15:11:17+0200'
+                    images: []
+                  instead_price:
+                    - locale: de
+                      value: statt 8.–
+                    - locale: fr
+                      value: au lieu de 8.–
+                    - locale: it
+                      value: invece di 8.–
+                  price_info:
+                    - locale: de
+                      value: Konkurrenzvergleich
+                    - locale: fr
+                      value: Comparaison concurrentielle
+                    - locale: it
+                      value: Confronto con la concorrenza
+                  price_unit:
+                    - locale: de
+                      value: Pro Packung
+                    - locale: fr
+                      value: Par paquet
+                    - locale: it
+                      value: Per pacchetto
+                  promotion_info: []
+                  compared: true
+                  article_group:
+                    id: 163e8f02-105b-494e-8ba3-73ed9007eef3
+                    code: 79-02
+                    name: Zigaretten
+                    parent:
+                      id: 548c44b8-8f7d-4c08-8b41-4a2a65432861
+                      code: '79'
+                      name: Rauchwaren
+                  packshot:
+                    id: e9297375-8ac5-4af3-9caa-f9aa5e023586
+                    quantity: 1
+                    url: https://denner-assets.s3.amazonaws.com/assets/e9297375-8ac5-4af3-9caa-f9aa5e023586/web/098000_9_c_K.png
+                    image_url: https://denner-assets.s3.amazonaws.com/assets/e9297375-8ac5-4af3-9caa-f9aa5e023586/web/098000_9_c_K.png
+                    preview_url: https://denner-assets.s3.amazonaws.com/assets/e9297375-8ac5-4af3-9caa-f9aa5e023586/web/098000_9_c_K.png?version=1
+                    cdn_url: https://denner.imgix.net/assets/e9297375-8ac5-4af3-9caa-f9aa5e023586/web/098000_9_c_K.png
+                    archived: false
+                    auto_assigned: false
+                    created_on: '2020-05-22T17:19:16+0200'
+                    view:
+                      id: front
+                  supplier:
+                    code: 31770
+                - id: 2d553701-a1ea-4848-8d26-808e4389ed17
+                  sort_index: 5
+                  article_id: 090392
+                  advertised_article_id: a5b7eb20-4159-475f-95c9-ce21c36a4e6b
+                  quantity: 1
+                  advertised_quantity: 1
+                  name: Parisienne OHNE Orange LEP 20
+                  title:
+                    - locale: de
+                      value: Parisienne Limited Edition Orange Ohne
+                    - locale: fr
+                      value: Parisienne Limited Edition Orange Sans
+                    - locale: it
+                      value: Parisienne Limited Edition Orange Senza
+                  description:
+                    - locale: de
+                      value: Box, 20 Zigaretten
+                    - locale: fr
+                      value: Box, 20 cigarettes
+                    - locale: it
+                      value: Box, 20 sigarette
+                  eco_labels: []
+                  dots: []
+                  sales_price: 7.–
+                  stopper:
+                    id: e871dd7a-4204-4845-b978-48586d55b480
+                    type:
+                      id: promotion
+                    markup_text:
+                      - locale: de
+                        value: AKTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: ACTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: AZIONE
+                        created_on: '2020-07-14T15:11:17+0200'
+                    text:
+                      - locale: de
+                        value: AKTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: ACTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: AZIONE
+                        created_on: '2020-07-14T15:11:17+0200'
+                    images: []
+                  instead_price:
+                    - locale: de
+                      value: statt 8.–
+                    - locale: fr
+                      value: au lieu de 8.–
+                    - locale: it
+                      value: invece di 8.–
+                  price_info:
+                    - locale: de
+                      value: Konkurrenzvergleich
+                    - locale: fr
+                      value: Comparaison concurrentielle
+                    - locale: it
+                      value: Confronto con la concorrenza
+                  price_unit:
+                    - locale: de
+                      value: Pro Packung
+                    - locale: fr
+                      value: Par paquet
+                    - locale: it
+                      value: Per pacchetto
+                  promotion_info: []
+                  compared: true
+                  article_group:
+                    id: 163e8f02-105b-494e-8ba3-73ed9007eef3
+                    code: 79-02
+                    name: Zigaretten
+                    parent:
+                      id: 548c44b8-8f7d-4c08-8b41-4a2a65432861
+                      code: '79'
+                      name: Rauchwaren
+                  packshot:
+                    id: 18787f78-f88f-437c-90da-dea98f5cb650
+                    quantity: 1
+                    url: https://denner-assets.s3.amazonaws.com/assets/18787f78-f88f-437c-90da-dea98f5cb650/web/090392_3_c_K.png
+                    image_url: https://denner-assets.s3.amazonaws.com/assets/18787f78-f88f-437c-90da-dea98f5cb650/web/090392_3_c_K.png
+                    preview_url: https://denner-assets.s3.amazonaws.com/assets/18787f78-f88f-437c-90da-dea98f5cb650/web/090392_3_c_K.png?version=1
+                    cdn_url: https://denner.imgix.net/assets/18787f78-f88f-437c-90da-dea98f5cb650/web/090392_3_c_K.png
+                    archived: false
+                    auto_assigned: true
+                    created_on: '2020-05-22T17:19:15+0200'
+                    view:
+                      id: front
+                  supplier:
+                    code: 31770
+                - id: 1a2dea4d-1054-472e-ac55-cb6525aac8e8
+                  sort_index: 7
+                  article_id: 090393
+                  advertised_article_id: 6a6d5477-236d-430f-8c4f-1d5f4a5ba50e
+                  quantity: 1
+                  advertised_quantity: 1
+                  name: Parisienne OHNE Verte LEP 20
+                  title:
+                    - locale: de
+                      value: Parisienne Limited Edition Verte Ohne
+                    - locale: fr
+                      value: Parisienne Limited Edition Verte Sans
+                    - locale: it
+                      value: Parisienne Limited Edition Verte Senza
+                  description:
+                    - locale: de
+                      value: Box, 20 Zigaretten
+                    - locale: fr
+                      value: Box, 20 cigarettes
+                    - locale: it
+                      value: Box, 20 sigarette
+                  eco_labels: []
+                  dots: []
+                  sales_price: 7.–
+                  stopper:
+                    id: d8564a9f-e7c7-479b-a049-4d8ccde37233
+                    type:
+                      id: promotion
+                    markup_text:
+                      - locale: de
+                        value: AKTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: ACTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: AZIONE
+                        created_on: '2020-07-14T15:11:17+0200'
+                    text:
+                      - locale: de
+                        value: AKTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: ACTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: AZIONE
+                        created_on: '2020-07-14T15:11:17+0200'
+                    images: []
+                  instead_price:
+                    - locale: de
+                      value: statt 8.–
+                    - locale: fr
+                      value: au lieu de 8.–
+                    - locale: it
+                      value: invece di 8.–
+                  price_info:
+                    - locale: de
+                      value: Konkurrenzvergleich
+                    - locale: fr
+                      value: Comparaison concurrentielle
+                    - locale: it
+                      value: Confronto con la concorrenza
+                  price_unit:
+                    - locale: de
+                      value: Pro Packung
+                    - locale: fr
+                      value: Par paquet
+                    - locale: it
+                      value: Per pacchetto
+                  promotion_info: []
+                  compared: true
+                  article_group:
+                    id: 163e8f02-105b-494e-8ba3-73ed9007eef3
+                    code: 79-02
+                    name: Zigaretten
+                    parent:
+                      id: 548c44b8-8f7d-4c08-8b41-4a2a65432861
+                      code: '79'
+                      name: Rauchwaren
+                  packshot:
+                    id: 17c81f69-3d45-46e9-91d3-cd9b124adede
+                    quantity: 1
+                    url: https://denner-assets.s3.amazonaws.com/assets/17c81f69-3d45-46e9-91d3-cd9b124adede/web/090393_3_c_K.png
+                    image_url: https://denner-assets.s3.amazonaws.com/assets/17c81f69-3d45-46e9-91d3-cd9b124adede/web/090393_3_c_K.png
+                    preview_url: https://denner-assets.s3.amazonaws.com/assets/17c81f69-3d45-46e9-91d3-cd9b124adede/web/090393_3_c_K.png?version=1
+                    cdn_url: https://denner.imgix.net/assets/17c81f69-3d45-46e9-91d3-cd9b124adede/web/090393_3_c_K.png
+                    archived: false
+                    auto_assigned: true
+                    created_on: '2020-05-22T17:19:15+0200'
+                    view:
+                      id: front
+                  supplier:
+                    code: 31770
+                - id: 90d6f99e-9a9a-4d1d-85bd-df6b1a8b880e
+                  sort_index: 3
+                  article_id: 098001
+                  advertised_article_id: 46c453bb-6bea-4566-949e-23667b2cc0f6
+                  quantity: 1
+                  advertised_quantity: 1
+                  name: Parisienne Blonde Box LEP 20
+                  title:
+                    - locale: de
+                      value: Parisienne Limited Edition Blonde
+                    - locale: fr
+                      value: Parisienne Limited Edition Blonde
+                    - locale: it
+                      value: Parisienne Limited Edition Blonde
+                  description:
+                    - locale: de
+                      value: Box, 20 Zigaretten
+                    - locale: fr
+                      value: Box, 20 cigarettes
+                    - locale: it
+                      value: Box, 20 sigarette
+                  eco_labels: []
+                  dots: []
+                  sales_price: 7.–
+                  stopper:
+                    id: dd1b56ae-f9f0-4564-a54e-6b62404d24ef
+                    type:
+                      id: promotion
+                    markup_text:
+                      - locale: de
+                        value: AKTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: ACTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: AZIONE
+                        created_on: '2020-07-14T15:11:17+0200'
+                    text:
+                      - locale: de
+                        value: AKTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: ACTION
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: AZIONE
+                        created_on: '2020-07-14T15:11:17+0200'
+                    images: []
+                  instead_price:
+                    - locale: de
+                      value: statt 8.–
+                    - locale: fr
+                      value: au lieu de 8.–
+                    - locale: it
+                      value: invece di 8.–
+                  price_info:
+                    - locale: de
+                      value: Konkurrenzvergleich
+                    - locale: fr
+                      value: Comparaison concurrentielle
+                    - locale: it
+                      value: Confronto con la concorrenza
+                  price_unit:
+                    - locale: de
+                      value: Pro Packung
+                    - locale: fr
+                      value: Par paquet
+                    - locale: it
+                      value: Per pacchetto
+                  promotion_info: []
+                  compared: true
+                  article_group:
+                    id: 163e8f02-105b-494e-8ba3-73ed9007eef3
+                    code: 79-02
+                    name: Zigaretten
+                    parent:
+                      id: 548c44b8-8f7d-4c08-8b41-4a2a65432861
+                      code: '79'
+                      name: Rauchwaren
+                  packshot:
+                    id: f19771e8-2aac-47f2-8347-00031e9c576d
+                    quantity: 1
+                    url: https://denner-assets.s3.amazonaws.com/assets/f19771e8-2aac-47f2-8347-00031e9c576d/web/098001_9_c_K.png
+                    image_url: https://denner-assets.s3.amazonaws.com/assets/f19771e8-2aac-47f2-8347-00031e9c576d/web/098001_9_c_K.png
+                    preview_url: https://denner-assets.s3.amazonaws.com/assets/f19771e8-2aac-47f2-8347-00031e9c576d/web/098001_9_c_K.png?version=1
+                    cdn_url: https://denner.imgix.net/assets/f19771e8-2aac-47f2-8347-00031e9c576d/web/098001_9_c_K.png
+                    archived: false
+                    auto_assigned: false
+                    created_on: '2020-05-22T17:19:16+0200'
+                    view:
+                      id: front
+                  supplier:
+                    code: 31770
+                - id: a49ab603-d6a1-44e5-9c86-e9cffd204fe3
+                  sort_index: 0
+                  article_id: 098000
+                  advertised_article_id: 66008d35-e331-43db-bdd2-d6110d550c59
+                  quantity: 10
+                  advertised_quantity: 10
+                  name: Parisienne Jaune Box LEP 20
+                  title:
+                    - locale: de
+                      value: Parisienne Limited Edition
+                    - locale: fr
+                      value: Parisienne Limited Edition
+                    - locale: it
+                      value: Parisienne Limited Edition
+                  description:
+                    - locale: de
+                      value: |-
+                        - Jaune
+                        - Blonde
+                        - Orange Ohne
+                        - Verte Ohne
+                        Box, 10 x 20 Zigaretten
+                    - locale: fr
+                      value: |-
+                        - Jaune
+                        - Blonde
+                        - Orange Sans
+                        - Verte Sans
+                        Box, 10 x 20 cigarettes
+                    - locale: it
+                      value: |-
+                        - Jaune
+                        - Blonde
+                        - Orange Senza
+                        - Verte Senza
+                        Box, 10 x 20 sigarette
+                  composite_info:
+                    title:
+                      - locale: de
+                        value: Parisienne Limited Edition
+                      - locale: fr
+                        value: Parisienne Limited Edition
+                      - locale: it
+                        value: Parisienne Limited Edition
+                    description:
+                      - locale: de
+                        value: |-
+                          - Jaune
+                          - Blonde
+                          - Orange Ohne
+                          - Verte Ohne
+                          Box, 10 x 20 Zigaretten
+                      - locale: fr
+                        value: |-
+                          - Jaune
+                          - Blonde
+                          - Orange Sans
+                          - Verte Sans
+                          Box, 10 x 20 cigarettes
+                      - locale: it
+                        value: |-
+                          - Jaune
+                          - Blonde
+                          - Orange Senza
+                          - Verte Senza
+                          Box, 10 x 20 sigarette
+                  eco_labels: []
+                  dots: []
+                  sales_price: 70.–
+                  stopper:
+                    id: fe2bccd3-8ff4-49df-9f98-402e75ea2e2d
+                    type:
+                      id: save_value
+                    markup_text:
+                      - locale: de
+                        value: "– 10 Fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                    text:
+                      - locale: de
+                        value: "– 10 Fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                    images: []
+                  instead_price:
+                    - locale: de
+                      value: statt 80.–
+                    - locale: fr
+                      value: au lieu de 80.–
+                    - locale: it
+                      value: invece di 80.–
+                  price_info:
+                    - locale: de
+                      value: Konkurrenzvergleich
+                    - locale: fr
+                      value: Comparaison concurrentielle
+                    - locale: it
+                      value: Confronto con la concorrenza
+                  price_unit:
+                    - locale: de
+                      value: Pro Stange
+                    - locale: fr
+                      value: Par cartouche
+                    - locale: it
+                      value: Per stecca
+                  promotion_info: []
+                  compared: true
+                  article_group:
+                    id: 163e8f02-105b-494e-8ba3-73ed9007eef3
+                    code: 79-02
+                    name: Zigaretten
+                    parent:
+                      id: 548c44b8-8f7d-4c08-8b41-4a2a65432861
+                      code: '79'
+                      name: Rauchwaren
+                  packshot:
+                    id: 8eeb5a82-ee31-418a-a41c-55df0976853f
+                    quantity: 1
+                    url: https://denner-assets.s3.amazonaws.com/assets/8eeb5a82-ee31-418a-a41c-55df0976853f/web/098000_8_c_K.png
+                    image_url: https://denner-assets.s3.amazonaws.com/assets/8eeb5a82-ee31-418a-a41c-55df0976853f/web/098000_8_c_K.png
+                    preview_url: https://denner-assets.s3.amazonaws.com/assets/8eeb5a82-ee31-418a-a41c-55df0976853f/web/098000_8_c_K.png?version=1
+                    cdn_url: https://denner.imgix.net/assets/8eeb5a82-ee31-418a-a41c-55df0976853f/web/098000_8_c_K.png
+                    archived: false
+                    auto_assigned: false
+                    created_on: '2020-05-22T17:19:16+0200'
+                    view:
+                      id: front
+                  supplier:
+                    code: 31770
+                - id: 4868b9f1-53b3-4c2d-a395-af3dbce5ce76
+                  sort_index: 4
+                  article_id: 090392
+                  advertised_article_id: 81455753-e25c-482f-8b11-29098c32b6c9
+                  quantity: 10
+                  advertised_quantity: 10
+                  name: Parisienne OHNE Orange LEP 20
+                  title:
+                    - locale: de
+                      value: Parisienne Limited Edition Orange Ohne
+                    - locale: fr
+                      value: Parisienne Limited Edition Orange Sans
+                    - locale: it
+                      value: Parisienne Limited Edition Orange Senza
+                  description:
+                    - locale: de
+                      value: Box, 10 x 20 Zigaretten
+                    - locale: fr
+                      value: Box, 10 x 20 cigarettes
+                    - locale: it
+                      value: Box, 10 x 20 sigarette
+                  eco_labels: []
+                  dots: []
+                  sales_price: 70.–
+                  stopper:
+                    id: f78f02d8-df36-493d-9f35-931dd4711147
+                    type:
+                      id: save_value
+                    markup_text:
+                      - locale: de
+                        value: "– 10 Fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                    text:
+                      - locale: de
+                        value: "– 10 Fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                    images: []
+                  instead_price:
+                    - locale: de
+                      value: statt 80.–
+                    - locale: fr
+                      value: au lieu de 80.–
+                    - locale: it
+                      value: invece di 80.–
+                  price_info:
+                    - locale: de
+                      value: Konkurrenzvergleich
+                    - locale: fr
+                      value: Comparaison concurrentielle
+                    - locale: it
+                      value: Confronto con la concorrenza
+                  price_unit:
+                    - locale: de
+                      value: Pro Stange
+                    - locale: fr
+                      value: Par cartouche
+                    - locale: it
+                      value: Per stecca
+                  promotion_info: []
+                  compared: true
+                  article_group:
+                    id: 163e8f02-105b-494e-8ba3-73ed9007eef3
+                    code: 79-02
+                    name: Zigaretten
+                    parent:
+                      id: 548c44b8-8f7d-4c08-8b41-4a2a65432861
+                      code: '79'
+                      name: Rauchwaren
+                  packshot:
+                    id: f8d6bccf-7650-40cb-b91a-ec40c9cae67b
+                    quantity: 1
+                    url: https://denner-assets.s3.amazonaws.com/assets/f8d6bccf-7650-40cb-b91a-ec40c9cae67b/web/090221_2_c_K.png
+                    image_url: https://denner-assets.s3.amazonaws.com/assets/f8d6bccf-7650-40cb-b91a-ec40c9cae67b/web/090221_2_c_K.png
+                    preview_url: https://denner-assets.s3.amazonaws.com/assets/f8d6bccf-7650-40cb-b91a-ec40c9cae67b/web/090221_2_c_K.png?version=1
+                    cdn_url: https://denner.imgix.net/assets/f8d6bccf-7650-40cb-b91a-ec40c9cae67b/web/090221_2_c_K.png
+                    archived: false
+                    auto_assigned: false
+                    created_on: '2017-07-17T10:18:52+0200'
+                    view:
+                      id: front
+                  supplier:
+                    code: 31770
+                - id: 0f27ce16-c5f4-4050-8ecd-e3797239b160
+                  sort_index: 6
+                  article_id: 090393
+                  advertised_article_id: 07734cc6-257d-43da-bcbf-e21701a827e1
+                  quantity: 10
+                  advertised_quantity: 10
+                  name: Parisienne OHNE Verte LEP 20
+                  title:
+                    - locale: de
+                      value: Parisienne Limited Edition Verte Ohne
+                    - locale: fr
+                      value: Parisienne Limited Edition Verte Sans
+                    - locale: it
+                      value: Parisienne Limited Edition Verte Senza
+                  description:
+                    - locale: de
+                      value: Box, 10 x 20 Zigaretten
+                    - locale: fr
+                      value: Box, 10 x 20 cigarettes
+                    - locale: it
+                      value: Box, 10 x 20 sigarette
+                  eco_labels: []
+                  dots: []
+                  sales_price: 70.–
+                  stopper:
+                    id: 601a67bb-b786-4b2b-a918-941e9649979a
+                    type:
+                      id: save_value
+                    markup_text:
+                      - locale: de
+                        value: "– 10 Fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                    text:
+                      - locale: de
+                        value: "– 10 Fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                    images: []
+                  instead_price:
+                    - locale: de
+                      value: statt 80.–
+                    - locale: fr
+                      value: au lieu de 80.–
+                    - locale: it
+                      value: invece di 80.–
+                  price_info:
+                    - locale: de
+                      value: Konkurrenzvergleich
+                    - locale: fr
+                      value: Comparaison concurrentielle
+                    - locale: it
+                      value: Confronto con la concorrenza
+                  price_unit:
+                    - locale: de
+                      value: Pro Stange
+                    - locale: fr
+                      value: Par cartouche
+                    - locale: it
+                      value: Per stecca
+                  promotion_info: []
+                  compared: true
+                  article_group:
+                    id: 163e8f02-105b-494e-8ba3-73ed9007eef3
+                    code: 79-02
+                    name: Zigaretten
+                    parent:
+                      id: 548c44b8-8f7d-4c08-8b41-4a2a65432861
+                      code: '79'
+                      name: Rauchwaren
+                  packshot:
+                    id: 7a6bb759-f6d8-4574-849a-676650078eee
+                    quantity: 1
+                    url: https://denner-assets.s3.amazonaws.com/assets/7a6bb759-f6d8-4574-849a-676650078eee/web/090220_2_c_K.png
+                    image_url: https://denner-assets.s3.amazonaws.com/assets/7a6bb759-f6d8-4574-849a-676650078eee/web/090220_2_c_K.png
+                    preview_url: https://denner-assets.s3.amazonaws.com/assets/7a6bb759-f6d8-4574-849a-676650078eee/web/090220_2_c_K.png?version=1
+                    cdn_url: https://denner.imgix.net/assets/7a6bb759-f6d8-4574-849a-676650078eee/web/090220_2_c_K.png
+                    archived: false
+                    auto_assigned: false
+                    created_on: '2017-07-17T10:18:42+0200'
+                    view:
+                      id: front
+                  supplier:
+                    code: 31770
+                - id: ee8d736e-c74b-47cd-86e0-beb411725b6d
+                  sort_index: 2
+                  article_id: 098001
+                  advertised_article_id: b6837cf8-8b99-4c25-99c5-6d9e1becb63b
+                  quantity: 10
+                  advertised_quantity: 10
+                  name: Parisienne Blonde Box LEP 20
+                  title:
+                    - locale: de
+                      value: Parisienne Limited Edition Blonde
+                    - locale: fr
+                      value: Parisienne Limited Edition Blonde
+                    - locale: it
+                      value: Parisienne Limited Edition Blonde
+                  description:
+                    - locale: de
+                      value: Box, 10 x 20 Zigaretten
+                    - locale: fr
+                      value: Box, 10 x 20 cigarettes
+                    - locale: it
+                      value: Box, 10 x 20 sigarette
+                  eco_labels: []
+                  dots: []
+                  sales_price: 70.–
+                  stopper:
+                    id: ba5286cd-346c-493c-89bf-c48206b62c50
+                    type:
+                      id: save_value
+                    markup_text:
+                      - locale: de
+                        value: "– 10 Fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                    text:
+                      - locale: de
+                        value: "– 10 Fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: fr
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                      - locale: it
+                        value: "– 10 fr."
+                        created_on: '2020-07-14T15:11:17+0200'
+                    images: []
+                  instead_price:
+                    - locale: de
+                      value: statt 80.–
+                    - locale: fr
+                      value: au lieu de 80.–
+                    - locale: it
+                      value: invece di 80.–
+                  price_info:
+                    - locale: de
+                      value: Konkurrenzvergleich
+                    - locale: fr
+                      value: Comparaison concurrentielle
+                    - locale: it
+                      value: Confronto con la concorrenza
+                  price_unit:
+                    - locale: de
+                      value: Pro Stange
+                    - locale: fr
+                      value: Par cartouche
+                    - locale: it
+                      value: Per stecca
+                  promotion_info: []
+                  compared: true
+                  article_group:
+                    id: 163e8f02-105b-494e-8ba3-73ed9007eef3
+                    code: 79-02
+                    name: Zigaretten
+                    parent:
+                      id: 548c44b8-8f7d-4c08-8b41-4a2a65432861
+                      code: '79'
+                      name: Rauchwaren
+                  packshot:
+                    id: 68c5bffe-c66b-4071-8836-4ef8c5348b59
+                    quantity: 1
+                    url: https://denner-assets.s3.amazonaws.com/assets/68c5bffe-c66b-4071-8836-4ef8c5348b59/web/098001_8_c_K.png
+                    image_url: https://denner-assets.s3.amazonaws.com/assets/68c5bffe-c66b-4071-8836-4ef8c5348b59/web/098001_8_c_K.png
+                    preview_url: https://denner-assets.s3.amazonaws.com/assets/68c5bffe-c66b-4071-8836-4ef8c5348b59/web/098001_8_c_K.png?version=1
+                    cdn_url: https://denner.imgix.net/assets/68c5bffe-c66b-4071-8836-4ef8c5348b59/web/098001_8_c_K.png
+                    archived: false
+                    auto_assigned: false
+                    created_on: '2020-05-22T17:19:16+0200'
+                    view:
+                      id: front
+                  supplier:
+                    code: 31770
+              screen:
+                id: tobacco
+                name: Tabak
+              design:
+                id: a59f84d6-f779-4075-95fe-5803aceae2f1
+                code: 1
+                name: Standard
+              template:
+                id: week-hit
+                code: 1
+                name: Wo-Hit
+              title:
+                - locale: de
+                  value: Parisienne Limited Edition Jaune
+                - locale: fr
+                  value: Parisienne Limited Edition Jaune
+                - locale: it
+                  value: Parisienne Limited Edition Jaune
+              footer: []
+
+  ### Appraisals
   /appraisals:
     get:
       summary: List wine appraisals
@@ -3372,12 +4009,12 @@ parameters:
     type: string
     required: false
   ArticleIdPathParam:
-     name: article_id
-     description: The unique identifier of an article
-     in: path
-     type: string
-     required: true
-     pattern: '/^[0-9]{6}$/'
+    name: article_id
+    description: The unique identifier of an article
+    in: path
+    type: string
+    required: true
+    pattern: '/^[0-9]{6}$/'
   PublicationIdPathParam:
     name: publication_id
     description: The unique identifier of an online publication
@@ -3512,6 +4149,18 @@ definitions:
     minimum: 0
     description: Quantity
 
+  SoldQuantity:
+    type: integer
+    format: int32
+    minimum: 0
+    description: Sold quantity (for texts and prices)
+
+  AdvertisedQuantity:
+    type: integer
+    format: int32
+    minimum: 0
+    description: Advertised quantity (for images)
+
   ContentSize:
     type: number
     format: float
@@ -3553,17 +4202,17 @@ definitions:
         $ref: '#/definitions/Translations'
 
   ArticleValidity:
-      type: object
-      description: Article validity based on dates (from/to) and corresponding texts (short and long version)
-      properties:
-        from:
-          $ref: '#/definitions/Date'
-        to:
-          $ref: '#/definitions/Date'
-        short_text:
-          $ref: '#/definitions/Translations'
-        long_text:
-          $ref: '#/definitions/Translations'
+    type: object
+    description: Article validity based on dates (from/to) and corresponding texts (short and long version)
+    properties:
+      from:
+        $ref: '#/definitions/Date'
+      to:
+        $ref: '#/definitions/Date'
+      short_text:
+        $ref: '#/definitions/Translations'
+      long_text:
+        $ref: '#/definitions/Translations'
 
   StoreFilter:
     type: object
@@ -3589,8 +4238,8 @@ definitions:
           $ref: '#/definitions/UUIDv4'
         description: Values to filter on. Array of UUids
     required:
-       - id
-       - value
+      - id
+      - value
 
   AvailabilityLimitations:
     type: object
@@ -3613,6 +4262,21 @@ definitions:
     format: int32
     minimum: 0
     description: Index for sorting
+
+  CompositeInfo:
+    type: object
+    properties:
+      title:
+        $ref: '#/definitions/Translations'
+      description:
+        $ref: '#/definitions/Translations'
+
+  Supplier:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
 
   ### Store
   Store:
@@ -3863,10 +4527,15 @@ definitions:
         $ref: '#/definitions/UUIDv4'
       code:
         type: string
-        description: Navision identification code
+        description: Eco label ID (e.g. 'suisse-garantie', 'utz')
       name:
         type: string
         description: German name for the eco label
+      image:
+        type: object
+        properties:
+          cdn_url:
+            $ref: '#/definitions/Url'
 
   ### Purchasing department
   PurchasingDepartment:
@@ -3974,19 +4643,46 @@ definitions:
       text:
         $ref: '#/definitions/Translations'
 
+  PackshotView:
+    type: object
+    properties:
+      id:
+        type: string
+#        pattern: '/^(front|back)$/'
+        enum:
+          - front
+          - back
+        description: View ID that is represented in packshot
+
   Packshot:
     type: object
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
+      quantity:
+        $ref: '#/definitions/Quantity'
       url:
+        $ref: '#/definitions/Url'
+      image_url:
+        $ref: '#/definitions/Url'
+      preview_url:
         $ref: '#/definitions/Url'
       cdn_url:
         $ref: '#/definitions/Url'
-      quantity:
+      archived:
         $ref: '#/definitions/Quantity'
+        type: boolean
+        description: Is the packshot archived?
+#      auto_assigned:
+#        type: boolean
+      view:
+        $ref: '#/definitions/PackshotView'
       created_on:
         $ref: '#/definitions/Date'
+    required:
+      - id
+      - url
+      - cdn_url
 
   BasicArticleWine:
 #  Has no definitions/WineBox
@@ -4133,6 +4829,12 @@ definitions:
       valid:
         type: boolean
         description: Is a valid rating?
+      stars:
+        type: number
+        format: float
+        minimum: 0
+        maximum: 5
+        description: Stars, rounded to the half integer
 
   Stock:
     type: object
@@ -4189,6 +4891,16 @@ definitions:
         $ref: '#/definitions/Translations'
       images:
         $ref: '#/definitions/OutputImages'
+
+  Stopper:
+    allOf:
+      - $ref: '#/definitions/Output'
+      - type: object
+        properties:
+          markup_text:
+            allOf:
+              - $ref: '#/definitions/Translations'
+              - description: Markup text for visual effects
 
   OutputType:
     type: object
@@ -4281,57 +4993,6 @@ definitions:
       wine:
         $ref: '#/definitions/BasicArticleWine'
 
-  ScreenArticle:
-    type: object
-    properties:
-      id:
-        $ref: '#/definitions/UUIDv4'
-      article_id:
-        type: string
-        pattern: '/^\d{6}$/'
-        description: Navision article code
-      name:
-        type: string
-        description: Article name
-      title:
-        $ref: '#/definitions/Translations'
-      description:
-        $ref: '#/definitions/Translations'
-      prices:
-        $ref: '#/definitions/ArticlePrices'
-      price_info:
-        $ref: '#/definitions/Translations'
-      unit_price_info:
-        $ref: '#/definitions/Translations'
-      dots:
-        $ref: '#/definitions/Dots'
-      quantity:
-        $ref: '#/definitions/Quantity'
-#      Removed because we cannot calculate a valid size, neither display a standardized unit
-#      content:
-#        $ref: '#/definitions/Content'
-      base:
-        $ref: '#/definitions/BaseContent'
-      validity:
-        $ref: '#/definitions/ArticleValidity'
-      availability_limitations:
-        $ref: '#/definitions/AvailabilityLimitations'
-      sort_index:
-        $ref: '#/definitions/SortIndex'
-      compared:
-        type: boolean
-        description: Is the article's price compared to an offer from an other company?
-      cooling:
-        $ref: '#/definitions/Cooling'
-      online_group:
-        $ref: '#/definitions/AssignedOnlineGroup'
-      article_group:
-        $ref: '#/definitions/AssignedArticleGroup'
-      packshot:
-        $ref: '#/definitions/Packshot'
-      wine:
-        $ref: '#/definitions/BasicArticleWine'
-
   ### Online publication
   OnlinePublication:
     type: object
@@ -4371,8 +5032,8 @@ definitions:
     allOf:
       - $ref: '#/definitions/OnlinePublication'
       - properties:
-         articles:
-           $ref: '#/definitions/OnlineArticles'
+          articles:
+            $ref: '#/definitions/OnlineArticles'
 
   PromotionType:
     type: object
@@ -4481,6 +5142,94 @@ definitions:
         $ref: '#/definitions/Translations'
 
   ### Screen publication
+  ScreenArticle:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      article_id:
+        type: string
+        pattern: '/^\d{6}$/'
+        description: Navision article code
+      advertised_article_id:
+        $ref: '#/definitions/UUIDv4'
+      quantity:
+        $ref: '#/definitions/SoldQuantity'
+      advertised_quantity:
+        $ref: '#/definitions/AdvertisedQuantity'
+      name:
+        type: string
+        description: Article name
+      title:
+        $ref: '#/definitions/Translations'
+      description:
+        $ref: '#/definitions/Translations'
+      composite_info:
+        $ref: '#/definitions/CompositeInfo'
+      eco_labels:
+        $ref: '#/definitions/EcoLabels'
+      dots:
+        $ref: '#/definitions/Dots'
+      sales_price:
+        type: string
+      stopper:
+        $ref: '#/definitions/Stopper'
+      instead_price:
+        $ref: '#/definitions/Translations'
+      price_info:
+        $ref: '#/definitions/Translations'
+      price_unit:
+        $ref: '#/definitions/Translations'
+      promotion_info:
+        $ref: '#/definitions/Translations'
+      compared:
+        type: boolean
+        description: Is the article's price compared to an offer from an other company?
+      article_group:
+        $ref: '#/definitions/AssignedArticleGroup'
+      packshot:
+        $ref: '#/definitions/Packshot'
+      supplier:
+        $ref: '#/definitions/Supplier'
+      country:
+        $ref: '#/definitions/Country'
+      rating:
+        $ref: '#/definitions/Rating'
+
+  ScreenScreen:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique ID (e.g.:"tobacco" ,"pos")
+#        pattern: '/^(tobacco|pos)$/'
+      name:
+        type: string
+
+  ScreenDesign:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: integer
+        format: int32
+      name:
+        type: string
+
+  ScreenTemplate:
+    type: object
+    properties:
+      id:
+        type: string
+      code:
+        type: integer
+        format: int32
+      name:
+        type: string
+
   ScreenPublication:
     type: object
     properties:
@@ -4492,17 +5241,41 @@ definitions:
         $ref: '#/definitions/Year'
       week:
         $ref: '#/definitions/Week'
-      title:
-        $ref: '#/definitions/Translations'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      created_on:
+        $ref: '#/definitions/Date'
       validity:
         $ref: '#/definitions/Validity'
+      promotion_type:
+        $ref: '#/definitions/PromotionType'
+      automatic:
+        type: boolean
+      screen:
+        $ref: '#/definitions/ScreenScreen'
+      design:
+        $ref: '#/definitions/ScreenDesign'
+      template:
+        $ref: '#/definitions/ScreenTemplate'
+      title:
+        $ref: '#/definitions/Translations'
+      footer:
+        $ref: '#/definitions/Translations'
+
+  ScreenPublicationWithArticleCount:
+    allOf:
+      - $ref: '#/definitions/ScreenPublication'
+      - properties:
+          article_count:
+            type: integer
+            format: int32
 
   ScreenPublicationWithArticles:
     allOf:
       - $ref: '#/definitions/ScreenPublication'
       - properties:
-         articles:
-           $ref: '#/definitions/ScreenArticles'
+          articles:
+            $ref: '#/definitions/ScreenArticles'
 
   ### Appraisal
   Appraisal:
@@ -4870,7 +5643,7 @@ definitions:
   ScreenPublications:
     type: array
     items:
-      $ref: '#/definitions/ScreenPublication'
+      $ref: '#/definitions/ScreenPublicationWithArticleCount'
 
   Appraisals:
     type: array
@@ -5002,22 +5775,22 @@ definitions:
         $ref: '#/definitions/Articles'
 
   PromotionTypesResponse:
-      type: object
-      properties:
-        page_count:
-          description: The number of pages
-          type: integer
-          format: int32
-        page_size:
-          description: The page size
-          type: integer
-          format: int32
-        total_items:
-          description: The number of items on all pages
-          type: integer
-          format: int32
-        promotion_types:
-          $ref: '#/definitions/PromotionTypes'
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      promotion_types:
+        $ref: '#/definitions/PromotionTypes'
 
   OnlineFiltersResponse:
     type: object
