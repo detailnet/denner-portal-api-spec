@@ -4920,8 +4920,21 @@ definitions:
       locale:
         type: string
         description: Locale for the image formats
+      design:
+        $ref: '#/definitions/OutputImageDesign'
       formats:
         $ref: '#/definitions/OutputImageFormats'
+
+  OutputImageDesign:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Designe of output image (e.g. 'red','white', ...)
+      priority:
+        type: integer
+        format: int32
+        minimum: 0
 
   OutputImageFormat:
     type: object
