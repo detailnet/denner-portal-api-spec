@@ -4946,6 +4946,15 @@ definitions:
         type: string
         description: Image url which can be used, for example, in an 'img' tag
 
+  OnlinePublicationDisplay:
+    type: object
+    description: Period of display (from/to), calculated value based on online filters
+    properties:
+      from:
+        $ref: '#/definitions/Date'
+      to:
+        $ref: '#/definitions/Date'
+
   ### Online publicated article
   OnlineArticle:
     type: object
@@ -5030,6 +5039,8 @@ definitions:
         $ref: '#/definitions/Translations'
       validity:
         $ref: '#/definitions/Validity'
+      display:
+        $ref: '#/definitions/OnlinePublicationDisplay'
       filters:
         type: array
         items:
