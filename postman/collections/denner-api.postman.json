@@ -3844,6 +3844,45 @@
 							"response": []
 						},
 						{
+							"name": "/publication-briefings",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Erstbestückung Wein-Aktionsfläche Rümlang (596) KW 22/2020\",\n    \"week\":{\n        \"year\":2020,\n        \"number\":22\n    },\n    \"store\":\"596\",\n    \"advertised_articles\":[\n        {\n            \"promotion\":\"APL02676\",\n            \"article\":\"050418\",\n            \"quantity\":1\n        }\n    ],\n    \"languages\":[\n        \"de\"\n    ],\n    \"templates\":[\n        \"a4-poster\",\n        \"a7-poster-8x\"\n    ],\n    \"created_by\":{\n        \"email\":\"michael.staehelin@denner.ch\",\n        \"firstname\":\"Michael\",\n        \"lastname\":\"Stähelin\"\n    },\n    \"reference\":\"optional-wpt-internal-reference\"\n}"
+								},
+								"url": {
+									"raw": "{{advertising_url_base}}/publication-briefings",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"publication-briefings"
+									]
+								},
+								"description": "Create a publication briefing (Wein-Aktionsplakate via Weinplanungstool)"
+							},
+							"response": []
+						},
+						{
 							"name": "/print-layouts",
 							"request": {
 								"method": "GET",
@@ -6029,7 +6068,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{articles_url_base}}/articles/051583?wine-year=2016",
+									"raw": "{{articles_url_base}}/articles/027122",
 									"host": [
 										"{{articles_url_base}}"
 									],
@@ -6058,14 +6097,20 @@
 										},
 										{
 											"key": "price-selection",
-											"value": "{\"valid_on\":\"2015-09-17\",\"level\":0}",
+											"value": "{\"valid_on\":\"2020-06-24\",\"level\":0}",
 											"description": "Get specific price (query formatted as JSON)",
 											"disabled": true
 										},
 										{
 											"key": "wine-year",
 											"value": "2016",
-											"description": "Get specific wine-year (for medals/awards)"
+											"description": "Get specific wine-year (for medals/awards)",
+											"disabled": true
+										},
+										{
+											"key": "hundred-gram-prices",
+											"value": "false",
+											"disabled": true
 										}
 									]
 								},
