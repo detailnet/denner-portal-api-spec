@@ -1,10 +1,9 @@
 {
-    "name": "Erstbestückung Wein-Aktionsfläche Rümlang (596) KW 22/2020",
     "week": {
         "year": 2020,
         "number": 22
     },
-    "store": "596",
+    "name": "Erstbestückung Wein-Aktionsfläche Rümlang (596) KW 22/2020",
     "advertised_articles": [
         {
             "promotion": "APL02676",
@@ -19,10 +18,11 @@
         "a4-poster",
         "a7-poster-8x"
     ],
+    "store": 596,
+    "reference": "optional-wpt-internal-reference",
     "created_by": {
         "email": "denner.user@denner.ch",
         "firstname": "Denner",
         "lastname": "User"
-    },
-    "reference": "optional-wpt-internal-reference"
+    }
 }

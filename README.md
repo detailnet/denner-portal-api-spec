@@ -48,7 +48,7 @@ The Denner Portal provides mostly advertising related data.
 * `GET /print-layouts` (Print-Layoutarten, [example](examples/print-layouts.json))
 * `GET /print-formats` (Print-Formate und -Vorlagen, [example](examples/print-formats.json))
 * `GET /print-schemes` (Print-Werbemittelschemas, [example](examples/print-schemes.json))
-* `POST /publication-briefings` (Print-Briefings, [body example](examples/publication-briefing.post.json), [response example](examples/publication-briefing.json))
+* `POST /print-publication-briefings` (Print-Publication-Briefings, [body example](examples/print-publication-briefing.post.json), [response example](examples/print-publication-briefing.json))
 
 ### Appraisals
 * `GET /appraisals` (Weinbeurteilungen, [example](examples/appraisals.json))
