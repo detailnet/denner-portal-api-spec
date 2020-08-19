@@ -1,0 +1,28 @@
+{
+    "name": "Erstbestückung Wein-Aktionsfläche Rümlang (596) KW 22/2020",
+    "week": {
+        "year": 2020,
+        "number": 22
+    },
+    "store": "596",
+    "advertised_articles": [
+        {
+            "promotion": "APL02676",
+            "article": "050418",
+            "quantity": 1
+        }
+    ],
+    "languages": [
+        "de"
+    ],
+    "templates": [
+        "a4-poster",
+        "a7-poster-8x"
+    ],
+    "created_by": {
+        "email": "denner.user@denner.ch",
+        "firstname": "Denner",
+        "lastname": "User"
+    },
+    "reference": "optional-wpt-internal-reference"
+}
