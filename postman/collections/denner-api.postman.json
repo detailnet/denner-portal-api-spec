@@ -3844,7 +3844,7 @@
 							"response": []
 						},
 						{
-							"name": "/publication-briefings",
+							"name": "/print-publication-briefings",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -3870,12 +3870,12 @@
 									"raw": "{\n    \"name\":\"Erstbestückung Wein-Aktionsfläche Rümlang (596) KW 22/2020\",\n    \"week\":{\n        \"year\":2020,\n        \"number\":22\n    },\n    \"store\":\"596\",\n    \"advertised_articles\":[\n        {\n            \"promotion\":\"APL02676\",\n            \"article\":\"050418\",\n            \"quantity\":1\n        }\n    ],\n    \"languages\":[\n        \"de\"\n    ],\n    \"templates\":[\n        \"a4-poster\",\n        \"a7-poster-8x\"\n    ],\n    \"created_by\":{\n        \"email\":\"michael.staehelin@denner.ch\",\n        \"firstname\":\"Michael\",\n        \"lastname\":\"Stähelin\"\n    },\n    \"reference\":\"optional-wpt-internal-reference\"\n}"
 								},
 								"url": {
-									"raw": "{{advertising_url_base}}/publication-briefings",
+									"raw": "{{advertising_url_base}}/print-publication-briefings",
 									"host": [
 										"{{advertising_url_base}}"
 									],
 									"path": [
-										"publication-briefings"
+										"print-publication-briefings"
 									]
 								},
 								"description": "Create a publication briefing (Wein-Aktionsplakate via Weinplanungstool)"

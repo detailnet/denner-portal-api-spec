@@ -31,19 +31,19 @@ Choose the one that best fits the testing situation you need:
 
 #### Import environments
 
-- Go to the environments manager window.
+- Go to the environment's manager window.
   - Move the mouse pointer over the eye dropdown menu (top bar).
   - Click on "Manage environments"
 - Click on "Import" button, choose all files in the project environments directory (all at once).
 
-> There is no direct possibility to import from an URL, but you can use your OS as wrapper. 
-> To do so enter an URL instead of a file in the file selection window (e.g. https://raw.githubusercontent.com/detailnet/denner-portal-api-spec/master/postman/environments/denner-api_web01.json).
+> There is no direct possibility to import from a URL, but you can use your OS as wrapper. 
+> To do so enter a URL instead of a file in the file selection window (e.g. https://raw.githubusercontent.com/detailnet/denner-portal-api-spec/master/postman/environments/denner-api_web01.json).
 
 #### Setup global variables
 
 We use global variables to store data that is your own, and must not be shared with others.
 
-Currently we support following global variables:
+Currently, we support following global variables:
 
 - `denner_advertising_app_id`
 - `denner_advertising_app_key`
@@ -58,7 +58,7 @@ Currently we support following global variables:
 
 Set up global variables:
 
-- Go to the environments manager window.
+- Go to the environment's manager window.
   - Move the mouse pointer over the eye drop-down menu (top bar).
   - Click on "Manage environments".
 - Click on "Globals" button.
@@ -69,7 +69,7 @@ Set up global variables:
 - Move your mouse pointer over the collection name (left menu), click on "Share collection" icon.
 - Click on "Download" button.
 - Export-collection menu appears, choose "Collection v2" and click on "Export".
-- Overwrite your local repository's [collections/denner-api.json](collections/denner-api.json) file.
+- Overwrite your local repository's [collections/denner-api.postman.json](collections/denner-api.postman.json) file.
 - Review changes with your preferred editor:
   - Replace tabs with 4 whitespaces.
   - Reset owner to original.
