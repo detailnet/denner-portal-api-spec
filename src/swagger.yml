@@ -4116,7 +4116,7 @@ parameters:
       - [{"property":"in_shop","operator":"eq","type":"boolean","value":true}]
 
   CreatePublicationBriefing:
-    name: PublicationBriefingInput
+    name: CreatePublicationBriefing
     in: body
     required: true
     schema:
