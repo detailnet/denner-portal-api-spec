@@ -3595,6 +3595,60 @@ paths:
                   value: Parisienne Limited Edition Jaune
               footer: []
 
+  ### Print Advertising (Production)
+  /publication-briefings:
+    post:
+      summary: Create breifing
+      description: >
+        Create a publication briefing (Wein-Aktionsplakate via Weinplanungstool).
+      tags:
+        - advertising
+      operationId: createPublicationBriefing
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - appKey: []
+        - appId: []
+      parameters:
+        - $ref: '#/parameters/PublicationBriefingInput'
+      responses:
+        201:
+          description: Successful creation
+          schema:
+            $ref: '#/definitions/PublicationBriefing'
+          examples:
+            application/json:
+              id: 3ef09dc1-5c64-4489-bbdf-f45fa64abec9
+              week:
+                year: 2020
+                number: 22
+              name: Erstbestückung Wein-Aktionsfläche Rümlang (596) KW 22/2020
+              status: new
+              advertised_articles:
+                - promotion: APL02676
+                  article: 050418
+                  quantity: 1
+              languages:
+                - de
+              templates:
+                - id: a4-poster
+                  name: A4-Plakat
+                - id: a7-poster-8x
+                  name: 8er-Bogen A7-Stopper
+              store: 596
+              reference: optional-wpt-internal-reference
+              created_by:
+                email: denner.user@denner.ch
+                firstname: Denner
+                lastname: User
+              created_on: '2020-08-19T11:27:52+0200'
+        400:
+          description: 400 Bad Request
+        500:
+          description: 500 Internal Server Error
+
   ### Appraisals
   /appraisals:
     get:
@@ -4064,6 +4118,52 @@ parameters:
       Examples:
       - [{"property":"id","operator":"in","type":"array","value":["7627150d-36bd-4867-89b2-091800a03d24","58afec5c-ece9-4b66-bc55-00d6dc1b65b8"]}]
       - [{"property":"in_shop","operator":"eq","type":"boolean","value":true}]
+  PublicationBriefingInput:
+    name: PublicationBriefingInput
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - name
+        - week
+        - store
+        - advertised_aricles
+        - languages
+        - templates
+      properties:
+        name:
+          type: string
+          description: Nanme for briefing and publications
+        week:
+          $ref: '#/definitions/FullWeek'
+        store:
+          $ref: '#/definitions/StoreCode'
+        advertised_articles:
+          type: array
+          description: Promoted articles selection
+          items:
+            $ref: '#/definitions/AdvertisedArticleSelection'
+          minItems: 1
+          uniqueItems: true
+        languages:
+          type: array
+          items:
+            $ref: '#/definitions/Locale'
+          minItems: 1
+          uniqueItems: true
+        templates:
+          type: array
+          description: templates to produce
+          items:
+            $ref: '#/definitions/PublicationTemplateId'
+          minItems: 1
+          uniqueItems: true
+        created_by:
+          $ref: '#/definitions/Creator'
+        reperence :
+          type: string
+          description: Optional WPT internal reference
 
 definitions:
   ### Common
@@ -4074,8 +4174,12 @@ definitions:
 
   Locale:
     type: string
-    pattern: '/^(de|fr|it)$/'
+    #pattern: '/^(de|fr|it)$/'
     description: Locale
+    enum:
+      - de
+      - fr
+      - it
 
   Translation:
     type: object
@@ -4140,6 +4244,17 @@ definitions:
     minimum: 1
     maximum: 53
     description: Week number (ISO 8601, week date system)
+
+  FullWeek:
+    type: object
+    properties:
+      year:
+        $ref: '#/definitions/Year'
+      number:
+        $ref: '#/definitions/Week'
+    required:
+      - year
+      - number
 
   Price:
     type: number
@@ -4261,6 +4376,11 @@ definitions:
 #    pattern: @todo Fixed pattern?
     description: Formatted phone number
 
+  Email:
+    type: string
+    format: email # Best effort Ref.: https://swagger.io/specification/#data-types
+    description: E-mail address
+
   SortIndex:
     type: integer
     format: int32
@@ -4282,16 +4402,73 @@ definitions:
         type: integer
         format: int32
 
+  Creator:
+    type: object
+    properties:
+      email:
+        $ref: '#/definitions/Email'
+      firstname:
+        type: string
+      lastname:
+        type: string
+
+  PublicationTemplateId:
+    type: string
+    description: The unique identifier of a template e.g. 'a4-poster', 'a7-poster-8x', 'a4-poster-preprinted', ...
+    pattern: '/^[-a-z0-9]{3,}$/'
+
+  PublicationTemplate:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/PublicationTemplateId'
+      name:
+        type: string
+
+  PublicationBriefing:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      week:
+        $ref: '#/definitions/FullWeek'
+      name:
+        type: string
+        description: Nanme for briefing and publications
+      status:
+        type: string
+      success:
+        type: boolean
+      store:
+        $ref: '#/definitions/StoreCode'
+      advertised_articles:
+        $ref: '#/definitions/AdvertisedArticleSelections'
+      languages:
+        $ref: '#/definitions/Locales'
+      templates:
+        $ref: '#/definitions/PublicationTemplates'
+      reperence :
+        type: string
+        description: Optional WPT internal reference
+      created_by:
+        $ref: '#/definitions/Creator'
+      created_on:
+        $ref: '#/definitions/Date'
+
   ### Store
+  StoreCode:
+    type: integer
+    format: int32
+    description: Navision store code
+    minimum: 1
+
   Store:
     type: object
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
       code:
-        type: integer
-        format: int32
-        description: Navision store code
+        $ref: '#/definitions/StoreCode'
       name:
         type: string
         description: Name
@@ -5305,6 +5482,28 @@ definitions:
           articles:
             $ref: '#/definitions/ScreenArticles'
 
+  ### Print Advertising (Production)
+  AdvertisedArticleSelection:
+    type: object
+    properties:
+      promotion:
+        type: string
+        description: Promotion code e.g. 'APL02676'
+        pattern: '/^[A-Z0-9]{6,9}$/'
+      article:
+        type: string
+        description: The unique identifier of an article
+        pattern: '/^[0-9]{6}$/'
+      quantity:
+        type: integer
+        format: int32
+        minimum: 1
+        description: The advertised quantity
+    required:
+      - promotion
+      - article
+      - quantity
+
   ### Appraisal
   Appraisal:
     type: object
@@ -5558,6 +5757,11 @@ definitions:
       - language
 
   ### Collections
+  Locales:
+    type: array
+    items:
+      $ref: '#/definitions/Locale'
+
   Translations:
     type: array
     items:
@@ -5697,6 +5901,16 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/ScreenScreen'
+
+  AdvertisedArticleSelections:
+    type: array
+    items:
+      $ref: '#/definitions/AdvertisedArticleSelection'
+
+  PublicationTemplates:
+    type: array
+    items:
+      $ref: '#/definitions/PublicationTemplate'
 
   ### Responses
   StoresResponse:

@@ -16,46 +16,47 @@ The Denner Portal provides mostly advertising related data.
 
 ### Stores
 
-* `/stores` (Filialen, [example](examples/stores.json))
-* `/store-channels` (Filialkanäle, [example](examples/store-channels.json))
-* `/store-services` (Filialangebote, [example](examples/store-services.json))
-* `/screen-stores` (Screen-Filialen, [example](examples/screen-stores.json))
+* `GET /stores` (Filialen, [example](examples/stores.json))
+* `GET /store-channels` (Filialkanäle, [example](examples/store-channels.json))
+* `GET /store-services` (Filialangebote, [example](examples/store-services.json))
+* `GET /screen-stores` (Screen-Filialen, [example](examples/screen-stores.json))
 
 ### Articles/Promotions
 
-* `/article-groups` (Warengruppen, [example](examples/article-groups.json))
-* `/articles` (Artikel, [example](examples/articles.json))
-* `/shop-wines` (Wineshop-Weine)
-* `/mobile-wines` (Mobile-App-Weine)
-* `/online-groups` (Internet-Sortimente, [example](examples/online-groups.json))
-* `/online-specials` (Online-Specials, [example](examples/online-specials.json))
-* `/advertised-articles` (beworbene Artikel)
-* `/promotion-types` (Aktionstypen, [example](examples/promotion-types.json))
+* `GET /article-groups` (Warengruppen, [example](examples/article-groups.json))
+* `GET /articles` (Artikel, [example](examples/articles.json))
+* `GET /shop-wines` (Wineshop-Weine)
+* `GET /mobile-wines` (Mobile-App-Weine)
+* `GET /online-groups` (Internet-Sortimente, [example](examples/online-groups.json))
+* `GET /online-specials` (Online-Specials, [example](examples/online-specials.json))
+* `GET /advertised-articles` (beworbene Artikel)
+* `GET /promotion-types` (Aktionstypen, [example](examples/promotion-types.json))
 
 ### Advertising
 
 #### Online
-* `/online-publications` (Online-Werbemittel, [example](examples/online-publications.json))
-* `/online-publication-articles/{article_id}` (Online-Werbemittel-Artikel, [example](examples/online-publication-article.json))
-* `/online-filters` (Angebotsfilter, [example](examples/online-filters.json))
+* `GET /online-publications` (Online-Werbemittel, [example](examples/online-publications.json))
+* `GET /online-publication-articles/{article_id}` (Online-Werbemittel-Artikel, [example](examples/online-publication-article.json))
+* `GET /online-filters` (Angebotsfilter, [example](examples/online-filters.json))
 
 #### Screen
-* `/screen-publications` (Screen-Werbemittel, [example](examples/screen-publications.json))
+* `GET /screen-publications` (Screen-Werbemittel, [example](examples/screen-publications.json))
 
 #### Print
-* `/print-publications` (Print-Werbemittel, [example](examples/print-publications.json))
-* `/print-publications/{publication_id]` (Print-Werbemittel, [example](examples/print-publication.json))
-* `/print-layouts` (Print-Layoutarten, [example](examples/print-layouts.json))
-* `/print-formats` (Print-Formate und -Vorlagen, [example](examples/print-formats.json))
-* `/print-schemes` (Print-Werbemittelschemas, [example](examples/print-schemes.json))
+* `GET /print-publications` (Print-Werbemittel, [example](examples/print-publications.json))
+* `GET /print-publications/{publication_id]` (Print-Werbemittel, [example](examples/print-publication.json))
+* `GET /print-layouts` (Print-Layoutarten, [example](examples/print-layouts.json))
+* `GET /print-formats` (Print-Formate und -Vorlagen, [example](examples/print-formats.json))
+* `GET /print-schemes` (Print-Werbemittelschemas, [example](examples/print-schemes.json))
+* `POST /publication-briefings` (Print-Briefings, [body example](examples/publication-briefing.post.json), [response example](examples/publication-briefing.json))
 
 ### Appraisals
-* `/appraisals` (Weinbeurteilungen, [example](examples/appraisals.json))
-* `/appraisals/{appraisal_id}` (Weinbeurteilung, [example](examples/appraisal.json))
-* `/appraisal-statistic/{date}` (Statistiken zu Weinbewertungen und -beurteilungen, [example](examples/appraisal-statistic.json))
-* `/ratings` (Weinbewertungen, [example](examples/ratings.json))
-* `/ratings/{article_id}` (Weinbewertung, [example](examples/rating.json))
-* `/sweepstake-participants` (Verlosungsteilnehmer, [example](examples/sweepstake-participants.json))
+* `GET /appraisals` (Weinbeurteilungen, [example](examples/appraisals.json))
+* `GET /appraisals/{appraisal_id}` (Weinbeurteilung, [example](examples/appraisal.json))
+* `GET /appraisal-statistic/{date}` (Statistiken zu Weinbewertungen und -beurteilungen, [example](examples/appraisal-statistic.json))
+* `GET /ratings` (Weinbewertungen, [example](examples/ratings.json))
+* `GET /ratings/{article_id}` (Weinbewertung, [example](examples/rating.json))
+* `GET /sweepstake-participants` (Verlosungsteilnehmer, [example](examples/sweepstake-participants.json))
 
 ## Building
 
