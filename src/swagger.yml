@@ -3960,7 +3960,7 @@ paths:
     get:
       summary: List articles rating infos
       description: >
-        Use this operation to get a list of all article rating average and caount, calculated from vaildated appraisals.
+        Use this operation to get a list of all article rating average and count, calculated from validated appraisals.
       tags:
         - appraisals
       operationId: listArticleRatings
@@ -4161,7 +4161,7 @@ parameters:
           uniqueItems: true
         created_by:
           $ref: '#/definitions/Creator'
-        reperence :
+        reference :
           type: string
           description: Optional WPT internal reference
 
@@ -4447,7 +4447,7 @@ definitions:
         $ref: '#/definitions/Locales'
       templates:
         $ref: '#/definitions/PublicationTemplates'
-      reperence :
+      reference :
         type: string
         description: Optional WPT internal reference
       created_by:
@@ -5132,7 +5132,7 @@ definitions:
       to:
         $ref: '#/definitions/Date'
 
-  ### Online publicated article
+  ### Online publication article
   OnlineArticle:
     type: object
     properties:
