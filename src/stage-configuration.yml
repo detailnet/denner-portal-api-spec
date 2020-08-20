@@ -1,0 +1,52 @@
+x-detail-stage-variables:
+  prod:
+    - advertising_app_id: "<secret>"
+    - advertising_app_key: "<secret>"
+    - lambda_alias: "live"
+    - lambda_env: "prod"
+    - url_advertising: "denner-adv-new.frb.io/api"
+    - url_articles: "denner-art-new.frb.io/api"
+    - url_assets: "denner-ats-new.frb.io/api"
+    - url_stores: "denner-sts-new.frb.io/api"
+  test:
+    - advertising_app_id: "<secret>"
+    - advertising_app_key: "<secret>"
+    - lambda_alias: "live"
+    - lambda_env: "test"
+    - url_articles: "denner-articles-test.detailnet.ch/api"
+    - url_advertising: "denner-advertising-test.detailnet.ch/api"
+    - url_assets: "denner-assets-test.detailnet.ch/api"
+    - url_stores: "denner-stores-test.detailnet.ch/api"
+x-detail-api-gatway-permissions:
+#  prod: >
+#    aws lambda add-permission --action lambda:InvokeFunction --function-name "arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools-prod_createBasePoster:live" --source-arn "arn:aws:execute-api:eu-west-1:802555642192:7xu6cbcuej/*/POST/base-posters" --principal apigateway.amazonaws.com --statement-id 76276df8-024c-42bb-8eb6-c8d47e8c3b34
+#  test: >
+#    aws lambda add-permission --action lambda:InvokeFunction --function-name "arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools-test_createBasePoster:live" --source-arn "arn:aws:execute-api:eu-west-1:802555642192:7xu6cbcuej/*/POST/base-posters" --principal apigateway.amazonaws.com --statement-id 76276df8-024c-42bb-8eb6-c8d47e8c3b34
+# Todo: comment ahead is only an example, sould set for all the current routes that use lambda functions:
+#    /appraisals:
+#      get:
+#        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listAppraisals:${stageVariables.lambda_alias}/invocations"
+#    /appraisals/{appraisal_id}:
+#      get:
+#        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listAppraisals:${stageVariables.lambda_alias}/invocations"
+#      patch:
+#        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_saveAppraisal:${stageVariables.lambda_alias}/invocations"
+#    /banners:
+#      get:
+#        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_listBanners:${stageVariables.lambda_alias}/invocations"
+#      post:
+#        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_saveBanner:${stageVariables.lambda_alias}/invocations"
+#    /banners/{banner_id}:
+#      get:
+#        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_listBanners:${stageVariables.lambda_alias}/invocations"
+#      patch:
+#        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_saveBanner:${stageVariables.lambda_alias}/invocations"
+#    /ratings:
+#      get:
+#        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listRatings:${stageVariables.lambda_alias}/invocations"
+#    /ratings/{article_id}:
+#      get:
+#        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listRatings:${stageVariables.lambda_alias}/invocations"
+#    /sweepstake-participants:
+#      get:
+#        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listSweepstakeParticipants:${stageVariables.lambda_alias}/invocations"

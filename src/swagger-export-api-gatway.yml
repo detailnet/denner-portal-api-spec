@@ -1619,10 +1619,6 @@ paths:
   /print-publication-briefings:
     post:
       parameters:
-        - name: "App-ID"
-          in: "header"
-          required: false
-          type: "string"
         - name: "App-Key"
           in: "header"
           required: false
@@ -1634,6 +1630,8 @@ paths:
           description: "400 response"
         500:
           description: "500 response"
+      security:
+        - AppKeyHeader: []
       x-amazon-apigateway-integration:
         uri: "https://${stageVariables.url_advertising}/print-publication-briefings"
         responses:
@@ -1644,14 +1642,10 @@ paths:
           5\d{2}:
             statusCode: "500"
         requestParameters:
-          integration.request.header.App-Key: "method.request.header.App-Key"
-          integration.request.header.App-ID: "method.request.header.App-ID"
+          integration.request.header.App-Key: "stageVariables.advertising_app_key"
+          integration.request.header.App-ID: "stageVariables.advertising_app_id"
         passthroughBehavior: "when_no_match"
         httpMethod: "POST"
-        cacheNamespace: "n935we"
-        cacheKeyParameters:
-          - "method.request.header.App-ID"
-          - "method.request.header.App-Key"
         type: "http"
   /promotion-types:
     get:
