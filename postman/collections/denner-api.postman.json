@@ -1582,6 +1582,68 @@
 								"description": "Delete an online filter (Angebotsfilter)"
 							},
 							"response": []
+						},
+						{
+							"name": "/online-channels",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/online-channels",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"online-channels"
+									]
+								},
+								"description": "List online channels (Kanäle)"
+							},
+							"response": []
+						},
+						{
+							"name": "/online-designs",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{advertising_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{advertising_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{advertising_url_base}}/online-designs",
+									"host": [
+										"{{advertising_url_base}}"
+									],
+									"path": [
+										"online-designs"
+									]
+								},
+								"description": "List online designs"
+							},
+							"response": []
 						}
 					],
 					"description": "Advertising: Online publication",
