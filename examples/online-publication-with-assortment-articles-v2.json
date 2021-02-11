@@ -41,10 +41,12 @@
         "id": "promotion",
         "name": "Aktionsmix"
     },
-    "assortment_articles": [
+    "articles": [
         {
             "id": "ebd60970-8f82-43f5-9042-f35a1a13a0ac",
-            "sort_index": 1,
+            "assortment": true,
+            "sort_index": 0,
+            "featured_sort_index": 0,
             "title": [
                 {
                     "locale": "de",
@@ -85,30 +87,42 @@
                     "changed_by": "Curzio Dell Santa"
                 }
             ],
-            "validity": [
-                {
-                    "locale": "de",
-                    "value": "Gültig in allen Denner Verkaufstellen, unter denner.ch/weinshop und in der Denner App",
-                    "changed_on": "2021-02-11T13:30:00+0100",
-                    "changed_by": "Curzio Dell Santa"
-                },
-                {
-                    "locale": "fr",
-                    "value": "...",
-                    "changed_on": "2021-02-11T13:30:00+0100",
-                    "changed_by": "Curzio Dell Santa"
-                },
-                {
-                    "locale": "it",
-                    "value": "...",
-                    "changed_on": "2021-02-11T13:30:00+0100",
-                    "changed_by": "Curzio Dell Santa"
-                }
-            ],
+            "validity": {
+                "from": "2021-02-23",
+                "to": "2021-03-01",
+                "short_text": [
+                    {
+                        "locale": "de",
+                        "value": "Gültig vom 23.02.01.03.2021"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "Valable du 23.0201.03.2021"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "Valida dal 23.0201.03.2021"
+                    }
+                ],
+                "long_text": [
+                    {
+                        "locale": "de",
+                        "value": "Angebot gültig vom 23.02. bis 01.03.2021"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "Offre valable du 23.02 au 01.03.2021"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "Offerta valida dal 23.02 al 01.03.2021"
+                    }
+                ]
+            },
             "notes": [
                 {
                     "locale": "de",
-                    "value": "* Augenommen online Specials .....",
+                    "value": "* Ausgenommen online Specials .....",
                     "changed_on": "2021-02-11T13:30:00+0100",
                     "changed_by": "Curzio Dell Santa"
                 },
@@ -348,11 +362,10 @@
                     "url": "https://www.denner.ch/it/shop/vino/vini.html"
                 }
             ]
-        }
-    ],
-    "articles": [
+        },
         {
             "id": "185a1d63-4b4c-4b92-a557-8b6d28c05fcb",
+            "assortment": false,
             "article_id": "051683",
             "advertised_article_id": "0469c16a-6257-448a-bafc-fbdf91ae43c7",
             "promotion_alert": false,
@@ -557,8 +570,8 @@
                 "year": 2021,
                 "number": 8
             },
-            "sort_index": 1,
-            "featured_sort_index": 1,
+            "sort_index": 3,
+            "featured_sort_index": 3,
             "televised": false,
             "featured": true,
             "promoted": true,
@@ -939,6 +952,7 @@
         },
         {
             "id": "6347a04c-983c-49a6-9d17-ef5a1f75b2d1",
+            "assortment": false,
             "article_id": "912905",
             "advertised_article_id": "903e1483-3e0f-4e3b-a415-11f0ff5ef01f",
             "promotion_alert": false,
@@ -1151,8 +1165,8 @@
                 "year": 2021,
                 "number": 8
             },
-            "sort_index": 0,
-            "featured_sort_index": 0,
+            "sort_index": 1,
+            "featured_sort_index": 1,
             "televised": false,
             "featured": true,
             "promoted": true,
@@ -1267,6 +1281,7 @@
         },
         {
             "id": "639b6fca-b7e6-478b-9120-89e6c8eb5341",
+            "assortment": false,
             "article_id": "058280",
             "advertised_article_id": "f3041405-d564-43df-a4d7-c3551e376f5f",
             "promotion_alert": false,
