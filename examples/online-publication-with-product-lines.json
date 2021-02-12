@@ -41,258 +41,56 @@
         "id": "promotion",
         "name": "Aktionsmix"
     },
-    "product_lines": [
-        {
-            "id": "ebd60970-8f82-43f5-9042-f35a1a13a0ac",
-            "sort_index": 1,
-            "title": [
-                {
-                    "locale": "de",
-                    "value": "20% auf alle italienische Rotweine *"
-                },
-                {
-                    "locale": "fr",
-                    "value": "20% de rebais sur tous le vins itailens *"
-                },
-                {
-                    "locale": "it",
-                    "value": "20% su tutti i vini italiani *"
-                }
-            ],
-            "description": [
-                {
-                    "locale": "de",
-                    "value": "Auch auf betehende Aktionspreise"
-                },
-                {
-                    "locale": "fr",
-                    "value": "..."
-                },
-                {
-                    "locale": "it",
-                    "value": "..."
-                }
-            ],
-            "validity": [
-                {
-                    "locale": "de",
-                    "value": "Gültig in allen Denner Verkaufstellen, unter denner.ch/weinshop und in der Denner App"
-                },
-                {
-                    "locale": "fr",
-                    "value": "..."
-                },
-                {
-                    "locale": "it",
-                    "value": "..."
-                }
-            ],
-            "footer": [
-                {
-                    "locale": "de",
-                    "value": "* Augenommen online Specials ....."
-                },
-                {
-                    "locale": "fr",
-                    "value": "...",
-                    "changed_on": "2021-02-11T13:30:00+0100"
-                },
-                {
-                    "locale": "it",
-                    "value": "..."
-                }
-            ],
-            "packshot_production_note": "<span style=\"background-color: rgb(247, 247, 247);\">\u200BFolgende Artikel verwenden:</span><ul style=\"\"><li style=\"background-color: rgb(247, 247, 247);\">000000</li><li style=\"\"><span style=\"background-color: rgb(255, 255, 0);\">1111111</span></li><li style=\"\"><span style=\"background-color: rgb(255, 255, 0);\">222222</span></li><li style=\"background-color: rgb(247, 247, 247);\">333333</li></ul>Die mittlere Artikel um 30% gosser als die andere dargestellt werden.",
-            "packshot": {
-                "id": "104cc3ae-faec-4f0f-ac18-8e6d3e8e1dd1",
-                "cdn_url": "https://denner.imgix.net/assets/104cc3ae-faec-4f0f-ac18-8e6d3e8e1dd1/web/051683_6.png"
+    "product_line": {
+        "title": [
+            {
+                "locale": "de",
+                "value": "20% auf alle italienische Rotweine"
             },
-            "stopper": {
-                "id": "2730a9f4-d133-4853-a91b-28b2ae01603e",
-                "type": {
-                    "id": "x_percent_free"
-                },
-                "markup_text": [
-                    {
-                        "locale": "de",
-                        "value": "20% <vertical>GRATIS*</vertical>"
-                    },
-                    {
-                        "locale": "fr",
-                        "value": "20% <vertical>GRATUIT*</vertical>"
-                    },
-                    {
-                        "locale": "it",
-                        "value": "20% <vertical>GRATIS*</vertical>"
-                    }
-                ],
-                "text": [
-                    {
-                        "locale": "de",
-                        "value": "20% GRATIS*"
-                    },
-                    {
-                        "locale": "fr",
-                        "value": "20% GRATUIT*"
-                    },
-                    {
-                        "locale": "it",
-                        "value": "20% GRATIS*"
-                    }
-                ]
+            {
+                "locale": "fr",
+                "value": "20% de rebais sur tous le vins itailens"
             },
-            "dots": [
-                {
-                    "id": "74feebfc-4f4c-4123-9ec6-34333cc26d7f",
-                    "type": {
-                        "id": "new"
-                    },
-                    "text": [
-                        {
-                            "locale": "de",
-                            "value": "NEU"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "NOUVEAU"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "NOVITÀ"
-                        }
-                    ],
-                    "images": [
-                        {
-                            "locale": "de",
-                            "formats": [
-                                {
-                                    "type": "image/svg+xml",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/01d23e21-71bb-4513-af2e-95c8b826cae7/new_de.svg",
-                                    "created_on": "2021-02-11T13:54:42+0100"
-                                },
-                                {
-                                    "type": "image/png",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/01d23e21-71bb-4513-af2e-95c8b826cae7/new_de.png",
-                                    "created_on": "2021-02-11T13:54:42+0100"
-                                }
-                            ]
-                        },
-                        {
-                            "locale": "fr",
-                            "formats": [
-                                {
-                                    "type": "image/svg+xml",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/765503f4-9283-4209-8903-1c5c4ac4c91a/new_fr.svg",
-                                    "created_on": "2021-02-11T13:54:43+0100"
-                                },
-                                {
-                                    "type": "image/png",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/765503f4-9283-4209-8903-1c5c4ac4c91a/new_fr.png",
-                                    "created_on": "2021-02-11T13:54:43+0100"
-                                }
-                            ]
-                        },
-                        {
-                            "locale": "it",
-                            "formats": [
-                                {
-                                    "type": "image/svg+xml",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/4efca2e1-d0f9-4ac7-8731-eaab090c530d/new_it.svg",
-                                    "created_on": "2021-02-11T13:54:43+0100"
-                                },
-                                {
-                                    "type": "image/png",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/4efca2e1-d0f9-4ac7-8731-eaab090c530d/new_it.png",
-                                    "created_on": "2021-02-11T13:54:43+0100"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "id": "a416e533-7d11-4486-aa5c-3a31fea5a7fc",
-                    "type": {
-                        "id": "limited"
-                    },
-                    "text": [
-                        {
-                            "locale": "de",
-                            "value": "Begrenzt\nVerfügbar"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "Disponibilité\nlimitée"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "Limitatamente\ndisponibile"
-                        }
-                    ],
-                    "images": [
-                        {
-                            "locale": "de",
-                            "formats": [
-                                {
-                                    "type": "image/svg+xml",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/96db549a-ed45-432e-a909-6572b6468c3d/limited_de.svg",
-                                    "created_on": "2021-02-11T13:56:05+0100"
-                                },
-                                {
-                                    "type": "image/png",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/96db549a-ed45-432e-a909-6572b6468c3d/limited_de.png",
-                                    "created_on": "2021-02-11T13:56:05+0100"
-                                }
-                            ]
-                        },
-                        {
-                            "locale": "fr",
-                            "formats": [
-                                {
-                                    "type": "image/svg+xml",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/58f50e8b-59d1-406c-970e-6a3c4d503dd4/limited_fr.svg",
-                                    "created_on": "2021-02-11T13:56:05+0100"
-                                },
-                                {
-                                    "type": "image/png",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/58f50e8b-59d1-406c-970e-6a3c4d503dd4/limited_fr.png",
-                                    "created_on": "2021-02-11T13:56:05+0100"
-                                }
-                            ]
-                        },
-                        {
-                            "locale": "it",
-                            "formats": [
-                                {
-                                    "type": "image/svg+xml",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/adc7e799-d418-43da-8f59-8e35a6ad9d43/limited_it.svg",
-                                    "created_on": "2021-02-11T13:56:05+0100"
-                                },
-                                {
-                                    "type": "image/png",
-                                    "url": "https://denner-assets-test.s3.eu-west-1.amazonaws.com/dots/adc7e799-d418-43da-8f59-8e35a6ad9d43/limited_it.png",
-                                    "created_on": "2021-02-11T13:56:05+0100"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "links": [
-                {
-                    "locale": "de",
-                    "url": "https://www.denner.ch/de/shop/wein/weine.html"
-                },
-                {
-                    "locale": "fr",
-                    "url": "https://www.denner.ch/fr/shop/vin/vins.html"
-                },
-                {
-                    "locale": "it",
-                    "url": "https://www.denner.ch/it/shop/vino/vini.html"
-                }
-            ]
-        }
-    ],
+            {
+                "locale": "it",
+                "value": "20% su tutti i vini italiani"
+            }
+        ],
+        "description": [
+            {
+                "locale": "de",
+                "value": "Auch auf betehende Aktionspreise"
+            },
+            {
+                "locale": "fr",
+                "value": "..."
+            },
+            {
+                "locale": "it",
+                "value": "..."
+            }
+        ],
+        "packshot_production_note": "<span style=\"background-color: rgb(247, 247, 247);\">\u200BFolgende Artikel verwenden:</span><ul style=\"\"><li style=\"background-color: rgb(247, 247, 247);\">000000</li><li style=\"\"><span style=\"background-color: rgb(255, 255, 0);\">1111111</span></li><li style=\"\"><span style=\"background-color: rgb(255, 255, 0);\">222222</span></li><li style=\"background-color: rgb(247, 247, 247);\">333333</li></ul>Die mittlere Artikel um 30% gosser als die andere dargestellt werden.",
+        "packshot": {
+            "id": "104cc3ae-faec-4f0f-ac18-8e6d3e8e1dd1",
+            "cdn_url": "https://denner.imgix.net/assets/104cc3ae-faec-4f0f-ac18-8e6d3e8e1dd1/web/051683_6.png"
+        },
+        "stopper_text": "20%",
+        "links": [
+            {
+                "locale": "de",
+                "url": "https://www.denner.ch/de/shop/wein/weine.html"
+            },
+            {
+                "locale": "fr",
+                "url": "https://www.denner.ch/fr/shop/vin/vins.html"
+            },
+            {
+                "locale": "it",
+                "url": "https://www.denner.ch/it/shop/vino/vini.html"
+            }
+        ]
+    },
     "articles": [
         {
             "id": "185a1d63-4b4c-4b92-a557-8b6d28c05fcb",
