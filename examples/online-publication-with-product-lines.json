@@ -73,15 +73,15 @@
         "stopper_text": [
             {
                 "locale": "de",
-                "url": "20%"
+                "value": "20%"
             },
             {
                 "locale": "fr",
-                "url": "20%"
+                "value": "20%"
             },
             {
                 "locale": "it",
-                "url": "20%"
+                "value": "20%"
             }
         ],
         "links": [
