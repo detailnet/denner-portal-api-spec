@@ -5232,10 +5232,7 @@ definitions:
       sort_index:
         $ref: '#/definitions/SortIndex'
       links:
-        type: array
-        items:
-          $ref: '#/definitions/OnlinePublicationLink'
-        description: Links
+        $ref: '#/definitions/OnlinePublicationLinks'
 
   OnlinePublicationWithArticles:
     allOf:
@@ -5860,6 +5857,12 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/OnlinePublication'
+
+  OnlinePublicationLinks:
+    type: array
+    items:
+      $ref: '#/definitions/OnlinePublicationLink'
+    description: Links
 
   OnlineFilters:
     type: array
