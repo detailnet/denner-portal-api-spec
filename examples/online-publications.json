@@ -712,6 +712,21 @@
                         "value": "20%"
                     }
                 ],
+                "sales_price": "7.–",
+                "instead_price": [
+                    {
+                        "locale": "de",
+                        "value": "statt 8.–"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "au lieu de 8.–"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "invece di 8.–"
+                    }
+                ],
                 "links": [
                     {
                         "locale": "de",
