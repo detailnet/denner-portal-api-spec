@@ -5200,6 +5200,23 @@ definitions:
       wine:
         $ref: '#/definitions/BasicArticleWine'
 
+  OnlineTeaser:
+    type: object
+    properties:
+      title:
+        $ref: '#/definitions/Translations'
+      description:
+        $ref: '#/definitions/Translations'
+      stopper:
+        $ref: '#/definitions/Translations'
+      links:
+        $ref: '#/definitions/OnlinePublicationLinks'
+      packshot:
+        $ref: '#/definitions/Packshot'
+      remarks:
+        type: string
+        description: Notes, used for packshot production (can include HTML tags)
+
   ### Online publication
   OnlinePublication:
     type: object
@@ -5232,15 +5249,14 @@ definitions:
       sort_index:
         $ref: '#/definitions/SortIndex'
       links:
-        type: array
-        items:
-          $ref: '#/definitions/OnlinePublicationLink'
-        description: Links
+        $ref: '#/definitions/OnlinePublicationLinks'
 
   OnlinePublicationWithArticles:
     allOf:
       - $ref: '#/definitions/OnlinePublication'
       - properties:
+          teaser:
+            $ref: '#/definitions/OnlineTeaser'
           articles:
             $ref: '#/definitions/OnlineArticles'
 
@@ -5860,6 +5876,12 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/OnlinePublication'
+
+  OnlinePublicationLinks:
+    type: array
+    items:
+      $ref: '#/definitions/OnlinePublicationLink'
+    description: Links
 
   OnlineFilters:
     type: array
