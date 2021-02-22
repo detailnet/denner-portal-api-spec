@@ -5200,6 +5200,27 @@ definitions:
       wine:
         $ref: '#/definitions/BasicArticleWine'
 
+  OnlineTeaser:
+    type: object
+    properties:
+      title:
+        $ref: '#/definitions/Translations'
+      description:
+        $ref: '#/definitions/Translations'
+      stopper:
+        $ref: '#/definitions/Translations'
+      sales_price:
+        type: string
+      instead_price:
+        $ref: '#/definitions/Translations'
+      links:
+        $ref: '#/definitions/OnlinePublicationLinks'
+      packshot:
+        $ref: '#/definitions/Packshot'
+      remarks:
+        type: string
+        description: Notes, used for packshot production (can include HTML tags)
+
   ### Online publication
   OnlinePublication:
     type: object
@@ -5238,6 +5259,8 @@ definitions:
     allOf:
       - $ref: '#/definitions/OnlinePublication'
       - properties:
+          teaser:
+            $ref: '#/definitions/OnlineTeaser'
           articles:
             $ref: '#/definitions/OnlineArticles'
 

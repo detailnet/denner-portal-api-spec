@@ -669,6 +669,84 @@
                 "id": "promotion",
                 "name": "Aktionsmix"
             },
+            "teaser": {
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "20% auf alle italienische Rotweine"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "20% de rebais sur tous le vins itailens"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "20% su tutti i vini italiani"
+                    }
+                ],
+                "description": [
+                    {
+                        "locale": "de",
+                        "value": "Auch auf betehende Aktionspreise"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "..."
+                    },
+                    {
+                        "locale": "it",
+                        "value": "..."
+                    }
+                ],
+                "stopper": [
+                    {
+                        "locale": "de",
+                        "value": "20%"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "20%"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "20%"
+                    }
+                ],
+                "sales_price": "7.–",
+                "instead_price": [
+                    {
+                        "locale": "de",
+                        "value": "statt 8.–"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "au lieu de 8.–"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "invece di 8.–"
+                    }
+                ],
+                "links": [
+                    {
+                        "locale": "de",
+                        "url": "https://www.denner.ch/de/shop/wein/weine.html"
+                    },
+                    {
+                        "locale": "fr",
+                        "url": "https://www.denner.ch/fr/shop/vin/vins.html"
+                    },
+                    {
+                        "locale": "it",
+                        "url": "https://www.denner.ch/it/shop/vino/vini.html"
+                    }
+                ],
+                "packshot": {
+                    "id": "104cc3ae-faec-4f0f-ac18-8e6d3e8e1dd1",
+                    "cdn_url": "https://denner.imgix.net/assets/104cc3ae-faec-4f0f-ac18-8e6d3e8e1dd1/web/051683_6.png"
+                },
+                "remarks": "<span style=\"background-color: rgb(247, 247, 247);\">\u200BFolgende Artikel in Bild zeigen:</span><ul style=\"\"><li style=\"background-color: rgb(247, 247, 247);\">000000</li><li style=\"\"><span style=\"background-color: rgb(255, 255, 0);\">1111111</span></li><li style=\"\"><span style=\"background-color: rgb(255, 255, 0);\">222222</span></li><li style=\"background-color: rgb(247, 247, 247);\">333333</li></ul>Den mittleren Artikel 30 % grösser darstellen."
+            },
             "articles": [
                 {
                     "id": "185a1d63-4b4c-4b92-a557-8b6d28c05fcb",
