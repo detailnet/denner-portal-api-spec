@@ -5215,8 +5215,8 @@ definitions:
         $ref: '#/definitions/Translations'
       links:
         $ref: '#/definitions/OnlinePublicationLinks'
-      packshot:
-        $ref: '#/definitions/Packshot'
+      packshot_url:
+        $ref: '#/definitions/Url'
       remarks:
         type: string
         description: Notes, used for packshot production (can include HTML tags)

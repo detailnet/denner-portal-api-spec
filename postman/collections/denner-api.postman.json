@@ -56,8 +56,7 @@
 											"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
 											"",
 											"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
-										],
-										"id": "9c23edcc-04b2-44dc-8d29-dde5d7066f6d"
+										]
 									}
 								}
 							],
@@ -595,9 +594,7 @@
 							"response": []
 						}
 					],
-					"description": "Advertising: Newsletters",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Advertising: Newsletters"
 				},
 				{
 					"name": "online",
@@ -621,12 +618,23 @@
 									}
 								],
 								"url": {
-									"raw": "{{advertising_url_base}}/online-publications",
+									"raw": "{{advertising_url_base}}/online-publications?sort=[{\"property\":\"year\",\"direction\":\"DESC\"},{\"property\":\"week\",\"direction\":\"DESC\"},{\"property\":\"sort_index\",\"direction\":\"ASC\"}]",
 									"host": [
 										"{{advertising_url_base}}"
 									],
 									"path": [
 										"online-publications"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "banner",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "[{\"property\":\"year\",\"direction\":\"DESC\"},{\"property\":\"week\",\"direction\":\"DESC\"},{\"property\":\"sort_index\",\"direction\":\"ASC\"}]"
+										}
 									]
 								},
 								"description": "List online publications (Online-Werbemittel)"
@@ -646,8 +654,7 @@
 											"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
 											"",
 											"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
-										],
-										"id": "9c25da31-4148-4c0d-b660-8f0b8ca37fc0"
+										]
 									}
 								}
 							],
@@ -784,7 +791,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Wochenaktionen KW 52/2015 UPDATE\",\n  \"year\": 2016,\n  \"week\": 32,\n  \"title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Wochenaktionen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Hits de la semaine UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Promozioni della settimana UPDATE\"\n    }\n  ],\n  \"list_title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Weitere Wochenaktionen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Autre hits de la semaine UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Altre promozioni della settimana UPDATE\"\n    }\n  ],\n  \"show_details_text\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Alle Wochenaktionen zeigen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"... UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"... UPDATE\"\n    }\n  ],\n  \"valid_from\": \"2016-08-18\",\n  \"valid_to\": \"2016-08-19\",\n  \"sort_index\": 33,\n  \"channels\": [\n  \t\"web\",\n  \t\"app-promotion\",\n  \t\"app-wine\"\n  ],\n  \"links\": [\n  \t{\n      \"locale\": \"de\",\n      \"url\": \"https://www.denner.ch/de/shop/wein/weine.html\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"url\": \"https://www.denner.ch/fr/shop/vin/vins.html\"\n    },\n    {\n      \"locale\": \"it\",\n      \"url\": \"https://www.denner.ch/it/shop/vino/vini.html\"\n    }\n  ]\n}"
+									"raw": "{\n  \"name\": \"Wochenaktionen KW 52/2015 UPDATE\",\n  \"year\": 2016,\n  \"week\": 32,\n  \"title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Wochenaktionen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Hits de la semaine UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Promozioni della settimana UPDATE\"\n    }\n  ],\n  \"list_title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Weitere Wochenaktionen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Autre hits de la semaine UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Altre promozioni della settimana UPDATE\"\n    }\n  ],\n  \"show_details_text\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Alle Wochenaktionen zeigen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"... UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"... UPDATE\"\n    }\n  ],\n  \"valid_from\": \"2016-08-18\",\n  \"valid_to\": \"2016-08-19\",\n  \"sort_index\": 33,\n  \"channels\": [\n  \t\"web\",\n  \t\"app\",\n  \t\"banner\"\n  ],\n  \"links\": [\n  \t{\n      \"locale\": \"de\",\n      \"url\": \"https://www.denner.ch/de/shop/wein/weine.html\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"url\": \"https://www.denner.ch/fr/shop/vin/vins.html\"\n    },\n    {\n      \"locale\": \"it\",\n      \"url\": \"https://www.denner.ch/it/shop/vino/vini.html\"\n    }\n  ],\n  \"teaser\": {\n        \"title\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"20% auf alle italienische Rotweine\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"20% de rebais sur tous le vins itailens\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"20% su tutti i vini italiani\"\n            }\n        ],\n        \"description\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Auch auf betehende Aktionspreise\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"...\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"...\"\n            }\n        ],\n        \"stopper\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"20%\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"20%\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"20%\"\n            }\n        ],\n        \"sales_price_raw\": 7,\n        \"instead_price_raw\": 8,\n        \"links\": [\n            {\n                \"locale\": \"de\",\n                \"url\": \"https://www.denner.ch/de/shop/wein/weine.html\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"url\": \"https://www.denner.ch/fr/shop/vin/vins.html\"\n            },\n            {\n                \"locale\": \"it\",\n                \"url\": \"https://www.denner.ch/it/shop/vino/vini.html\"\n            }\n        ],\n        \"packshot_url\": \"https://denner.imgix.net/assets/104cc3ae-faec-4f0f-ac18-8e6d3e8e1dd1/web/051683_6.png\",\n        \"remarks\": \"<span style=\\\"background-color: rgb(247, 247, 247);\\\">Folgende Artikel in Bild zeigen:</span><ul style=\\\"\\\"><li style=\\\"background-color: rgb(247, 247, 247);\\\">000000</li><li style=\\\"\\\"><span style=\\\"background-color: rgb(255, 255, 0);\\\">1111111</span></li><li style=\\\"\\\"><span style=\\\"background-color: rgb(255, 255, 0);\\\">222222</span></li><li style=\\\"background-color: rgb(247, 247, 247);\\\">333333</li></ul>Den mittleren Artikel 30 % grösser darstellen.\"\n    }\n}"
 								},
 								"url": {
 									"raw": "{{advertising_url_base}}/online-publications/44444444-aaaa-4444-aaaa-444444444444",
@@ -1646,9 +1653,7 @@
 							"response": []
 						}
 					],
-					"description": "Advertising: Online publication",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Advertising: Online publication"
 				},
 				{
 					"name": "print",
@@ -1672,8 +1677,7 @@
 													"",
 													"tests[\"Setup first publication_article_id in environment\"] = !!id;",
 													""
-												],
-												"id": "592ab406-2f38-4dc2-8062-f06c844fb5e1"
+												]
 											}
 										}
 									],
@@ -1714,7 +1718,6 @@
 										{
 											"listen": "test",
 											"script": {
-												"id": "e3256be1-abd6-4a7d-b092-35d8d2017e7d",
 												"exec": [
 													"// Save created publication article's id in environment",
 													"var jsonData = JSON.parse(responseBody),",
@@ -1781,7 +1784,6 @@
 										{
 											"listen": "test",
 											"script": {
-												"id": "c0131799-27f0-4cb5-abe0-42b148c4d1f5",
 												"exec": [
 													"// Save created publication article's id in environment",
 													"var jsonData = JSON.parse(responseBody),",
@@ -2287,8 +2289,7 @@
 													"",
 													"tests[\"Setup first generated_file_id in environment\"] = !!id;",
 													""
-												],
-												"id": "25f4aee3-4d75-475c-82a1-51ae755b3562"
+												]
 											}
 										}
 									],
@@ -2339,8 +2340,7 @@
 													"",
 													"tests[\"Setup generated_file_id in environment\"] = !!id;",
 													""
-												],
-												"id": "4a739ad2-9685-4b76-aca6-eaed4062704b"
+												]
 											}
 										}
 									],
@@ -2486,9 +2486,7 @@
 									},
 									"response": []
 								}
-							],
-							"protocolProfileBehavior": {},
-							"_postman_isSubFolder": true
+							]
 						},
 						{
 							"name": "by positioning",
@@ -2509,8 +2507,7 @@
 													"",
 													"tests[\"Setup first document_id in environment\"] = !!id;",
 													""
-												],
-												"id": "4d0d9426-cbbc-4c3e-9367-6e6dc0bcecbb"
+												]
 											}
 										}
 									],
@@ -2561,8 +2558,7 @@
 													"",
 													"tests[\"Setup new document_id in environment\"] = !!id;",
 													""
-												],
-												"id": "14b71b78-91f0-4242-9397-c13f2f972373"
+												]
 											}
 										}
 									],
@@ -2701,8 +2697,7 @@
 													"",
 													"tests[\"Setup new sheet_id in environment\"] = !!id;",
 													""
-												],
-												"id": "fa396a99-4b07-4c27-bae4-44868f4957c1"
+												]
 											}
 										}
 									],
@@ -2852,8 +2847,7 @@
 													"",
 													"tests[\"Setup first publication_article_id in environment\"] = !!id;",
 													""
-												],
-												"id": "bb4ec561-297a-481b-bd1f-9632ee539014"
+												]
 											}
 										}
 									],
@@ -3112,8 +3106,7 @@
 													"",
 													"tests[\"Setup first page_id in environment\"] = !!id;",
 													""
-												],
-												"id": "4580b588-325e-4eba-ba31-2505b308fbf8"
+												]
 											}
 										}
 									],
@@ -3308,8 +3301,7 @@
 													"",
 													"tests[\"Setup first sheet_id in environment\"] = !!id;",
 													""
-												],
-												"id": "cd701e22-e60a-4fe7-89bc-535c7e5ab146"
+												]
 											}
 										}
 									],
@@ -3345,9 +3337,7 @@
 									},
 									"response": []
 								}
-							],
-							"protocolProfileBehavior": {},
-							"_postman_isSubFolder": true
+							]
 						},
 						{
 							"name": "/print-publications",
@@ -3365,8 +3355,7 @@
 											"",
 											"tests[\"Setup first publication_id in environment\"] = !!id;",
 											""
-										],
-										"id": "37a788b6-3e8a-447e-832d-606f0c129db5"
+										]
 									}
 								}
 							],
@@ -3415,8 +3404,7 @@
 											"",
 											"tests[\"Setup first publication_id in environment\"] = !!id;",
 											""
-										],
-										"id": "b8d54adc-799f-40f5-8786-0978c424ddef"
+										]
 									}
 								},
 								{
@@ -3429,8 +3417,7 @@
 											"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
 											"",
 											"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
-										],
-										"id": "ead1529c-9a11-4dbc-96cf-a205e2facd04"
+										]
 									}
 								}
 							],
@@ -3480,8 +3467,7 @@
 											"",
 											"tests[\"Setup new publication_id in environment\"] = !!id;",
 											""
-										],
-										"id": "c3fa2a00-4093-4d5b-915b-ea731b9dbcc3"
+										]
 									}
 								},
 								{
@@ -3490,8 +3476,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"postman.setEnvironmentVariable(\"new_uuid\",'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0,v=c=='x'?r:(r&0x3|0x8);return v.toString(16);}));"
-										],
-										"id": "8b278abe-894f-4007-b5b7-fe4fd75e6574"
+										]
 									}
 								}
 							],
@@ -4125,9 +4110,7 @@
 							"response": []
 						}
 					],
-					"description": "Advertising: Print publication",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Advertising: Print publication"
 				},
 				{
 					"name": "screen",
@@ -4215,8 +4198,7 @@
 											"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
 											"",
 											"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
-										],
-										"id": "efb7809c-a549-4ed9-b905-67aa9204db28"
+										]
 									}
 								}
 							],
@@ -4267,8 +4249,7 @@
 											"    tests[testName] = article.sales_price &&  article.sales_price.length > 1;",
 											"}",
 											""
-										],
-										"id": "02059ff9-aca5-4828-a4fb-0a969dce54f4"
+										]
 									}
 								}
 							],
@@ -4587,9 +4568,7 @@
 							"response": []
 						}
 					],
-					"description": "Advertising: Screen publication",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Advertising: Screen publication"
 				},
 				{
 					"name": "usages",
@@ -4819,9 +4798,7 @@
 							"response": []
 						}
 					],
-					"description": "Advertising: Usages",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Advertising: Usages"
 				},
 				{
 					"name": "proofreading",
@@ -5865,9 +5842,7 @@
 							"response": []
 						}
 					],
-					"description": "Advertising: Proofreading",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Advertising: Proofreading"
 				}
 			],
 			"description": "Routes provided by the denner-advertising project\n\nSource: https://bitbucket.org/detailnet/denner-advertising/src/master/\nGit repo: git@bitbucket.org:detailnet/denner-advertising.git",
@@ -5875,7 +5850,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "a9f81cf8-c700-4844-ad3e-ffab42e5691d",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -5885,15 +5859,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ae155925-4fde-49a2-afcd-b7461e5050d9",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "appraisals",
@@ -6105,7 +6077,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "166e7b6a-239a-4a77-9d8a-87dc5f2186b8",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -6115,15 +6086,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9bbe95a3-da4f-4477-9064-075b8245ee5b",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "articles",
@@ -6325,8 +6294,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"postman.setEnvironmentVariable(\"current_datetime\", (new Date()).toISOString().replace(/\\.\\d+Z$/,'Z'));"
-										],
-										"id": "6648eef0-72ff-4fd3-a908-2ef454286580"
+										]
 									}
 								}
 							],
@@ -6857,8 +6825,7 @@
 											"",
 											"tests[\"Setup new advertised_article_id in environment\"] = !!id;",
 											""
-										],
-										"id": "f5a82069-a7a8-4fb9-9e27-e5d35791dd1d"
+										]
 									}
 								}
 							],
@@ -7143,9 +7110,7 @@
 							"response": []
 						}
 					],
-					"description": "Articles: Articles",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Articles: Articles"
 				},
 				{
 					"name": "promotion",
@@ -7166,8 +7131,7 @@
 											"",
 											"tests[\"Setup first advertised_article_id in environment\"] = !!id;",
 											""
-										],
-										"id": "b37aad1c-ecf2-4687-8415-745b5f8b21e0"
+										]
 									}
 								}
 							],
@@ -7216,8 +7180,7 @@
 											"",
 											"tests[\"Setup new advertised_article_id in environment\"] = !!id;",
 											""
-										],
-										"id": "acab8494-d931-4c65-9250-14b3f086b29d"
+										]
 									}
 								}
 							],
@@ -7273,8 +7236,7 @@
 											"postman.setEnvironmentVariable(\"advertised_article_id\", id);",
 											"",
 											"tests[\"Setup first advertised_article_id in environment\"] = !!id;"
-										],
-										"id": "f373e3ef-67c4-4f3e-8cac-27ec9a555024"
+										]
 									}
 								},
 								{
@@ -7287,8 +7249,7 @@
 											"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
 											"",
 											"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
-										],
-										"id": "ba13899f-a4b8-40e0-8670-e43f5775e2ca"
+										]
 									}
 								}
 							],
@@ -7369,8 +7330,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"postman.setEnvironmentVariable(\"current_datetime\", (new Date()).toISOString().replace(/\\.\\d+Z$/,'Z'));"
-										],
-										"id": "52d50858-bf81-4ee7-a7c7-4ad3e2545451"
+										]
 									}
 								}
 							],
@@ -7428,8 +7388,7 @@
 											"",
 											"tests[\"Setup first dot_id in environment\"] = !!id;",
 											""
-										],
-										"id": "7b8a73d5-6a61-4144-944c-0b38e5015328"
+										]
 									}
 								}
 							],
@@ -7480,8 +7439,7 @@
 											"",
 											"tests[\"Setup new dot_id in environment\"] = !!id;",
 											""
-										],
-										"id": "a8b95976-ba67-47c8-bf09-3bf68e791646"
+										]
 									}
 								}
 							],
@@ -7654,8 +7612,7 @@
 											"",
 											"tests[\"Setup first stopper_id in environment\"] = !!id;",
 											""
-										],
-										"id": "b202f92d-2557-4ad1-bc82-854da24d4d58"
+										]
 									}
 								}
 							],
@@ -7706,8 +7663,7 @@
 											"",
 											"tests[\"Setup new stopper_id in environment\"] = !!id;",
 											""
-										],
-										"id": "2a8609d0-ed41-4fd9-8417-cf7963184f79"
+										]
 									}
 								}
 							],
@@ -8043,7 +7999,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "75fa4711-9e00-4dcb-94f7-6b7968639c6c",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -8053,16 +8008,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "df930b15-bf5a-4127-91ac-59f89f667d6d",
 								"type": "text/javascript",
 								"exec": [
 									""
 								]
 							}
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "/languages",
@@ -8107,7 +8059,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "ee83922d-c930-418d-b285-5a203fe8b984",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -8117,15 +8068,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6020afe4-ee46-41c0-bbb7-e00bf278a1c7",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "assets",
@@ -9337,7 +9286,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79b6603f-e85e-4081-8ccd-e7005dca9ee9",
 								"exec": [
 									"var rendererResponses = JSON.parse(postman.getGlobalVariable(\"rendererResponses\") || '{}');",
 									"console.log( rendererResponses);",
@@ -9395,7 +9343,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://requestbin.fullcontact.com/{your-reqwstb.in-id}?inspect",
+							"raw": "https://requestbin.fullcontact.com/{your-reqwstb.in-id}?inspect=",
 							"protocol": "https",
 							"host": [
 								"requestbin",
@@ -9408,7 +9356,7 @@
 							"query": [
 								{
 									"key": "inspect",
-									"value": null
+									"value": ""
 								}
 							]
 						},
@@ -9422,17 +9370,15 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
 								"exec": [
 									"// @todo would be better to update the rendererResponses here if response successful (no time for it now)"
 								],
-								"id": "1cb5fe94-5407-4434-b7c7-e4909a472fbe"
+								"type": "text/javascript"
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
-								"type": "text/javascript",
 								"exec": [
 									"var rendererResponses = JSON.parse(postman.getGlobalVariable(\"rendererResponses\") || '{}');\r",
 									"\r",
@@ -9451,7 +9397,7 @@
 									"\r",
 									"postman.setGlobalVariable(\"rendererResponses\", JSON.stringify(rendererResponses));"
 								],
-								"id": "9765eb17-4f3b-4130-bffd-e5106cb4a934"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -9477,15 +9423,13 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{{responseToSubmit}}"
+							"raw": "{\r\n    \"id\": \"60342a90a969571ea05059bd\",\r\n    \"source\": {\r\n      \"type\": \"s3\",\r\n      \"region\": \"eu-west-1\",\r\n      \"bucket\": \"curzio-della-santa\",\r\n      \"key\": \"lw-inside/assets/0f06502c-b750-4848-95be-96f28a257f39/IMG_20180911_162048.jpg\",\r\n      \"url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/lw-inside/assets/0f06502c-b750-4848-95be-96f28a257f39/IMG_20180911_162048.jpg\"\r\n    },\r\n    \"source_url\": \"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/lw-inside/assets/0f06502c-b750-4848-95be-96f28a257f39/IMG_20180911_162048.jpg\",\r\n    \"source_meta\": {\r\n      \"width\": 1500,\r\n      \"height\": 1125\r\n    },\r\n    \"action_count\": 1,\r\n    \"actions\": [\r\n      {\r\n        \"name\": \"thumbnail\",\r\n        \"params\": {\r\n          \"output_file\": \"png:output.png\",\r\n          \"size\": \"1500x1500>\",\r\n          \"background\": \"transparent\",\r\n          \"strip\": true\r\n        },\r\n        \"save\": {\r\n          \"identifier\": \"web\",\r\n          \"params\": {\r\n            \"bucket\": \"curzio-della-santa\",\r\n            \"key\": \"lw-inside/assets/0f06502c-b750-4848-95be-96f28a257f39/web/IMG_20180911_162048.png\"\r\n          },\r\n          \"type\": \"s3\"\r\n        }\r\n      }\r\n    ],\r\n    \"notification_count\": 1,\r\n    \"notifications\": [\r\n      {\r\n        \"id\": \"60342a90a969571ea05059be\",\r\n        \"params\": {\r\n          \"url\": \"https://24c2a047f3f0e23c69ad1a22992504c9.m.pipedream.net\"\r\n        },\r\n        \"type\": \"webhook\",\r\n        \"calls\": []\r\n      }\r\n    ],\r\n    \"status\": \"complete\",\r\n    \"result_count\": 1,\r\n    \"results\": [\r\n      {\r\n        \"id\": \"60342ac0760ac162667e9c0e\",\r\n        \"identifier\": \"web\",\r\n        \"url\": \"http://curzio-della-santa.s3.amazonaws.com/lw-inside/assets/0f06502c-b750-4848-95be-96f28a257f39/web/IMG_20180911_162048.png\",\r\n        \"meta\": {\r\n          \"width\": 1500,\r\n          \"height\": 1125\r\n        }\r\n      }\r\n    ],\r\n    \"submitted_on\": \"2021-02-22T23:05:04+0100\",\r\n    \"processing_started_on\": \"2021-02-22T23:05:06+0100\",\r\n    \"processing_completed_on\": \"2021-02-22T23:05:52+0100\"\r\n  }\r\n"
 						},
 						"url": {
-							"raw": "http://denner-assets.public.web01.detailnet.me/dws-fileconversion/receive-completed-job",
+							"raw": "http://lw-inside.detailnet.me/dws-fileconversion/receive-completed-job",
 							"protocol": "http",
 							"host": [
-								"denner-assets",
-								"public",
-								"web01",
+								"lw-inside",
 								"detailnet",
 								"me"
 							],
@@ -9504,7 +9448,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "151b5490-1cd2-4d46-8993-0e911a7d858f",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -9514,15 +9457,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "cd077078-cc19-4abe-becb-ffb21b8309f3",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "banners",
@@ -9659,7 +9600,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "d001a622-3fea-44a2-be7f-1fb3b2e5a2d6",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -9669,15 +9609,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "927fbd83-a6a1-4d9d-9a87-64284139ae28",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "portal",
@@ -9928,7 +9866,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "e9fd4204-148f-4b69-b0f1-890f26575d91",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -9938,15 +9875,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "fa41a8ee-e54c-4fd8-8b15-5e935614333c",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "stores",
@@ -10126,7 +10061,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "53f229c2-bad4-4995-b673-6a3a4357573e",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -10136,16 +10070,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e3414f03-97f3-421f-99ee-ecf6a74ef8de",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

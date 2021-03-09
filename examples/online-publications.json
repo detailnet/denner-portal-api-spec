@@ -741,10 +741,7 @@
                         "url": "https://www.denner.ch/it/shop/vino/vini.html"
                     }
                 ],
-                "packshot": {
-                    "id": "104cc3ae-faec-4f0f-ac18-8e6d3e8e1dd1",
-                    "cdn_url": "https://denner.imgix.net/assets/104cc3ae-faec-4f0f-ac18-8e6d3e8e1dd1/web/051683_6.png"
-                },
+                "packshot_url": "https://denner.imgix.net/assets/104cc3ae-faec-4f0f-ac18-8e6d3e8e1dd1/web/051683_6.png",
                 "remarks": "<span style=\"background-color: rgb(247, 247, 247);\">\u200BFolgende Artikel in Bild zeigen:</span><ul style=\"\"><li style=\"background-color: rgb(247, 247, 247);\">000000</li><li style=\"\"><span style=\"background-color: rgb(255, 255, 0);\">1111111</span></li><li style=\"\"><span style=\"background-color: rgb(255, 255, 0);\">222222</span></li><li style=\"background-color: rgb(247, 247, 247);\">333333</li></ul>Den mittleren Artikel 30 % grösser darstellen."
             },
             "articles": [
