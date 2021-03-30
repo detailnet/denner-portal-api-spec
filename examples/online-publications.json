@@ -712,6 +712,38 @@
                         "value": "20%"
                     }
                 ],
+                "validity": {
+                    "from": "2015-06-23",
+                    "to": "2015-06-29",
+                    "short_text": [
+                        {
+                            "locale": "de",
+                            "value": "Gültig von 23.06.–29.06."
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "..."
+                        },
+                        {
+                            "locale": "it",
+                            "value": "..."
+                        }
+                    ],
+                    "long_text": [
+                        {
+                            "locale": "de",
+                            "value": "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "..."
+                        },
+                        {
+                            "locale": "it",
+                            "value": "..."
+                        }
+                    ]
+                },
                 "sales_price": "7.–",
                 "instead_price": [
                     {
