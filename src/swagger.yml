@@ -189,22 +189,26 @@ paths:
                       open_from: '08:00'
                       open_to: '20:00'
                   weekly_opening_days:
-                    - weekday: 1
+                    - day: '2015-06-22'
+                      weekday: 1
                       statements:
                         - open_from: '08:00'
                           open_to: '20:00'
                           superseded: false
-                    - weekday: 2
+                    - day: '2015-06-23'
+                      weekday: 2
                       statements:
                         - open_from: '08:00'
                           open_to: '20:00'
                           superseded: false
-                    - weekday: 3
+                    - day: '2015-06-24'
+                      weekday: 3
                       statements:
                         - open_from: '08:00'
                           open_to: '20:00'
                           superseded: false
-                    - weekday: 4
+                    - day: '2015-06-25'
+                      weekday: 4
                       statements:
                         - open_from: '08:00'
                           open_to: '20:00'
@@ -216,7 +220,8 @@ paths:
                               value: tbd
                             - locale: it
                               value: tbd
-                    - weekday: 5
+                    - day: '2015-06-26'
+                      weekday: 5
                       statements:
                         - open_from: '08:00'
                           open_to: '20:00'
@@ -228,7 +233,8 @@ paths:
                               value: tbd
                             - locale: it
                               value: tbd
-                    - weekday: 6
+                    - day: '2015-06-27'
+                      weekday: 6
                       statements:
                         - open_from: '08:00'
                           open_to: '12:00'
@@ -236,7 +242,8 @@ paths:
                         - open_from: '14:00'
                           open_to: '20:00'
                           superseded: false
-                    - weekday: 7
+                    - day: '2015-06-28'
+                      weekday: 7
                       statements:
                         - text_override:
                             - locale: de
@@ -4652,6 +4659,8 @@ definitions:
   WeeklyOpeningDay:
     type: object
     properties:
+      day:
+        $ref: '#/definitions/Date'
       weekday:
         $ref: '#/definitions/DayOfWeek'
       statements:
