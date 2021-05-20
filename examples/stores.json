@@ -221,6 +221,7 @@
             ],
             "weekly_opening_days" : [
                 {
+                    "day": "2015-06-22",
                     "weekday": 1,
                     "statements": [
                         {
@@ -231,6 +232,7 @@
                     ]
                 },
                 {
+                    "day": "2015-06-23",
                     "weekday": 2,
                     "statements": [
                         {
@@ -241,6 +243,7 @@
                     ]
                 },
                 {
+                    "day": "2015-06-24",
                     "weekday": 3,
                     "statements": [
                         {
@@ -251,6 +254,7 @@
                     ]
                 },
                 {
+                    "day": "2015-06-25",
                     "weekday": 4,
                     "statements": [
                         {
@@ -275,6 +279,7 @@
                     ]
                 },
                 {
+                    "day": "2015-06-26",
                     "weekday": 5,
                     "statements": [
                         {
@@ -299,6 +304,7 @@
                     ]
                 },
                 {
+                    "day": "2015-06-27",
                     "weekday": 6,
                     "statements": [
                         {
@@ -314,6 +320,7 @@
                     ]
                 },
                 {
+                    "day": "2015-06-28",
                     "weekday": 7,
                     "statements": [
                         {
