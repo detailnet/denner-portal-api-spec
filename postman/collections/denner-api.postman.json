@@ -9984,7 +9984,48 @@
 								"44444444-aaaa-4444-aaaa-444444444444"
 							]
 						},
-						"description": "Get a single store (Filiale).\n\nNotes:\n * On API-Gatway this resource is not available"
+						"description": "Get a single store (Filiale).\n\nNotes:\n * Store code can be used as ID\n * On API-Gatway this resource is not available"
+					},
+					"response": []
+				},
+				{
+					"name": "/stores/{store_id}",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{stores_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{stores_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"flyer_url\": \"www.denner.ch/flyer\"\r\n}"
+						},
+						"url": {
+							"raw": "{{stores_url_base}}/stores/44444444-aaaa-4444-aaaa-444444444444",
+							"host": [
+								"{{stores_url_base}}"
+							],
+							"path": [
+								"stores",
+								"44444444-aaaa-4444-aaaa-444444444444"
+							]
+						},
+						"description": "Update a single store (Filiale).\n\nNotes:\n * Store code can be used as ID\n * On API-Gatway this resource is not available"
 					},
 					"response": []
 				},
