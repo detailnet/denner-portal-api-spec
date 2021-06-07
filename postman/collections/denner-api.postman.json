@@ -9989,47 +9989,6 @@
 					"response": []
 				},
 				{
-					"name": "/stores/{store_id}",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "App-ID",
-								"value": "{{stores_header_app_id}}"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{stores_header_app_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"flyer_url\": \"www.denner.ch/flyer\"\r\n}"
-						},
-						"url": {
-							"raw": "{{stores_url_base}}/stores/44444444-aaaa-4444-aaaa-444444444444",
-							"host": [
-								"{{stores_url_base}}"
-							],
-							"path": [
-								"stores",
-								"44444444-aaaa-4444-aaaa-444444444444"
-							]
-						},
-						"description": "Update a single store (Filiale).\n\nNotes:\n * Store code can be used as ID\n * On API-Gatway this resource is not available"
-					},
-					"response": []
-				},
-				{
 					"name": "/store-channels",
 					"request": {
 						"method": "GET",
@@ -10094,6 +10053,188 @@
 							]
 						},
 						"description": "Use this operation to get a list of all store services (Filialangebote; e.g. \"Humidor\" or \"Backstation\")."
+					},
+					"response": []
+				},
+				{
+					"name": "/store-flyers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{stores_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{stores_header_app_key}}"
+							}
+						],
+						"url": {
+							"raw": "{{stores_url_base}}/store-flyers",
+							"host": [
+								"{{stores_url_base}}"
+							],
+							"path": [
+								"store-flyers"
+							]
+						},
+						"description": "Use this operation to get a list of all store flyers."
+					},
+					"response": []
+				},
+				{
+					"name": "/store-flyers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{stores_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{stores_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"www.demmer.ch/flyer\",\r\n    \"expires_on\":\"2021-07-01\",\r\n    \"sort_index\": 10,\r\n    \"stores\": [\r\n        \"820\",\r\n        \"44444444-aaaa-4444-aaaa-444444444444\"\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{stores_url_base}}/store-flyers",
+							"host": [
+								"{{stores_url_base}}"
+							],
+							"path": [
+								"store-flyers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/store-flyers/{flyer_id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{stores_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{stores_header_app_key}}"
+							}
+						],
+						"url": {
+							"raw": "{{stores_url_base}}/store-flyers/44444444-aaaa-4444-aaaa-444444444444",
+							"host": [
+								"{{stores_url_base}}"
+							],
+							"path": [
+								"store-flyers",
+								"44444444-aaaa-4444-aaaa-444444444444"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/store-flyers/{flyer_id}",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{stores_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{stores_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"www.denner.ch/flyer22\",\r\n    \"expires_on\": \"2021-07-01\",\r\n    \"sort_index\": 10,\r\n    \"stores\": [\r\n       \"44444444-aaaa-4444-aaaa-444444444444\",\r\n       \"820\"\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{stores_url_base}}/store-flyers/44444444-aaaa-4444-aaaa-444444444444",
+							"host": [
+								"{{stores_url_base}}"
+							],
+							"path": [
+								"store-flyers",
+								"44444444-aaaa-4444-aaaa-444444444444"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/store-flyers/{flyier_id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "App-ID",
+								"value": "{{stores_header_app_id}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{stores_header_app_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{stores_url_base}}/store-flyers/44444444-aaaa-4444-aaaa-444444444444",
+							"host": [
+								"{{stores_url_base}}"
+							],
+							"path": [
+								"store-flyers",
+								"44444444-aaaa-4444-aaaa-444444444444"
+							]
+						},
+						"description": "Delete single store (Filiale).\n\nNotes:\n * On API-Gatway this resource is not available"
 					},
 					"response": []
 				}
