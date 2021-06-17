@@ -38,34 +38,36 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/advertised-articles"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -75,7 +77,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "dbyx1r"
         cacheKeyParameters:
           - "method.request.querystring.sort"
@@ -84,7 +85,6 @@ paths:
           - "method.request.querystring.filter"
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
-        type: "http"
   /advertised-articles/{advertised_article_id}:
     get:
       produces:
@@ -103,99 +103,99 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        404:
+        "404":
           description: "404 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/advertised-articles/{advertised_article_id}"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          404:
+          "404":
             statusCode: "404"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.header.App-Key: "method.request.header.App-Key"
           integration.request.path.advertised_article_id: "method.request.path.advertised_article_id"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "lxfelb"
         cacheKeyParameters:
           - "method.request.header.App-Key"
           - "method.request.header.App-ID"
-        type: "http"
   /appraisal-statistic:
     get:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "http://denner-portal.detailnet.ch/data/appraisal_statistics.json"
         responses:
           default:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
-        type: "http"
     options:
       consumes:
         - "application/json"
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
@@ -207,6 +207,7 @@ paths:
             Access-Control-Allow-Headers:
               type: "string"
       x-amazon-apigateway-integration:
+        type: "mock"
         responses:
           default:
             statusCode: "200"
@@ -217,7 +218,6 @@ paths:
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
-        type: "mock"
   /appraisals:
     get:
       consumes:
@@ -246,37 +246,39 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "aws"
+        httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listAppraisals:${stageVariables.lambda_alias}/invocations"
         responses:
           default:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestTemplates:
           application/json: "#set($queryParams = $input.params().querystring)\r\n\
@@ -284,21 +286,19 @@ paths:
             : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
             \r\n}"
         passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
         cacheNamespace: "l16zra"
         cacheKeyParameters:
           - "method.request.querystring.f.email"
           - "method.request.querystring.sort"
           - "method.request.querystring.page_size"
           - "method.request.querystring.page"
-        type: "aws"
     options:
       consumes:
         - "application/json"
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
@@ -310,6 +310,7 @@ paths:
             Access-Control-Allow-Headers:
               type: "string"
       x-amazon-apigateway-integration:
+        type: "mock"
         responses:
           default:
             statusCode: "200"
@@ -320,7 +321,6 @@ paths:
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
-        type: "mock"
   /appraisals/{appraisal_id}:
     get:
       consumes:
@@ -337,63 +337,63 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        404:
+        "404":
           description: "404 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
+        httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listAppraisals:${stageVariables.lambda_alias}/invocations"
         responses:
           default:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
-          403:
+          "403":
             statusCode: "403"
-          404:
+          "404":
             statusCode: "404"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestTemplates:
           application/json: "{\r\n  \"mode\": \"findOne\",\r\n  \"serialization\"\
             : {\"group\": \"portal-listing\"},\r\n  \"query\": \"f._id=$input.params().path.get('appraisal_id')\"\
             \r\n}"
         passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
         cacheNamespace: "iov04u"
         cacheKeyParameters:
           - "method.request.path.appraisal_id"
-        type: "aws"
     options:
       consumes:
         - "application/json"
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
@@ -405,6 +405,7 @@ paths:
             Access-Control-Allow-Headers:
               type: "string"
       x-amazon-apigateway-integration:
+        type: "mock"
         responses:
           default:
             statusCode: "200"
@@ -415,7 +416,6 @@ paths:
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
-        type: "mock"
     patch:
       consumes:
         - "application/json"
@@ -431,50 +431,50 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
+        httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_saveAppraisal:${stageVariables.lambda_alias}/invocations"
         responses:
           default:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestTemplates:
           application/json: "{\r\n  \"serialization\": {\"group\": \"portal-listing\"\
             },\r\n  \"appraisal_id\": \"$input.params().path.get('appraisal_id')\"\
             ,\r\n  \"appraisal_data\": $input.json('$')\r\n}"
         passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
         cacheNamespace: "iov04u"
         cacheKeyParameters:
           - "method.request.path.appraisal_id"
-        type: "aws"
   /article-groups:
     get:
       produces:
@@ -505,32 +505,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/article-groups"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -540,7 +542,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "a4d8lg"
         cacheKeyParameters:
           - "method.request.querystring.page"
@@ -549,7 +550,6 @@ paths:
           - "method.request.querystring.filter"
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
-        type: "http"
   /articles:
     get:
       produces:
@@ -580,32 +580,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/articles"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -615,7 +617,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "ckulow"
         cacheKeyParameters:
           - "method.request.header.App-Key"
@@ -624,7 +625,6 @@ paths:
           - "method.request.querystring.page_size"
           - "method.request.querystring.sort"
           - "method.request.querystring.filter"
-        type: "http"
   /articles/{article_id}:
     get:
       produces:
@@ -655,38 +655,40 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        404:
+        "404":
           description: "404 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/articles/{article_id}"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          404:
+          "404":
             statusCode: "404"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.price-selection: "method.request.querystring.price-selection"
@@ -696,7 +698,6 @@ paths:
           integration.request.querystring.quantity: "method.request.querystring.quantity"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "ttsbci"
         cacheKeyParameters:
           - "method.request.header.App-ID"
@@ -705,7 +706,6 @@ paths:
           - "method.request.querystring.quantity"
           - "method.request.querystring.wine-year"
           - "method.request.querystring.price-selection"
-        type: "http"
   /articles/{article_id}/text-blocks:
     get:
       produces:
@@ -724,50 +724,50 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        404:
+        "404":
           description: "404 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/articles/{article_id}/text-blocks"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          404:
+          "404":
             statusCode: "404"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.header.App-Key: "method.request.header.App-Key"
           integration.request.path.article_id: "method.request.path.article_id"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "3rzs2v"
         cacheKeyParameters:
           - "method.request.header.App-Key"
           - "method.request.header.App-ID"
-        type: "http"
   /banners:
     get:
       consumes:
@@ -780,39 +780,41 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
+        httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_listBanners:${stageVariables.lambda_alias}/invocations"
         responses:
           default:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestTemplates:
           application/json: "#set($queryParams = $input.params().querystring)\r\n\
@@ -820,8 +822,6 @@ paths:
             : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
             \r\n}"
         passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
-        type: "aws"
     post:
       consumes:
         - "application/json"
@@ -833,53 +833,53 @@ paths:
           required: false
           type: "string"
       responses:
-        201:
+        "201":
           description: "201 response"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
+        httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_saveBanner:${stageVariables.lambda_alias}/invocations"
         responses:
           default:
             statusCode: "201"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestTemplates:
           application/json: "{\r\n  \"serialization\": {\"group\": \"portal-listing\"\
             },\r\n  \"banner_data\": $input.json('$')\r\n}"
         passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
-        type: "aws"
     options:
       consumes:
         - "application/json"
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
@@ -891,6 +891,7 @@ paths:
             Access-Control-Allow-Headers:
               type: "string"
       x-amazon-apigateway-integration:
+        type: "mock"
         responses:
           default:
             statusCode: "200"
@@ -901,7 +902,6 @@ paths:
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
-        type: "mock"
   /banners/{banner_id}:
     get:
       consumes:
@@ -918,58 +918,60 @@ paths:
           required: true
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        404:
+        "404":
           description: "404 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
+        httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_listBanners:${stageVariables.lambda_alias}/invocations"
         responses:
           default:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
-          403:
+          "403":
             statusCode: "403"
-          404:
+          "404":
             statusCode: "404"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestTemplates:
           application/json: "{\r\n  \"mode\": \"findOne\",\r\n  \"serialization\"\
             : {\"group\": \"portal-listing\"},\r\n  \"query\": \"f._id=$input.params().path.get('banner_id')\"\
             \r\n}"
         passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
         cacheNamespace: "1731ej"
         cacheKeyParameters:
           - "method.request.path.banner_id"
-        type: "aws"
     delete:
       consumes:
+        - "application/json"
+      produces:
         - "application/json"
       parameters:
         - name: "banner_id"
@@ -977,33 +979,42 @@ paths:
           required: true
           type: "string"
       responses:
-        204:
+        "500":
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/Error"
+        "204":
           description: "204 response"
+          schema:
+            $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_deleteBanner:${stageVariables.lambda_alias}/invocations"
         responses:
           default:
             statusCode: "204"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          "5\\d{2}":
+            statusCode: "500"
         requestTemplates:
-          application/json: "{\"statusCode\": 200}"
+          application/json: "{\r\n  \"id\": \"$input.params().path.get('banner_id')\"\
+            \r\n}"
         passthroughBehavior: "when_no_match"
-        cacheNamespace: "1731ej"
-        cacheKeyParameters:
-          - "method.request.path.banner_id"
-        type: "mock"
+        contentHandling: "CONVERT_TO_TEXT"
     options:
       consumes:
         - "application/json"
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
@@ -1015,17 +1026,17 @@ paths:
             Access-Control-Allow-Headers:
               type: "string"
       x-amazon-apigateway-integration:
+        type: "mock"
         responses:
           default:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'DELETE,GET,OPTIONS,PATCH'"
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,Access-Control-Allow-Origin,App-Key,X-Requested-With'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
-        type: "mock"
     patch:
       consumes:
         - "application/json"
@@ -1041,51 +1052,51 @@ paths:
           required: true
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
+        httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_saveBanner:${stageVariables.lambda_alias}/invocations"
         responses:
           default:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestTemplates:
           application/json: "{\r\n  \"serialization\": {\"group\": \"portal-listing\"\
             },\r\n  \"banner_id\": \"$input.params().path.get('banner_id')\",\r\n\
             \  \"banner_data\": $input.json('$')\r\n}"
         passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
         cacheNamespace: "1731ej"
         cacheKeyParameters:
           - "method.request.header.App-Key"
           - "method.request.path.banner_id"
-        type: "aws"
   /mobile-wines:
     get:
       produces:
@@ -1116,32 +1127,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/mobile-wines"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -1151,7 +1164,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "uudpgz"
         cacheKeyParameters:
           - "method.request.querystring.filter"
@@ -1159,7 +1171,6 @@ paths:
           - "method.request.querystring.page_size"
           - "method.request.querystring.sort"
           - "method.request.header.App-ID"
-        type: "http"
   /online-filters:
     get:
       produces:
@@ -1190,32 +1201,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/online-filters"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -1225,7 +1238,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "e8bhi7"
         cacheKeyParameters:
           - "method.request.querystring.sort"
@@ -1234,7 +1246,6 @@ paths:
           - "method.request.querystring.filter"
           - "method.request.header.App-Key"
           - "method.request.header.App-ID"
-        type: "http"
   /online-groups:
     get:
       produces:
@@ -1265,32 +1276,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/online-groups"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -1300,7 +1313,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "6kao9x"
         cacheKeyParameters:
           - "method.request.querystring.page"
@@ -1309,7 +1321,6 @@ paths:
           - "method.request.querystring.sort"
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
-        type: "http"
   /online-publication-articles/{article_id}:
     get:
       produces:
@@ -1328,51 +1339,51 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        404:
+        "404":
           description: "404 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/online-publication-articles/{article_id}"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          404:
+          "404":
             statusCode: "404"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.path.article_id: "method.request.path.article_id"
           integration.request.header.App-Key: "method.request.header.App-Key"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "90mhl8"
         cacheKeyParameters:
           - "method.request.path.article_id"
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
-        type: "http"
   /online-publications:
     get:
       produces:
@@ -1403,32 +1414,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/online-publications"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -1438,7 +1451,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "526f2f"
         cacheKeyParameters:
           - "method.request.header.App-Key"
@@ -1447,7 +1459,6 @@ paths:
           - "method.request.querystring.page"
           - "method.request.querystring.page_size"
           - "method.request.querystring.filter"
-        type: "http"
   /online-publications/{publication_id}:
     get:
       produces:
@@ -1466,38 +1477,40 @@ paths:
           required: true
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        404:
+        "404":
           description: "404 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/online-publications/{publication_id}"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          404:
+          "404":
             statusCode: "404"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.header.App-Key: "method.request.header.App-Key"
@@ -1505,13 +1518,11 @@ paths:
           integration.request.path.publication_id: "method.request.path.publication_id"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "76s57b"
         cacheKeyParameters:
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
           - "method.request.path.publication_id"
-        type: "http"
   /online-specials:
     get:
       produces:
@@ -1542,32 +1553,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/online-specials"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -1577,7 +1590,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "pgucqf"
         cacheKeyParameters:
           - "method.request.querystring.filter"
@@ -1586,14 +1598,13 @@ paths:
           - "method.request.querystring.sort"
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
-        type: "http"
     options:
       consumes:
         - "application/json"
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
@@ -1605,6 +1616,7 @@ paths:
             Access-Control-Allow-Headers:
               type: "string"
       x-amazon-apigateway-integration:
+        type: "mock"
         responses:
           default:
             statusCode: "200"
@@ -1615,7 +1627,6 @@ paths:
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
-        type: "mock"
   /print-publication-briefings:
     post:
       parameters:
@@ -1624,29 +1635,29 @@ paths:
           required: false
           type: "string"
       responses:
-        201:
+        "201":
           description: "201 response"
-        400:
+        "400":
           description: "400 response"
-        500:
+        "500":
           description: "500 response"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "POST"
         uri: "https://${stageVariables.url_advertising}/print-publication-briefings"
         responses:
-          4\d{2}:
+          "4\\d{2}":
             statusCode: "400"
           default:
             statusCode: "201"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
         requestParameters:
           integration.request.header.App-Key: "stageVariables.advertising_app_key"
           integration.request.header.App-ID: "stageVariables.advertising_app_id"
         passthroughBehavior: "when_no_match"
-        httpMethod: "POST"
-        type: "http"
   /promotion-types:
     get:
       produces:
@@ -1677,32 +1688,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/promotion-types"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -1712,7 +1725,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "1ooqzt"
         cacheKeyParameters:
           - "method.request.querystring.page"
@@ -1721,7 +1733,6 @@ paths:
           - "method.request.querystring.sort"
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
-        type: "http"
   /promotions:
     get:
       produces:
@@ -1752,32 +1763,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/promotions"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -1787,7 +1800,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "lls4zt"
         cacheKeyParameters:
           - "method.request.querystring.page"
@@ -1796,7 +1808,6 @@ paths:
           - "method.request.querystring.filter"
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
-        type: "http"
   /ratings:
     get:
       consumes:
@@ -1829,25 +1840,27 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
+        httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listRatings:${stageVariables.lambda_alias}/invocations"
         responses:
           default:
@@ -1856,11 +1869,11 @@ paths:
               application/json: "#set($response = $input.path('$'))\n{\n    \"ratings\"\
                 : $response.ratings,\n    \"total_ratings\": $response.total_ratings,\n\
                 \    \"total_items\": $response.total_ratings\n}\n"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestTemplates:
           application/json: "#set($queryParams = $input.params().querystring)\r\n\
@@ -1868,8 +1881,6 @@ paths:
             : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
             \r\n}"
         passthroughBehavior: "when_no_templates"
-        httpMethod: "POST"
-        type: "aws"
   /ratings/{article_id}:
     get:
       consumes:
@@ -1886,48 +1897,48 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        404:
+        "404":
           description: "404 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
+        httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listRatings:${stageVariables.lambda_alias}/invocations"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          404:
+          "404":
             statusCode: "404"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestTemplates:
           application/json: "{\r\n  \"mode\": \"findOne\",\r\n  \"serialization\"\
             : {\"group\": \"portal-listing\"},\r\n  \"query\": \"f._id=__streq_$input.params().path.get('article_id')\"\
             \r\n}"
         passthroughBehavior: "when_no_templates"
-        httpMethod: "POST"
-        type: "aws"
   /screen-publications:
     get:
       produces:
@@ -1958,32 +1969,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/screen-publications"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -1993,7 +2006,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "u50shc"
         cacheKeyParameters:
           - "method.request.querystring.page"
@@ -2002,7 +2014,6 @@ paths:
           - "method.request.querystring.sort"
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
-        type: "http"
   /screen-publications/{publication_id}:
     get:
       produces:
@@ -2021,51 +2032,51 @@ paths:
           required: true
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        404:
+        "404":
           description: "404 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/screen-publications/{publication_id}"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          404:
+          "404":
             statusCode: "404"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.header.App-Key: "method.request.header.App-Key"
           integration.request.path.publication_id: "method.request.path.publication_id"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "jcgi97"
         cacheKeyParameters:
           - "method.request.header.App-Key"
           - "method.request.header.App-ID"
           - "method.request.path.publication_id"
-        type: "http"
   /screen-stores:
     get:
       produces:
@@ -2088,23 +2099,25 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_stores}/stores"
         responses:
           default:
@@ -2116,11 +2129,11 @@ paths:
                 : $store.calendar_opening_times\n    }#if($foreach.hasNext),#end\n\
                 \n#end\n  ],\n  \"page_count\": $root.page_count,\n  \"page_size\"\
                 : $root.page_size,\n  \"total_items\": $root.total_items\n}\n"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -2128,14 +2141,12 @@ paths:
           integration.request.querystring.page_size: "method.request.querystring.page_size"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "x92vt1"
         cacheKeyParameters:
           - "method.request.querystring.page"
           - "method.request.querystring.page_size"
           - "method.request.header.App-Key"
           - "method.request.header.App-ID"
-        type: "http"
   /shop-wines:
     get:
       produces:
@@ -2166,32 +2177,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/shop-wines"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -2201,7 +2214,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "s62tqc"
         cacheKeyParameters:
           - "method.request.header.App-Key"
@@ -2210,7 +2222,6 @@ paths:
           - "method.request.querystring.page_size"
           - "method.request.querystring.page"
           - "method.request.querystring.sort"
-        type: "http"
   /shop-wines/{article_id}:
     get:
       produces:
@@ -2229,51 +2240,51 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        404:
+        "404":
           description: "404 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/shop-wines/{article_id}"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          404:
+          "404":
             statusCode: "404"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.header.App-Key: "method.request.header.App-Key"
           integration.request.path.article_id: "method.request.path.article_id"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "m1pett"
         cacheKeyParameters:
           - "method.request.header.App-ID"
           - "method.request.header.App-Key"
           - "method.request.path.article_id"
-        type: "http"
   /store-channels:
     get:
       produces:
@@ -2304,32 +2315,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_stores}/store-channels"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -2339,7 +2352,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "ret4wy"
         cacheKeyParameters:
           - "method.request.querystring.sort"
@@ -2348,7 +2360,6 @@ paths:
           - "method.request.querystring.filter"
           - "method.request.header.App-Key"
           - "method.request.header.App-ID"
-        type: "http"
   /store-services:
     get:
       produces:
@@ -2379,32 +2390,34 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_stores}/store-services"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
@@ -2414,7 +2427,6 @@ paths:
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "r0t0eg"
         cacheKeyParameters:
           - "method.request.header.App-Key"
@@ -2423,7 +2435,6 @@ paths:
           - "method.request.querystring.page"
           - "method.request.querystring.page_size"
           - "method.request.querystring.filter"
-        type: "http"
   /stores:
     get:
       produces:
@@ -2454,44 +2465,44 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
         uri: "https://${stageVariables.url_stores}/stores"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestParameters:
           integration.request.querystring.page: "method.request.querystring.page"
           integration.request.header.App-Key: "method.request.header.App-Key"
-          integration.request.querystring.only_opened: "'yes'"
           integration.request.querystring.filter: "method.request.querystring.filter"
           integration.request.querystring.only_online_publishable: "'yes'"
           integration.request.querystring.page_size: "method.request.querystring.page_size"
           integration.request.querystring.sort: "method.request.querystring.sort"
           integration.request.header.App-ID: "method.request.header.App-ID"
         passthroughBehavior: "when_no_match"
-        httpMethod: "GET"
         cacheNamespace: "0pxdef"
         cacheKeyParameters:
           - "method.request.querystring.sort"
@@ -2500,7 +2511,6 @@ paths:
           - "method.request.querystring.filter"
           - "method.request.header.App-Key"
           - "method.request.header.App-ID"
-        type: "http"
   /sweepstake-participants:
     get:
       consumes:
@@ -2537,34 +2547,36 @@ paths:
           required: false
           type: "string"
       responses:
-        200:
+        "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-        500:
+        "500":
           description: "500 response"
           schema:
             $ref: "#/definitions/Error"
-        403:
+        "403":
           description: "403 response"
           schema:
             $ref: "#/definitions/Error"
-        406:
+        "406":
           description: "406 response"
           schema:
             $ref: "#/definitions/Error"
       security:
         - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
+        httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listSweepstakeParticipants:${stageVariables.lambda_alias}/invocations"
         responses:
           default:
             statusCode: "200"
-          403:
+          "403":
             statusCode: "403"
-          5\d{2}:
+          "5\\d{2}":
             statusCode: "500"
-          406:
+          "406":
             statusCode: "406"
         requestTemplates:
           application/json: "#set($queryParams = $input.params().querystring)\r\n\
@@ -2572,7 +2584,6 @@ paths:
             : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
             \r\n}"
         passthroughBehavior: "when_no_templates"
-        httpMethod: "POST"
         cacheNamespace: "ahyiw5"
         cacheKeyParameters:
           - "method.request.querystring.sort"
@@ -2581,7 +2592,6 @@ paths:
           - "method.request.querystring.f.created_on"
           - "method.request.querystring.f.created_from"
           - "method.request.querystring.f.created_to"
-        type: "aws"
 securityDefinitions:
   AppKeyHeader:
     type: "apiKey"
@@ -2589,10 +2599,10 @@ securityDefinitions:
     in: "header"
     x-amazon-apigateway-authtype: "custom"
     x-amazon-apigateway-authorizer:
+      type: "token"
       authorizerUri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools_authorizeApiRequest:live/invocations"
       authorizerCredentials: "arn:aws:iam::802555642192:role/aws-apigateway-role.denner-api"
       authorizerResultTtlInSeconds: 3600
-      type: "token"
 definitions:
   Empty:
     type: "object"

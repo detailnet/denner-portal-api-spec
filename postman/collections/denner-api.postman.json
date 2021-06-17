@@ -9497,6 +9497,41 @@
 					"response": []
 				},
 				{
+					"name": "/banners",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}"
+							},
+							{
+								"key": "App-Key",
+								"value": "{{banners_header_app_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"20% auf alle Weine\",\n    \"closable\": true,\n    \"active\": true,\n    \"position\": \"top\",\n    \"display_from\": \"2016-01-01\",\n    \"display_to\": \"2016-12-31\",\n    \"locales\": [\n        \"de\",\n        \"fr\",\n        \"it\"\n    ],\n    \"types\": [\n        \"wine\"\n    ],\n    \"platforms\": [\n        \"iOS\",\n        \"Android\",\n        \"Windows\"\n    ],\n    \"title\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"20% auf alle Weine\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"20% sur tous les vins\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"20% su tutti i vini\"\n        }\n    ],\n    \"html\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"Nur am Sonntag, 20. Dezember 2015 auch auf bestehende Aktionspreise. Gültig in allen geöffneten Filialen (siehe www.denner.ch), unter www.denner-wineshop.ch und in der Denner App.**<br />*ausgenommen Schaumweine und Bordeaux Grands Crus 2013. Solange Vorrat. Nicht mit Gutscheinen, Bons und Rabatten bei Neueröffnungen und Weinmessen kumulierbar. **die Lieferung vor Weihnachten ist nicht garantiert.\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"Seulement le dimanche 20 décembre 2015, valable également sur les prix promotionnels. Valable dans toutes les succursales ouvertes (voir www.denner.ch), sur www.denner-wineshop.ch et dans l’appli Denner.**<br />*excepté les vins mousseux et Bordeaux Grands Crus 2013. Jusqu’à épuisement des stocks. Non cumulable avec des bons et des rabais accordés aux inaugurations et aux foires aux vins. **la livraison avant Noël n’est pas garantie.\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"Solo domenica 20 dicembre 2015 anche sugli attuali prezzi promozionali. Valida in tutte le filiali aperte (vedi www.denner.ch), su www.denner-wineshop.ch e nell’app di Denner.**<br />*sono esclusi spumanti, vini frizzanti e Bordeaux Grands Crus 2013. Fino a esaurimento. Non cumulabile con buoni e sconti a fiere del vino e inaugurazioni di nuovi punti vendita. **consegna prima di Natale non garantita.\"\n        }\n    ],\n    \"image\": [\n        {\n            \"locale\": \"de\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/6557432f-2aeb-4440-8405-799b9120727b/20Weine_de.png\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/b0a1bf0e-2b09-4fe8-ba2a-19030d23e67f/20Weine_fr.png\"\n        },\n        {\n            \"locale\": \"it\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/f31c80ee-ecbc-4af8-b972-00e7facabede/20Weine_it.png\"\n        }\n    ],\n    \"link\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"http://denner-wineshop.ch/de\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"http://denner-wineshop.ch/fr\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"http://denner-wineshop.ch/it\"\n        }\n    ]\n}\n"
+						},
+						"url": {
+							"raw": "{{banners_url_base}}/banners",
+							"host": [
+								"{{banners_url_base}}"
+							],
+							"path": [
+								"banners"
+							]
+						},
+						"description": "Create a new banner"
+					},
+					"response": []
+				},
+				{
 					"name": "/banners/{banner_id}",
 					"request": {
 						"method": "GET",
@@ -9561,9 +9596,9 @@
 					"response": []
 				},
 				{
-					"name": "/banners",
+					"name": "/banners/{banner_id}",
 					"request": {
-						"method": "POST",
+						"method": "DELETE",
 						"header": [
 							{
 								"key": "Accept",
@@ -9578,20 +9613,17 @@
 								"value": "application/json"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"20% auf alle Weine\",\n    \"closable\": true,\n    \"active\": true,\n    \"position\": \"top\",\n    \"display_from\": \"2016-01-01\",\n    \"display_to\": \"2016-12-31\",\n    \"locales\": [\n        \"de\",\n        \"fr\",\n        \"it\"\n    ],\n    \"types\": [\n        \"wine\"\n    ],\n    \"platforms\": [\n        \"iOS\",\n        \"Android\",\n        \"Windows\"\n    ],\n    \"title\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"20% auf alle Weine\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"20% sur tous les vins\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"20% su tutti i vini\"\n        }\n    ],\n    \"html\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"Nur am Sonntag, 20. Dezember 2015 auch auf bestehende Aktionspreise. Gültig in allen geöffneten Filialen (siehe www.denner.ch), unter www.denner-wineshop.ch und in der Denner App.**<br />*ausgenommen Schaumweine und Bordeaux Grands Crus 2013. Solange Vorrat. Nicht mit Gutscheinen, Bons und Rabatten bei Neueröffnungen und Weinmessen kumulierbar. **die Lieferung vor Weihnachten ist nicht garantiert.\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"Seulement le dimanche 20 décembre 2015, valable également sur les prix promotionnels. Valable dans toutes les succursales ouvertes (voir www.denner.ch), sur www.denner-wineshop.ch et dans l’appli Denner.**<br />*excepté les vins mousseux et Bordeaux Grands Crus 2013. Jusqu’à épuisement des stocks. Non cumulable avec des bons et des rabais accordés aux inaugurations et aux foires aux vins. **la livraison avant Noël n’est pas garantie.\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"Solo domenica 20 dicembre 2015 anche sugli attuali prezzi promozionali. Valida in tutte le filiali aperte (vedi www.denner.ch), su www.denner-wineshop.ch e nell’app di Denner.**<br />*sono esclusi spumanti, vini frizzanti e Bordeaux Grands Crus 2013. Fino a esaurimento. Non cumulabile con buoni e sconti a fiere del vino e inaugurazioni di nuovi punti vendita. **consegna prima di Natale non garantita.\"\n        }\n    ],\n    \"image\": [\n        {\n            \"locale\": \"de\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/6557432f-2aeb-4440-8405-799b9120727b/20Weine_de.png\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/b0a1bf0e-2b09-4fe8-ba2a-19030d23e67f/20Weine_fr.png\"\n        },\n        {\n            \"locale\": \"it\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/f31c80ee-ecbc-4af8-b972-00e7facabede/20Weine_it.png\"\n        }\n    ],\n    \"link\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"http://denner-wineshop.ch/de\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"http://denner-wineshop.ch/fr\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"http://denner-wineshop.ch/it\"\n        }\n    ]\n}\n"
-						},
 						"url": {
-							"raw": "{{banners_url_base}}/banners",
+							"raw": "{{banners_url_base}}/banners/44444444-aaaa-4444-aaaa-444444444444",
 							"host": [
 								"{{banners_url_base}}"
 							],
 							"path": [
-								"banners"
+								"banners",
+								"44444444-aaaa-4444-aaaa-444444444444"
 							]
 						},
-						"description": "Create a new banner"
+						"description": "Update a banner"
 					},
 					"response": []
 				}
