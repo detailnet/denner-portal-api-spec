@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "68857ec2-6d1f-6d59-4fa1-09b53026c273",
+		"_postman_id": "9db51647-481a-4b7e-9006-ce7df7abd9de",
 		"name": "denner-api",
 		"description": "Denner 2.0 Web Service",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -6126,6 +6126,37 @@
 						},
 						{
 							"name": "/boxes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{articles_url_base}}/boxes",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"boxes"
+									]
+								},
+								"description": "List all boxes"
+							},
+							"response": []
+						},
+						{
+							"name": "/canisters",
 							"request": {
 								"method": "GET",
 								"header": [
