@@ -1,0 +1,149 @@
+{
+	"id": "e086eb7e-409a-4f05-b330-97a06d63f109",
+	"name": "denner-api detailnet.me (lando)",
+	"values": [
+		{
+			"key": "header_accept",
+			"value": "application/json",
+			"enabled": true
+		},
+		{
+			"key": "base_url_schema",
+			"value": "http://",
+			"enabled": true
+		},
+		{
+			"key": "articles_host",
+			"value": "denner-articles.detailnet.me",
+			"enabled": true
+		},
+		{
+			"key": "articles_url_base",
+			"value": "{{base_url_schema}}{{articles_host}}/api",
+			"enabled": true
+		},
+		{
+			"key": "articles_header_app_id",
+			"value": "{{denner_articles_development_app_id}}",
+			"enabled": true
+		},
+		{
+			"key": "articles_header_app_key",
+			"value": "{{denner_articles_development_app_key}}",
+			"enabled": true
+		},
+		{
+			"key": "assets_host",
+			"value": "denner-assets.detailnet.me",
+			"enabled": true
+		},
+		{
+			"key": "assets_url_base",
+			"value": "{{base_url_schema}}{{assets_host}}/api",
+			"enabled": true
+		},
+		{
+			"key": "assets_header_app_id",
+			"value": "{{denner_assets_development_app_id}}",
+			"enabled": true
+		},
+		{
+			"key": "assets_header_app_key",
+			"value": "{{denner_assets_development_app_key}}",
+			"enabled": true
+		},
+		{
+			"key": "advertising_host",
+			"value": "denner-advertising.detailnet.me",
+			"enabled": true
+		},
+		{
+			"key": "advertising_url_base",
+			"value": "{{base_url_schema}}{{advertising_host}}/api",
+			"enabled": true
+		},
+		{
+			"key": "advertising_header_app_id",
+			"value": "{{denner_advertising_development_app_id}}",
+			"enabled": true
+		},
+		{
+			"key": "advertising_header_app_key",
+			"value": "{{denner_advertising_development_app_key}}",
+			"enabled": true
+		},
+		{
+			"key": "stores_host",
+			"value": "denner-stores.detailnet.me",
+			"enabled": true
+		},
+		{
+			"key": "stores_url_base",
+			"value": "{{base_url_schema}}{{stores_host}}/api",
+			"enabled": true
+		},
+		{
+			"key": "stores_header_app_id",
+			"value": "{{denner_stores_development_app_id}}",
+			"enabled": true
+		},
+		{
+			"key": "stores_header_app_key",
+			"value": "{{denner_stores_development_app_key}}",
+			"enabled": true
+		},
+		{
+			"key": "portal_host",
+			"value": "denner-portal.detailnet.me",
+			"enabled": true
+		},
+		{
+			"key": "portal_url_base",
+			"value": "{{base_url_schema}}{{portal_host}}/api",
+			"enabled": true
+		},
+		{
+			"key": "portal_header_app_id",
+			"value": "{{denner_portal_development_app_id}}",
+			"enabled": true
+		},
+		{
+			"key": "portal_header_app_key",
+			"value": "{{denner_portal_development_app_key}}",
+			"enabled": true
+		},
+		{
+			"key": "publication_id",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "responseToSubmit",
+			"value": "{\"id\":\"5c33848dadedb5ef158b45f2\",\"source\":{\"type\":\"s3\",\"bucket\":\"curzio-della-santa\",\"key\":\"denner-assets/assets/43267ef8-44ce-4b29-9031-61891bc6d91c/910082_2_c_K.tif\",\"url\":\"https://curzio-della-santa.s3.amazonaws.com/denner-assets/assets/43267ef8-44ce-4b29-9031-61891bc6d91c/910082_2_c_K.tif\"},\"source_url\":\"https://curzio-della-santa.s3.amazonaws.com/denner-assets/assets/43267ef8-44ce-4b29-9031-61891bc6d91c/910082_2_c_K.tif\",\"source_meta\":[],\"action_count\":1,\"actions\":[{\"name\":\"thumbnail\",\"params\":{\"output_file\":\"png:output.png\",\"size\":\"1064x1064>\",\"background\":\"transparent\",\"strip\":true},\"save\":{\"identifier\":\"web\",\"params\":{\"bucket\":\"curzio-della-santa\",\"key\":\"denner-assets/assets/43267ef8-44ce-4b29-9031-61891bc6d91c/web/910082_2_c_K.png\"},\"type\":\"s3\"}}],\"notification_count\":1,\"notifications\":[{\"id\":\"5c33848dadedb5ef158b45f3\",\"params\":{\"url\":\"http://requestbin.fullcontact.com/wabjuiwa\"},\"type\":\"webhook\",\"calls\":[{\"sent_on\":\"2019-01-07T17:55:46+0100\",\"success\":false},{\"sent_on\":\"2019-01-07T17:56:48+0100\",\"success\":false}]}],\"status\":\"error\",\"result_count\":0,\"results\":[],\"submitted_on\":\"2019-01-07T17:55:41+0100\",\"processing_started_on\":\"2019-01-07T17:55:43+0100\",\"processing_completed_on\":\"2019-01-07T17:55:45+0100\"}",
+			"enabled": true
+		},
+		{
+			"key": "current_datetime",
+			"value": "2021-03-25T11:12:16Z",
+			"enabled": true
+		},
+		{
+			"key": "current_week",
+			"value": "2021-12",
+			"enabled": true
+		},
+		{
+			"key": "advertised_article_id",
+			"value": "a597f4b2-b5a1-42f1-8d8b-761be3e721d4",
+			"enabled": true
+		},
+		{
+			"key": "document_id",
+			"value": null,
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-07-15T08:09:40.538Z",
+	"_postman_exported_using": "Postman/8.8.0"
+}
