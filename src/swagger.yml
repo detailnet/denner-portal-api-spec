@@ -4548,6 +4548,8 @@ definitions:
         type: string
         format: date
         description: Renovation ending on
+      flyers:
+        $ref: '#/definitions/StoreFlyers'
       longitude:
         type: number
         format: float
@@ -4731,6 +4733,20 @@ definitions:
         $ref: '#/definitions/Translations'
       appearances:
         $ref: '#/definitions/Appearances'
+
+  ### Store Flyer
+  StoreFlyer:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      expired:
+        type: boolean
+        description: Is the flyer expired?
+      url:
+        $ref: '#/definitions/Url'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
 
   ### Article group
   ArticleGroup:
@@ -5881,6 +5897,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/StoreService'
+
+  StoreFlyers:
+    type: array
+    items:
+      $ref: '#/definitions/StoreFlyer'
 
   ArticleGroups:
     type: array
