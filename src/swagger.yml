@@ -4600,7 +4600,6 @@ definitions:
         items:
           $ref: '#/definitions/WeeklyOpeningDay'
         description: Weekly opening days, exact opening plan for the week. Items are sorted for correct display.
-
       services:
         type: array
         items:
