@@ -6174,15 +6174,15 @@
 									}
 								],
 								"url": {
-									"raw": "{{articles_url_base}}/boxes",
+									"raw": "{{articles_url_base}}/canisters",
 									"host": [
 										"{{articles_url_base}}"
 									],
 									"path": [
-										"boxes"
+										"canisters"
 									]
 								},
-								"description": "List all boxes"
+								"description": "List all canisters"
 							},
 							"response": []
 						},
