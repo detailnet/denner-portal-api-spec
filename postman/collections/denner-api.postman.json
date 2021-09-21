@@ -2100,7 +2100,6 @@
 										{
 											"listen": "test",
 											"script": {
-												"type": "text/javascript",
 												"exec": [
 													"// Save created publication document sheet's id in environment",
 													"var jsonData = JSON.parse(responseBody),",
@@ -2110,7 +2109,8 @@
 													"",
 													"tests[\"Setup new sheet_id in environment\"] = !!id;",
 													""
-												]
+												],
+												"type": "text/javascript"
 											}
 										}
 									],
@@ -6051,6 +6051,37 @@
 							"response": []
 						},
 						{
+							"name": "/eco-labels",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"url": {
+									"raw": "{{articles_url_base}}/eco-labels",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"eco-labels"
+									]
+								},
+								"description": "List online groups (Internet-Sortimente)"
+							},
+							"response": []
+						},
+						{
 							"name": "/online-specials",
 							"request": {
 								"method": "GET",
@@ -7186,6 +7217,44 @@
 							"response": []
 						},
 						{
+							"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id} Copy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"advertised-articles",
+										"{{advertised_article_id}}",
+										"stoppers",
+										"{{stopper_id}}"
+									]
+								},
+								"description": "ROUTE STILL NOT ACTIVE: Delete a stopper within an advertised article"
+							},
+							"response": []
+						},
+						{
 							"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id}",
 							"request": {
 								"method": "PATCH",
@@ -7224,44 +7293,6 @@
 									]
 								},
 								"description": "Update a stopper within an advertised article"
-							},
-							"response": []
-						},
-						{
-							"name": "/advertised-articles/{advertised_article_id}/stoppers/{stopper_id}",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "{{header_accept}}"
-									},
-									{
-										"key": "App-ID",
-										"value": "{{articles_header_app_id}}"
-									},
-									{
-										"key": "App-Key",
-										"value": "{{articles_header_app_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/stoppers/{{stopper_id}}",
-									"host": [
-										"{{articles_url_base}}"
-									],
-									"path": [
-										"advertised-articles",
-										"{{advertised_article_id}}",
-										"stoppers",
-										"{{stopper_id}}"
-									]
-								},
-								"description": "ROUTE STILL NOT ACTIVE: Delete a stopper within an advertised article"
 							},
 							"response": []
 						},
@@ -7458,6 +7489,248 @@
 									""
 								]
 							}
+						}
+					]
+				},
+				{
+					"name": "ad-hoc",
+					"item": [
+						{
+							"name": "/ad-hoc-articles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Save first advertised-article's id in environment\r",
+											"var jsonData = JSON.parse(responseBody),\r",
+											"    id = (jsonData && jsonData.ad_hoc_articles && jsonData.ad_hoc_articles[0]) ? jsonData.ad_hoc_articles[0].id : null;\r",
+											"    \r",
+											"postman.setEnvironmentVariable(\"ad_hoc_article_id\", id);\r",
+											"\r",
+											"tests[\"Setup first ad_hoc_article_id in environment\"] = !!id;\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "x-denner-broadcast",
+										"value": "update",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{articles_url_base}}/ad-hoc-articles",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"ad-hoc-articles"
+									]
+								},
+								"description": "List articles (Artikel)"
+							},
+							"response": []
+						},
+						{
+							"name": "/ad-hoc-articles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Save created advertised article dots's id in environment",
+											"var jsonData = JSON.parse(responseBody),",
+											"    id = (jsonData) ? jsonData.id : null;",
+											"    ",
+											"postman.setEnvironmentVariable(\"ad_hoc_article_id\", id);",
+											"",
+											"tests[\"Setup new ad_hoc_article_id in environment\"] = !!id;",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"test from postman\",\n    \"articles\": [\n        {\n            \"id\": \"051683\",\n            \"locales\": [\n                \"de\",\n                \"fr\",\n                \"it\"\n            ]\n        },\n        {\n            \"id\": \"051300\",\n            \"locales\": [\n                \"de\",\n                \"it\"\n            ]\n        },\n        {\n            \"id\": \"051314\",\n            \"locales\": [\n                \"fr\"\n            ]\n        }\n    ],\n    \"article_group\": \"06-60\",\n    \"online_group\": \"2-9\",\n    \"title\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"TITLE DE\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"TITLE FR\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"TITLE IT\"\n        }\n    ],\n    \"description\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"Description DE\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"Description FR\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"Description IT\"\n        }\n    ],\n    \"cooling\": 2,\n    \"eco_labels\": [\n        \"IP-Suisse\",\n        \"Bio\"\n    ],\n    \"packshots\": [\n        {\n            \"id\": \"c883413d-292a-4567-ae77-25aa760f0939\",\n            \"auto_assigned\": false,\n            \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/c883413d-292a-4567-ae77-25aa760f0939/800617_4_c_K.tif\",\n            \"preview_url\": \"https://denner-assets.s3.amazonaws.com/assets/c883413d-292a-4567-ae77-25aa760f0939/web/800617_4_c_K.png?version=3\",\n            \"cdn_url\": \"https://denner.imgix.net/assets/c883413d-292a-4567-ae77-25aa760f0939/web/800617_4_c_K.png\",\n            \"quantity\": 1,\n            \"created_on\": \"2017-03-01T13:25:45+0100\",\n            \"images\": [\n                {\n                    \"purpose\": \"print\",\n                    \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/c883413d-292a-4567-ae77-25aa760f0939/800617_4_c_K.tif\",\n                    \"created_on\": \"2018-10-05T15:58:34+0200\"\n                },\n                {\n                    \"purpose\": \"web\",\n                    \"url\": \"https://denner-assets.s3.amazonaws.com/assets/c883413d-292a-4567-ae77-25aa760f0939/web/800617_4_c_K.png\",\n                    \"created_on\": \"2017-03-01T13:25:45+0100\"\n                }\n            ],\n            \"attributes\": {\n                \"locales\": [\"de\",\"fr\"]\n            }\n        }\n    ],\n    \"note\": \"Test from postman\"\n}"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/ad-hoc-articles",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"ad-hoc-articles"
+									]
+								},
+								"description": "Create an advertised article"
+							},
+							"response": []
+						},
+						{
+							"name": "/ad-hoc-articles/{ad_hoc_article_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "X-Denner-Broadcast",
+										"value": "UPDATE",
+										"description": "Request broadcast notifications for this article on updates",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{articles_url_base}}/ad-hoc-articles/{{ad_hoc_article_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"ad-hoc-articles",
+										"{{ad_hoc_article_id}}"
+									]
+								},
+								"description": "List single article (Artikel)\n\nAdd query parameters for \"decorated\" article/wine"
+							},
+							"response": []
+						},
+						{
+							"name": "/ad-hoc-articles/{ad_hoc_article_id}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"test from postman xxx\",\n    \"articles\": [\n        {\n            \"id\": \"051683\",\n            \"locales\": [\n                \"de\",\n                \"fr\"\n            ]\n        },\n        {\n            \"id\": \"051301\",\n            \"locales\": [\n                \"de\",\n                \"it\"\n            ]\n        },\n        {\n            \"id\": \"000000\",\n            \"locales\": [\n                \"fr\"\n            ]\n        }\n    ],\n    \"article_group\": \"07-60\",\n    \"online_group\": \"1-1\",\n    \"title\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"TITLE DE 2\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"TITLE FR 2\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"TITLE IT 2\"\n        }\n    ],\n    \"description\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"Description DE 2\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"Description FR 2\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"Description IT 2\"\n        }\n    ],\n    \"cooling\": 1,\n    \"eco_labels\": [\n        \"Suisse-garantie\",\n        \"utz\"\n    ],\n    \"packshots\": [\n        {\n            \"id\": \"c883413d-292a-4567-ae77-25aa760f0939\",\n            \"auto_assigned\": false,\n            \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/c883413d-292a-4567-ae77-25aa760f0939/800617_4_c_K.tif\",\n            \"preview_url\": \"https://denner-assets.s3.amazonaws.com/assets/c883413d-292a-4567-ae77-25aa760f0939/web/800617_4_c_K.png?version=3\",\n            \"cdn_url\": \"https://denner.imgix.net/assets/c883413d-292a-4567-ae77-25aa760f0939/web/800617_4_c_K.png\",\n            \"quantity\": 1,\n            \"created_on\": \"2017-03-01T13:25:45+0100\",\n            \"images\": [\n                {\n                    \"purpose\": \"print\",\n                    \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/c883413d-292a-4567-ae77-25aa760f0939/800617_4_c_K.tif\",\n                    \"created_on\": \"2018-10-05T15:58:34+0200\"\n                },\n                {\n                    \"purpose\": \"web\",\n                    \"url\": \"https://denner-assets.s3.amazonaws.com/assets/c883413d-292a-4567-ae77-25aa760f0939/web/800617_4_c_K.png\",\n                    \"created_on\": \"2017-03-01T13:25:45+0100\"\n                }\n            ],\n            \"attributes\": {\n                \"locales\": [\"it\"]\n            }\n        }\n    ],\n    \"note\": \"Test from postman 2\"\n}"
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/ad-hoc-articles/{{ad_hoc_article_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"ad-hoc-articles",
+										"{{ad_hoc_article_id}}"
+									]
+								},
+								"description": "Create an advertised article"
+							},
+							"response": []
+						},
+						{
+							"name": "/ad-hoc-articles/{ad_hoc_article_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{header_accept}}"
+									},
+									{
+										"key": "App-ID",
+										"value": "{{articles_header_app_id}}"
+									},
+									{
+										"key": "App-Key",
+										"value": "{{articles_header_app_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{articles_url_base}}/ad-hoc-articles/{{ad_hoc_article_id}}",
+									"host": [
+										"{{articles_url_base}}"
+									],
+									"path": [
+										"ad-hoc-articles",
+										"{{ad_hoc_article_id}}"
+									]
+								},
+								"description": "ROUTE STILL NOT ACTIVE: Delete a stopper within an advertised article"
+							},
+							"response": []
 						}
 					]
 				},
