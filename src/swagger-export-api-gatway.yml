@@ -392,6 +392,11 @@ paths:
         - "application/json"
       produces:
         - "application/json"
+      parameters:
+        - name: "appraisal_id"
+          in: "path"
+          required: true
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -768,6 +773,62 @@ paths:
         cacheKeyParameters:
           - "method.request.header.App-Key"
           - "method.request.header.App-ID"
+  /banner-publications/{publication_id}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "App-ID"
+          in: "header"
+          required: false
+          type: "string"
+        - name: "App-Key"
+          in: "header"
+          required: false
+          type: "string"
+        - name: "publication_id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+        "500":
+          description: "500 response"
+        "403":
+          description: "403 response"
+        "404":
+          description: "404 response"
+        "406":
+          description: "406 response"
+      x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
+        uri: "https://${stageVariables.url_advertising}/online-publications/{publication_id}"
+        responses:
+          default:
+            statusCode: "200"
+          "403":
+            statusCode: "403"
+          "404":
+            statusCode: "404"
+          "5\\d{2}":
+            statusCode: "500"
+          "406":
+            statusCode: "406"
+        requestParameters:
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.view-as: "'online_publication.only_banner_articles'"
+          integration.request.path.publication_id: "method.request.path.publication_id"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        cacheNamespace: "yyznet"
+        cacheKeyParameters:
+          - "method.request.path.publication_id"
+          - "method.request.header.App-ID"
+          - "method.request.header.App-Key"
   /banners:
     get:
       consumes:
@@ -1013,6 +1074,11 @@ paths:
         - "application/json"
       produces:
         - "application/json"
+      parameters:
+        - name: "banner_id"
+          in: "path"
+          required: true
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -1171,6 +1237,61 @@ paths:
           - "method.request.querystring.page_size"
           - "method.request.querystring.sort"
           - "method.request.header.App-ID"
+  /newsletter-publications/{publication_id}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "App-ID"
+          in: "header"
+          required: false
+          type: "string"
+        - name: "App-Key"
+          in: "header"
+          required: false
+          type: "string"
+        - name: "publication_id"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+        "500":
+          description: "500 response"
+        "403":
+          description: "403 response"
+        "404":
+          description: "404 response"
+        "406":
+          description: "406 response"
+      x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
+        uri: "https://${stageVariables.url_advertising}/online-publications/{publication_id}"
+        responses:
+          default:
+            statusCode: "200"
+          "403":
+            statusCode: "403"
+          "404":
+            statusCode: "404"
+          "5\\d{2}":
+            statusCode: "500"
+          "406":
+            statusCode: "406"
+        requestParameters:
+          integration.request.header.App-Key: "method.request.header.App-Key"
+          integration.request.querystring.view-as: "'online_publication.only_newsletter_articles'"
+          integration.request.path.publication_id: "method.request.path.publication_id"
+          integration.request.header.App-ID: "method.request.header.App-ID"
+        passthroughBehavior: "when_no_match"
+        cacheNamespace: "opsmbw"
+        cacheKeyParameters:
+          - "method.request.header.App-ID"
+          - "method.request.header.App-Key"
   /online-filters:
     get:
       produces:

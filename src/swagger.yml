@@ -5340,6 +5340,10 @@ definitions:
         description: Online filter with appearances (and no localised title)
       promotion_type:
         $ref: '#/definitions/PromotionType'
+      channels:
+        $ref: '#/definitions/OnlineChannels'
+      design:
+        $ref: '#/definitions/OnlineDesign'
       sort_index:
         $ref: '#/definitions/SortIndex'
       links:
@@ -5372,6 +5376,26 @@ definitions:
         $ref: '#/definitions/Locale'
       url:
         $ref: '#/definitions/Url'
+
+  OnlineChannel:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique ID
+      name:
+        type: string
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+
+  OnlineDesign:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique ID
+      name:
+        type: string
 
   ### Online filter
   OnlineFilter:
@@ -5996,6 +6020,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/OnlineSpecial'
+
+  OnlineChannels:
+    type: array
+    items:
+      $ref: '#/definitions/OnlineChannel'
 
   ScreenPublications:
     type: array
