@@ -10252,7 +10252,15 @@
 				"exec": [
 					"// For API-gateway filter and sorting",
 					"if (pm.request.url.query) {",
-					"    pm.request.url.query = encodeURIComponent(pm.request.url.query);",
+					"    // Ref: https://community.postman.com/t/is-there-a-way-to-automatically-encode-urls/874/4",
+					"    //console.log(\"----- Encode query string\");",
+					"    //console.log(\"Input: \" + pm.request.url.query.toString());",
+					"    var querycount = pm.request.url.query.count();",
+					"    for(let i = 0; i < querycount; i++) {",
+					"        //console.log(i + \"/\" + pm.request.url.query.idx(i).key + \": \" + encodeURIComponent(pm.request.url.query.idx(i).value));",
+					"        pm.request.url.query.idx(i).value = encodeURIComponent(pm.request.url.query.idx(i).value);",
+					"    }",
+					"    //console.log(\"Output: \" + pm.request.url.query.toString());",
 					"}"
 				]
 			}
