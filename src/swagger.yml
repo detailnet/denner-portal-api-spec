@@ -304,7 +304,6 @@ paths:
                       appearances:
                         - from: '2013-01-01'
 
-
   /screen-stores:
     get:
       summary: List all screen stores
@@ -1648,6 +1647,10 @@ paths:
         - appId: []
       parameters:
         - $ref: '#/parameters/PublicationIdPathParam'
+        - name: view-as-override
+          in: query
+          type: string
+          required: false
       responses:
         200:
           description: Successful object
@@ -4794,9 +4797,11 @@ definitions:
       name:
         type: string
         description: German name for the eco label
-      image:
+      images:
         type: object
         properties:
+          locale:
+            $ref: '#/definitions/Locale'
           cdn_url:
             $ref: '#/definitions/Url'
 
@@ -4946,6 +4951,16 @@ definitions:
       - id
       - url
       - cdn_url
+
+  LocalizedPackshot:
+    allOf:
+      - $ref: '#/definitions/Packshot'
+      - type: object
+        properties:
+          locale:
+            $ref: '#/definitions/Locale'
+        required:
+          - locale
 
   BasicArticleWine:
 #  Has no definitions/WineBox
@@ -5251,6 +5266,8 @@ definitions:
         $ref: '#/definitions/Translations'
       dots:
         $ref: '#/definitions/Dots'
+      barcodes: # Only for mobile-app
+        $ref: '#/definitions/Barcodes'
       quantity:
         $ref: '#/definitions/Quantity'
 #      Removed because we cannot calculate a valid size, neither display a standardized unit
