@@ -1468,63 +1468,6 @@ paths:
                           value: "Uova"
                       children: []
 
-  /online-specials:
-    get:
-      summary: List all online specials
-      description: >
-        Use this operation to get a list of all online specials (Online-Specials).
-      tags:
-        - advertising
-      operationId: listOnlineSpecials
-      security:
-        - appKey: []
-        - appId: []
-      parameters:
-        - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeUnlimitableParam'
-      responses:
-        200:
-          description: Successful listing
-          schema:
-            $ref: '#/definitions/OnlineSpecialsResponse'
-          examples:
-            application/json:
-
-              page_count: 1
-              page_size: -1
-              total_items: 3
-              online_specials:
-                - id: wine
-                  name: Weine
-                  sort_index: 10
-                  title:
-                    - locale: de
-                      value: Weine
-                    - locale: fr
-                      value: Vins
-                    - locale: it
-                      value: Vini
-                - id: sparkling-wine
-                  name: Schaumweine
-                  sort_index: 20
-                  title:
-                    - locale: de
-                      value: Schaumweine
-                    - locale: fr
-                      value: Mousseux
-                    - locale: it
-                      value: Spumanti
-                - id: bordeaux
-                  name: Bordeaux Grand Cru
-                  sort_index: 30
-                  title:
-                    - locale: de
-                      value: Bordeaux Grand Cru
-                    - locale: fr
-                      value: Bordeaux Grand Cru
-                    - locale: it
-                      value: Bordeaux Grand Cru
-
   ### Online Advertising
   /online-publications:
     get:
@@ -3849,79 +3792,6 @@ paths:
 #              edited_by: "Hans Muster"
 #              edited_on: "2016-01-22T11:00:45"
 
-  /appraisal-statistic/{date}:
-    get:
-      summary: Get appraisal statistics
-      description: >
-        Use this operation to get day and overall appraisal statistics.
-      tags:
-        - appraisals
-      operationId: getAppraisalStatistic
-      security:
-        - appKey: []
-#        - appId: []
-      parameters:
-        - $ref: '#/parameters/DatePathParam'
-      responses:
-        200:
-          description: Successful object
-          schema:
-            $ref: '#/definitions/AppraisalStatisticResponse'
-          examples:
-            application/json:
-
-              day: "2015-10-20"
-              on_day:
-                total: 4
-                processed: 0
-                not_processed: 4
-                approved: 0
-                not_approved: 4
-                unique: 3
-                sweepstake_total: 0
-                sweepstake_unique: 0
-                rating:
-                  -
-                    value: 1
-                    count: 0
-                  -
-                    value: 2
-                    count: 0
-                  -
-                    value: 3
-                    count: 2
-                  -
-                    value: 4
-                    count: 1
-                  -
-                    value: 5
-                    count: 1
-              overall:
-                total: 38530
-                processed: 38530
-                not_processed: 0
-                approved: 31334
-                not_approved: 7196
-                unique: 11406
-                sweepstake_total: 0
-                sweepstake_unique: 0
-                rating:
-                  -
-                    value: 1
-                    count: 464
-                  -
-                    value: 2
-                    count: 685
-                  -
-                    value: 3
-                    count: 3514
-                  -
-                    value: 4
-                    count: 14066
-                  -
-                    value: 5
-                    count: 12605
-
   /sweepstake-participants:
     get:
       summary: List sweepstake participants
@@ -5489,18 +5359,6 @@ definitions:
       parent:
         $ref: '#/definitions/AssignedOnlineGroup'
 
-  ### Online special
-  OnlineSpecial:
-    type: object
-    properties:
-      id:
-        type: string
-        description: Unique ID
-      sort_index:
-        $ref: '#/definitions/SortIndex'
-      title:
-        $ref: '#/definitions/Translations'
-
   ### Screen publication
   ScreenArticle:
     type: object
@@ -5776,44 +5634,6 @@ definitions:
     required:
       - id
 
-  AppraisalStatistic:
-    type: object
-    properties:
-      total:
-        type: integer
-        format: int32
-        description: Total number of appraisals
-      processed:
-        type: integer
-        format: int32
-        description: Total number of processed appraisals
-      not_processed:
-        type: integer
-        format: int32
-        description: Total number of unprocessed appraisals
-      approved:
-        type: integer
-        format: int32
-        description: Total number of approved appraisals
-      not_approved:
-        type: integer
-        format: int32
-        description: Total number of appraisals that have not been approved
-      unique:
-        type: integer
-        format: int32
-        description: Total number of individual persons that sent at least one appraisal (based on email addresses)
-      sweepstake_total:
-        type: integer
-        format: int32
-        description: Total number of sweepstake participations
-      sweepstake_unique:
-        type: integer
-        format: int32
-        description: Total number of individual persons that participated at least once in the sweepstake (based on email addresses)
-      rating:
-        $ref: '#/definitions/RatingsGrouped'
-
   AppraisalArticleRating:
     type: object
     properties:
@@ -5836,22 +5656,6 @@ definitions:
         $ref: '#/definitions/Date'
     required:
       - article_id
-      - value
-      - count
-
-  RatingGrouped:
-    type: object
-    description: Rating count for a given value
-    properties:
-      value:
-        type: integer
-        format: int32
-        minimum: 1
-        maximum: 5
-      count:
-        type: integer
-        format: int32
-    required:
       - value
       - count
 
@@ -6033,11 +5837,6 @@ definitions:
     items:
       $ref: '#/definitions/OnlineGroup'
 
-  OnlineSpecials:
-    type: array
-    items:
-      $ref: '#/definitions/OnlineSpecial'
-
   OnlineChannels:
     type: array
     items:
@@ -6062,11 +5861,6 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/AppraisalArticleRating'
-
-  RatingsGrouped:
-    type: array
-    items:
-      $ref: '#/definitions/RatingGrouped'
 
   ScreenScreens:
     type: array
@@ -6246,24 +6040,6 @@ definitions:
       online_groups:
         $ref: '#/definitions/OnlineGroups'
 
-  OnlineSpecialsResponse:
-    type: object
-    properties:
-      page_count:
-        description: The number of pages
-        type: integer
-        format: int32
-      page_size:
-        description: The page size
-        type: integer
-        format: int32
-      total_items:
-        description: The number of items on all pages
-        type: integer
-        format: int32
-      online_groups:
-        $ref: '#/definitions/OnlineSpecials'
-
   OnlinePublicationsResponse:
     type: object
     properties:
@@ -6317,16 +6093,6 @@ definitions:
         format: int32
       appraisals:
         $ref: '#/definitions/Appraisals'
-
-  AppraisalStatisticResponse:
-    type: object
-    properties:
-      day:
-        $ref: '#/definitions/Date'
-      on_day:
-        $ref: '#/definitions/AppraisalStatistic'
-      overall:
-        $ref: '#/definitions/AppraisalStatistic'
 
   SweepstakeParticipantsResponse:
     type: object

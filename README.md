@@ -53,7 +53,6 @@ The Denner Portal provides mostly advertising related data.
 ### Appraisals
 * `GET /appraisals` (Weinbeurteilungen, [example](examples/appraisals.json))
 * `GET /appraisals/{appraisal_id}` (Weinbeurteilung, [example](examples/appraisal.json))
-* `GET /appraisal-statistic/{date}` (Statistiken zu Weinbewertungen und -beurteilungen, [example](examples/appraisal-statistic.json))
 * `GET /ratings` (Weinbewertungen, [example](examples/ratings.json))
 * `GET /ratings/{article_id}` (Weinbewertung, [example](examples/rating.json))
 * `GET /sweepstake-participants` (Verlosungsteilnehmer, [example](examples/sweepstake-participants.json))

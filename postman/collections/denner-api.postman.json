@@ -7895,34 +7895,6 @@
 					"response": []
 				},
 				{
-					"name": "/appraisal-statistics/{date}",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "App-Key",
-								"value": "{{appraisals_header_app_key}}"
-							}
-						],
-						"url": {
-							"raw": "{{appraisals_url_base}}/appraisal-statistics/2015-02-17",
-							"host": [
-								"{{appraisals_url_base}}"
-							],
-							"path": [
-								"appraisal-statistics",
-								"2015-02-17"
-							]
-						},
-						"description": "Wine appraisal statistics"
-					},
-					"response": []
-				},
-				{
 					"name": "/sweepstake-participants",
 					"request": {
 						"method": "GET",
