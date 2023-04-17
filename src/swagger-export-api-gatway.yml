@@ -56,6 +56,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "aws"
         httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listAppraisals:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -81,7 +82,6 @@ paths:
         - "method.request.querystring.sort"
         - "method.request.querystring.page_size"
         - "method.request.querystring.page"
-        type: "aws"
     options:
       consumes:
       - "application/json"
@@ -100,6 +100,7 @@ paths:
             Access-Control-Allow-Headers:
               type: "string"
       x-amazon-apigateway-integration:
+        type: "mock"
         responses:
           default:
             statusCode: "200"
@@ -110,7 +111,6 @@ paths:
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
-        type: "mock"
   /appraisals/{appraisal_id}:
     get:
       consumes:
@@ -153,6 +153,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
         httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listAppraisals:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -176,7 +177,6 @@ paths:
         cacheNamespace: "iov04u"
         cacheKeyParameters:
         - "method.request.path.appraisal_id"
-        type: "aws"
     options:
       consumes:
       - "application/json"
@@ -200,6 +200,7 @@ paths:
             Access-Control-Allow-Headers:
               type: "string"
       x-amazon-apigateway-integration:
+        type: "mock"
         responses:
           default:
             statusCode: "200"
@@ -210,7 +211,6 @@ paths:
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
-        type: "mock"
     patch:
       consumes:
       - "application/json"
@@ -248,6 +248,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
         httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_saveAppraisal:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -269,7 +270,6 @@ paths:
         cacheNamespace: "iov04u"
         cacheKeyParameters:
         - "method.request.path.appraisal_id"
-        type: "aws"
   /article-groups:
     get:
       produces:
@@ -317,6 +317,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/article-groups"
         responses:
@@ -344,7 +345,6 @@ paths:
         - "method.request.querystring.filter"
         - "method.request.header.App-ID"
         - "method.request.header.App-Key"
-        type: "http"
   /articles:
     get:
       produces:
@@ -392,6 +392,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/articles"
         responses:
@@ -419,7 +420,6 @@ paths:
         - "method.request.querystring.page_size"
         - "method.request.querystring.sort"
         - "method.request.querystring.filter"
-        type: "http"
   /articles/{article_id}:
     get:
       produces:
@@ -471,6 +471,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/articles/{article_id}"
         responses:
@@ -500,7 +501,6 @@ paths:
         - "method.request.querystring.quantity"
         - "method.request.querystring.wine-year"
         - "method.request.querystring.price-selection"
-        type: "http"
   /banners:
     get:
       consumes:
@@ -535,6 +535,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
         httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_listBanners:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -554,7 +555,6 @@ paths:
             : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
             \r\n}"
         passthroughBehavior: "when_no_match"
-        type: "aws"
     post:
       consumes:
       - "application/json"
@@ -588,6 +588,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
         httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_saveBanner:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -605,7 +606,6 @@ paths:
           application/json: "{\r\n  \"serialization\": {\"group\": \"portal-listing\"\
             },\r\n  \"banner_data\": $input.json('$')\r\n}"
         passthroughBehavior: "when_no_match"
-        type: "aws"
     options:
       consumes:
       - "application/json"
@@ -624,6 +624,7 @@ paths:
             Access-Control-Allow-Headers:
               type: "string"
       x-amazon-apigateway-integration:
+        type: "mock"
         responses:
           default:
             statusCode: "200"
@@ -634,7 +635,6 @@ paths:
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
-        type: "mock"
   /banners/{banner_id}:
     get:
       consumes:
@@ -677,6 +677,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
         httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_listBanners:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -700,7 +701,6 @@ paths:
         cacheNamespace: "1731ej"
         cacheKeyParameters:
         - "method.request.path.banner_id"
-        type: "aws"
     delete:
       consumes:
       - "application/json"
@@ -726,6 +726,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
         httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_deleteBanner:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -740,7 +741,6 @@ paths:
             \r\n}"
         passthroughBehavior: "when_no_match"
         contentHandling: "CONVERT_TO_TEXT"
-        type: "aws"
     options:
       consumes:
       - "application/json"
@@ -764,6 +764,7 @@ paths:
             Access-Control-Allow-Headers:
               type: "string"
       x-amazon-apigateway-integration:
+        type: "mock"
         responses:
           default:
             statusCode: "200"
@@ -774,7 +775,6 @@ paths:
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
-        type: "mock"
     patch:
       consumes:
       - "application/json"
@@ -812,6 +812,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
         httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-banners-api-${stageVariables.lambda_env}_saveBanner:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -834,7 +835,6 @@ paths:
         cacheKeyParameters:
         - "method.request.header.App-Key"
         - "method.request.path.banner_id"
-        type: "aws"
   /error-log:
     get:
       produces:
@@ -868,6 +868,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://eu.rest.logs.insight.rapid7.com/download/logs/${stageVariables.logentries_log_ids}"
         responses:
@@ -897,7 +898,6 @@ paths:
           integration.request.header.X-Api-Key: "stageVariables.logentries_key"
           integration.request.querystring.time_range: "method.request.querystring.time_range"
         passthroughBehavior: "when_no_match"
-        type: "http"
   /mobile-wines:
     get:
       produces:
@@ -945,6 +945,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/mobile-wines"
         responses:
@@ -971,7 +972,6 @@ paths:
         - "method.request.querystring.page_size"
         - "method.request.querystring.sort"
         - "method.request.header.App-ID"
-        type: "http"
   /newsletter-publications/{publication_id}:
     get:
       produces:
@@ -1003,6 +1003,7 @@ paths:
         "406":
           description: "406 response"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/online-publications/{publication_id}"
         responses:
@@ -1026,7 +1027,6 @@ paths:
         cacheKeyParameters:
         - "method.request.header.App-ID"
         - "method.request.header.App-Key"
-        type: "http"
   /newsletter-publications/{publication_id}/articles:
     get:
       produces:
@@ -1062,6 +1062,7 @@ paths:
         "406":
           description: "406 response"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/online-publications/{publication_id}"
         responses:
@@ -1094,7 +1095,6 @@ paths:
         cacheKeyParameters:
         - "method.request.header.App-ID"
         - "method.request.header.App-Key"
-        type: "http"
   /online-filters:
     get:
       produces:
@@ -1142,6 +1142,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/online-filters"
         responses:
@@ -1169,7 +1170,6 @@ paths:
         - "method.request.querystring.filter"
         - "method.request.header.App-Key"
         - "method.request.header.App-ID"
-        type: "http"
   /online-groups:
     get:
       produces:
@@ -1217,6 +1217,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/online-groups"
         responses:
@@ -1244,7 +1245,6 @@ paths:
         - "method.request.querystring.sort"
         - "method.request.header.App-ID"
         - "method.request.header.App-Key"
-        type: "http"
   /online-publication-articles/{article_id}:
     get:
       produces:
@@ -1284,6 +1284,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/online-publication-articles/{article_id}"
         responses:
@@ -1307,7 +1308,6 @@ paths:
         - "method.request.path.article_id"
         - "method.request.header.App-ID"
         - "method.request.header.App-Key"
-        type: "http"
   /online-publications:
     get:
       produces:
@@ -1355,6 +1355,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/online-publications"
         responses:
@@ -1382,7 +1383,6 @@ paths:
         - "method.request.querystring.page"
         - "method.request.querystring.page_size"
         - "method.request.querystring.filter"
-        type: "http"
   /online-publications/{publication_id}:
     get:
       produces:
@@ -1426,6 +1426,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_advertising}/online-publications/{publication_id}"
         responses:
@@ -1451,7 +1452,6 @@ paths:
         - "method.request.header.App-ID"
         - "method.request.header.App-Key"
         - "method.request.path.publication_id"
-        type: "http"
   /print-publication-briefings:
     post:
       parameters:
@@ -1469,6 +1469,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "POST"
         uri: "https://${stageVariables.url_advertising}/print-publication-briefings"
         responses:
@@ -1482,7 +1483,6 @@ paths:
           integration.request.header.App-Key: "stageVariables.advertising_app_key"
           integration.request.header.App-ID: "stageVariables.advertising_app_id"
         passthroughBehavior: "when_no_match"
-        type: "http"
   /promotion-types:
     get:
       produces:
@@ -1530,6 +1530,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/promotion-types"
         responses:
@@ -1557,7 +1558,6 @@ paths:
         - "method.request.querystring.sort"
         - "method.request.header.App-ID"
         - "method.request.header.App-Key"
-        type: "http"
   /ratings:
     get:
       consumes:
@@ -1609,6 +1609,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
         httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listRatings:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -1630,7 +1631,6 @@ paths:
             : \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
             \r\n}"
         passthroughBehavior: "when_no_templates"
-        type: "aws"
   /ratings/{article_id}:
     get:
       consumes:
@@ -1670,6 +1670,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
         httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listRatings:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -1688,215 +1689,6 @@ paths:
             : {\"group\": \"portal-listing\"},\r\n  \"query\": \"f._id=__streq_$input.params().path.get('article_id')\"\
             \r\n}"
         passthroughBehavior: "when_no_templates"
-        type: "aws"
-  /screen-publications:
-    get:
-      produces:
-      - "application/json"
-      parameters:
-      - name: "App-Key"
-        in: "header"
-        required: false
-        type: "string"
-      - name: "sort"
-        in: "query"
-        required: false
-        type: "string"
-      - name: "page"
-        in: "query"
-        required: false
-        type: "string"
-      - name: "page_size"
-        in: "query"
-        required: false
-        type: "string"
-      - name: "App-ID"
-        in: "header"
-        required: false
-        type: "string"
-      - name: "filter"
-        in: "query"
-        required: false
-        type: "string"
-      responses:
-        "200":
-          description: "200 response"
-          schema:
-            $ref: "#/definitions/Empty"
-        "500":
-          description: "500 response"
-          schema:
-            $ref: "#/definitions/Error"
-        "403":
-          description: "403 response"
-          schema:
-            $ref: "#/definitions/Error"
-        "406":
-          description: "406 response"
-          schema:
-            $ref: "#/definitions/Error"
-      x-amazon-apigateway-integration:
-        httpMethod: "GET"
-        uri: "https://${stageVariables.url_advertising}/screen-publications"
-        responses:
-          default:
-            statusCode: "200"
-          "403":
-            statusCode: "403"
-          "5\\d{2}":
-            statusCode: "500"
-          "406":
-            statusCode: "406"
-        requestParameters:
-          integration.request.querystring.page: "method.request.querystring.page"
-          integration.request.header.App-Key: "method.request.header.App-Key"
-          integration.request.querystring.filter: "method.request.querystring.filter"
-          integration.request.querystring.page_size: "method.request.querystring.page_size"
-          integration.request.querystring.sort: "method.request.querystring.sort"
-          integration.request.header.App-ID: "method.request.header.App-ID"
-        passthroughBehavior: "when_no_match"
-        cacheNamespace: "u50shc"
-        cacheKeyParameters:
-        - "method.request.querystring.page"
-        - "method.request.querystring.page_size"
-        - "method.request.querystring.filter"
-        - "method.request.querystring.sort"
-        - "method.request.header.App-ID"
-        - "method.request.header.App-Key"
-        type: "http"
-  /screen-publications/{publication_id}:
-    get:
-      produces:
-      - "application/json"
-      parameters:
-      - name: "App-ID"
-        in: "header"
-        required: false
-        type: "string"
-      - name: "App-Key"
-        in: "header"
-        required: false
-        type: "string"
-      - name: "publication_id"
-        in: "path"
-        required: true
-        type: "string"
-      responses:
-        "200":
-          description: "200 response"
-          schema:
-            $ref: "#/definitions/Empty"
-        "500":
-          description: "500 response"
-          schema:
-            $ref: "#/definitions/Error"
-        "403":
-          description: "403 response"
-          schema:
-            $ref: "#/definitions/Error"
-        "404":
-          description: "404 response"
-          schema:
-            $ref: "#/definitions/Error"
-        "406":
-          description: "406 response"
-          schema:
-            $ref: "#/definitions/Error"
-      x-amazon-apigateway-integration:
-        httpMethod: "GET"
-        uri: "https://${stageVariables.url_advertising}/screen-publications/{publication_id}"
-        responses:
-          default:
-            statusCode: "200"
-          "403":
-            statusCode: "403"
-          "404":
-            statusCode: "404"
-          "5\\d{2}":
-            statusCode: "500"
-          "406":
-            statusCode: "406"
-        requestParameters:
-          integration.request.header.App-Key: "method.request.header.App-Key"
-          integration.request.path.publication_id: "method.request.path.publication_id"
-          integration.request.header.App-ID: "method.request.header.App-ID"
-        passthroughBehavior: "when_no_match"
-        cacheNamespace: "jcgi97"
-        cacheKeyParameters:
-        - "method.request.header.App-Key"
-        - "method.request.header.App-ID"
-        - "method.request.path.publication_id"
-        type: "http"
-  /screen-stores:
-    get:
-      produces:
-      - "application/json"
-      parameters:
-      - name: "App-Key"
-        in: "header"
-        required: false
-        type: "string"
-      - name: "page"
-        in: "query"
-        required: false
-        type: "string"
-      - name: "page_size"
-        in: "query"
-        required: false
-        type: "string"
-      - name: "App-ID"
-        in: "header"
-        required: false
-        type: "string"
-      responses:
-        "200":
-          description: "200 response"
-          schema:
-            $ref: "#/definitions/Empty"
-        "500":
-          description: "500 response"
-          schema:
-            $ref: "#/definitions/Error"
-        "403":
-          description: "403 response"
-          schema:
-            $ref: "#/definitions/Error"
-        "406":
-          description: "406 response"
-          schema:
-            $ref: "#/definitions/Error"
-      x-amazon-apigateway-integration:
-        httpMethod: "GET"
-        uri: "https://${stageVariables.url_stores}/stores"
-        responses:
-          default:
-            statusCode: "200"
-            responseTemplates:
-              application/json: "#set($root = $input.path('$'))\n{\n  \"stores\":\
-                \ [\n#foreach($store in $root.stores)\n    {\n      \"id\": \"$store.id\"\
-                ,\n      \"code\": $store.code,\n      \"calendar_opening_times\"\
-                : $store.calendar_opening_times\n    }#if($foreach.hasNext),#end\n\
-                \n#end\n  ],\n  \"page_count\": $root.page_count,\n  \"page_size\"\
-                : $root.page_size,\n  \"total_items\": $root.total_items\n}\n"
-          "403":
-            statusCode: "403"
-          "5\\d{2}":
-            statusCode: "500"
-          "406":
-            statusCode: "406"
-        requestParameters:
-          integration.request.querystring.page: "method.request.querystring.page"
-          integration.request.header.App-Key: "method.request.header.App-Key"
-          integration.request.querystring.page_size: "method.request.querystring.page_size"
-          integration.request.header.App-ID: "method.request.header.App-ID"
-        passthroughBehavior: "when_no_match"
-        cacheNamespace: "x92vt1"
-        cacheKeyParameters:
-        - "method.request.querystring.page"
-        - "method.request.querystring.page_size"
-        - "method.request.header.App-Key"
-        - "method.request.header.App-ID"
-        type: "http"
   /shop-wines:
     get:
       produces:
@@ -1944,6 +1736,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/shop-wines"
         responses:
@@ -1971,7 +1764,6 @@ paths:
         - "method.request.querystring.page_size"
         - "method.request.querystring.page"
         - "method.request.querystring.sort"
-        type: "http"
   /shop-wines/{article_id}:
     get:
       produces:
@@ -2011,6 +1803,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_articles}/shop-wines/{article_id}"
         responses:
@@ -2034,7 +1827,6 @@ paths:
         - "method.request.header.App-ID"
         - "method.request.header.App-Key"
         - "method.request.path.article_id"
-        type: "http"
   /store-channels:
     get:
       produces:
@@ -2082,6 +1874,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_stores}/store-channels"
         responses:
@@ -2109,7 +1902,6 @@ paths:
         - "method.request.querystring.filter"
         - "method.request.header.App-Key"
         - "method.request.header.App-ID"
-        type: "http"
   /store-services:
     get:
       produces:
@@ -2157,6 +1949,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_stores}/store-services"
         responses:
@@ -2184,7 +1977,6 @@ paths:
         - "method.request.querystring.page"
         - "method.request.querystring.page_size"
         - "method.request.querystring.filter"
-        type: "http"
   /stores:
     get:
       produces:
@@ -2232,6 +2024,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        type: "http"
         httpMethod: "GET"
         uri: "https://${stageVariables.url_stores}/stores"
         responses:
@@ -2260,7 +2053,6 @@ paths:
         - "method.request.querystring.filter"
         - "method.request.header.App-Key"
         - "method.request.header.App-ID"
-        type: "http"
   /sweepstake-participants:
     get:
       consumes:
@@ -2316,6 +2108,7 @@ paths:
       security:
       - AppKeyHeader: []
       x-amazon-apigateway-integration:
+        type: "aws"
         httpMethod: "POST"
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-appraisals-api-${stageVariables.lambda_env}_listSweepstakeParticipants:${stageVariables.lambda_alias}/invocations"
         responses:
@@ -2341,7 +2134,6 @@ paths:
         - "method.request.querystring.f.created_on"
         - "method.request.querystring.f.created_from"
         - "method.request.querystring.f.created_to"
-        type: "aws"
 securityDefinitions:
   AppKeyHeader:
     type: "apiKey"
@@ -2349,10 +2141,10 @@ securityDefinitions:
     in: "header"
     x-amazon-apigateway-authtype: "custom"
     x-amazon-apigateway-authorizer:
+      type: "token"
       authorizerUri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools_authorizeApiRequest:live/invocations"
       authorizerCredentials: "arn:aws:iam::802555642192:role/aws-apigateway-role.denner-api"
       authorizerResultTtlInSeconds: 3600
-      type: "token"
 definitions:
   Empty:
     type: "object"
