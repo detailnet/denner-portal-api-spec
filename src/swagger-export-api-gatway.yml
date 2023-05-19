@@ -875,13 +875,13 @@ paths:
           default:
             statusCode: "200"
             responseTemplates:
-              application/json: "#set($inputLines = $input.path('$').split(\"\\n\"\
-                ))\n#set($allParams = $input.params())\n#set($params = $allParams.get('querystring'))\n\
+              application/json: "#set($inputLines = $input.body.split(\"\\n\"))\n\
+                #set($allParams = $input.params())\n#set($params = $allParams.get('querystring'))\n\
                 {\"params\":{#foreach($paramName in $params.keySet())\n\"$paramName\"\
                 :\"$util.escapeJavaScript($params.get($paramName))\"#if($foreach.hasNext),#end\n\
                 #end\n},\"line_count\":$inputLines.size(),\"lines\":[#foreach($line\
                 \ in $inputLines)\n\"$util.escapeJavaScript($line)\"#if($foreach.hasNext),#end\n\
-                #end\n]##,\"body-json\" : $input.json('$')\n}"
+                #end\n]\n}"
           "400":
             statusCode: "400"
           "403":
@@ -891,7 +891,6 @@ paths:
           "5\\d2":
             statusCode: "500"
         requestParameters:
-          integration.request.querystring.query: "'where(error)'"
           integration.request.querystring.from: "method.request.querystring.from"
           integration.request.querystring.to: "method.request.querystring.to"
           integration.request.header.Accept: "'*/*'"
@@ -2134,6 +2133,68 @@ paths:
         - "method.request.querystring.f.created_on"
         - "method.request.querystring.f.created_from"
         - "method.request.querystring.f.created_to"
+  /user-log:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "from"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "to"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "time_range"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+        "400":
+          description: "400 response"
+        "500":
+          description: "500 response"
+        "403":
+          description: "403 response"
+        "404":
+          description: "404 response"
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
+        uri: "https://eu.rest.logs.insight.rapid7.com/download/logs/${stageVariables.logentries_log_ids}"
+        responses:
+          default:
+            statusCode: "200"
+            responseTemplates:
+              application/json: "#set($inputLines = $input.body.split(\"\\n\"))\n\
+                #set($allParams = $input.params())\n#set($params = $allParams.get('querystring'))\n\
+                {\"params\":{#foreach($paramName in $params.keySet())\n\"$paramName\"\
+                :\"$util.escapeJavaScript($params.get($paramName))\"#if($foreach.hasNext),#end\n\
+                #end\n},\"line_count\":$inputLines.size(),\"lines\":[#foreach($line\
+                \ in $inputLines)\n\"$util.escapeJavaScript($line)\"#if($foreach.hasNext),#end\n\
+                #end\n]\n}"
+          "400":
+            statusCode: "400"
+          "403":
+            statusCode: "403"
+          "404":
+            statusCode: "404"
+          "5\\d2":
+            statusCode: "500"
+        requestParameters:
+          integration.request.querystring.from: "method.request.querystring.from"
+          integration.request.querystring.to: "method.request.querystring.to"
+          integration.request.header.Accept: "'*/*'"
+          integration.request.header.X-Api-Key: "stageVariables.logentries_key"
+          integration.request.querystring.time_range: "method.request.querystring.time_range"
+        passthroughBehavior: "when_no_match"
 securityDefinitions:
   AppKeyHeader:
     type: "apiKey"
