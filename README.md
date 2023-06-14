@@ -59,7 +59,10 @@ The Denner Portal provides mostly advertising related data.
 
 ## Building
 
-### Protobox
+### Protobox 
+_This does not works anympre, all has to be migrated to openapi (see denner-public project)_
+_For API definition see next section_
+
 To build the specification we're using [swagger-codegen](https://github.com/swagger-api/swagger-codegen).
 
 Run the following commands in [Protobox](https://bitbucket.org/detailnet/protobox) to install it (and it's dependencies):
@@ -128,3 +131,77 @@ You can also generate a static HTML page:
             -o ../denner-portal-api-spec/build/html
             
 The file will be located at `build/html/index.html`.
+
+### Using Ubuntu on WSL2
+Run the following commands to install swagger-codgen and it's dependencies in a separate directory:
+
+        cd ..
+        git clone git@github.com:swagger-api/swagger-codegen.git
+        sudo apt-get install maven
+        sudo apt install openjdk-11-jdk
+        cd swagger-codegen
+        git fetch origin 3.0.0:3.0.0
+        git checkout 3.0.0
+        #  export JDK_JAVA_OPTIONS=-Djdk.attach.allowAttachSelf=true .. not sure if really needed
+        mvn clean package
+
+#### JSON (used to update docs page too)
+Once installed, `openapi.json` can be generated as follows:
+
+        cd ../swagger-codegen  && \
+        java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate \
+            -i ../denner-portal-api-spec/src/swagger.yml \
+            -l openapi \
+            -o ../denner-portal-api-spec/docs && \
+        cd -
+
+The file will be located at `docs/openapi.json`.
+
+**Important: after generation revert the servers section at beginning of `docs/openapi.json`**
+
+For other options see
+
+        cd ../swagger-codegen  && \
+        java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate -h \ 
+        cd -
+
+For the API definition in lmbda function  generate with additional params:
+
+        cd ../swagger-codegen  && \
+        java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate \
+            -i ../denner-portal-api-spec/src/swagger.yml \
+            -l openapi \
+            --disable-examples \
+            -o ../denner-portal-api-spec/export && \
+        cd -
+
+
+To filter out examples and descriptions execute following (JSON processor needed `npm install -g json`):
+
+        json -e '
+          function dropRecursive(obj, objName) {
+            if (objName != "properties") {
+              delete obj.examples;
+              delete obj.example;
+              delete obj.description;
+              delete obj.summary;
+            }
+            
+            for (var key in obj) {
+              if (obj[key] && typeof obj[key] === "object") { 
+                dropRecursive(obj[key], key);
+              }
+            }
+          }
+          
+          dropRecursive(this, 'this');
+        ' < ../denner-portal-api-spec/docs/openapi.json > ../denner-portal-api-spec/docs/openapi.no_texts.json
+
+The file will be located at `build/swagger/swagger.no_texts.json`.
+
+To compress all your JSON data execute following (JSON processor needed):
+
+        for f in `ls ../denner-portal-api-spec/docs/*.json | grep -v "compressed"`
+        do 
+          json -o json-0 < $f > "${f%.json}.compressed.json"
+        done
