@@ -3016,6 +3016,20 @@ definitions:
     minimum: 0
     description: Cooling type (0 = no cooling, 1 = refrigerated, 2 = frozen)
 
+  LegalWarning:
+    type: string
+    enum:
+      - none
+      - deadly-smoking
+      - tobacco-cancerous
+      - dangerous-tobacco-and-addictive
+      - dangerous-and-addictive
+      - dangerous-smoking
+      - driving-compromised
+      - unhealthy-and-addictive
+      - unhealthy
+    description: Indicates which legal warning info must be displayed
+
   Appearance:
     type: object
     properties:
@@ -3517,6 +3531,10 @@ definitions:
         $ref: '#/definitions/BaseContent'
       cooling:
         $ref: '#/definitions/Cooling'
+      legal_warning:
+        $ref: '#/definitions/LegalWarning'
+      legal_texts:
+        $ref: '#/definitions/Translations'
       eco_labels:
         $ref: '#/definitions/EcoLabels'
       packshots:
@@ -3820,6 +3838,18 @@ definitions:
       master:
         type: boolean
         description: Is master barcode?
+  OnlineSpecial:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Denner rarity type code (e.g. 'bordeaux', 'fine-wine', 'online-specials')
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      name:
+        type: string
+      title:
+        $ref: '#/definitions/Translations'
   WineCanister:
     type: object
     properties:
@@ -3967,6 +3997,10 @@ definitions:
         description: Is the article's price compared to an offer from an other company?
       cooling:
         $ref: '#/definitions/Cooling'
+      legal_warning:
+        $ref: '#/definitions/LegalWarning'
+      legal_texts:
+        $ref: '#/definitions/Translations'
       online_group:
         $ref: '#/definitions/AssignedOnlineGroup'
       article_group:
@@ -4452,6 +4486,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/PromotionType'
+
+  OnlineSpecials:
+    type: array
+    items:
+      $ref: '#/definitions/OnlineSpecial'
 
   OutputImages:
     type: array
